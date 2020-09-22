@@ -1,0 +1,12 @@
+https://hdrihaven.com/p/faq.php
+
+HDRIs supplied by HDRIHaven under a CC0 commercial license.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+Can I include these HDRIs in a product I sell?
+Yep. The only thing you can't do is claim to be the original author or re-license them. More about the CC0 license here.
+
+Please make it clear to your customers that these HDRIs are free and public domain, and if possible (though it's not required) include a link to HDRI Haven.
+
+If your product sells well, consider supporting the creation of these HDRIs on Patreon.

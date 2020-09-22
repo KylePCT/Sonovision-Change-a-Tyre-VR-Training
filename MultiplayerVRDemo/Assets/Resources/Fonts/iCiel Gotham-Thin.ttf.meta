@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 5623b10a341f22341a76013594a92c2d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: iCiel Gotham
+  fontNames:
+  - iCiel Gotham
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e557c654dad11de4cb99db012b6e632d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
