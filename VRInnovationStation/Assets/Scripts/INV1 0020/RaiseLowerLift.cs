@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class RaiseLowerLift : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class RaiseLowerLift : MonoBehaviour
     public GameObject Button_ConfirmationIndication;
     public GameObject Button_Raise;
     public GameObject Button_Lower;
+
+    public TextMeshProUGUI Text_DistanceFromFloor;
 
     [Header("Movement Variables (z Axis)")]
     public float LowestPositionLimit;
@@ -77,6 +80,8 @@ public class RaiseLowerLift : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Text_DistanceFromFloor.SetText((Lift.transform.position.y * 100).ToString("F2") + "mm");
+
         if (IsRaising)
         {
             RaiseLift();
@@ -104,7 +109,7 @@ public class RaiseLowerLift : MonoBehaviour
     {
         if (Lift.transform.position.y < HighestPositionLimit)
         {
-            Lift.transform.position += (Vector3.forward * LiftSpeed * Time.deltaTime);
+            Lift.transform.position += (Vector3.up * LiftSpeed * Time.deltaTime);
             Button_Raise.GetComponent<MeshRenderer>().material = WheelCanBeMoved;
             Button_Lower.GetComponent<MeshRenderer>().material = WheelCantBeMoved;
         }
@@ -114,9 +119,28 @@ public class RaiseLowerLift : MonoBehaviour
     {
         if (Lift.transform.position.y > LowestPositionLimit)
         {
-            Lift.transform.position += (-Vector3.forward * LiftSpeed * Time.deltaTime);
+            Lift.transform.position += (Vector3.down * LiftSpeed * Time.deltaTime);
             Button_Raise.GetComponent<MeshRenderer>().material = WheelCantBeMoved;
             Button_Lower.GetComponent<MeshRenderer>().material = WheelCanBeMoved;
         }
     }
+
+    //Public voids to call from buttons.
+    #region Public Voids
+    public void MakeRaise()
+    {
+        IsRaising = true;
+    }
+
+    public void MakeLower()
+    {
+        IsLowering = true;
+    }
+
+    public void StopMoving()
+    {
+        IsRaising = false;
+        IsLowering = false;
+    }
+    #endregion
 }
