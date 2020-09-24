@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{DA5CA3C9-EC24-5E8B-1EDF-0E9804249A82}</ProjectGuid>
+    <ProjectGuid>{FE984DD9-8EC8-B130-6C30-97BFC294D1A0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -257,35 +257,23 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.WebGL.Extensions">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.8f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.Android.Extensions">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.8f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.8f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="Photon3Unity3D">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Assets/External Plugins/Photon/PhotonLibs/Photon3Unity3D.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Assets/External Plugins/Photon/PhotonLibs/Photon3Unity3D.dll</HintPath>
     </Reference>
     <Reference Include="websocket-sharp">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Assets/External Plugins/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Assets/External Plugins/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.NRefactory">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/PackageCache/com.unity.render-pipelines.core@7.3.1/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/PackageCache/com.unity.render-pipelines.core@7.3.1/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.8f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.8f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.8f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -642,173 +630,173 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Subsystem.Registration">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Interaction.Toolkit">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.XR.Interaction.Toolkit.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.XR.Interaction.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Interaction.Toolkit.Editor">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.XR.Interaction.Toolkit.Editor.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.XR.Interaction.Toolkit.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Oculus">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.XR.Oculus.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.XR.Oculus.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Oculus.Editor">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.XR.Oculus.Editor.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.XR.Oculus.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management.Editor">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Programs/GitHub/Projects/SV_VRInnovationStation/MultiplayerVRDemo/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/KT/Desktop/SV_VRMartin/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{80360026-8C63-D96C-40DC-74E34FE666BF}</Project>
+      <Project>{F36900DE-981B-D8DE-B0A4-21FE364A5B34}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj">
-      <Project>{248BFC7B-74EB-79E8-C014-F34ECC195370}</Project>
+      <Project>{D2977349-598A-5C85-F55D-D38078F65AF5}</Project>
       <Name>PhotonUnityNetworking.Utilities.PhotonPlayer.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PunDemos.DemoHubEditor.csproj">
-      <Project>{03ADD686-3838-9DA0-B8AA-BEA1AE558EBB}</Project>
+      <Project>{CFD3E96F-545A-A8FC-F248-EE1CF4F34AFD}</Project>
       <Name>PunDemos.DemoHubEditor</Name>
     </ProjectReference>
     <ProjectReference Include="PunDemos.DemoSlotcarEditor.csproj">
-      <Project>{91E0E457-D439-94C8-1526-BFBB3427ABCC}</Project>
+      <Project>{BA374F85-7A54-65B5-3455-60832EF2B59B}</Project>
       <Name>PunDemos.DemoSlotcarEditor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.API.csproj">
-      <Project>{A5EA2F30-4755-AA64-34E0-9980B40E12BB}</Project>
+      <Project>{51B8F6DC-D987-EEC8-CA4E-7CEB6FC1D8FD}</Project>
       <Name>PhotonVoice.API</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Demos.csproj">
-      <Project>{D4A9096A-E28B-4317-10CD-B82083393D19}</Project>
+      <Project>{2DE5587B-9BD3-5B25-D0B3-F4AA5A113066}</Project>
       <Name>PhotonUnityNetworking.Demos</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.csproj">
-      <Project>{191FCBE3-691E-501B-091F-D191CB8A31FE}</Project>
+      <Project>{166D92A8-3524-5B92-BE76-54A7F172DD14}</Project>
       <Name>PhotonUnityNetworking.Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.Editor.csproj">
-      <Project>{F8D008A9-86EA-3974-2AAE-B16979ADD0A5}</Project>
+      <Project>{CD5E8C1E-E0B8-A539-DB2D-CF752B35590B}</Project>
       <Name>PhotonVoice.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.PUN.csproj">
-      <Project>{10D1F06C-2CEC-04BF-1C4C-CB82953D207B}</Project>
+      <Project>{3824EFE0-C262-3057-8A52-2ABAE65D74BF}</Project>
       <Name>PhotonVoice.PUN</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonWebSocket.csproj">
-      <Project>{36071A8B-7F34-870F-0FC6-D124B58F0288}</Project>
+      <Project>{F2FCD3A4-701B-8330-5996-DCDDD889D218}</Project>
       <Name>PhotonWebSocket</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonRealtime.csproj">
-      <Project>{81A61778-D9DC-C357-52C2-5C1B369CC694}</Project>
+      <Project>{FC1DBB27-BEF0-3118-1D6B-BB14AA9DA8C8}</Project>
       <Name>PhotonRealtime</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.csproj">
-      <Project>{79221B3C-DFF5-F986-20F9-1AEC2967C751}</Project>
+      <Project>{D59E88A1-C5CC-C3C3-44E5-E40B07B921A1}</Project>
       <Name>PhotonUnityNetworking</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.csproj">
-      <Project>{C28D193E-AB25-03C2-F914-840180DE579B}</Project>
+      <Project>{47D21995-D86B-A270-6F34-967AB0B0C00D}</Project>
       <Name>PhotonVoice</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonChat.csproj">
-      <Project>{151F645A-C451-FD52-CF95-065D025A7A10}</Project>
+      <Project>{3BC23DB1-5FCE-DAA9-52D8-9A39C8FFC173}</Project>
       <Name>PhotonChat</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.Utilities.Editor.csproj">
-      <Project>{6555FA05-A271-3BDC-2694-BAA1E09AABE9}</Project>
+      <Project>{D4243124-0F82-C3D8-A0E5-2B5F7485D9BE}</Project>
       <Name>PhotonVoice.Utilities.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.Culling.Editor.csproj">
-      <Project>{BE4F8BFC-695E-2E3E-2404-323A2D1F4586}</Project>
+      <Project>{35DB7504-2BE1-E3CD-FD16-C32DF7773A96}</Project>
       <Name>PhotonUnityNetworking.Utilities.Culling.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Editor.csproj">
-      <Project>{41124F92-00D6-5546-8BF9-DA1F74099FD1}</Project>
+      <Project>{7F93FC55-1DF3-C370-25E4-024B435D94A9}</Project>
       <Name>PhotonUnityNetworking.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.PUN.Editor.csproj">
-      <Project>{0FD27817-9C02-DBCC-08AA-7887253AD5E0}</Project>
+      <Project>{4475B34B-4371-D0E9-CCA0-C7660E2A3774}</Project>
       <Name>PhotonVoice.PUN.Editor</Name>
     </ProjectReference>
   </ItemGroup>
