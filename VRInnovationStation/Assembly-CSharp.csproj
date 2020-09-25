@@ -136,6 +136,7 @@
     <Compile Include="Assets\Scripts\HighlightVoice.cs" />
     <Compile Include="Assets\Scripts\HingeJointListener.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\RaiseLowerLift.cs" />
+    <Compile Include="Assets\Scripts\INV1 0020\RestrictRotation.cs" />
     <Compile Include="Assets\Scripts\InputListener.cs" />
     <Compile Include="Assets\Scripts\InputListenerSecondaryButton.cs" />
     <Compile Include="Assets\Scripts\Joystick\Joystick_CallMovement.cs" />

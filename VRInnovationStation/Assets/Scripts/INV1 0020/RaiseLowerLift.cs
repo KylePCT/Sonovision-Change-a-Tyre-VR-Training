@@ -37,6 +37,7 @@ public class RaiseLowerLift : MonoBehaviour
     [Header("Visual Materials")]
     public Material WheelCantBeMoved;
     public Material WheelCanBeMoved;
+    public Material Default;
 
     // Start is called before the first frame update
     void Start()
@@ -111,7 +112,7 @@ public class RaiseLowerLift : MonoBehaviour
         {
             Lift.transform.position += (Vector3.up * LiftSpeed * Time.deltaTime);
             Button_Raise.GetComponent<MeshRenderer>().material = WheelCanBeMoved;
-            Button_Lower.GetComponent<MeshRenderer>().material = WheelCantBeMoved;
+            Button_Lower.GetComponent<MeshRenderer>().material = Default;
         }
     }
 
@@ -120,7 +121,7 @@ public class RaiseLowerLift : MonoBehaviour
         if (Lift.transform.position.y > LowestPositionLimit)
         {
             Lift.transform.position += (Vector3.down * LiftSpeed * Time.deltaTime);
-            Button_Raise.GetComponent<MeshRenderer>().material = WheelCantBeMoved;
+            Button_Raise.GetComponent<MeshRenderer>().material = Default;
             Button_Lower.GetComponent<MeshRenderer>().material = WheelCanBeMoved;
         }
     }
