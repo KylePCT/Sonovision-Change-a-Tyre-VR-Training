@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Floor
-  - Whiteboard
+  - ToothLever
+  - HiddenCollision
   layers:
   - Default
   - TransparentFX

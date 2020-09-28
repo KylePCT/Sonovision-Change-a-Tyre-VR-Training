@@ -63,8 +63,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\External Plugins\Photon\PhotonVoice\Demos\DemoVoicePun\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
-    <Compile Include="Assets\Scripts\Editor\LoginManagerEditorScript.cs" />
-    <Compile Include="Assets\Scripts\Editor\RoomManagerEditorScript.cs" />
+    <Compile Include="Assets\Scripts\VR_Multiplayer\Editor\LoginManagerEditorScript.cs" />
+    <Compile Include="Assets\Scripts\VR_Multiplayer\Editor\RoomManagerEditorScript.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.8f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
