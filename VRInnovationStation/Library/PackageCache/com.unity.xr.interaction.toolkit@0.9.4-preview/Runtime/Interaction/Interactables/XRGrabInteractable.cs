@@ -439,7 +439,9 @@ namespace UnityEngine.XR.Interaction.Toolkit
             base.OnSelectExit(interactor);
 
             if (m_RetainTransformParent)
+            {
                 transform.parent = m_OriginalSceneParent;
+            }
 
             // reset RididBody settings
             m_RigidBody.isKinematic = m_WasKinematic;
