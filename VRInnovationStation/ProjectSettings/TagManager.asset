@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ToothLever
   - HiddenCollision
+  - InstructionCanvas
   layers:
   - Default
   - TransparentFX
