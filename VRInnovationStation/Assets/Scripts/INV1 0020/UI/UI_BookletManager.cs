@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,15 +8,19 @@ using TMPro;
 public class UI_BookletManager : MonoBehaviour
 {
     private GameObject CanvasCheckObj = null;
+    private Camera PlayerCamera;
 
     [Header("Page Lists")]
     public UI_Instruction[] InstructionPages;
     public List<GameObject> InstructionObjects;
     public GameObject[] InstructionCanvases;
 
+    [SerializeField]
     [Header("Page Single References")]
+    public GameObject CanvasParent;
     public GameObject IntroductionPage;
 
+    [SerializeField]
     [Header("Page History")]
     private GameObject PreviousPage;
     public List<GameObject> PageHistory;
@@ -28,14 +33,34 @@ public class UI_BookletManager : MonoBehaviour
 
     void Awake()
     {
+
         //Finds all the instruction pages and adds them to the InstructionObjects list.
         InstructionPages = FindObjectsOfType<UI_Instruction>();
+        Array.Reverse(InstructionPages);
+
         foreach (UI_Instruction instruction in InstructionPages)
         {
+            GameObject NewCanvas = Instantiate(Resources.Load("InstructionCanvas")) as GameObject;
             InstructionObjects.Add(instruction.gameObject);
         }
 
         InstructionCanvases = GameObject.FindGameObjectsWithTag("InstructionCanvas");
+        IntroductionPage = InstructionCanvases[0];
+
+        for (int i = 0; i < (InstructionCanvases.Length); i++)
+        {
+            if (InstructionPages[i].InstructionNumberSuffix == null)
+            {
+                InstructionCanvases[i].name = "UI_Canvas_" + InstructionPages[i].InstructionNumber + "_" + InstructionPages[i].InstructionNameShort;
+            }
+            else
+            {
+                InstructionCanvases[i].name = "UI_Canvas_" + InstructionPages[i].InstructionNumber + InstructionPages[i].InstructionNumberSuffix + "_" + InstructionPages[i].InstructionNameShort;
+            }
+
+            InstructionCanvases[i].gameObject.transform.SetParent(CanvasParent.gameObject.transform, false);
+            InstructionCanvases[i].gameObject.transform.position = CanvasParent.gameObject.transform.position;
+        }
 
         PopulatePages();
     }
@@ -58,6 +83,15 @@ public class UI_BookletManager : MonoBehaviour
         
     }
 
+    private void LateUpdate()
+    {
+        if (PlayerCamera == null)
+        {
+            Debug.Log("Camera not found. Finding XR Camera...");
+            PlayerCamera = Camera.main;
+            Debug.Log("Camera found at: " + PlayerCamera + ".");
+        }
+    }
     #region Page Navigation
 
     //Runs through this reference checker until a canvas component is found, which is then set as the active current page.
@@ -82,7 +116,7 @@ public class UI_BookletManager : MonoBehaviour
     public void SetPreviousPage(GameObject InstructionObject)
     {
         //If the page can be returned to, add it to the history.
-        if (InstructionObject.GetComponent<UI_Instruction>().CanBeReturnedTo == true)
+        if (InstructionObject.GetComponent<UI_Instruction>().CanBeReturnedToWithBack == true)
         {
             PageHistory.Add(InstructionObject);
         }
@@ -104,8 +138,29 @@ public class UI_BookletManager : MonoBehaviour
     }
 
     //Hides the game object the current button and canvas is on and then shows the target canvas.
-    public void ShowNextPage(GameObject NextPage)
+    public void ShowPreviousPage(GameObject PreviousPage)
     {
+        //If the currentpage is not null, set it to not be active. If it is, get the canvas reference and then set to not be active.
+        if (CurrentPage != null)
+        {
+            CurrentPage.SetActive(false);
+        }
+        else
+        {
+            FindCanvasReference();
+            CurrentPage.SetActive(false);
+        }
+
+        //Set the PreviousPage method.
+        CurrentPage.SetActive(false);
+        
+        CurrentPage = PreviousPage;
+        PreviousPage.SetActive(true);
+    }
+
+    //Hides the game object the current button and canvas is on and then shows the target canvas.
+    public void ShowNextPage(GameObject NextPage)
+    {        
         //If the currentpage is not null, set it to not be active. If it is, get the canvas reference and then set to not be active.
         if (CurrentPage != null)
         {
@@ -122,17 +177,24 @@ public class UI_BookletManager : MonoBehaviour
         SetPreviousPage(CurrentPage);
         CurrentPage = NextPage;
         NextPage.SetActive(true);
+        //maybe clear listener from button idk
     }
     #endregion
 
     public void PopulatePages()
     {
-        for (int i = 0; i < InstructionCanvases.Length; i++)
+        for (int i = 0; i < (InstructionCanvases.Length); i++)
         {
             InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Title").GetComponent<TextMeshProUGUI>().text = InstructionPages[i].InstructionName;
-            //set description
-            //set image
-            //instantiate these at some point then add this stuff
+            InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Description").GetComponent<TextMeshProUGUI>().text = InstructionPages[i].InstructionDescription;
+            InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Image").GetComponent<Image>().sprite = InstructionPages[i].InstructionImageGuide;
+
+            InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Back").GetComponent<Button>().onClick.AddListener(() => ShowPreviousPage(InstructionPages[i].PreviousInstruction));
+            InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Forward").GetComponent<Button>().onClick.AddListener(() => ShowNextPage(InstructionPages[i].NextInstruction));
+
+            InstructionCanvases[i].GetComponent<Canvas>().worldCamera = Camera.main;
+
+            Debug.Log("Canvas: <" + InstructionCanvases[i].name + "> populated.");
         }
     }
 }
