@@ -597,7 +597,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerNode: 4
-  rayInteractorController: {fileID: 0}
   OnPress:
     m_PersistentCalls:
       m_Calls:
@@ -1374,7 +1373,8 @@ MonoBehaviour:
   m_SmoothMovement: 0
   m_FollowTightness: 10
   m_SnapThresholdDistance: 10
-  m_Reticle: {fileID: 0}
+  m_Reticle: {fileID: 3243884769686159862, guid: ba7331f932a688a4f8e39cea819590de,
+    type: 3}
   m_StopLineAtFirstRaycastHit: 1
 --- !u!120 &698464524
 LineRenderer:
@@ -1394,7 +1394,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: f4722ffe6ff790241be594b747df2d8c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5791,12 +5791,12 @@ PrefabInstance:
     - target: {fileID: 3353666617269073607, guid: 23cfe3920f67df9479ef9a8c60f5a1de,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.5
+      value: -0.30000305
       objectReference: {fileID: 0}
     - target: {fileID: 3353666617269073607, guid: 23cfe3920f67df9479ef9a8c60f5a1de,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -4.7
+      value: -4.700001
       objectReference: {fileID: 0}
     - target: {fileID: 3353666617269073607, guid: 23cfe3920f67df9479ef9a8c60f5a1de,
         type: 3}
@@ -5915,7 +5915,7 @@ PrefabInstance:
     - target: {fileID: 3353666617506976392, guid: 23cfe3920f67df9479ef9a8c60f5a1de,
         type: 3}
       propertyPath: m_text
-      value: Silver Tier
+      value: The Room
       objectReference: {fileID: 0}
     - target: {fileID: 3353666617506976438, guid: 23cfe3920f67df9479ef9a8c60f5a1de,
         type: 3}
@@ -6209,27 +6209,27 @@ PrefabInstance:
     - target: {fileID: 3353666618244272507, guid: 23cfe3920f67df9479ef9a8c60f5a1de,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3353666618244272508, guid: 23cfe3920f67df9479ef9a8c60f5a1de,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3353666618244272508, guid: 23cfe3920f67df9479ef9a8c60f5a1de,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3353666618244272508, guid: 23cfe3920f67df9479ef9a8c60f5a1de,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 85.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3353666618244272508, guid: 23cfe3920f67df9479ef9a8c60f5a1de,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -34.8552
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3353666618244272509, guid: 23cfe3920f67df9479ef9a8c60f5a1de,
         type: 3}

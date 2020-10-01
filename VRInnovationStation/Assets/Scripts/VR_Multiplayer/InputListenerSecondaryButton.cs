@@ -9,7 +9,6 @@ public class InputListenerSecondaryButton : MonoBehaviour
 {
     List<InputDevice> devices;
     public XRNode controllerNode;
-    public GameObject rayInteractorController;
 
     [Tooltip("Event when the button starts being pressed")]
     public UnityEvent OnPress;
@@ -65,9 +64,6 @@ public class InputListenerSecondaryButton : MonoBehaviour
                     isPressed = false;
                     OnRelease.Invoke();
                     Debug.Log("OnRelease event is called");
-
-                    rayInteractorController.GetComponent<XRRayInteractor>().attachTransform.gameObject.GetComponent<Rigidbody>().useGravity = true;
-
                 }
             }
             
