@@ -15,10 +15,10 @@ public class AvatarHolder : MonoBehaviour
     private void Start()
     {
         //Setting the layer of avatar head to AvatarLocalHead layer so that it does not block the view of the local VR Player
-        SetLayerRecursively(HeadTransform.gameObject, 11);
+        SetLayerRecursively(HeadTransform.gameObject, 30);
 
         //Setting the layer of avatar body to AvatarLocalBody layer so that it does not block the view of the local VR Player
-        SetLayerRecursively(BodyTransform.gameObject, 12);
+        SetLayerRecursively(BodyTransform.gameObject, 31);
     }
     void SetLayerRecursively(GameObject go, int layerNumber)
     {

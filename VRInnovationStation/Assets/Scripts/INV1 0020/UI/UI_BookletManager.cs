@@ -59,7 +59,10 @@ public class UI_BookletManager : MonoBehaviour
                 InstructionCanvases[i].name = "UI_Canvas_" + InstructionPages[i].InstructionNumber + InstructionPages[i].InstructionNumberSuffix + "_" + InstructionPages[i].InstructionNameShort;
             }
 
-            InstructionPages[i].NextInstruction = InstructionCanvases[i+1];
+            if (i != 0) //If the index is not 0, set the next pages.
+            {
+                InstructionPages[i - 1].NextInstruction = InstructionCanvases[i];
+            }
 
             InstructionCanvases[i].gameObject.transform.SetParent(CanvasParent.gameObject.transform, false);
             InstructionCanvases[i].gameObject.transform.position = CanvasParent.gameObject.transform.position;
@@ -131,6 +134,7 @@ public class UI_BookletManager : MonoBehaviour
     {
         int Index = PageHistory.Count;
         PreviousPage = PageHistory[Index - 1];
+        Debug.Log("<color=cyan>[UI_BookletManager.cs] Previous Page is: </color> " + PreviousPage);
         return PreviousPage;
     }
 
@@ -144,15 +148,15 @@ public class UI_BookletManager : MonoBehaviour
     //Finds the last active page amd assigns it.
     public void ShowPreviousPage()
     {
+        Debug.Log("<color=cyan>[UI_BookletManager.cs] </color>Showing previous page: " + GetPreviousPage());
         CurrentPage.SetActive(false);
-        GetPreviousPage().SetActive(true);
         RemovePreviousPage();
+        GetPreviousPage().SetActive(true);
     }
 
     //Hides the game object the current button and canvas is on and then shows the target canvas.
     public void ShowNextPage(GameObject NextPage)
     {
-        Debug.Log("<color=cyan>[UI_BookletManager.cs] AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </color>" + CurrentPage);
         SetPreviousPage(CurrentPage);
 
         CurrentPage.SetActive(false);
@@ -189,11 +193,8 @@ public class UI_BookletManager : MonoBehaviour
             InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Description").GetComponent<TextMeshProUGUI>().text = InstructionPages[temp_i].InstructionDescription;
             InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Image").GetComponent<Image>().sprite = InstructionPages[temp_i].InstructionImageGuide;
 
-            if (PageHistory.Count > 0)
-            {
-                InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Back").GetComponent<Button>().onClick.AddListener(() => Debug.Log("<color=cyan>[UI_BookletManager.cs] </color>Previous page clicked: " + PageHistory[0]));
-                InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Back").GetComponent<Button>().onClick.AddListener(() => ShowPreviousPage());
-            }
+            InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Back").GetComponent<Button>().onClick.AddListener(() => Debug.Log("<color=cyan>[UI_BookletManager.cs] </color>Previous page clicked: " + PageHistory[0]));
+            InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Back").GetComponent<Button>().onClick.AddListener(() => ShowPreviousPage());
 
             InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Forward").GetComponent<Button>().onClick.AddListener(() => Debug.Log("<color=cyan>[UI_BookletManager.cs] </color>Next page clicked: " + InstructionPages[temp_i].NextInstruction));
             InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Forward").GetComponent<Button>().onClick.AddListener(() => ShowNextPage(InstructionPages[temp_i].NextInstruction));

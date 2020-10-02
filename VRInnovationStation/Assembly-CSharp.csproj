@@ -125,11 +125,13 @@
     <Compile Include="Assets\Scripts\INV1 0020\MoveableArms.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\RaiseLowerLift.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\RestrictRotation.cs" />
+    <Compile Include="Assets\Scripts\INV1 0020\ToggleAttach.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\UI\AssignCanvasEventCamera.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\UI\UI_BookletManager.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\UI\UI_HoldHistoryBool.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\UI\UI_Instruction.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\UI\UI_VersionNumber.cs" />
+    <Compile Include="Assets\Scripts\INV1 0020\Wrench\WrenchManager.cs" />
     <Compile Include="Assets\Scripts\VR_Multiplayer\Anims\AN_LowerTip.cs" />
     <Compile Include="Assets\Scripts\VR_Multiplayer\Anims\AN_MovePincers.cs" />
     <Compile Include="Assets\Scripts\VR_Multiplayer\Anims\AN_OpenDoors.cs" />

@@ -12,7 +12,7 @@ public class RandomColour : MonoBehaviourPunCallbacks
     public GameObject leftHand;
     public GameObject rightHand;
 
-    private void OnEnable()
+    void OnEnable()
     {
         randomColour = Random.ColorHSV(0f, 1f, 0.8f, 1f, 1f, 1f);
         photonView.RPC("changeColour", RpcTarget.AllBuffered, randomColour);
