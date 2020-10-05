@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7832750167371330785}
   - component: {fileID: 4235270762184506942}
   - component: {fileID: 7782154417372749332}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text_VoiceState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -832,7 +832,7 @@ MonoBehaviour:
   AvatarHeadGameobject: {fileID: 6404915988805294934}
   AvatarBodyGameobject: {fileID: 3512079555299209284}
   AvatarModelPrefabs:
-  - {fileID: 2059960205749354645, guid: 6c9d0f8ca6df14945bd661d8df956052, type: 3}
+  - {fileID: 7876344375786308987}
   PlayerName_Text: {fileID: 5221700341541650909}
 --- !u!114 &464364591642852801
 MonoBehaviour:
@@ -1095,7 +1095,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 3895
+    m_Bits: 2147487543
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_PoseProviderComponent: {fileID: 0}
   m_TrackingType: 0
   m_UpdateType: 0
-  m_UseRelativeTransform: 0
+  m_UseRelativeTransform: 1
 --- !u!114 &39139866910973942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3419,7 +3419,7 @@ GameObject:
   - component: {fileID: 4623950880705418294}
   - component: {fileID: 5341874535600378438}
   - component: {fileID: 7857633160086470281}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image_Mic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3850,7 +3850,7 @@ GameObject:
   - component: {fileID: 8601861861472967488}
   - component: {fileID: 2567094641258524710}
   - component: {fileID: 1511966844500276305}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Voice Debug UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3865,7 +3865,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6262622021023537718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3.127}
+  m_LocalPosition: {x: 0, y: 0, z: 2.752}
   m_LocalScale: {x: 0.025, y: 0.025, z: 0.025}
   m_Children:
   - {fileID: 4623950880705418294}
@@ -3875,7 +3875,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1.305}
+  m_AnchoredPosition: {x: 0, y: 0.266}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1451739574918238699
@@ -4795,6 +4795,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1719709062873078319, guid: 6c9d0f8ca6df14945bd661d8df956052,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1719709062873078319, guid: 6c9d0f8ca6df14945bd661d8df956052,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1719709062873078319, guid: 6c9d0f8ca6df14945bd661d8df956052,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2059960205749354645, guid: 6c9d0f8ca6df14945bd661d8df956052,
         type: 3}
       propertyPath: m_Name
@@ -4804,6 +4819,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059960205749354645, guid: 6c9d0f8ca6df14945bd661d8df956052,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2256039792707525280, guid: 6c9d0f8ca6df14945bd661d8df956052,
         type: 3}
@@ -5310,10 +5330,20 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7329761083387667739, guid: 6c9d0f8ca6df14945bd661d8df956052,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8494837185786230101, guid: 6c9d0f8ca6df14945bd661d8df956052,
         type: 3}
       propertyPath: m_RenderingLayerMask
       value: 2049
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140155021364739679, guid: 6c9d0f8ca6df14945bd661d8df956052,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c9d0f8ca6df14945bd661d8df956052, type: 3}

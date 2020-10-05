@@ -131,6 +131,9 @@
     <Compile Include="Assets\Scripts\INV1 0020\UI\UI_HoldHistoryBool.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\UI\UI_Instruction.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\UI\UI_VersionNumber.cs" />
+    <Compile Include="Assets\Scripts\INV1 0020\Wheel\BoltIdentity.cs" />
+    <Compile Include="Assets\Scripts\INV1 0020\Wheel\SlotIdentity.cs" />
+    <Compile Include="Assets\Scripts\INV1 0020\Wheel\WheelManager.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\Wrench\WrenchManager.cs" />
     <Compile Include="Assets\Scripts\VR_Multiplayer\Anims\AN_LowerTip.cs" />
     <Compile Include="Assets\Scripts\VR_Multiplayer\Anims\AN_MovePincers.cs" />

@@ -7,6 +7,10 @@ TagManager:
   - ToothLever
   - HiddenCollision
   - InstructionCanvas
+  - BreakBoltHoles
+  - WheelBoltHoles
+  - Bolts
+  - WrenchBit
   layers:
   - Default
   - TransparentFX

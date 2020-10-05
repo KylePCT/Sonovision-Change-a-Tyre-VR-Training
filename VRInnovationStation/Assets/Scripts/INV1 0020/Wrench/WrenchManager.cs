@@ -22,7 +22,7 @@ public class WrenchManager : MonoBehaviour
 
     private GameObject BitInSocket;
     private bool IsThereABitInSocket;
-    private bool TheBitIsCorrect = false;
+    public bool TheBitIsCorrect = false;
 
     // Update is called once per frame
     void Update()
@@ -40,15 +40,15 @@ public class WrenchManager : MonoBehaviour
 
         if (IsThereABitInSocket == true)
         {
-            if (BitInSocket == CorrectBit)
+            if (BitInSocket == CorrectBit && TheBitIsCorrect == false)
             {
                 Debug.Log("<color=yellow>[WrenchManager.cs] </color> Correct bit is in socket.");
                 //Great success. Unscrew the thing or send another bool to allow it to happen with collision.
                 TheBitIsCorrect = true;
+                CorrectBit.GetComponent<XRSocketInteractor>().enabled = true;
             }
             else
             {
-                Debug.Log("<color=yellow>[WrenchManager.cs] </color> Wrong bit selected.");
                 TheBitIsCorrect = false;
             }
         }
@@ -58,12 +58,11 @@ public class WrenchManager : MonoBehaviour
     {
         if (BitSocket.GetComponent<XRSocketInteractor>().selectTarget.gameObject != null)
         {
-            Debug.Log("Current bit is: " + BitSocket.GetComponent<XRSocketInteractor>().selectTarget.gameObject + ". Correct bit is: " + CorrectBit + ".");
             BitInSocket = BitSocket.GetComponent<XRSocketInteractor>().selectTarget.gameObject;
         }
         else
         {
-            return;
+            //BitInSocket = null;
         }
     }
 }

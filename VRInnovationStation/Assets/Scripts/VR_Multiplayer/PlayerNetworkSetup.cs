@@ -30,6 +30,9 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
             gameObject.GetComponent<MovementController>().enabled = true; //Allows the local rig to be moved.
             gameObject.GetComponent<AvatarInputConverter>().enabled = true;
 
+            AvatarHeadGameobject.layer = 30;
+            AvatarBodyGameobject.layer = 31;
+
             //Get the Avatar selection data for the correct model to be displayed.
             object avatarSelectionNumber;
             if (PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue(MultiplayerVRConstants.AVATAR_SELECTION_NUMBER, out avatarSelectionNumber))
@@ -71,8 +74,10 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
             gameObject.GetComponent<AvatarInputConverter>().enabled = false;
 
             ////Set the Avatar's head and body to layer 'Default', which allows them to be seen by Main Cameras in the scene. => Allows remote players to be seen by the local player.
-            //SetLayerRecursively(AvatarHeadGameobject, 0);
-            //SetLayerRecursively(AvatarBodyGameobject, 0);
+
+            AvatarHeadGameobject.layer = 0;
+            AvatarBodyGameobject.layer = 0;
+
             AvatarHeadGameobject.SetActive(true); //Just enable the head incase, LayerRecursive is buggy.
         }
 
