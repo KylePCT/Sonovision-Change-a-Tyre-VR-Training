@@ -21,35 +21,25 @@ public class WrenchManager : MonoBehaviour
     public GameObject CorrectBit;
 
     private GameObject BitInSocket;
+    private bool DoesBitNeedCheck = true;
     private bool IsThereABitInSocket;
     public bool TheBitIsCorrect = false;
 
     // Update is called once per frame
     void Update()
     {
-        CheckForBit();
+        if (DoesBitNeedCheck == true)
+        {
+            CheckForBit();
 
-        if (BitSocket.GetComponent<XRSocketInteractor>().selectTarget.gameObject == null)
-        {
-            IsThereABitInSocket = false;
-        }
-        else
-        {
-            IsThereABitInSocket = true;
-        }
-
-        if (IsThereABitInSocket == true)
-        {
-            if (BitInSocket == CorrectBit && TheBitIsCorrect == false)
+            if (BitSocket.GetComponent<XRSocketInteractor>().selectTarget.gameObject == null)
             {
-                Debug.Log("<color=yellow>[WrenchManager.cs] </color> Correct bit is in socket.");
-                //Great success. Unscrew the thing or send another bool to allow it to happen with collision.
-                TheBitIsCorrect = true;
-                CorrectBit.GetComponent<XRSocketInteractor>().enabled = true;
+                IsThereABitInSocket = false;
             }
             else
             {
-                TheBitIsCorrect = false;
+                IsThereABitInSocket = true;
+                IsBitCorrect();
             }
         }
     }
@@ -60,9 +50,25 @@ public class WrenchManager : MonoBehaviour
         {
             BitInSocket = BitSocket.GetComponent<XRSocketInteractor>().selectTarget.gameObject;
         }
-        else
+    }
+
+    public void IsBitCorrect()
+    {
+        if (IsThereABitInSocket == true)
         {
-            //BitInSocket = null;
+            if (BitInSocket == CorrectBit && TheBitIsCorrect == false)
+            {
+                //Great success. Unscrew the thing or send another bool to allow it to happen with collision.
+                CorrectBit.GetComponent<XRSocketInteractor>().enabled = true;
+                DoesBitNeedCheck = false;
+                Debug.Log("<color=yellow>[WrenchManager.cs] </color> Correct bit is in socket.");
+                TheBitIsCorrect = true;
+            }
+            else
+            {
+                DoesBitNeedCheck = true;
+                TheBitIsCorrect = false;
+            }
         }
     }
 }

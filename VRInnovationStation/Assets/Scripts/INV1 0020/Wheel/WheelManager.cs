@@ -32,39 +32,46 @@ public class WheelManager : MonoBehaviour
         SortBoltArrays();
 
         IsNewWheelAttached = false;
-        WheelMain.GetComponent<BoxCollider>().enabled = false;
+        WheelMain.GetComponent<MeshCollider>().enabled = false;
     }
 
+    //Checks if all the bolts are removed before allowing the user to take the wheel off.
     public void AreAllBoltsRemoved()
     {
-        for (int i = 0; i < Bolts.Length; ++i)
+        Debug.Log("<color=orange>[WheelManager.cs]</color> <" + Bolts.Length + "> bolts found.");
+
+        for (int i = 0; i < Bolts.Length; i++)
         {
-            if (Bolts[i].GetComponent<SlotIdentity>().BoltInSlot == true)
+            if (Bolts[i].GetComponent<BoltIdentity>().InSlot == true)
             {
+                Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel cannot be removed yet. One or more bolts still remain.");
                 return;
             }
         }
 
-        WheelMain.GetComponent<BoxCollider>().enabled = true;
-        WheelMain.GetComponent<Rigidbody>().useGravity = true;
+        WheelMain.GetComponent<MeshCollider>().enabled = true;
         WheelMain.layer = 11;
         IsNewWheelAttached = true;
-        //You can remove the wheel!
+        Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel can now be removed.");
     }
 
+    //Checks if the slots all have bolts. This would be called after you have put the new wheel on.
     public void DoAllSlotsHaveBolts()
     {
-        for (int i = 0; i < Bolts.Length; ++i)
+        for (int i = 0; i < Bolts.Length; i++)
         {
-            if (Bolts[i].GetComponent<SlotIdentity>().BoltInSlot == false)
+            if (Bolts[i].GetComponent<BoltIdentity>().InSlot == false)
             {
+                Debug.Log("<color=orange>[WheelManager.cs]</color> Task not completed, one or more bolts are still needed.");
+                return;
                 //Check for nothing.
             }
         }
 
-        //All bolts are in the new wheel.
+        Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel has all bolts and task is complete.");
     }
 
+    //Sorts the arrays into descending order for convinience.
     public void SortBoltArrays()
     {
         Bolts = Bolts.OrderBy(c => c.name).ToArray();

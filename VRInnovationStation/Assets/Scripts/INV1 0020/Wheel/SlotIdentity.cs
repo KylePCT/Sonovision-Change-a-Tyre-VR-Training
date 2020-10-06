@@ -18,23 +18,27 @@ public class SlotIdentity : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<XRSocketInteractor>().enabled = false;
-    }
-
-    private void Update()
-    {
-    
+        if (SlotType == 0)
+        {
+            GetComponent<XRSocketInteractor>().enabled = false;
+        }
     }
 
     private void OnTriggerEnter(Collider col)
     {
-        if (WheelManager.IsNewWheelAttached == true)
+        if (col.tag == "Bolts")
         {
-            GetComponent<XRSocketInteractor>().enabled = true;
-        }
-        else
-        {
-            Debug.Log("Wrong object or slot is full.");
+            if (WheelManager.IsNewWheelAttached == true)
+            {
+                if (SlotType == 0)
+                {
+                    GetComponent<XRSocketInteractor>().enabled = true;
+                }
+            }
+            else
+            {
+                Debug.Log("<color=orange>[SlotIdentity.cs]</color> New wheel is not yet attached.");
+            }
         }
     }
 }

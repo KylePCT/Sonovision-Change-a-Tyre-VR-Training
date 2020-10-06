@@ -8,22 +8,27 @@ public class BoltIdentity : MonoBehaviour
 {
     [Header("Identity")]
     public int BoltNumber;
-    public bool InSlot = true;
+    public bool InSlot;
 
     public WrenchManager WrenchManager;
     public WheelManager WheelManager;
+
+    private void Start()
+    {
+        InSlot = true;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "WrenchBit" && WrenchManager.TheBitIsCorrect == true)
         {
-            //gameObject.transform.SetParent(WrenchManager.PneumaticWrench.transform.Find("AttachSocket"));
-            Debug.Log(gameObject.name + " is now attached.");
-            InSlot = false;
-        }
-        else
-        {
-            //gameObject.transform.SetParent(WheelManager.WheelBoltsManager.transform);
+            if (WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().selectTarget == null)
+            {
+                InSlot = false;
+
+                WheelManager.AreAllBoltsRemoved();
+                Debug.Log("<color=orange>[BoltIdentity.cs]</color> Bolt: " + gameObject.name + " is now attached.");
+            }
         }
     }
 }

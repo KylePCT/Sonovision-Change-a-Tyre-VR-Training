@@ -30,8 +30,9 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
             gameObject.GetComponent<MovementController>().enabled = true; //Allows the local rig to be moved.
             gameObject.GetComponent<AvatarInputConverter>().enabled = true;
 
-            AvatarHeadGameobject.layer = 30;
-            AvatarBodyGameobject.layer = 31;
+            AvatarHeadGameobject.GetComponent<MeshRenderer>().enabled = true;
+            //AvatarHeadGameobject.layer = 30;
+            //AvatarBodyGameobject.layer = 31;
 
             //Get the Avatar selection data for the correct model to be displayed.
             object avatarSelectionNumber;
@@ -45,7 +46,7 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
             ////Set the local Avatar's head and body to their own layers so the camera in the scene can cull them and not see them.
             //SetLayerRecursively(AvatarHeadGameobject, 12);
             //SetLayerRecursively(AvatarBodyGameobject, 12);
-            AvatarHeadGameobject.SetActive(false); //Just remove the head incase, LayerRecursive is buggy.
+            //AvatarHeadGameobject.SetActive(false); //Just remove the head incase, LayerRecursive is buggy.
 
             //Set up teleportation for local player.
             //Will look for teleportation areas when the rig is instantiated and assign them.
@@ -74,11 +75,12 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
             gameObject.GetComponent<AvatarInputConverter>().enabled = false;
 
             ////Set the Avatar's head and body to layer 'Default', which allows them to be seen by Main Cameras in the scene. => Allows remote players to be seen by the local player.
+            AvatarHeadGameobject.GetComponent<MeshRenderer>().enabled = false;
 
-            AvatarHeadGameobject.layer = 0;
-            AvatarBodyGameobject.layer = 0;
+            //AvatarHeadGameobject.layer = 0;
+            //AvatarBodyGameobject.layer = 0;
 
-            AvatarHeadGameobject.SetActive(true); //Just enable the head incase, LayerRecursive is buggy.
+            //AvatarHeadGameobject.SetActive(true); //Just enable the head incase, LayerRecursive is buggy.
         }
 
         //Shows player names for all users.
