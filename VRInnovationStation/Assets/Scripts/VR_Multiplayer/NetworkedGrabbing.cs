@@ -4,7 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks
+public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks, IPunObservable
 {
     private PhotonView m_photonView;
     public Rigidbody rb; //For access to the Kinematic options.
@@ -33,7 +33,6 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
     }
 
     [PunRPC]
-    //Update is called once per frame.
     void Update()
     {
         if (!isBeingHeld) //If the object is not being held.
@@ -50,6 +49,7 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
     }
 
     //When object is grabbed...
+    [PunRPC]
     public void OnSelectEnter()
     {
         //Calls the RPC method across players in the room.
@@ -69,6 +69,7 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
     }
 
     //When object is released...
+    [PunRPC]
     public void OnSelectExit()
     {
         //When an object is no longer selected, call the StopNetworkGrabbing method to all players in the same room.
@@ -124,6 +125,18 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
         if (whatIsGrabbed == objectName)
         {
             isBeingHeld = false;
+        }
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(rb.velocity);
+        }
+        else
+        {
+            rb.velocity = (Vector3)stream.ReceiveNext();
         }
     }
 }

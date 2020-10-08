@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Photon.Pun;
 
 public class RaiseLowerLift : MonoBehaviour
 {
@@ -146,6 +147,29 @@ public class RaiseLowerLift : MonoBehaviour
             {
                 Lift.transform.position += (Vector3.down * LiftSpeed * Time.deltaTime);
             }
+        }
+    }
+
+    //This void allows the object to be synced using Photon View.
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        //The recieve order MUST be the send as the same order.
+        if (stream.IsWriting) //The Local Client uses this.
+        {
+            //stream.SendNext(VARIABLE TO SYNC);
+            stream.SendNext(MakeLiftRaise);
+            stream.SendNext(MakeLiftLower);
+            stream.SendNext(IsRaising);
+            stream.SendNext(IsLowering);
+        }
+        else //The remote client uses this.
+        {
+            //This should get the data from the network.
+            //this.VARIABLE = (VARIABLE TYPE)stream.RecieveNext();
+            this.MakeLiftRaise = (bool)stream.ReceiveNext();
+            this.MakeLiftLower = (bool)stream.ReceiveNext();
+            this.IsRaising = (bool)stream.ReceiveNext();
+            this.IsLowering = (bool)stream.ReceiveNext();
         }
     }
 

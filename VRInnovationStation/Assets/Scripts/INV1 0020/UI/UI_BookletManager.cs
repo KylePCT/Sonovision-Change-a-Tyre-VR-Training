@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 using TMPro;
 
-public class UI_BookletManager : MonoBehaviour
+public class UI_BookletManager : MonoBehaviour, Photon.Pun.IPunObservable
 {
     [Header("Page Lists")]
     public UI_Instruction[] InstructionPages;
@@ -202,6 +203,25 @@ public class UI_BookletManager : MonoBehaviour
             InstructionCanvases[i].gameObject.transform.Find("InstructionPanel").GetComponent<UI_HoldHistoryBool>().CanBeReturnedToWithBack = InstructionPages[temp_i].CanBeReturnedToWithBack;
 
             Debug.Log("Canvas: <" + InstructionCanvases[i].name + "> populated.");
+        }
+    }
+
+    //This void allows the object to be synced using Photon View.
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        //The recieve order MUST be the send as the same order.
+        if (stream.IsWriting) //The Local Client uses this.
+        {
+            //stream.SendNext(VARIABLE TO SYNC);
+            stream.SendNext(CurrentPage);
+            stream.SendNext(PreviousPage);
+        }
+        else //The remote client uses this.
+        {
+            //This should get the data from the network.
+            //this.VARIABLE = (VARIABLE TYPE)stream.RecieveNext();
+            this.CurrentPage = (GameObject)stream.ReceiveNext();
+            this.PreviousPage = (GameObject)stream.ReceiveNext();
         }
     }
 }

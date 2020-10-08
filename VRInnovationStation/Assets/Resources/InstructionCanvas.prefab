@@ -1010,6 +1010,7 @@ GameObject:
   - component: {fileID: 8804264307668893601}
   - component: {fileID: 8804264307668893603}
   - component: {fileID: 8804264307668893602}
+  - component: {fileID: 3316470977325643493}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1026,14 +1027,14 @@ RectTransform:
   m_GameObject: {fileID: 8804264307668893600}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.62118995, y: 0.62118995, z: 0.62118995}
+  m_LocalScale: {x: 0.35731465, y: 0.35731465, z: 0.35731465}
   m_Children: []
   m_Father: {fileID: 8804264307116483755}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -13.1}
+  m_AnchoredPosition: {x: 0, y: -27.2}
   m_SizeDelta: {x: 100, y: 61.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8804264307668893603
@@ -1073,6 +1074,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3316470977325643493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8804264307668893600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &8804264308607415219
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,7 +1123,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.4939607, y: 23.599548}
+  m_AnchoredPosition: {x: 0.4939607, y: 23.1}
   m_SizeDelta: {x: 71.6, y: 12.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8804264308607415214
@@ -1167,14 +1183,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 5
+  m_fontSize: 4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 3
-  m_fontSizeMax: 5
+  m_fontSizeMin: 1
+  m_fontSizeMax: 4
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

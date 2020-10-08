@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class LeverEnableLift : MonoBehaviour
+public class LeverEnableLift : MonoBehaviour, Photon.Pun.IPunObservable
 {
     [HideInInspector]
     public bool LiftCanMove;
@@ -28,5 +29,22 @@ public class LeverEnableLift : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         LiftCanMove = false;
+    }
+
+    //This void allows the object to be synced using Photon View.
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        //The recieve order MUST be the send as the same order.
+        if (stream.IsWriting) //The Local Client uses this.
+        {
+            //stream.SendNext(VARIABLE TO SYNC);
+            stream.SendNext(LiftCanMove);
+        }
+        else //The remote client uses this.
+        {
+            //This should get the data from the network.
+            //this.VARIABLE = (VARIABLE TYPE)stream.RecieveNext();
+            this.LiftCanMove = (bool)stream.ReceiveNext();
+        }
     }
 }

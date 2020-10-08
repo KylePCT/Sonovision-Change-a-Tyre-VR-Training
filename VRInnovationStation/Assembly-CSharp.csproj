@@ -161,6 +161,7 @@
     <Compile Include="Assets\Scripts\VR_Multiplayer\MultiplayerVRConstants.cs" />
     <Compile Include="Assets\Scripts\VR_Multiplayer\MultiplayerVRSynchronisation.cs" />
     <Compile Include="Assets\Scripts\VR_Multiplayer\NetworkedGrabbing.cs" />
+    <Compile Include="Assets\Scripts\VR_Multiplayer\PUN2_LagCompensation.cs" />
     <Compile Include="Assets\Scripts\VR_Multiplayer\PlayerNetworkSetup.cs" />
     <Compile Include="Assets\Scripts\VR_Multiplayer\PlayerUIManager.cs" />
     <Compile Include="Assets\Scripts\VR_Multiplayer\RandomColour.cs" />

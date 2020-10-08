@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using Photon.Pun;
 
-public class WrenchManager : MonoBehaviour
+public class WrenchManager : MonoBehaviour, Photon.Pun.IPunObservable
 {
     [Header("Object References")]
     public GameObject PneumaticWrench;
@@ -69,6 +70,27 @@ public class WrenchManager : MonoBehaviour
                 DoesBitNeedCheck = true;
                 TheBitIsCorrect = false;
             }
+        }
+    }
+
+    //This void allows the object to be synced using Photon View.
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        //The recieve order MUST be the send as the same order.
+        if (stream.IsWriting) //The Local Client uses this.
+        {
+            //stream.SendNext(VARIABLE TO SYNC);
+            stream.SendNext(IsThereABitInSocket);
+            stream.SendNext(BitInSocket);
+            stream.SendNext(TheBitIsCorrect);
+        }
+        else //The remote client uses this.
+        {
+            //This should get the data from the network.
+            //this.VARIABLE = (VARIABLE TYPE)stream.RecieveNext();
+            this.IsThereABitInSocket = (bool)stream.ReceiveNext();
+            this.BitInSocket = (GameObject)stream.ReceiveNext();
+            this.TheBitIsCorrect = (bool)stream.ReceiveNext();
         }
     }
 }
