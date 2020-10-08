@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using Photon.Pun;
 
-public class WheelManager : MonoBehaviour, Photon.Pun.IPunObservable
+public class WheelManager : MonoBehaviour
 {
     [Header("Script References")]
     public WrenchManager WrenchManager;
@@ -78,22 +78,5 @@ public class WheelManager : MonoBehaviour, Photon.Pun.IPunObservable
         Bolts = Bolts.OrderBy(c => c.name).ToArray();
         WheelMainBoltHoles = WheelMainBoltHoles.OrderBy(c => c.name).ToArray();
         WheelBreakBoltHoles = WheelBreakBoltHoles.OrderBy(c => c.name).ToArray();
-    }
-
-    //This void allows the object to be synced using Photon View.
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        //The recieve order MUST be the send as the same order.
-        if (stream.IsWriting) //The Local Client uses this.
-        {
-            //stream.SendNext(VARIABLE TO SYNC);
-            stream.SendNext(IsNewWheelAttached);
-        }
-        else //The remote client uses this.
-        {
-            //This should get the data from the network.
-            //this.VARIABLE = (VARIABLE TYPE)stream.RecieveNext();
-            this.IsNewWheelAttached = (bool)stream.ReceiveNext();
-        }
     }
 }

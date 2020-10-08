@@ -870,7 +870,6 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 464364591642852801}
   - {fileID: 8318550555086800135}
-  - {fileID: 1644914474595178216}
   - {fileID: 6480037694045818116}
   viewIdField: 0
   InstantiationId: 0

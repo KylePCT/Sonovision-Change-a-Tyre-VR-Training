@@ -81,7 +81,7 @@ public class WrenchManager : MonoBehaviour, Photon.Pun.IPunObservable
         {
             //stream.SendNext(VARIABLE TO SYNC);
             stream.SendNext(IsThereABitInSocket);
-            stream.SendNext(BitInSocket);
+            //stream.SendNext(BitInSocket);
             stream.SendNext(TheBitIsCorrect);
         }
         else //The remote client uses this.
@@ -89,7 +89,7 @@ public class WrenchManager : MonoBehaviour, Photon.Pun.IPunObservable
             //This should get the data from the network.
             //this.VARIABLE = (VARIABLE TYPE)stream.RecieveNext();
             this.IsThereABitInSocket = (bool)stream.ReceiveNext();
-            this.BitInSocket = (GameObject)stream.ReceiveNext();
+            //this.BitInSocket = (GameObject)stream.ReceiveNext();
             this.TheBitIsCorrect = (bool)stream.ReceiveNext();
         }
     }
