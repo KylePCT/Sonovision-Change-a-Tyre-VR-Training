@@ -9,6 +9,7 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
     private PhotonView m_photonView;
     public Rigidbody rb; //For access to the Kinematic options.
     public bool isBeingHeld = false; //Keep track of the object held.
+    private bool wasAlreadyKinematic;
 
     //Grabbed object string storage.
     string grabbedName;
@@ -24,6 +25,15 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
         Debug.Log("<" + m_photonView.gameObject.name + "> could be <" + gameObject.name + ">.");
         grabbedName = m_photonView.gameObject.name;
         objectName = gameObject.name;
+
+        if (rb.isKinematic == true)
+        {
+            wasAlreadyKinematic = true;
+        }
+        else
+        {
+            wasAlreadyKinematic = false;
+        }
     }
 
     void Start()
@@ -38,12 +48,18 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
         if (!isBeingHeld) //If the object is not being held.
         {
             rb = GetComponent<Rigidbody>();
-            rb.isKinematic = false;
+
+            //Only turn off the kinematic if it wasn't already kinematic.
+            if (!wasAlreadyKinematic)
+            {
+                rb.isKinematic = false;
+            }
         }
 
         if (isBeingHeld) //If the object is being held.
         {
             rb = GetComponent<Rigidbody>();
+
             rb.isKinematic = true;
         }
     }
