@@ -64,7 +64,7 @@ namespace Photon.Pun
     public static partial class PhotonNetwork
     {
         /// <summary>Version number of PUN. Used in the AppVersion, which separates your playerbase in matchmaking.</summary>
-        public const string PunVersion = "2.21";
+        public const string PunVersion = "2.22";
 
         /// <summary>Version number of your game. Setting this updates the AppVersion, which separates your playerbase in matchmaking.</summary>
         /// <remarks>
@@ -997,7 +997,7 @@ namespace Photon.Pun
             #if UNITY_EDITOR
             if (!EditorApplication.isPlayingOrWillChangePlaymode) return;
             #endif
-            // This clear is for when Domain Reloading is disabled. Typicall will already be empty.
+            // This clear is for when Domain Reloading is disabled. Typically will already be empty.
             monoRPCMethodsCache.Clear();
 
             // set up the NetworkingClient, protocol, etc

@@ -816,7 +816,7 @@ namespace Photon.Realtime
             this.connectToBestRegion = true;
             this.bestRegionSummaryFromStorage = appSettings.BestRegionSummaryFromStorage;
             this.DisconnectedCause = DisconnectCause.None;
-            
+
 
             this.CheckConnectSetupWebGl();
             this.CheckConnectSetupXboxOne(); // may throw an exception if there are issues that can not be corrected
@@ -890,7 +890,7 @@ namespace Photon.Realtime
                 // this is a workaround to use with version v4.0.29.11263 or lower, which doesn't support GpBinaryV18 yet.
                 this.SerializationProtocol = SerializationProtocol.GpBinaryV16;
             }
-            
+
 
             this.CheckConnectSetupWebGl();
             this.CheckConnectSetupXboxOne(); // may throw an exception if there are issues that can not be corrected
@@ -1025,22 +1025,22 @@ namespace Photon.Realtime
             this.AuthMode = AuthModeOption.Auth;
             if (this.AuthValues == null)
             {
-                UnityEngine.Debug.LogError("UNITY_XBOXONE builds must set AuthValues. Set this before calling any Connect method. Refer to the online docs for guidance.");
+                this.DebugReturn(DebugLevel.ERROR, "UNITY_XBOXONE builds must set AuthValues. Set this before calling any Connect method. Refer to the online docs for guidance.");
                 throw new Exception("UNITY_XBOXONE builds must set AuthValues.");
             }
             if (this.AuthValues.AuthPostData == null)
             {
-                UnityEngine.Debug.LogError("UNITY_XBOXONE builds must use Photon's XBox Authentication and set the XSTS token by calling: PhotonNetwork.AuthValues.SetAuthPostData(xstsToken). Refer to the online docs for guidance.");
+                this.DebugReturn(DebugLevel.ERROR,"UNITY_XBOXONE builds must use Photon's XBox Authentication and set the XSTS token by calling: PhotonNetwork.AuthValues.SetAuthPostData(xstsToken). Refer to the online docs for guidance.");
                 throw new Exception("UNITY_XBOXONE builds must use Photon's XBox Authentication.");
             }
             if (this.AuthValues.AuthType != CustomAuthenticationType.Xbox)
             {
-                UnityEngine.Debug.LogWarning("UNITY_XBOXONE builds must use AuthValues.AuthType \"CustomAuthenticationType.Xbox\". PUN sets this value now. Refer to the online docs to avoid this warning.");
+                this.DebugReturn(DebugLevel.WARNING, "UNITY_XBOXONE builds must use AuthValues.AuthType \"CustomAuthenticationType.Xbox\". PUN sets this value now. Refer to the online docs to avoid this warning.");
                 this.AuthValues.AuthType = CustomAuthenticationType.Xbox;
             }
             if (this.LoadBalancingPeer.TransportProtocol != ConnectionProtocol.WebSocketSecure)
             {
-                UnityEngine.Debug.LogWarning("UNITY_XBOXONE builds must use WSS (Secure WebSockets) as Transport Protocol. Changing the protocol now.");
+                this.DebugReturn(DebugLevel.INFO, "UNITY_XBOXONE builds must use WSS (Secure WebSockets) as Transport Protocol. Changing the protocol now.");
                 this.LoadBalancingPeer.TransportProtocol = ConnectionProtocol.WebSocketSecure;
             }
 
@@ -2191,14 +2191,25 @@ namespace Photon.Realtime
             object temp;
             if (operationResponse.Parameters.TryGetValue(ParameterCode.RoomOptionFlags, out temp))
             {
-                this.CurrentRoom.SetRoomFlags((int)temp);
+                this.CurrentRoom.InternalCacheRoomFlags((int)temp);
             }
 
             this.State = ClientState.Joined;
 
 
             // the callbacks OnCreatedRoom and OnJoinedRoom are called in the event join. it contains important info about the room and players.
+            // unless there will be no room events (RoomOptions.SuppressRoomEvents = true)
+            if (this.CurrentRoom.SuppressRoomEvents)
+            {
+                if (this.lastJoinType == JoinType.CreateRoom || (this.lastJoinType == JoinType.JoinOrCreateRoom && this.LocalPlayer.ActorNumber == 1))
+                {
+                    this.MatchMakingCallbackTargets.OnCreatedRoom();
         }
+
+                this.MatchMakingCallbackTargets.OnJoinedRoom();
+            }
+        }
+
 
         private void UpdatedActorList(int[] actorsInGame)
         {
@@ -2560,7 +2571,11 @@ namespace Photon.Realtime
                             {
                                 Hashtable allProps = new Hashtable();
                                 allProps.Merge(this.LocalPlayer.CustomProperties);
-                                allProps[ActorProperties.PlayerName] = this.LocalPlayer.NickName;
+
+                                if (!string.IsNullOrEmpty(this.LocalPlayer.NickName))
+                                {
+                                    allProps[ActorProperties.PlayerName] = this.LocalPlayer.NickName;
+                                }
 
                                 this.enterRoomParamsCache.PlayerProperties = allProps;
                             }

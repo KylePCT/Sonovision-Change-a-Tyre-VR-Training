@@ -10,6 +10,7 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
     public Rigidbody rb; //For access to the Kinematic options.
     public bool isBeingHeld = false; //Keep track of the object held.
     private bool wasAlreadyKinematic;
+    public bool wantsToBeKinematicAfterGrab;
 
     //Grabbed object string storage.
     string grabbedName;
@@ -53,6 +54,12 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
             if (!wasAlreadyKinematic)
             {
                 rb.isKinematic = false;
+            }
+
+            if (wantsToBeKinematicAfterGrab)
+            {
+                rb.isKinematic = true;
+                rb.useGravity = true;
             }
         }
 

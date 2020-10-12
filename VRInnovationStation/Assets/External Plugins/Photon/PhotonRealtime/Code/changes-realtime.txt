@@ -2,6 +2,18 @@
 Photon Realtime C# Client - Changelog
 Exit Games GmbH - www.photonengine.com - forum.photonengine.com
 
+Version 4.1.4.5 (02. September 2020)
+    Added: Unity-only ConnectionHandler.StaticReset() to allow entering playmode without domain reload.
+    Added: ErrorCode definition for OperationLimitReached (32743). The client will become unable to call any further operations (to safeguard the room/server) and get disconnected soon after. Currently used for SetProperties only.
+    Fixed: Region pinging for the case that none of the regions answered anything. Then, all region results caused a callback.
+    Added: Support for rooms that suppress room-events.
+    Added: Field bool Room.SuppressRoomEvents to allow checking if room events are suppressed.
+    Changed: If room events are suppressed, the callbacks OnCreatedRoom() and OnJoinedRoom() are now called by the operation response (not waiting for the suppressed events).
+    Renamed: Room.SetRoomFlags() to InternalCacheRoomFlags().
+    Changed: When entering a room, the local players NickName property (255) is not sent if NullOrEmpty.
+    Changed: LoadBalancingApi should not use Unity.Debug unconditionally.
+    Updated: AuthenticationValues reference slightly. Better wording.
+    Updated: Token setter to be protected internal. Only needs to be set by Photon LB API.
 
 Version 4.1.4.4 (6. July 2020)
     Fixed: AppSettings.CopyTo method. It was not copying the new value EnableProtocolFallback yet.

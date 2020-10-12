@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 3156596090569316682}
   m_Layer: 0
   m_Name: XR Rig
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -523,7 +523,7 @@ GameObject:
   - component: {fileID: 3783185924950629598}
   m_Layer: 10
   m_Name: Generic VR Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -854,7 +854,7 @@ GameObject:
   - component: {fileID: 3156596091599991652}
   m_Layer: 0
   m_Name: Left Teleport Controller
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1191,7 +1191,7 @@ GameObject:
   - component: {fileID: 3156596091793126048}
   m_Layer: 0
   m_Name: Right Teleport Controller
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1565,7 +1565,7 @@ GameObject:
   - component: {fileID: 1115078715468413864}
   m_Layer: 0
   m_Name: Left Base Controller
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2484,7 +2484,7 @@ GameObject:
   - component: {fileID: 2277222230994931291}
   m_Layer: 0
   m_Name: Right Base Controller Direct
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3765,6 +3765,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2059960205749354645, guid: 6c9d0f8ca6df14945bd661d8df956052,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2256039792707525280, guid: 6c9d0f8ca6df14945bd661d8df956052,
         type: 3}
       propertyPath: m_Layer
@@ -3899,6 +3904,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2256039792707525330, guid: 6c9d0f8ca6df14945bd661d8df956052,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2256039792707525332, guid: 6c9d0f8ca6df14945bd661d8df956052,
         type: 3}
@@ -4254,6 +4264,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774440033620461277, guid: 6c9d0f8ca6df14945bd661d8df956052,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5774440033620461279, guid: 6c9d0f8ca6df14945bd661d8df956052,
         type: 3}

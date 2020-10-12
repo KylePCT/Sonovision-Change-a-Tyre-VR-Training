@@ -101,7 +101,8 @@ public class RaiseLowerLift : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TextDistanceFromFloor.SetText((Lift.transform.position.y * 100).ToString("F2") + "mm");
+        //-60 is just to get it nearish 0.
+        TextDistanceFromFloor.SetText(((Lift.transform.position.y * 100) - 60).ToString("F2") + "mm");
 
         if (IsRaising)
         {

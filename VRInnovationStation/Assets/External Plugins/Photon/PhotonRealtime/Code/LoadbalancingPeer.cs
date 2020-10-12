@@ -1234,6 +1234,11 @@ namespace Photon.Realtime
         public const int ExternalHttpCallFailed = 32744; // 0x7FFF - 23,
 
         /// <summary>
+        /// (32743) for operations with defined limits (as in calls per second, content count or size).
+        /// </summary>
+        public const int OperationLimitReached = 32743; // 0x7FFF - 24,
+
+        /// <summary>
         /// (32742) Server error during matchmaking with slot reservation. E.g. the reserved slots can not exceed MaxPlayers.
         /// </summary>
         public const int SlotError = 32742; // 0x7FFF - 25,

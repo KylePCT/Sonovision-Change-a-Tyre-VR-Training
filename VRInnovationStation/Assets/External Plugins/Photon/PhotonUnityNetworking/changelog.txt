@@ -2,6 +2,22 @@
 PUN 2 Change Log
 Exit Games GmbH - www.photonengine.com - forum.photonengine.com
 
+v2.22 (07. September 2020)
+Changed: Default observe option for PhotonView is Unreliable On Change.
+Fixed: PhotonView.Get wouldn't work if object was disabled. This fixes that.
+Fixed: PhotonView.Get was using GetComponentInParent which will fail to find the PV if an object is disabled. Custom GetParentComponent solves that problem.
+Fixed: Code using the WebSocketSharp library. It's only for non-WebGL builds and needs to be put inside the conditional code of WebSocket.cs.
+Changed: Export settings for websocket-sharp.dll. It should export to any platform (if needed) except for console, web and Windows Store. Each such platform has a more specific solution.
+Added: AmOwner property to cached ownership values.
+Added: SetControllerInternal method for use with advanced SNS ownership handling. Not used currently by Pun2.
+Changed: Photonhander for client disconnects fixed to only change owner to null rather than Master.
+Changed: Only change owner of objects that will survive autoCleanup.
+Fixed: Mispelling of Owner as Onwer.
+Changed: Only rebuild controller cache on JoinRoom if client is the master. Otherwise leaves the controller as -1 indicating the current controller isn't known yet.
+Changed: PhotonView custom inspector. Default observe option for PhotonView is "Unreliable On Change" again.
+Added: OnSerializeView now checks components, so list items being null in Observables are not breaking anymore.
+Changed: A PhotonView now has IOnPhotonViewPreNetDestroy, IOnPhotonViewOwnerChange and IOnPhotonViewControllerChange callbacks that help with fine grained control of these cases. Interface IOnPhotonViewCallback is renamed to IPhotonViewCallback.
+Updated: The Realtime API and Photon3Unity3d.dll (v4.1.4.5) with lots of improvements and changes. Check the respective changelogs.
 
 v2.21 (19. August 2020)
 Fixed: Handling of case "blocked by Windows firewall". WebSocket-sharp does not call OnError in this case. This affects WebSocket.cs.

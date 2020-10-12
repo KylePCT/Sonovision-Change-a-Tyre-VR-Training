@@ -1228,7 +1228,6 @@ namespace Photon.Chat
                         channel.MessageLimit = this.MessageLimit;
                         this.PublicChannels.Add(channel.Name, channel);
                     }
-                    #if CHAT_EXTENDED
                     object temp;
                     if (eventData.Parameters.TryGetValue(ChatParameterCode.Properties, out temp))
                     {
@@ -1237,13 +1236,14 @@ namespace Photon.Chat
                     }
                     if (channel.PublishSubscribers) // or maybe remove check & always add anyway?
                     {
-                        channel.Subscribers.Add(UserId);
+                        channel.Subscribers.Add(this.UserId);
                     }
                     if (eventData.Parameters.TryGetValue(ChatParameterCode.ChannelSubscribers, out temp))
                     {
                         string[] subscribers = temp as string[];
                         channel.AddSubscribers(subscribers);
                     }
+                    #if CHAT_EXTENDED
                     if (eventData.Parameters.TryGetValue(ChatParameterCode.UserProperties, out temp))
                     {
                         Dictionary<string, Dictionary<object, object>> userProperties = temp as Dictionary<string, Dictionary<object, object>>;

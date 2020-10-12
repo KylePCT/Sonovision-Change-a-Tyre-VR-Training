@@ -56,8 +56,7 @@
         <member name="T:ExitGames.Client.Photon.ByteArraySlice">
              <summary>A slice of memory that should be pooled and reused. Wraps a byte-array.</summary>
              <remarks>
-             This is a serializable datatype for the .Net clients. It will transfer as byte[] (the server does not know this type).
-             
+             This is a serializable datatype for the .Net clients. It will serialize and transfer as byte[].
              If PhotonPeer.UseByteArraySlicePoolForEvents is enabled, byte-arrays in (incoming) events will be deserialized as
              ByteArraySlice.
             
@@ -1548,6 +1547,16 @@
         <member name="F:ExitGames.Client.Photon.PhotonPeer.AsyncKeyExchange">
             <summary>Defines if Key Exchange for Encryption is done asynchronously in another thread.</summary>
         </member>
+        <member name="F:ExitGames.Client.Photon.PhotonPeer.RandomizeSequenceNumbers">
+            <summary>Indicates if sequence numbers should be randomized.</summary>
+        </member>
+        <member name="F:ExitGames.Client.Photon.PhotonPeer.RandomizedSequenceNumbers">
+            <summary>Initialization array, used to modify the sequence numbers of channels.</summary>
+        </member>
+        <member name="F:ExitGames.Client.Photon.PhotonPeer.GcmDatagramEncryption">
+            <summary>If GCM is used for DatagramEncryption.</summary>
+            <remarks>If true, the randomization-value gets added to the current value, else (CBC/old style) the randomization-value replaces the current value.</remarks>
+        </member>
         <member name="P:ExitGames.Client.Photon.PhotonPeer.TrafficStatsIncoming">
             <summary>
             Gets the byte-count of incoming "low level" messages, which are either Enet Commands or Tcp Messages.
@@ -1612,6 +1621,12 @@
         </member>
         <member name="F:ExitGames.Client.Photon.PhotonPeer.Encryptor">
             <summary>The datagram encryptor used for the current connection. Applied internally in InitDatagramEncryption.</summary>
+        </member>
+        <member name="P:ExitGames.Client.Photon.PhotonPeer.CountDiscarded">
+            <summary>Count of unreliable commands being discarded in case this client already dispatched a command that was newer (higher sequence number).</summary>
+        </member>
+        <member name="P:ExitGames.Client.Photon.PhotonPeer.DeltaUnreliableNumber">
+            <summary>Set per dispatch in DispatchIncomingCommands to: commandUnreliableSequenceNumber - channel.incomingUnreliableSequenceNumber. Indicates how big the (sequence)gap is, compared to the last dispatched unreliable command.</summary>
         </member>
         <member name="M:ExitGames.Client.Photon.PhotonPeer.#ctor(ExitGames.Client.Photon.ConnectionProtocol)">
             <summary>Creates a new PhotonPeer with specified transport protocol (without a IPhotonPeerListener).</summary>

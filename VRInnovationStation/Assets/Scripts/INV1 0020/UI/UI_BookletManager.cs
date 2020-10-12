@@ -16,6 +16,7 @@ public class UI_BookletManager : MonoBehaviour
 
     [SerializeField]
     [Header("Page Single References")]
+    public GameObject Tablet;
     public GameObject CanvasParent;
     public GameObject CanvasCheckObj;
     public GameObject IntroductionPage;
@@ -71,6 +72,10 @@ public class UI_BookletManager : MonoBehaviour
 
         PopulatePages();
         CurrentPage = IntroductionPage;
+
+        InstructionCanvases = InstructionCanvases.OrderBy(c => c.name).ToArray();
+
+        Tablet.transform.position = new Vector3(1, 2, 0);
     }
 
     void Start()

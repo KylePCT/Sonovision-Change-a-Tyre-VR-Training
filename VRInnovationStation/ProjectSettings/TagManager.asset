@@ -11,6 +11,7 @@ TagManager:
   - WheelBoltHoles
   - Bolts
   - WrenchBit
+  - Tablet
   layers:
   - Default
   - TransparentFX

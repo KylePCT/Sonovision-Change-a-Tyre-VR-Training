@@ -80,7 +80,7 @@ namespace Photon.Pun
                     var child = node.GetChild(c);
 
                     // Ignore branches that are not active
-                    if (!includeInactive && !child.gameObject.activeInHierarchy)
+                    if (!includeInactive && !child.gameObject.activeSelf)
                         continue;
 
                     // Hit a nested node - don't search this node
@@ -275,7 +275,7 @@ namespace Photon.Pun
                 var child = t.GetChild(i);
 
                 // Ignore inactive nodes (optional)
-                if (!includeInactive && !child.gameObject.activeInHierarchy)
+                if (!includeInactive && !child.gameObject.activeSelf)
                     continue;
 
                 // ignore nested DontRecurseOnT
@@ -300,7 +300,7 @@ namespace Photon.Pun
                     var child = node.GetChild(i);
 
                     // Ignore inactive nodes (optional)
-                    if (!includeInactive && !child.gameObject.activeInHierarchy)
+                    if (!includeInactive && !child.gameObject.activeSelf)
                         continue;
 
                     // ignore nested NestedT
@@ -331,7 +331,7 @@ namespace Photon.Pun
             list.Clear();
 
             // If this is inactive, nothing will be found. Give up now if we are restricted to active.
-            if (!includeInactive && !t.gameObject.activeInHierarchy)
+            if (!includeInactive && !t.gameObject.activeSelf)
                 return;
 
             System.Type searchType = typeof(SearchT);
@@ -367,7 +367,7 @@ namespace Photon.Pun
                     var child = node.GetChild(i);
 
                     // Ignore inactive nodes (optional)
-                    if (!includeInactive && !child.gameObject.activeInHierarchy)
+                    if (!includeInactive && !child.gameObject.activeSelf)
                         continue;
 
                     // ignore nested DontRecurseOnT

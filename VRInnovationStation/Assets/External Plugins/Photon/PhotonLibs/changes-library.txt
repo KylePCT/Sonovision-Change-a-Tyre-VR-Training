@@ -4,8 +4,13 @@ Exit Games GmbH - www.photonengine.com - forum.photonengine.com
 
 
 
-Version 4.1.4.5 (2020 - rev)
+Version 4.1.4.5 (04. September 2020 - rev5733)
+    Fixed: Serialization of a ByteArraySlice will now release it, as described in the docs. So you can pass a ByteArraySlice to RaiseEvent and control of it is passed over to the Photon API.
     Fixed: Potential issues with SupportLogger.StartBackgroundCalls() when there were 255 threads running (and or stopped).
+    Changed: When PhotonClientWebSocket fails to connect, this will now correctly result in a disconnect with code/reason ExceptionOnConnect.
+    Changed: The socket reading-thread not call it's disconnect method, if already disconnecting/disconnected. This avoids a surplus call (and callback).
+    Internal: The thread locking object in SocketNative is no longers static.
+    Note: The next release will change the native datagram encryptor api. Most likely this is the last one compatible with the old native plugin.
     
 Version 4.1.4.4 (29. June 2020 - rev5625)
     Fixed: NonAllocDict. Capacity change was broken. This is a critical fix.

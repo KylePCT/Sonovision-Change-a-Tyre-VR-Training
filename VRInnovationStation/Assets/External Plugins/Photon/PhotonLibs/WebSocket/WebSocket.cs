@@ -2,10 +2,10 @@
 
 using System;
 using System.Text;
-using WebSocketSharp;
 #if UNITY_WEBGL && !UNITY_EDITOR
 using System.Runtime.InteropServices;
 #else
+using WebSocketSharp;
 using System.Collections.Generic;
 using System.Security.Authentication;
 #endif

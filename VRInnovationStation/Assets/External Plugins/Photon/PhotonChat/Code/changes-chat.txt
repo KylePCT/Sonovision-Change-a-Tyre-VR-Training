@@ -4,6 +4,10 @@ Exit Games GmbH - www.photonengine.com - forum.photonengine.com
 
 
 
+Version 4.1.4.5 (02. September 2020)
+    Added: Option for extended features: Channels may send a user list, channels and users can have custom properties and there are web-forwarding flags. Needs compile define CHAT_EXTENDED. This also adds new methods to the IChatClientListener.
+    Changed: AuthenticationValues has been refined, analog to the changes in the Realtime API.
+
 Version 4.1.4.2 (8. May 2020 - rev5519)
     Added: Broadcast receive and read channel using UniqueRoomID UniqueRoomID read from SubscribeChannel response
 
