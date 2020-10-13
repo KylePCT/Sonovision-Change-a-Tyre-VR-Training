@@ -74,8 +74,6 @@ public class UI_BookletManager : MonoBehaviour
         CurrentPage = IntroductionPage;
 
         InstructionCanvases = InstructionCanvases.OrderBy(c => c.name).ToArray();
-
-        Tablet.transform.position = new Vector3(1, 2, 0);
     }
 
     void Start()

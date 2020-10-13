@@ -36,6 +36,7 @@ public class RaiseLowerLift : MonoBehaviour
     [Space(10)]
     public float LiftSpeed;
 
+    public TC_FeetInPlace TaskCheck;
     public LeverEnableLift EnableLift;
     private bool CanMoveLift = false;
     private bool CanRemoveWheel = false;
@@ -129,7 +130,7 @@ public class RaiseLowerLift : MonoBehaviour
 
     public void RaiseLift()
     {
-        if (Lift.transform.position.y < HighestPositionLimit)
+        if (Lift.transform.position.y < HighestPositionLimit && TaskCheck.AreAllFeetInPlace)
         {
             ButtonRaise.GetComponent<MeshRenderer>().material = WheelCanBeMoved;
             ButtonLower.GetComponent<MeshRenderer>().material = DefaultMat;
@@ -139,7 +140,7 @@ public class RaiseLowerLift : MonoBehaviour
 
     public void LowerLift()
     {
-        if (Lift.transform.position.y > LowestPositionLimit)
+        if (Lift.transform.position.y > LowestPositionLimit && TaskCheck.AreAllFeetInPlace)
         {
             ButtonLower.GetComponent<MeshRenderer>().material = WheelCanBeMoved;
             ButtonRaise.GetComponent<MeshRenderer>().material = DefaultMat;
