@@ -2,3 +2,7 @@
 *.apk
 VRInnovationStation/Library/PlayerDataCache/Android/Data/data.unity3d
 *.unity3d
+VRInnovationStation/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+VRInnovationStation/.vs/VRInnovationStation/v15/Server/sqlite3/storage.ide-wal
+VRInnovationStation/.vs/VRInnovationStation/v15/Server/sqlite3/storage.ide-shm
+VRInnovationStation/.vs/VRInnovationStation/v15/Server/sqlite3/storage.ide
