@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Animations\UI\UI_ShowIssueMessage.cs" />
     <Compile Include="Assets\External Plugins\IRONHEAD Games\VRKeys\Scripts\BackspaceKey.cs" />
     <Compile Include="Assets\External Plugins\IRONHEAD Games\VRKeys\Scripts\CancelKey.cs" />
     <Compile Include="Assets\External Plugins\IRONHEAD Games\VRKeys\Scripts\ClearKey.cs" />
@@ -125,10 +126,10 @@
     <Compile Include="Assets\Scripts\INV1 0020\MoveableArms.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\RaiseLowerLift.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\RestrictRotation.cs" />
+    <Compile Include="Assets\Scripts\INV1 0020\TaskChecks\TC_FeetInPlace.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\ToggleAttach.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\UI\AssignCanvasEventCamera.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\UI\SnapBack.cs" />
-    <Compile Include="Assets\Scripts\INV1 0020\UI\UI_BookletManager.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\UI\UI_HoldHistoryBool.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\UI\UI_Instruction.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\UI\UI_VersionNumber.cs" />

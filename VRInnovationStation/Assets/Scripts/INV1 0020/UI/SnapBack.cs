@@ -25,9 +25,14 @@ public class SnapBack : MonoBehaviour
     public void ReactivateUI()
     {
         playerPos = Player.transform.position;
-        Tablet.gameObject.SetActive(true);
-        Tablet.gameObject.transform.position = Vector3.Lerp(playerPos, tabletPos, fraction);
-        Instantiate(SpawnParticles, Tablet.gameObject.transform.position, Quaternion.identity);
+        Tablet.SetActive(true);
+        Tablet.transform.position = Vector3.Lerp(playerPos, tabletPos, fraction);
+
+        Vector3 direction = Player.transform.position - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(direction + new Vector3(0,60,0));
+        Tablet.transform.rotation = rotation;
+
+        Instantiate(SpawnParticles, Tablet.transform.position, Quaternion.identity);
         tabletPos = Tablet.transform.position;
     }
 }

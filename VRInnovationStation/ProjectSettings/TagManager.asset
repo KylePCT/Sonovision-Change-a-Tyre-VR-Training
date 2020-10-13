@@ -12,6 +12,7 @@ TagManager:
   - Bolts
   - WrenchBit
   - Tablet
+  - Chassis_Foot
   layers:
   - Default
   - TransparentFX
