@@ -46,7 +46,7 @@ public class UI_BookletManager : MonoBehaviour
         }
 
         InstructionCanvases = GameObject.FindGameObjectsWithTag("InstructionCanvas");
-        
+
         IntroductionPage = InstructionCanvases[0];
 
 
@@ -92,7 +92,7 @@ public class UI_BookletManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     #region Page Navigation

@@ -770,7 +770,7 @@ HingeJoint:
   m_GameObject: {fileID: 1743294856270629656}
   m_ConnectedBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 0, y: 0, z: 1}
+  m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 1.2666636, y: -0.16100551, z: 0.8815604}
   m_UseSpring: 0
@@ -785,8 +785,8 @@ HingeJoint:
     freeSpin: 0
   m_UseLimits: 1
   m_Limits:
-    min: 0.39860773
-    max: 90.58879
+    min: 3.644661
+    max: 95.13508
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -1051,7 +1051,7 @@ HingeJoint:
   m_GameObject: {fileID: 2223509772416261930}
   m_ConnectedBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 0, y: 0, z: -1}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 1.2666641, y: 0.16100402, z: 0.88156104}
   m_UseSpring: 0
@@ -1066,8 +1066,8 @@ HingeJoint:
     freeSpin: 0
   m_UseLimits: 1
   m_Limits:
-    min: 36.583344
-    max: 126.88895
+    min: -33.860996
+    max: 55.27411
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
