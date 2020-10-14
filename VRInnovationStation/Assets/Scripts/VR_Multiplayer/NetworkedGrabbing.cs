@@ -97,6 +97,12 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
     {
         //When an object is no longer selected, call the StopNetworkGrabbing method to all players in the same room.
         m_photonView.RPC("StopNetworkGrabbing", RpcTarget.AllBuffered);
+
+        if (wantsToBeKinematicAfterGrab)
+        {
+            rb.isKinematic = true;
+            rb.useGravity = true;
+        }
     }
 
     private void TransferOwnership()

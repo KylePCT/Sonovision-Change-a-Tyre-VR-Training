@@ -194,7 +194,7 @@ public class UI_BookletManager : MonoBehaviour
             Debug.Log("<color=cyan>[UI_BookletManager.cs] </color>" + InstructionPages[i].NextInstruction);
             int temp_i = i;
             InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Title").GetComponent<TextMeshProUGUI>().text = InstructionPages[temp_i].InstructionName;
-            InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Description").GetComponent<TextMeshProUGUI>().text = InstructionPages[temp_i].InstructionDescription;
+            InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/ScrollArea/TextContainer/Description").GetComponent<TextMeshProUGUI>().text = InstructionPages[temp_i].InstructionDescription;
             InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Image").GetComponent<Image>().sprite = InstructionPages[temp_i].InstructionImageGuide;
 
             InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Back").GetComponent<Button>().onClick.AddListener(() => Debug.Log("<color=cyan>[UI_BookletManager.cs] </color>Previous page clicked: " + PageHistory[0]));

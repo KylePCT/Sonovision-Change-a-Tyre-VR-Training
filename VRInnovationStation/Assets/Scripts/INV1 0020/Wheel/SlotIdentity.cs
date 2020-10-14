@@ -16,6 +16,7 @@ public class SlotIdentity : MonoBehaviour
     public bool BoltInSlot = true;
 
     public WheelManager WheelManager;
+    public WrenchManager WrenchManager;
 
     private void Start()
     {
@@ -29,15 +30,17 @@ public class SlotIdentity : MonoBehaviour
     {
         if (col.tag == "Bolts")
         {
-            if (WheelManager.IsNewWheelAttached == true)
+            if (WheelManager.CanNewWheelBeAttached == true)
             {
                 if (SlotType == 0)
                 {
+                    //Slots for bolts are now active on the new wheel.
                     GetComponent<XRSocketInteractor>().enabled = true;
                 }
             }
             else
             {
+                WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enabled = true;
                 Debug.Log("<color=orange>[SlotIdentity.cs]</color> New wheel is not yet attached.");
             }
         }

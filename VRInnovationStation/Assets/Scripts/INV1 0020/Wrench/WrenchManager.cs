@@ -51,6 +51,10 @@ public class WrenchManager : MonoBehaviour, Photon.Pun.IPunObservable
         {
             BitInSocket = BitSocket.GetComponent<XRSocketInteractor>().selectTarget.gameObject;
         }
+        else
+        {
+            return;
+        }
     }
 
     public void IsBitCorrect()

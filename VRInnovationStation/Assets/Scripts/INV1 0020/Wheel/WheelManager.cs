@@ -21,6 +21,8 @@ public class WheelManager : MonoBehaviour
     public GameObject[] WheelBreakBoltHoles;
 
     [HideInInspector]
+    public bool CanNewWheelBeAttached = false;
+    [HideInInspector]
     public bool IsNewWheelAttached = false;
 
     // Start is called before the first frame update
@@ -29,11 +31,11 @@ public class WheelManager : MonoBehaviour
         Bolts = GameObject.FindGameObjectsWithTag("Bolts");
         WheelMainBoltHoles = GameObject.FindGameObjectsWithTag("WheelBoltHoles");
         WheelBreakBoltHoles = GameObject.FindGameObjectsWithTag("BreakBoltHoles");
+        WheelMain.GetComponent<MeshCollider>().enabled = false;
 
         SortBoltArrays();
 
-        IsNewWheelAttached = false;
-        WheelMain.GetComponent<MeshCollider>().enabled = false;
+        CanNewWheelBeAttached = false;
     }
 
     //Checks if all the bolts are removed before allowing the user to take the wheel off.
@@ -52,24 +54,28 @@ public class WheelManager : MonoBehaviour
 
         WheelMain.GetComponent<MeshCollider>().enabled = true;
         WheelMain.layer = 11;
-        IsNewWheelAttached = true;
+        CanNewWheelBeAttached = true;
         Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel can now be removed.");
     }
 
     //Checks if the slots all have bolts. This would be called after you have put the new wheel on.
     public void DoAllSlotsHaveBolts()
     {
-        for (int i = 0; i < Bolts.Length; i++)
+        if (CanNewWheelBeAttached && WheelBreakDisk.GetComponent<XRSocketInteractor>().selectTarget.gameObject.name == "Wheel_New")
         {
-            if (Bolts[i].GetComponent<BoltIdentity>().InSlot == false)
+            for (int i = 0; i < Bolts.Length; i++)
             {
-                Debug.Log("<color=orange>[WheelManager.cs]</color> Task not completed, one or more bolts are still needed.");
-                return;
-                //Check for nothing.
+                if (Bolts[i].GetComponent<BoltIdentity>().InSlot == false)
+                {
+                    Debug.Log("<color=orange>[WheelManager.cs]</color> Task not completed, one or more bolts are still needed.");
+                    return;
+                    //Check for nothing.
+                }
             }
-        }
 
-        Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel has all bolts and task is complete.");
+            IsNewWheelAttached = true;
+            Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel has all bolts and task is complete.");
+        }
     }
 
     //Sorts the arrays into descending order for convinience.

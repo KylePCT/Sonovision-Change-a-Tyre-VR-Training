@@ -28,8 +28,11 @@ public class RopeGen : MonoBehaviour
         {
             this.ropeSegments.Add(new RopeSegment(ropeStartPoint));
             ropeStartPoint.y -= ropeSegLen;
+            
 
         }
+
+
     }
 
     // Update is called once per frame
@@ -137,4 +140,5 @@ public class RopeGen : MonoBehaviour
             this.posOld = pos;
         }
     }
+
 }
