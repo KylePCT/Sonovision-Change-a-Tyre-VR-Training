@@ -5065,7 +5065,14 @@ MonoBehaviour:
   InstructionNumberSuffix: b
   InstructionName: Left-Hand Rear-Facing Arm
   InstructionNameShort: LHRFArm
-  InstructionDescription: 
+  InstructionDescription: 'From left-hand side of the chassis, articulate rear-facing
+    lift arm to the left-hand jacking point at the rear of the chassis (a halo should
+    indicate the jacking point on the chassis).
+
+
+    Please ensure the lift arm
+    is accurately located before proceeding. If necessary, extend or retract the
+    lift arm to achieve the required positioning.'
   InstructionImageGuide: {fileID: 0}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 1699754741}
@@ -7864,7 +7871,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678850236}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -14919,7 +14926,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577363994}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -16619,11 +16626,8 @@ MonoBehaviour:
   InstructionNumberSuffix: a
   InstructionName: Visual and Safety Observations
   InstructionNameShort: PPE
-  InstructionDescription: '- In order to work safely, you must wear the appropriate
-    PPE. Please pick up and wear the shown PPE on the desk.
-
-    - (This is not yet
-    implemented).'
+  InstructionDescription: In order to work safely, you must wear the appropriate
+    PPE. Please pick up and wear the shown PPE on the desk. (This is not yet implemented).
   InstructionImageGuide: {fileID: 0}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 1897715580}
@@ -18743,7 +18747,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981820745}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -19959,7 +19963,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075467950}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
