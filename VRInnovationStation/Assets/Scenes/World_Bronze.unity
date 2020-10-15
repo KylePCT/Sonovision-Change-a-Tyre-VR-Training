@@ -2015,7 +2015,8 @@ MonoBehaviour:
     and hold the \u2018Raise\u2019 button on the Car Lift until to raise the lift
     arms approximately 1 inch. This will release the lift arms from the safety release
     and allow the lift arms to be lowered."
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: ff8ea11f087bf3842a580370927af2af,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 1859784660}
   NextInstruction: {fileID: 965364290}
@@ -2322,7 +2323,8 @@ MonoBehaviour:
   InstructionDescription: Locate the bolt gun stowed on the workbench. Check the
     head is correct and if not, select the appropriate socket (12mm) and fit this
     to the head of the bolt gun.
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: 57bea3c4e4cfac34db1941562c6980dc,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 1898571531}
   NextInstruction: {fileID: 1021408337}
@@ -5148,7 +5150,8 @@ MonoBehaviour:
     Please
     ensure the lift arm is accurately located before proceeding. If necessary, extend
     or retract the lift arm to achieve the required positioning.'
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: 67cbdf193571de949a20a06465095adc,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 441272484}
   NextInstruction: {fileID: 1553681439}
@@ -5549,7 +5552,8 @@ MonoBehaviour:
 
     Using both hands carefully roll the removed wheel to the workbench
     in the immediate vicinity.'
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: 4b64aaf9f538ef942a4f97748cefda66,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 2045741200}
   NextInstruction: {fileID: 1405502947}
@@ -6008,7 +6012,7 @@ GameObject:
   - component: {fileID: 433760931}
   - component: {fileID: 433760930}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: GlassSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6081,11 +6085,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433760929}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.038, y: 3.587, z: 6.678}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.038, y: 2.25345, z: 6.678}
   m_LocalScale: {x: 7.968791, y: 1.8194344, z: 0.005639975}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 527208631}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &441272484
@@ -6142,7 +6146,8 @@ MonoBehaviour:
     Please
     ensure the lift arm is accurately located before proceeding. If necessary, extend
     or retract the lift arm to achieve the required positioning.'
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: 67cbdf193571de949a20a06465095adc,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 1699754741}
   NextInstruction: {fileID: 354961667}
@@ -6714,6 +6719,8 @@ Transform:
   - {fileID: 4744655392866338042}
   - {fileID: 529396155}
   - {fileID: 695367843}
+  - {fileID: 433760933}
+  - {fileID: 1586775249}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8918,7 +8925,8 @@ MonoBehaviour:
     locate onto the wheel studs. Ensure the holes in the wheels are accurately aligned
     with the wheel studs. Once aligned, push the wheel fully onto the hub assembly
     and ensure it is correctly seated.'
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: 37504ff3c68bc634b8a4b39e13bfad53,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 1405502947}
   NextInstruction: {fileID: 1859784660}
@@ -9073,7 +9081,8 @@ MonoBehaviour:
     button on the Car Lift until all four wheels are approximately 2 inches (50mm)
     above the floor. Once the chassis is in the required position, release the \u2018Raise\u2019
     button.\r"
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: ff8ea11f087bf3842a580370927af2af,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 759527672}
   NextInstruction: {fileID: 2040488068}
@@ -9858,7 +9867,8 @@ MonoBehaviour:
     Please
     ensure the lift arm is accurately located before proceeding. If necessary, extend
     or retract the lift arm to achieve the required positioning.'
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: 67cbdf193571de949a20a06465095adc,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 1553681439}
   NextInstruction: {fileID: 623599745}
@@ -11606,7 +11616,8 @@ MonoBehaviour:
     the safety release lever fully downwards, press and hold the \u2018Lower\u2019
     button on the Car Lift until the lift arms are fully lowered and all four wheels
     are securely supported on the floor."
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: 6d49e145bc1a08a44a696960994bb744,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 97872087}
   NextInstruction: {fileID: 272521018}
@@ -11935,7 +11946,8 @@ MonoBehaviour:
     wheel, use the bolt gun and socket to remove the five (5) retaining nuts from
     the wheel studs in a clockwise sequence. \n- NOTE: When the nuts are removed,
     they will stay in the air for easy use."
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: 63736b4efcd533a42ab7fbc65b255cde,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 151743661}
   NextInstruction: {fileID: 2045741200}
@@ -13677,7 +13689,8 @@ MonoBehaviour:
   InstructionName: Task Complete!
   InstructionNameShort: TaskComp
   InstructionDescription: Well done! You have successfully changed the tyre!
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: 42e9bbe07e4919847b489f38eca81f61,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 1260886551}
   NextInstruction: {fileID: 0}
@@ -15449,7 +15462,8 @@ MonoBehaviour:
     Please
     ensure the lift arm is stowed before proceeding. If necessary, extend or retract
     the lift arm to achieve the required positioning.'
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: 23ab534061aa2cb4ebe115fc481b9a32,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 1468180396}
   NextInstruction: {fileID: 1131817919}
@@ -17658,7 +17672,8 @@ MonoBehaviour:
     Please
     ensure the lift arm is stowed before proceeding. If necessary, extend or retract
     the lift arm to achieve the required positioning.'
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: 23ab534061aa2cb4ebe115fc481b9a32,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 1557072658}
   NextInstruction: {fileID: 1260886551}
@@ -18167,7 +18182,8 @@ MonoBehaviour:
     Please
     ensure the lift arm is accurately located before proceeding. If necessary, extend
     or retract the lift arm to achieve the required positioning.'
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: 67cbdf193571de949a20a06465095adc,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 354961667}
   NextInstruction: {fileID: 759527672}
@@ -18311,7 +18327,8 @@ MonoBehaviour:
     Please
     ensure the lift arm is stowed before proceeding. If necessary, extend or retract
     the lift arm to achieve the required positioning.'
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: 23ab534061aa2cb4ebe115fc481b9a32,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 1640886270}
   NextInstruction: {fileID: 1468180396}
@@ -18815,7 +18832,7 @@ GameObject:
   - component: {fileID: 1586775247}
   - component: {fileID: 1586775246}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: GlassUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18888,11 +18905,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586775245}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 5.696, y: 7.41, z: 1.82}
-  m_LocalScale: {x: 11.357918, y: 1.8194344, z: 0.005639975}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 5.696, y: 6.07645, z: 1.82}
+  m_LocalScale: {x: 11.357917, y: 1.8194344, z: 0.0056399745}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 527208631}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1591318594
@@ -20060,7 +20077,8 @@ MonoBehaviour:
     Please
     ensure the lift arm is stowed before proceeding. If necessary, extend or retract
     the lift arm to achieve the required positioning.'
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: 23ab534061aa2cb4ebe115fc481b9a32,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 272521018}
   NextInstruction: {fileID: 1557072658}
@@ -21817,7 +21835,8 @@ MonoBehaviour:
     While standing immediately next to the front left-hand wheel,
     use the bolt gun and socket to fit the five (5) retaining nuts onto the wheel
     studs in a diametrically opposed sequence.'
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: d6db14879a1403c41bb961d30922c42f,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 613925077}
   NextInstruction: {fileID: 97872087}
@@ -22510,7 +22529,8 @@ MonoBehaviour:
   InstructionNameShort: ContinueChassis
   InstructionDescription: "Continue to raise the chassis so that the Wheels are aligned
     chest height, allowing for ease of access.\r"
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: ff8ea11f087bf3842a580370927af2af,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 2040488068}
   NextInstruction: {fileID: 151743661}
@@ -24357,7 +24377,8 @@ MonoBehaviour:
   InstructionDescription: While standing immediately next to the front left-hand
     wheel with a sure footing, use both hands to remove the wheel from the Chassis.
     Once removed place the wheel on the floor immediately next to the chassis.
-  InstructionImageGuide: {fileID: 0}
+  InstructionImageGuide: {fileID: 21300000, guid: 503a755bd98c67f438bf8cafeadf21a6,
+    type: 3}
   CanBeReturnedToWithBack: 1
   PreviousInstruction: {fileID: 1021408337}
   NextInstruction: {fileID: 388838191}

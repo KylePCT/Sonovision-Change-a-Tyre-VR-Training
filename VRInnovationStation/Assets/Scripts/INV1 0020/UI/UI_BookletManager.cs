@@ -195,7 +195,15 @@ public class UI_BookletManager : MonoBehaviour
             int temp_i = i;
             InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Title").GetComponent<TextMeshProUGUI>().text = InstructionPages[temp_i].InstructionName;
             InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/ScrollArea/TextContainer/Description").GetComponent<TextMeshProUGUI>().text = InstructionPages[temp_i].InstructionDescription;
-            InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Image").GetComponent<Image>().sprite = InstructionPages[temp_i].InstructionImageGuide;
+
+            if (InstructionPages[temp_i].InstructionImageGuide != null)
+            {
+                InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Image").GetComponent<Image>().sprite = InstructionPages[temp_i].InstructionImageGuide;
+            }
+            else
+            {
+                InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Image").gameObject.SetActive(false);
+            }
 
             InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Back").GetComponent<Button>().onClick.AddListener(() => Debug.Log("<color=cyan>[UI_BookletManager.cs] </color>Previous page clicked: " + PageHistory[0]));
             InstructionCanvases[i].gameObject.transform.Find("InstructionPanel/Back").GetComponent<Button>().onClick.AddListener(() => ShowPreviousPage());
