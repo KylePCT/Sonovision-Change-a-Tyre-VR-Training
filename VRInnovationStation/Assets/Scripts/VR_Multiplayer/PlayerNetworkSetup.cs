@@ -21,18 +21,28 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
     void Start()
     {
         //Setup the player.
+        if (photonView.IsMine == false)
+        {
+            LocalXRRigGameobject.SetActive(false);
+            AvatarHeadGameobject.SetActive(true);
+
+            //Turn off the movement for the remote player => stops all rigs following the local player and lets everyone control their own rig.
+            gameObject.GetComponent<MovementController>().enabled = false;
+            gameObject.GetComponent<AvatarInputConverter>().enabled = false;
+        }
 
         //Is the player setup the local player?
-        if (photonView.IsMine)
+        else if (photonView.IsMine == true)
         {
             LocalXRRigGameobject.SetActive(true);
-            
+            AvatarHeadGameobject.SetActive(false);
+
             gameObject.GetComponent<MovementController>().enabled = true; //Allows the local rig to be moved.
             gameObject.GetComponent<AvatarInputConverter>().enabled = true;
 
-            AvatarHeadGameobject.GetComponent<MeshRenderer>().enabled = true;
-            //AvatarHeadGameobject.layer = 30;
-            //AvatarBodyGameobject.layer = 31;
+            //Set the local Avatar's head and body to their own layers so the camera in the scene can cull them and not see them.
+            SetLayerRecursively(AvatarHeadGameobject, 30);
+            SetLayerRecursively(AvatarBodyGameobject, 31);
 
             //Get the Avatar selection data for the correct model to be displayed.
             object avatarSelectionNumber;
@@ -42,11 +52,6 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
 
                 photonView.RPC("InitializeSelectedAvatarModel", RpcTarget.AllBuffered, (int)avatarSelectionNumber);
             }
-
-            ////Set the local Avatar's head and body to their own layers so the camera in the scene can cull them and not see them.
-            //SetLayerRecursively(AvatarHeadGameobject, 12);
-            //SetLayerRecursively(AvatarBodyGameobject, 12);
-            //AvatarHeadGameobject.SetActive(false); //Just remove the head incase, LayerRecursive is buggy.
 
             //Set up teleportation for local player.
             //Will look for teleportation areas when the rig is instantiated and assign them.
@@ -68,19 +73,7 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
         //Is the player the remote player?
         else
         {
-            LocalXRRigGameobject.SetActive(false);
-
-            //Turn off the movement for the remote player => stops all rigs following the local player and lets everyone control their own rig.
-            gameObject.GetComponent<MovementController>().enabled = false;
-            gameObject.GetComponent<AvatarInputConverter>().enabled = false;
-
-            ////Set the Avatar's head and body to layer 'Default', which allows them to be seen by Main Cameras in the scene. => Allows remote players to be seen by the local player.
-            AvatarHeadGameobject.GetComponent<MeshRenderer>().enabled = false;
-
-            //AvatarHeadGameobject.layer = 0;
-            //AvatarBodyGameobject.layer = 0;
-
-            //AvatarHeadGameobject.SetActive(true); //Just enable the head incase, LayerRecursive is buggy.
+            Debug.LogError("[PlayerNetworkSetup.cs] How have you managed to cause PhotonView to not be true OR false?! Check your code.");
         }
 
         //Shows player names for all users.

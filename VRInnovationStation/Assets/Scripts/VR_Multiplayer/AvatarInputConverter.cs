@@ -29,7 +29,9 @@ public class AvatarInputConverter : MonoBehaviour
     {
         //Head and Body synch
         MainAvatarTransform.position = Vector3.Lerp(MainAvatarTransform.position, XRHead.position + headPositionOffset, 0.5f);
+        AvatarHead.position = Vector3.Lerp(AvatarHead.position, XRHead.position + headPositionOffset, 0.5f);
         AvatarHead.rotation = Quaternion.Lerp(AvatarHead.rotation, XRHead.rotation, 0.5f);
+        AvatarBody.position = new Vector3(AvatarHead.position.x, AvatarHead.position.y - 0.5f, AvatarHead.position.z);
         AvatarBody.rotation = Quaternion.Lerp(AvatarBody.rotation, Quaternion.Euler(new Vector3(0, AvatarHead.rotation.eulerAngles.y, 0)), 0.05f);
 
         //Hands synch
