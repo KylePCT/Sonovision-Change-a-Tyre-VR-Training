@@ -31,11 +31,11 @@ public class AvatarInputConverter : MonoBehaviour
         MainAvatarTransform.position = Vector3.Lerp(MainAvatarTransform.position, XRHead.position + headPositionOffset, 0.5f);
         AvatarHead.position = Vector3.Lerp(AvatarHead.position, XRHead.position + headPositionOffset, 0.5f);
         AvatarHead.rotation = Quaternion.Lerp(AvatarHead.rotation, XRHead.rotation, 0.5f);
-        AvatarBody.position = new Vector3(AvatarHead.position.x, AvatarHead.position.y - 0.5f, AvatarHead.position.z);
+        AvatarBody.position = new Vector3(AvatarHead.position.x, AvatarHead.position.y - .9f, AvatarHead.position.z);
         AvatarBody.rotation = Quaternion.Lerp(AvatarBody.rotation, Quaternion.Euler(new Vector3(0, AvatarHead.rotation.eulerAngles.y, 0)), 0.05f);
 
         //Hands synch
-        AvatarHand_Right.position = Vector3.Lerp(AvatarHand_Right.position,XRHand_Right.position,0.5f);
+        AvatarHand_Right.position = Vector3.Lerp(AvatarHand_Right.position,XRHand_Right.position, 0.5f);
         AvatarHand_Right.rotation = Quaternion.Lerp(AvatarHand_Right.rotation,XRHand_Right.rotation,0.5f)*Quaternion.Euler(handRotationOffset);
 
         AvatarHand_Left.position = Vector3.Lerp(AvatarHand_Left.position,XRHand_Left.position,0.5f);

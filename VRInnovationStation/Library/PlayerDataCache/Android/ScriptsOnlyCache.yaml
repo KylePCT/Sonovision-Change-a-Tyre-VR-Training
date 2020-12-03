@@ -34,12 +34,14 @@ ScriptsOnlyBuild:
     - RandomColour
     - RoomManager
     - RopeGen
+    - RotateAutomatically
     - SlotIdentity
     - SnapBack
     - SnapNewWheel
     - SpawnManager
     - TC_FeetInPlace
     - TC_FeetInPlace_Single
+    - TC_GotPPE
     - ToggleAttach
     - UIManager
     - UI_BookletManager
@@ -75,8 +77,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
     PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PhotonTransformViewEditor
-    - Photon.Pun.PhotonViewInspector
     - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.Utilities.dll:
     - Photon.Pun.UtilityScripts.MoveByKeys
@@ -287,7 +287,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 15884}
     - Class: 114
-      Script: {instanceID: 16018}
+      Script: {instanceID: 16020}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -588,23 +588,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 15884}
     - Class: 114
-      Script: {instanceID: 16000}
+      Script: {instanceID: 16002}
     - Class: 114
-      Script: {instanceID: 16006}
+      Script: {instanceID: 16008}
     - Class: 114
-      Script: {instanceID: 16018}
+      Script: {instanceID: 16020}
     - Class: 114
-      Script: {instanceID: 16026}
+      Script: {instanceID: 16028}
     - Class: 114
-      Script: {instanceID: 16066}
+      Script: {instanceID: 16068}
     - Class: 114
-      Script: {instanceID: 16096}
+      Script: {instanceID: 16098}
     - Class: 114
-      Script: {instanceID: 16134}
+      Script: {instanceID: 16136}
     - Class: 114
-      Script: {instanceID: 16208}
+      Script: {instanceID: 16210}
     - Class: 114
-      Script: {instanceID: 16216}
+      Script: {instanceID: 16218}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -779,6 +779,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14850}
     - Class: 114
+      Script: {instanceID: 14916}
+    - Class: 114
       Script: {instanceID: 14922}
     - Class: 114
       Script: {instanceID: 15106}
@@ -809,15 +811,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 15884}
     - Class: 114
-      Script: {instanceID: 16018}
+      Script: {instanceID: 15972}
     - Class: 114
-      Script: {instanceID: 16026}
+      Script: {instanceID: 16020}
     - Class: 114
-      Script: {instanceID: 16044}
+      Script: {instanceID: 16028}
     - Class: 114
-      Script: {instanceID: 16134}
+      Script: {instanceID: 16046}
     - Class: 114
-      Script: {instanceID: 16232}
+      Script: {instanceID: 16136}
+    - Class: 114
+      Script: {instanceID: 16234}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -990,13 +994,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 15884}
     - Class: 114
-      Script: {instanceID: 16018}
+      Script: {instanceID: 16020}
     - Class: 114
-      Script: {instanceID: 16026}
+      Script: {instanceID: 16028}
     - Class: 114
-      Script: {instanceID: 16134}
+      Script: {instanceID: 16136}
     - Class: 114
-      Script: {instanceID: 33576}
+      Script: {instanceID: 76600}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -2770,7 +2774,7 @@ ScriptsOnlyBuild:
     className: LoaderAnime
   - hash:
       serializedVersion: 2
-      Hash: e79c75cb0d914c50d88e6a50df660ee2
+      Hash: 821344eb92db4381250c57188a2f27b2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RotateAutomatically
@@ -3322,6 +3326,12 @@ ScriptsOnlyBuild:
     className: XRManagerSettings
   - hash:
       serializedVersion: 2
+      Hash: 51d476216f914b944c0cf8a5dfeb0f29
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TC_GotPPE
+  - hash:
+      serializedVersion: 2
       Hash: 4ef0f7d42cdb13479386e1f049c315aa
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner
@@ -3524,4 +3534,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/HomeScene.unity
   - Assets/Scenes/World_Bronze.unity
   - Assets/Scenes/World_Silver.unity
-  playerPath: C:/Users/KT/Desktop/SV_VRMartin/APKs/v0.2.4d.apk
+  playerPath: C:/Users/KT/Desktop/SV_VRMartin/APKs/v0.2.5.apk
