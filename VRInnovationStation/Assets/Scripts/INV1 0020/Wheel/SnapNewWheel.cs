@@ -20,6 +20,7 @@ public class SnapNewWheel : MonoBehaviour
             SnapWheel();
         }
     }
+    
 
     public void SnapWheel()
     {

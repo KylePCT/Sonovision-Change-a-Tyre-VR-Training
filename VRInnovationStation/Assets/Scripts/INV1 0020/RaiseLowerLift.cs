@@ -95,6 +95,8 @@ public class RaiseLowerLift : MonoBehaviour
         {
             IsRaising = false;
             IsLowering = false;
+            ButtonRaise.GetComponent<MeshRenderer>().material = DefaultMat;
+            ButtonLower.GetComponent<MeshRenderer>().material = DefaultMat;
             Debug.Log("Stopped moving.");
         }
     }

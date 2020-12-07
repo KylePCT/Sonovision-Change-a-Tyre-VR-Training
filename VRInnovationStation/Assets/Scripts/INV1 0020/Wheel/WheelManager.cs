@@ -48,6 +48,7 @@ public class WheelManager : MonoBehaviour
             if (Bolts[i].GetComponent<BoltIdentity>().InSlot == true)
             {
                 Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel cannot be removed yet. One or more bolts still remain.");
+                CanNewWheelBeAttached = false;
                 return;
             }
         }

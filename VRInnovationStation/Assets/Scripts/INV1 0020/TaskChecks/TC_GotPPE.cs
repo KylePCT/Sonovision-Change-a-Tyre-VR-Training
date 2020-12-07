@@ -27,13 +27,17 @@ public class TC_GotPPE : MonoBehaviour
         //If it isn't safe to work (no PPE) then you can't do any VR interactions.
         if (!IsSafeToWork)
         {
-            //Player.GetComponentInChildren<XRDirectInteractor>().enableInteractions = false;
-            //Player.GetComponentInChildren<ControllerManager>().enabled = false;
+            Player.GetComponentInChildren<XRDirectInteractor>().enableInteractions = false;
+            Player.GetComponentInChildren<XRRayInteractor>().enableInteractions = false;
         }
+
+        PopulateVariables();
     }
 
-    private void LateUpdate()
+    private void PopulateVariables()
     {
+        if (InstructionCanvas != null) return;
+
         InstructionCanvas = GameObject.Find("[INSTRUCTION UI]/[CANVASES]/UI_Tablet_v1/GeneratedCanvases/UI_Canvas_2a_PPE");
         Instruction.IsTaskComplete = false;
 
@@ -71,12 +75,8 @@ public class TC_GotPPE : MonoBehaviour
             Instruction.IsTaskComplete = true;
             InstructionCanvas.gameObject.transform.Find("InstructionPanel/Forward").GetComponent<Button>().interactable = true;
 
-            //Player.GetComponentInChildren<XRDirectInteractor>().enableInteractions = true;
-        }
-
-        else
-        {
-            IsSafeToWork = false;
+            Player.GetComponentInChildren<XRDirectInteractor>().enableInteractions = true;
+            Player.GetComponentInChildren<XRRayInteractor>().enableInteractions = true;
         }
     }
 }
