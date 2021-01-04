@@ -11,7 +11,10 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
     public GameObject MainAvatarGameobject;
 
     public GameObject AvatarHeadGameobject;
+    public GameObject AvatarHeadAccessories;
     public GameObject AvatarBodyGameobject;
+
+    public Material OwnPlayerHeadMaterial;
 
     public GameObject[] AvatarModelPrefabs;
 
@@ -24,7 +27,6 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
         if (photonView.IsMine == false)
         {
             LocalXRRigGameobject.SetActive(false);
-            AvatarHeadGameobject.SetActive(true);
 
             //Turn off the movement for the remote player => stops all rigs following the local player and lets everyone control their own rig.
             gameObject.GetComponent<MovementController>().enabled = false;
@@ -35,7 +37,10 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
         else if (photonView.IsMine == true)
         {
             LocalXRRigGameobject.SetActive(true);
-            AvatarHeadGameobject.SetActive(false);
+
+            //Set the player avatar's head to be transparent through materials as the layering below doesn't seem to work half of the time. Yay code.
+            AvatarHeadGameobject.GetComponent<Renderer>().material = OwnPlayerHeadMaterial;
+            AvatarHeadAccessories.GetComponent<Renderer>().material = OwnPlayerHeadMaterial;
 
             gameObject.GetComponent<MovementController>().enabled = true; //Allows the local rig to be moved.
             gameObject.GetComponent<AvatarInputConverter>().enabled = true;
