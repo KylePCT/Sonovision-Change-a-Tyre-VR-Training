@@ -12,11 +12,12 @@ public class TC_GotPPE : MonoBehaviour
 
     public UI_Instruction Instruction;
 
-    [SerializeField]
-    private GameObject InstructionCanvas;
+    public GameObject InstructionCanvas;
 
-    private bool GotHelmet;
-    private bool GotHighVis;
+    private static bool GotHelmet = false;
+    private static bool GotHighVis = false;
+
+    public ParticleSystem RemovedParticles;
 
     [HideInInspector]
     public bool IsSafeToWork = false;
@@ -30,53 +31,59 @@ public class TC_GotPPE : MonoBehaviour
             Player.GetComponentInChildren<XRDirectInteractor>().enableInteractions = false;
             Player.GetComponentInChildren<XRRayInteractor>().enableInteractions = false;
         }
-
-        PopulateVariables();
-    }
-
-    private void PopulateVariables()
-    {
-        if (InstructionCanvas != null) return;
-
-        InstructionCanvas = GameObject.Find("[INSTRUCTION UI]/[CANVASES]/UI_Tablet_v1/GeneratedCanvases/UI_Canvas_2a_PPE");
-        Instruction.IsTaskComplete = false;
-
-        InstructionCanvas.gameObject.transform.Find("InstructionPanel/Forward").GetComponent<Button>().interactable = false;
     }
 
     //Grab PPE when colliding.
     void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Player" && gameObject.name == "PPE_Goggles")
+        if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("[Task Check] Player has picked up goggles.");
-            PPE_Helmet.gameObject.SetActive(false);
-            Player.gameObject.transform.Find("Generic VR Player/Avatar_001/Body1/Avatar_HighVis_v_Sono").GetComponent<GameObject>().layer = 31;
-            GotHelmet = true;
+            if (gameObject.name == "PPE_Goggles")
+            {
+                GotHelmet = true;
+                Debug.Log("[Task Check] Player has picked up goggles; GotHelmet is now: " + GotHelmet + ".");
 
-        }
+                CheckPPE();
+                Instantiate(RemovedParticles, PPE_Helmet.transform.position, PPE_Helmet.transform.rotation);
+                PPE_Helmet.SetActive(false);
+            }
 
-        if (collision.gameObject.tag == "Player" && gameObject.name == "PPE_HighVis")
-        { 
-            Debug.Log("[Task Check] Player has picked up high visibility jacket.");
-            PPE_HighVis.gameObject.SetActive(false);
-            GotHighVis = true;
+            if (gameObject.name == "PPE_HighVis")
+            {
+                GotHighVis = true;
+                Debug.Log("[Task Check] Player has picked up high visibility jacket; GotHighVis is now: " + GotHighVis + ".");
 
-            CheckPPE();
+                CheckPPE();
+                Instantiate(RemovedParticles, PPE_HighVis.transform.position, PPE_HighVis.transform.rotation);
+                PPE_HighVis.SetActive(false);
+            }
         }
     }
 
     void CheckPPE()
     {
         //When both PPE objects are attained, you can do VR things.
-        if (GotHelmet == true && GotHighVis == true)
+        if (GotHelmet || GotHighVis)
         {
-            IsSafeToWork = true;
-            Instruction.IsTaskComplete = true;
-            InstructionCanvas.gameObject.transform.Find("InstructionPanel/Forward").GetComponent<Button>().interactable = true;
+            Debug.Log("[Task Check] GotHelmet is " + GotHelmet + ". GotHighVis is " + GotHighVis + ".");
 
-            Player.GetComponentInChildren<XRDirectInteractor>().enableInteractions = true;
-            Player.GetComponentInChildren<XRRayInteractor>().enableInteractions = true;
+            if (GotHelmet && GotHighVis)
+            {
+                Debug.Log("[Task Check] All PPE has been picked up.");
+                IsSafeToWork = true;
+                Instruction.IsTaskComplete = true;
+
+                InstructionCanvas.GetComponent<AssignCanvasEventCamera>().AttachCamera();
+
+                Player.GetComponentInChildren<XRDirectInteractor>().enableInteractions = true;
+                Player.GetComponentInChildren<XRRayInteractor>().enableInteractions = true;
+                Debug.Log("[Task Check] Interactions activated.");
+            }
+        }
+
+        else
+        {
+            Debug.Log("[Task Check] Player does not have any PPE yet.");
         }
     }
 }

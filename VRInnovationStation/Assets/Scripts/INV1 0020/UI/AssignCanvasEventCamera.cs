@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class AssignCanvasEventCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        Canvas canvas = GetComponent<Canvas>();
-        if (canvas && canvas.worldCamera == null)
+        Canvas canvas = this.GetComponent<Canvas>();
+
+        Debug.Log("Canvas: " + canvas + "; Canvas Camera: " +  canvas.worldCamera + ".");
+
+        if (canvas.worldCamera == null)
         {
             Debug.Log("Camera not found. Initializing XR Camera...");
             canvas.worldCamera = Camera.main;
-            Debug.Log("Camera initialized as <" + Camera.main + ">.");
+            Debug.Log("Camera initialized as <" + Camera.main.name + ">.");
         }
+    }
+
+    public void AttachCamera()
+    {
+        Canvas canvas = this.GetComponent<Canvas>();
+
+        Debug.Log("Canvas: " + canvas + "; Canvas Camera: " + canvas.worldCamera + ".");
+
+        Debug.Log("Camera not found. Initializing XR Camera...");
+        canvas.worldCamera = Camera.main;
+        Debug.Log("Camera initialized as <" + Camera.main.name + ">.");
     }
 }

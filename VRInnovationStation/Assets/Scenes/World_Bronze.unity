@@ -556,7 +556,9 @@ MonoBehaviour:
   PPE_Helmet: {fileID: 1676642146}
   PPE_HighVis: {fileID: 6952441}
   Instruction: {fileID: 1699754743}
-  InstructionCanvas: {fileID: 0}
+  InstructionCanvas: {fileID: 1088331329}
+  RemovedParticles: {fileID: 7897930186204489696, guid: fcc0098da4fd9ec43a818d75d72c79be,
+    type: 3}
   IsSafeToWork: 0
 --- !u!54 &6952445
 Rigidbody:
@@ -672,7 +674,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &9328809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3839,7 +3841,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 655581602}
+      - m_Target: {fileID: 428375923}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -12503,7 +12505,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &411111409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12629,11 +12631,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Welcome to the Sonovision Tyre Replacement VR Simulation. This is your
-    handy guide which will guide you through the process.
+    handy guide which will guide you through the process!
 
 
-    Please note: this
-    is a Work In Progress and some things do not work as they should.'
+    Put on your Personal
+    Protective Equipment (to the left) to get started!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79d4648e145bbfe4d98e527a1bc556e4, type: 2}
   m_sharedMaterial: {fileID: -4535133726810321958, guid: 79d4648e145bbfe4d98e527a1bc556e4,
@@ -12897,7 +12899,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &428375928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15017,7 +15019,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &485590878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17305,7 +17307,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &562742050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19958,7 +19960,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 655581602}
+      - m_Target: {fileID: 1088331329}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -20357,7 +20359,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &614786609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20488,7 +20490,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &614793733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21610,7 +21612,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &637559837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21919,7 +21921,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &655581607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25646,7 +25648,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &804913480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27265,7 +27267,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &848479140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30324,7 +30326,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &955089726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31257,7 +31259,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &976104751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32100,7 +32102,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &1000265449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33771,7 +33773,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1712390113}
   m_HandleRect: {fileID: 1712390112}
   m_Direction: 2
-  m_Value: 0.99992007
+  m_Value: 0.9999195
   m_Size: 0.43403837
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -34569,7 +34571,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &1088331334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38178,7 +38180,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &1187449160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39251,7 +39253,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8525263101022833912, guid: 50e5c6c355d169347b2cc5e8bf9fc290, type: 3}
 --- !u!114 &1209366465
@@ -44401,7 +44403,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &1421179297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46676,7 +46678,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &1489733631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52153,7 +52155,9 @@ MonoBehaviour:
   PPE_Helmet: {fileID: 1676642146}
   PPE_HighVis: {fileID: 6952441}
   Instruction: {fileID: 1699754743}
-  InstructionCanvas: {fileID: 0}
+  InstructionCanvas: {fileID: 1088331329}
+  RemovedParticles: {fileID: 7897930186204489696, guid: fcc0098da4fd9ec43a818d75d72c79be,
+    type: 3}
   IsSafeToWork: 0
 --- !u!54 &1676642150
 Rigidbody:
@@ -53434,7 +53438,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1728791701}
   m_OnClick:
     m_PersistentCalls:
@@ -54622,7 +54626,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &1760406109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59179,7 +59183,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &1912371715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60631,7 +60635,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &1958772290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62347,7 +62351,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &2004517193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63219,7 +63223,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &2021935315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64743,15 +64747,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075945379}
-  m_LocalRotation: {x: -0.24721873, y: -0.6624825, z: -0.6624823, w: 0.24721874}
-  m_LocalPosition: {x: 0.67499995, y: 0, z: -1.62}
+  m_LocalRotation: {x: -0.1693321, y: -0.68653244, z: -0.68653226, w: 0.16933213}
+  m_LocalPosition: {x: 2.323, y: 0.733, z: 4.138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 748493713}
   - {fileID: 1651840909}
   m_Father: {fileID: 1660459415}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -139.072}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -152.289}
 --- !u!114 &2075945381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65519,7 +65523,7 @@ MonoBehaviour:
   m_CheckFor3DOcclusion: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 4294967295
 --- !u!114 &2092780654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70463,7 +70467,7 @@ MonoBehaviour:
   SlotType: 0
   BoltInSlot: 1
   WheelManager: {fileID: 2123629107}
-  WrenchManager: {fileID: 0}
+  WrenchManager: {fileID: 1340159584}
 --- !u!114 &2666335932330484896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70846,7 +70850,7 @@ MonoBehaviour:
   SlotType: 0
   BoltInSlot: 1
   WheelManager: {fileID: 2123629107}
-  WrenchManager: {fileID: 0}
+  WrenchManager: {fileID: 1340159584}
 --- !u!114 &2750616380748013988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75502,7 +75506,7 @@ MonoBehaviour:
   SlotType: 0
   BoltInSlot: 1
   WheelManager: {fileID: 2123629107}
-  WrenchManager: {fileID: 0}
+  WrenchManager: {fileID: 1340159584}
 --- !u!114 &5579225623469858008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78257,7 +78261,7 @@ MonoBehaviour:
   SlotType: 0
   BoltInSlot: 1
   WheelManager: {fileID: 2123629107}
-  WrenchManager: {fileID: 0}
+  WrenchManager: {fileID: 1340159584}
 --- !u!114 &7488703313158482436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79553,7 +79557,7 @@ MonoBehaviour:
   SlotType: 0
   BoltInSlot: 1
   WheelManager: {fileID: 2123629107}
-  WrenchManager: {fileID: 0}
+  WrenchManager: {fileID: 1340159584}
 --- !u!114 &8476244230795346866
 MonoBehaviour:
   m_ObjectHideFlags: 0

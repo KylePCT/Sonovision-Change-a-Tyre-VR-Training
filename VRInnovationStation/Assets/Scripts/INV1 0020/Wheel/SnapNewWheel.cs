@@ -9,13 +9,13 @@ public class SnapNewWheel : MonoBehaviour
     public GameObject NewWheel;
     public Transform AttachPoint;
     public GameObject SnapParent;
-    private bool CanSnap = false;
+    public bool CanSnap = false;
 
     public WheelManager WheelManager;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Wheel_New" && WheelManager.CanNewWheelBeAttached)
+        if (other.name == "Wheel_New" && WheelManager.CanNewWheelBeAttached && CanSnap)
         {
             SnapWheel();
         }

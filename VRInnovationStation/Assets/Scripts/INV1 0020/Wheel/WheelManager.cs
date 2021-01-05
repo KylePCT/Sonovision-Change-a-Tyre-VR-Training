@@ -9,6 +9,7 @@ public class WheelManager : MonoBehaviour
 {
     [Header("Script References")]
     public WrenchManager WrenchManager;
+    public SnapNewWheel WheelSnap;
 
     [Header("Object References")]
     public GameObject WheelMain;
@@ -49,6 +50,7 @@ public class WheelManager : MonoBehaviour
             {
                 Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel cannot be removed yet. One or more bolts still remain.");
                 CanNewWheelBeAttached = false;
+                WheelSnap.CanSnap = false;
                 return;
             }
         }
@@ -56,6 +58,7 @@ public class WheelManager : MonoBehaviour
         WheelMain.GetComponent<MeshCollider>().enabled = true;
         WheelMain.layer = 11;
         CanNewWheelBeAttached = true;
+        WheelSnap.CanSnap = true;
         Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel can now be removed.");
     }
 

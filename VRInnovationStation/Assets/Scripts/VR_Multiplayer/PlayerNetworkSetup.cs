@@ -10,11 +10,19 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
     public GameObject LocalXRRigGameobject; //XR Rig under the VR Character.
     public GameObject MainAvatarGameobject;
 
+    [Space(10)]
+
     public GameObject AvatarHeadGameobject;
     public GameObject AvatarHeadAccessories;
     public GameObject AvatarBodyGameobject;
+    public GameObject AvatarBodyAccessories;
+
+    [Space(10)]
 
     public Material OwnPlayerHeadMaterial;
+    public Material OwnPlayerGhostMaterial;
+
+    [Space(10)]
 
     public GameObject[] AvatarModelPrefabs;
 
@@ -42,6 +50,11 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
             AvatarHeadGameobject.GetComponent<Renderer>().material = OwnPlayerHeadMaterial;
             AvatarHeadAccessories.GetComponent<Renderer>().material = OwnPlayerHeadMaterial;
 
+            //Set the body to be semi-transparent to prevent any sight being blocked.
+            AvatarBodyGameobject.GetComponent<Renderer>().material = OwnPlayerGhostMaterial;
+            AvatarBodyAccessories.GetComponent<Renderer>().material = OwnPlayerGhostMaterial;
+
+            //Controls
             gameObject.GetComponent<MovementController>().enabled = true; //Allows the local rig to be moved.
             gameObject.GetComponent<AvatarInputConverter>().enabled = true;
 

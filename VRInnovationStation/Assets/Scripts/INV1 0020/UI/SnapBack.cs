@@ -6,6 +6,9 @@ public class SnapBack : MonoBehaviour
 {
     private GameObject Player;
     public GameObject Tablet;
+
+    [Space(10)]
+
     public ParticleSystem SpawnParticles;
 
     private Vector3 playerPos;
@@ -32,7 +35,7 @@ public class SnapBack : MonoBehaviour
         Quaternion rotation = Quaternion.LookRotation(direction);
         Tablet.transform.rotation = rotation;
 
-        Instantiate(SpawnParticles, Tablet.transform.position, Quaternion.identity);
+        Instantiate(SpawnParticles, Tablet.transform.position, Tablet.transform.rotation);
         tabletPos = Tablet.transform.position;
     }
 }
