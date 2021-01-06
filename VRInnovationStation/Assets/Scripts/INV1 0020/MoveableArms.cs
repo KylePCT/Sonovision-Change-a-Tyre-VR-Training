@@ -33,6 +33,15 @@ public class MoveableArms : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "HiddenCollision")
+        {
+            ArmsCanMove = true;
+            MoveArms();
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         ArmsCanMove = false;

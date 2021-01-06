@@ -13,10 +13,16 @@ public class SnapNewWheel : MonoBehaviour
 
     public WheelManager WheelManager;
 
+    private void Start()
+    {
+        NewWheel.GetComponent<MeshCollider>().enabled = false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.name == "Wheel_New" && WheelManager.CanNewWheelBeAttached && CanSnap)
         {
+            NewWheel.GetComponent<MeshCollider>().enabled = true;
             SnapWheel();
         }
     }

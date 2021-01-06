@@ -10,6 +10,8 @@ public class TC_GotPPE : MonoBehaviour
     public GameObject PPE_Helmet;
     public GameObject PPE_HighVis;
 
+    [Space(10)]
+
     public UI_Instruction Instruction;
 
     public GameObject InstructionCanvas;
@@ -17,7 +19,13 @@ public class TC_GotPPE : MonoBehaviour
     private static bool GotHelmet = false;
     private static bool GotHighVis = false;
 
+    [Space(10)]
+
     public ParticleSystem RemovedParticles;
+
+    [Space(10)]
+
+    public GameObject[] ObjectsToShowWhenPPEIsOn;
 
     [HideInInspector]
     public bool IsSafeToWork = false;
@@ -77,6 +85,7 @@ public class TC_GotPPE : MonoBehaviour
 
                 Player.GetComponentInChildren<XRDirectInteractor>().enableInteractions = true;
                 Player.GetComponentInChildren<XRRayInteractor>().enableInteractions = true;
+                ShowExtrasWithPPEOn();
                 Debug.Log("[Task Check] Interactions activated.");
             }
         }
@@ -84,6 +93,15 @@ public class TC_GotPPE : MonoBehaviour
         else
         {
             Debug.Log("[Task Check] Player does not have any PPE yet.");
+        }
+    }
+
+    //For any extra objects which need to be turned on.
+    void ShowExtrasWithPPEOn()
+    {
+        foreach (GameObject i in ObjectsToShowWhenPPEIsOn)
+        {
+            i.SetActive(true);
         }
     }
 }
