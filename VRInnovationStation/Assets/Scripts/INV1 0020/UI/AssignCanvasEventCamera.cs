@@ -14,7 +14,6 @@ public class AssignCanvasEventCamera : MonoBehaviour
         {
             Debug.Log("Camera not found. Initializing XR Camera...");
             canvas.worldCamera = Camera.main;
-            Debug.Log("Camera initialized as <" + Camera.main.name + ">.");
         }
     }
 

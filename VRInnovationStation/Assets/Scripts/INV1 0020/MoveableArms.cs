@@ -29,6 +29,7 @@ public class MoveableArms : MonoBehaviour
         if (other.gameObject.tag == "HiddenCollision")
         {
             ArmsCanMove = true;
+            FindObjectOfType<AudioManager>().PlaySound("MetalClang");
             MoveArms();
         }
     }
@@ -45,6 +46,7 @@ public class MoveableArms : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         ArmsCanMove = false;
+        FindObjectOfType<AudioManager>().PlaySound("MetalClang");
         ArmHandle.GetComponent<BoxCollider>().enabled = false;
     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
+[RequireComponent(typeof(PhotonView))]
 public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbacks, IPunObservable
 {
     private PhotonView m_photonView;
@@ -23,7 +24,6 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
         m_photonView = GetComponent<PhotonView>();
 
         //Set the names of the presumed grabbed object.
-        Debug.Log("<" + m_photonView.gameObject.name + "> could be <" + gameObject.name + ">.");
         grabbedName = m_photonView.gameObject.name;
         objectName = gameObject.name;
 

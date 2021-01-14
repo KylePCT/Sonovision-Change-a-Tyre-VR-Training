@@ -37,6 +37,8 @@ public class BoltIdentity : MonoBehaviour
                 this.gameObject.transform.SetParent(null);
                 WheelManager.AreAllBoltsRemoved();
                 Debug.Log("<color=orange>[BoltIdentity.cs]</color> Bolt: " + gameObject.name + " is now removed from the old wheel.");
+
+                FindObjectOfType<AudioManager>().PlaySound("PneumaticWrench");
             }
         }
     }

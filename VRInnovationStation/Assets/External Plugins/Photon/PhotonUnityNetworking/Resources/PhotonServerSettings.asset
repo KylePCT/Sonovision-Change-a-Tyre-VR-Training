@@ -46,6 +46,8 @@ MonoBehaviour:
   - changeColour
   - OnSelectEnter
   - OnSelectExit
+  - DisableUIElements
+  - SetActiveUIElements
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

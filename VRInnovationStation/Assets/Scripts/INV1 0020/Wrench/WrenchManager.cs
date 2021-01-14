@@ -26,6 +26,10 @@ public class WrenchManager : MonoBehaviour, Photon.Pun.IPunObservable
     private bool IsThereABitInSocket;
     public bool TheBitIsCorrect = false;
 
+    [Header("UI")]
+    public GameObject UI_TaskComplete_CorrectBit;
+
+
     // Update is called once per frame
     void Update()
     {
@@ -68,11 +72,13 @@ public class WrenchManager : MonoBehaviour, Photon.Pun.IPunObservable
                 DoesBitNeedCheck = false;
                 Debug.Log("<color=yellow>[WrenchManager.cs] </color> Correct bit is in socket.");
                 TheBitIsCorrect = true;
+                UI_TaskComplete_CorrectBit.SetActive(true);
             }
             else
             {
                 DoesBitNeedCheck = true;
                 TheBitIsCorrect = false;
+                UI_TaskComplete_CorrectBit.SetActive(false);
             }
         }
     }

@@ -122,6 +122,7 @@
     <Compile Include="Assets\External Plugins\Photon\PhotonVoice\Demos\DemoVoiceUI\DemoVoiceUI.cs" />
     <Compile Include="Assets\External Plugins\Photon\PhotonVoice\Demos\DemoVoiceUI\MicrophoneDropdownFiller.cs" />
     <Compile Include="Assets\External Plugins\Photon\PhotonVoice\Demos\DemoVoiceUI\RemoteSpeakerUI.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\LeverEnableLift.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\MoveableArms.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\RaiseLowerLift.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="Assets\Scripts\INV1 0020\Wheel\SnapNewWheel.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\Wheel\WheelManager.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\Wrench\WrenchManager.cs" />
+    <Compile Include="Assets\Scripts\Sound.cs" />
     <Compile Include="Assets\Scripts\VR_Multiplayer\Anims\AN_LowerTip.cs" />
     <Compile Include="Assets\Scripts\VR_Multiplayer\Anims\AN_MovePincers.cs" />
     <Compile Include="Assets\Scripts\VR_Multiplayer\Anims\AN_OpenDoors.cs" />

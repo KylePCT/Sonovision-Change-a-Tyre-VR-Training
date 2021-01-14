@@ -1,13 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class TC_FeetInPlace : MonoBehaviour
+public class TC_FeetInPlace : MonoBehaviourPunCallbacks
 {
+    public PhotonView m_photonView;
+
     public GameObject Col_LeftFrontArmPlace;
     public GameObject Col_LeftBackArmPlace;
     public GameObject Col_RightFrontArmPlace;
     public GameObject Col_RightBackArmPlace;
+
+    public GameObject UI_ProgressTask;
+
+    private bool UI_ProgressTaskComplete;
 
     [HideInInspector]
     public bool AreAllFeetInPlace = false;
@@ -15,7 +23,9 @@ public class TC_FeetInPlace : MonoBehaviour
     private void Start()
     {
         DeactivateAllMeshRenderers();
+        UI_ProgressTaskComplete = false;
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -25,12 +35,24 @@ public class TC_FeetInPlace : MonoBehaviour
             Col_RightBackArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == true)
         {
             AreAllFeetInPlace = true;
+            m_photonView.RPC("SetActiveUIElements", RpcTarget.AllBuffered);
             DeactivateAllMeshRenderers();
             Debug.Log("<color=white><b>[TC_FeetInPlace.cs] LIFT CAN NOW BE RAISED.</b> All four feet are in place.</color>");
         }
         else
         {
             AreAllFeetInPlace = false;
+        }
+    }
+
+    [PunRPC]
+    void SetActiveUIElements()
+    {
+        if (UI_ProgressTaskComplete == false)
+        {
+            UI_ProgressTask.transform.gameObject.SetActive(true);
+            FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
+            UI_ProgressTaskComplete = true;
         }
     }
 

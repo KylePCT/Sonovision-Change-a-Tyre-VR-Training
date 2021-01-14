@@ -46,6 +46,8 @@ public class TC_GotPPE : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
+
             if (gameObject.name == "PPE_Goggles")
             {
                 GotHelmet = true;

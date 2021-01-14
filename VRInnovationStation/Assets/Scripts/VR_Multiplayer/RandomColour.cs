@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class RandomColour : MonoBehaviourPunCallbacks
+public class RandomColour : MonoBehaviourPunCallbacks, IPunObservable
 {
     private Color randomColour;
 
@@ -16,7 +16,7 @@ public class RandomColour : MonoBehaviourPunCallbacks
     {
         randomColour = Random.ColorHSV(0f, 1f, 0.6f, .8f, 1f, 1f);
         changeColour();
-        photonView.RPC("changeColour", RpcTarget.AllBuffered, randomColour);
+        //photonView.RPC("changeColour", RpcTarget.AllBuffered, randomColour);
     }
 
     [PunRPC]
@@ -36,5 +36,25 @@ public class RandomColour : MonoBehaviourPunCallbacks
         body.GetComponent<Renderer>().material.color = randomColour;
         leftHand.GetComponentInChildren<Renderer>().material.color = randomColour;
         rightHand.GetComponentInChildren<Renderer>().material.color = randomColour;
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(leftHand.GetComponent<Renderer>().material.color.r);
+            stream.SendNext(leftHand.GetComponent<Renderer>().material.color.g);
+            stream.SendNext(leftHand.GetComponent<Renderer>().material.color.b);
+        }
+        else
+        {
+            float red = (float)stream.ReceiveNext();
+            float green = (float)stream.ReceiveNext();
+            float blue = (float)stream.ReceiveNext();
+            head.GetComponent<Renderer>().material.color = new Color(red, green, blue, 1.0f);
+            body.GetComponent<Renderer>().material.color = new Color(red, green, blue, 1.0f);
+            leftHand.GetComponent<Renderer>().material.color = new Color(red, green, blue, 1.0f);
+            rightHand.GetComponent<Renderer>().material.color = new Color(red, green, blue, 1.0f);
+        }
     }
 }

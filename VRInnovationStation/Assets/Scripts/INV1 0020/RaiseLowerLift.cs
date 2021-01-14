@@ -47,6 +47,9 @@ public class RaiseLowerLift : MonoBehaviour
     public Material WheelCantBeMoved;
     public Material WheelCanBeMoved;
 
+    [Space(10)]
+    public GameObject UI_LiftIsRaisedTaskButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -105,7 +108,7 @@ public class RaiseLowerLift : MonoBehaviour
     void Update()
     {
         //-60 is just to get it nearish 0.
-        TextDistanceFromFloor.SetText(((Lift.transform.position.y * 100) - 60).ToString("F2") + "mm");
+        TextDistanceFromFloor.SetText(((Lift.transform.position.y * 100) - 60).ToString("F2") + "cm");
 
         if (IsRaising)
         {
@@ -122,11 +125,13 @@ public class RaiseLowerLift : MonoBehaviour
         {
             CanRemoveWheel = true;
             ButtonConfirmationIndication.GetComponent<MeshRenderer>().material = WheelCanBeMoved;
+            UI_LiftIsRaisedTaskButton.SetActive(true);
         }
         else
         {
             CanRemoveWheel = false;
             ButtonConfirmationIndication.GetComponent<MeshRenderer>().material = WheelCantBeMoved;
+            UI_LiftIsRaisedTaskButton.SetActive(false);
         }
     }
 
@@ -137,6 +142,7 @@ public class RaiseLowerLift : MonoBehaviour
             ButtonRaise.GetComponent<MeshRenderer>().material = WheelCanBeMoved;
             ButtonLower.GetComponent<MeshRenderer>().material = DefaultMat;
             Lift.transform.position += (Vector3.up * LiftSpeed * Time.deltaTime);
+            UI_LiftIsRaisedTaskButton.SetActive(true);
         }
     }
 
