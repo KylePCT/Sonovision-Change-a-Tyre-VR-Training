@@ -1035,7 +1035,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16140}
     - Class: 114
-      Script: {instanceID: 297750}
+      Script: {instanceID: 27456}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -2029,7 +2029,7 @@ ScriptsOnlyBuild:
     className: ChangeName
   - hash:
       serializedVersion: 2
-      Hash: f1f4d9bfa651aada2f48d3baa00ff6d6
+      Hash: 16832afb9576e155811a27a007d91ba1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RaiseLowerLift
@@ -3575,4 +3575,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/HomeScene.unity
   - Assets/Scenes/World_Bronze.unity
   - Assets/Scenes/World_Silver.unity
-  playerPath: C:/Users/KT/Desktop/SV_VRMartin/APKs/v0.2.6.apk
+  playerPath: C:/Users/KT/Desktop/SV_VRMartin/APKs/v0.2.6b.apk

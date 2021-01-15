@@ -56,7 +56,7 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
                 rb.isKinematic = false;
             }
 
-            if (wantsToBeKinematicAfterGrab)
+            else if (wantsToBeKinematicAfterGrab)
             {
                 rb.isKinematic = true;
                 rb.useGravity = true;

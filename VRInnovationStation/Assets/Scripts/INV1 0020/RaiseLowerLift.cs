@@ -49,10 +49,15 @@ public class RaiseLowerLift : MonoBehaviour
 
     [Space(10)]
     public GameObject UI_LiftIsRaisedTaskButton;
+    public PhotonView m_photonView;
+
+    private bool UI_ProgressTaskComplete;
 
     // Start is called before the first frame update
     void Start()
     {
+        UI_ProgressTaskComplete = false;
+
         IsRaising = false;
         IsLowering = false;
 
@@ -126,6 +131,8 @@ public class RaiseLowerLift : MonoBehaviour
             CanRemoveWheel = true;
             ButtonConfirmationIndication.GetComponent<MeshRenderer>().material = WheelCanBeMoved;
             UI_LiftIsRaisedTaskButton.SetActive(true);
+            m_photonView.RPC("SetActiveUIElements", RpcTarget.AllBuffered);
+
         }
         else
         {
@@ -140,6 +147,8 @@ public class RaiseLowerLift : MonoBehaviour
         if (Lift.transform.position.y < HighestPositionLimit && TaskCheck.AreAllFeetInPlace)
         {
             ButtonRaise.GetComponent<MeshRenderer>().material = WheelCanBeMoved;
+            m_photonView.RPC("SetActiveUIElements", RpcTarget.AllBuffered);
+
             ButtonLower.GetComponent<MeshRenderer>().material = DefaultMat;
             Lift.transform.position += (Vector3.up * LiftSpeed * Time.deltaTime);
             UI_LiftIsRaisedTaskButton.SetActive(true);
@@ -180,6 +189,17 @@ public class RaiseLowerLift : MonoBehaviour
             this.MakeLiftLower = (bool)stream.ReceiveNext();
             this.IsRaising = (bool)stream.ReceiveNext();
             this.IsLowering = (bool)stream.ReceiveNext();
+        }
+    }
+
+    [PunRPC]
+    void SetActiveUIElements()
+    {
+        if (UI_ProgressTaskComplete == false)
+        {
+            UI_LiftIsRaisedTaskButton.transform.gameObject.SetActive(true);
+            FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
+            UI_ProgressTaskComplete = true;
         }
     }
 

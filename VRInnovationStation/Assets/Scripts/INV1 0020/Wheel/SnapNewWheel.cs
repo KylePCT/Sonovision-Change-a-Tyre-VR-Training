@@ -22,7 +22,6 @@ public class SnapNewWheel : MonoBehaviour
     {
         if (other.name == "Wheel_New" && WheelManager.CanNewWheelBeAttached && CanSnap)
         {
-            NewWheel.GetComponent<MeshCollider>().enabled = true;
             SnapWheel();
         }
     }

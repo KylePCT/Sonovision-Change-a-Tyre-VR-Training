@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class RandomColour : MonoBehaviourPunCallbacks, IPunObservable
+public class RandomColour : MonoBehaviourPunCallbacks
 {
     private Color randomColour;
 
@@ -36,25 +36,5 @@ public class RandomColour : MonoBehaviourPunCallbacks, IPunObservable
         body.GetComponent<Renderer>().material.color = randomColour;
         leftHand.GetComponentInChildren<Renderer>().material.color = randomColour;
         rightHand.GetComponentInChildren<Renderer>().material.color = randomColour;
-    }
-
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-            stream.SendNext(leftHand.GetComponent<Renderer>().material.color.r);
-            stream.SendNext(leftHand.GetComponent<Renderer>().material.color.g);
-            stream.SendNext(leftHand.GetComponent<Renderer>().material.color.b);
-        }
-        else
-        {
-            float red = (float)stream.ReceiveNext();
-            float green = (float)stream.ReceiveNext();
-            float blue = (float)stream.ReceiveNext();
-            head.GetComponent<Renderer>().material.color = new Color(red, green, blue, 1.0f);
-            body.GetComponent<Renderer>().material.color = new Color(red, green, blue, 1.0f);
-            leftHand.GetComponent<Renderer>().material.color = new Color(red, green, blue, 1.0f);
-            rightHand.GetComponent<Renderer>().material.color = new Color(red, green, blue, 1.0f);
-        }
     }
 }
