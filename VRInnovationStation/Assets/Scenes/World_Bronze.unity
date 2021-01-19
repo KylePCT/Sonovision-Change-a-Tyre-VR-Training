@@ -2700,7 +2700,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 64409426}
   m_StartingSelectedInteractable: {fileID: 0}
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -2714,7 +2714,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -2728,15 +2728,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -6823,10 +6824,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9063388434545631223}
@@ -6841,7 +6842,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9063388434545631223}
@@ -6856,10 +6857,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9063388434545631223}
@@ -6874,7 +6875,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -6950,10 +6954,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 180669660807605241}
@@ -6968,7 +6972,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 180669660807605241}
@@ -6983,10 +6987,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 180669660807605241}
@@ -7001,7 +7005,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -7077,10 +7084,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8103105834680778658}
@@ -7095,7 +7102,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8103105834680778658}
@@ -7110,10 +7117,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8103105834680778658}
@@ -7128,7 +7135,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -7204,10 +7214,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 479046720619281533}
@@ -7222,7 +7232,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 479046720619281533}
@@ -7237,10 +7247,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 479046720619281533}
@@ -7255,7 +7265,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -7331,10 +7344,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3845659682283721212}
@@ -7349,7 +7362,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3845659682283721212}
@@ -7364,10 +7377,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3845659682283721212}
@@ -7382,7 +7395,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -7458,10 +7474,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7513226367100759659}
@@ -7476,7 +7492,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7513226367100759659}
@@ -7491,10 +7507,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7513226367100759659}
@@ -7509,7 +7525,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -7585,10 +7604,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1206727793614629923}
@@ -7603,7 +7622,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1206727793614629923}
@@ -7618,10 +7637,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1206727793614629923}
@@ -7636,7 +7655,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -7712,10 +7734,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9038933829154947503}
@@ -7730,7 +7752,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9038933829154947503}
@@ -7745,10 +7767,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9038933829154947503}
@@ -7763,7 +7785,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -8542,21 +8567,22 @@ MonoBehaviour:
     m_Bits: 2304
   m_AttachTransform: {fileID: 953327246}
   m_StartingSelectedInteractable: {fileID: 230662960}
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 0.008
   m_RecycleDelayTime: 1
@@ -9112,7 +9138,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 301706595}
   m_StartingSelectedInteractable: {fileID: 0}
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -9126,7 +9152,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -9140,15 +9166,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -10771,8 +10798,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!1 &345617849
 GameObject:
@@ -13766,8 +13793,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!1001 &453592325
 PrefabInstance:
@@ -15695,10 +15722,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 542674996}
@@ -15724,7 +15751,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 542674996}
@@ -15750,7 +15777,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 542674996}
@@ -15764,10 +15791,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -16329,8 +16359,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &552228459
 MonoBehaviour:
@@ -16460,10 +16490,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 552228464}
@@ -16478,7 +16508,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 552228464}
@@ -16493,13 +16523,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -16647,7 +16680,12 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 552228459}
+  - {fileID: 552228457}
+  - {fileID: 552228458}
+  - {fileID: 606655582}
+  - {fileID: 606655581}
   viewIdField: 90
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -17918,10 +17956,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 581542702}
@@ -17947,7 +17985,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 581542702}
@@ -17973,7 +18011,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 581542702}
@@ -17987,10 +18025,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -18916,10 +18957,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 597546481}
@@ -18934,7 +18975,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 597546481}
@@ -18949,13 +18990,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -20036,8 +20080,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!1 &613925077
 GameObject:
@@ -21916,6 +21960,8 @@ GameObject:
   - component: {fileID: 678850238}
   - component: {fileID: 678850241}
   - component: {fileID: 678850239}
+  - component: {fileID: 678850242}
+  - component: {fileID: 678850243}
   m_Layer: 0
   m_Name: Col_LeftFrontArmPlace
   m_TagString: Untagged
@@ -22010,7 +22056,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsFootInCollision: 0
+  m_photonView: {fileID: 678850242}
   CollisionBox: {fileID: 678850236}
+--- !u!114 &678850242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678850236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 678850243}
+  viewIdField: 32
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &678850243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678850236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
 --- !u!1 &684868655
 GameObject:
   m_ObjectHideFlags: 0
@@ -26228,10 +26313,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 832914307}
@@ -26246,7 +26331,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 832914307}
@@ -26261,13 +26346,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -26425,8 +26513,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!1 &835153760
 GameObject:
@@ -28659,10 +28747,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2304
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2100000, guid: 8d1483e560a1ec74597f52711f7617fb, type: 2}
@@ -28676,7 +28764,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2100000, guid: e161c2140b32df646a268b9454dbe947, type: 2}
@@ -28690,13 +28778,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -32619,8 +32710,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &1046172995
 MonoBehaviour:
@@ -32750,10 +32841,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1046173000}
@@ -32768,7 +32859,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1046173000}
@@ -32783,13 +32874,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -32937,7 +33031,12 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 1046172995}
+  - {fileID: 1046172993}
+  - {fileID: 1046172994}
+  - {fileID: 338591904}
+  - {fileID: 338591903}
   viewIdField: 81
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -35357,7 +35456,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 1120458755}
   m_StartingSelectedInteractable: {fileID: 0}
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -35371,7 +35470,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -35385,15 +35484,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -36517,10 +36617,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1146372668}
@@ -36535,7 +36635,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1146372668}
@@ -36550,13 +36650,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -38932,7 +39035,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: -1
   m_Mesh: {fileID: -5285379327019731616, guid: 0d9fb5360a1d9714d9c5b1132fa95109, type: 3}
 --- !u!114 &1209366465
@@ -38953,10 +39056,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1209366467}
@@ -38982,7 +39085,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1209366467}
@@ -38997,13 +39100,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8970699921859665985}
@@ -39017,6 +39120,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
   m_OnActivate:
     m_PersistentCalls:
       m_Calls: []
@@ -43030,6 +43136,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 78b5d833c28060b4898f2826fd0dd48e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78b5d833c28060b4898f2826fd0dd48e, type: 3}
 --- !u!4 &1393190063 stripped
@@ -43057,6 +43168,56 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 11.887848, y: 14.000003, z: 3.2665899}
   m_Center: {x: 0, y: 0, z: -1.6332949}
+--- !u!114 &1393190066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393190064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f6bf3d943ac7945842268c9ef1dca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 1111888417}
+  m_Colliders:
+  - {fileID: 1393190065}
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CustomReticle: {fileID: 3243884769686159862, guid: ba7331f932a688a4f8e39cea819590de,
+    type: 3}
+  m_TeleportationProvider: {fileID: 0}
+  m_MatchOrientation: 0
+  m_TeleportTrigger: 0
 --- !u!1 &1395395922
 GameObject:
   m_ObjectHideFlags: 0
@@ -44409,7 +44570,11 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 1437246295}
+  - {fileID: 1437246294}
+  - {fileID: 1437246302}
+  - {fileID: 1437246301}
   viewIdField: 101
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -47582,6 +47747,8 @@ GameObject:
   - component: {fileID: 1577363996}
   - component: {fileID: 1577363999}
   - component: {fileID: 1577363997}
+  - component: {fileID: 1577364000}
+  - component: {fileID: 1577364001}
   m_Layer: 0
   m_Name: Col_LeftBackArmPlace
   m_TagString: Untagged
@@ -47676,7 +47843,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsFootInCollision: 0
+  m_photonView: {fileID: 1577364000}
   CollisionBox: {fileID: 1577363994}
+--- !u!114 &1577364000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577363994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 1577364001}
+  viewIdField: 31
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &1577364001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577363994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
 --- !u!1001 &1586244172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48234,6 +48440,11 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -0.008951187
       objectReference: {fileID: 0}
+    - target: {fileID: 585067638106777951, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1743294856270629658, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
       propertyPath: m_OnActivate.m_PersistentCalls.m_Calls.Array.size
@@ -48369,6 +48580,11 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 0.05930257
       objectReference: {fileID: 0}
+    - target: {fileID: 1743294856270629663, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2223509772416261932, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -48443,6 +48659,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223509772416261937, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2783336416626583523, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
@@ -48554,6 +48775,11 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -0.008951187
       objectReference: {fileID: 0}
+    - target: {fileID: 4633296049985498324, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4911060967181038591, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -48634,6 +48860,16 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 0.050822735
       objectReference: {fileID: 0}
+    - target: {fileID: 6174238453219419892, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193382112440135744, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6193382112440135802, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
       propertyPath: m_TagString
@@ -48653,6 +48889,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: -0.0038628578
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473501971600260202, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6473501971600260203, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
@@ -48679,6 +48920,11 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 0.10049188
       objectReference: {fileID: 0}
+    - target: {fileID: 6521840908309469770, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8542950950607649963, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -48693,6 +48939,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: 0.051676035
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542950950607649967, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca89b0b6c94e6904fb73c44eeb7318b4, type: 3}
@@ -51412,10 +51663,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1696579642}
@@ -51430,7 +51681,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1696579642}
@@ -51445,13 +51696,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -58625,7 +58879,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 1939141366}
   m_StartingSelectedInteractable: {fileID: 0}
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -58639,7 +58893,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -58653,15 +58907,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -59905,6 +60160,8 @@ GameObject:
   - component: {fileID: 1981820747}
   - component: {fileID: 1981820750}
   - component: {fileID: 1981820748}
+  - component: {fileID: 1981820751}
+  - component: {fileID: 1981820752}
   m_Layer: 0
   m_Name: Col_RightBackArmPlace
   m_TagString: Untagged
@@ -59999,7 +60256,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsFootInCollision: 0
+  m_photonView: {fileID: 1981820751}
   CollisionBox: {fileID: 1981820745}
+--- !u!114 &1981820751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981820745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 1981820752}
+  viewIdField: 25
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &1981820752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981820745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
 --- !u!1001 &1982410603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62064,8 +62360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &1987909293
 MonoBehaviour:
@@ -62195,10 +62491,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1987909298}
@@ -62213,7 +62509,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1987909298}
@@ -62228,13 +62524,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -62382,7 +62681,12 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 1987909293}
+  - {fileID: 1987909291}
+  - {fileID: 1987909292}
+  - {fileID: 2125311324}
+  - {fileID: 2125311323}
   viewIdField: 84
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -65023,6 +65327,8 @@ GameObject:
   - component: {fileID: 2075467952}
   - component: {fileID: 2075467955}
   - component: {fileID: 2075467953}
+  - component: {fileID: 2075467956}
+  - component: {fileID: 2075467957}
   m_Layer: 0
   m_Name: Col_RightFrontArmPlace
   m_TagString: Untagged
@@ -65117,7 +65423,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsFootInCollision: 0
+  m_photonView: {fileID: 2075467956}
   CollisionBox: {fileID: 2075467950}
+--- !u!114 &2075467956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075467950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 2075467957}
+  viewIdField: 26
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &2075467957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075467950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
 --- !u!1 &2075706620
 GameObject:
   m_ObjectHideFlags: 0
@@ -65245,22 +65590,25 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -67047,8 +67395,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!1 &2139797142
 GameObject:
@@ -67289,10 +67637,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2141997201}
@@ -67307,7 +67655,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2141997201}
@@ -67322,13 +67670,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -67582,7 +67933,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 2146575588}
   m_StartingSelectedInteractable: {fileID: 0}
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -67596,7 +67947,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -67610,15 +67961,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -71072,7 +71424,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 6549425420857522190}
   m_StartingSelectedInteractable: {fileID: 6309427354559235445}
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -71086,7 +71438,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -71100,15 +71452,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -71483,7 +71836,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 2294758768488545076}
   m_StartingSelectedInteractable: {fileID: 1146372666}
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -71497,7 +71850,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -71511,15 +71864,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -72773,8 +73127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &3432739471209155612
 MonoBehaviour:
@@ -72789,8 +73143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &3432739471209155613
 MonoBehaviour:
@@ -72820,8 +73174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &3432739471209155615
 MonoBehaviour:
@@ -72836,8 +73190,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &3432739471209155616
 MonoBehaviour:
@@ -72867,8 +73221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &3432739471209155618
 MonoBehaviour:
@@ -72883,8 +73237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &3432739471209155619
 MonoBehaviour:
@@ -72914,8 +73268,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &3432739471209155621
 MonoBehaviour:
@@ -72930,8 +73284,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &3432739471209155622
 MonoBehaviour:
@@ -72951,7 +73305,12 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 3432739471209155626}
+  - {fileID: 3432739471209155625}
+  - {fileID: 3432739471209155612}
+  - {fileID: 3432739471209155610}
+  - {fileID: 3432739471209155611}
   viewIdField: 96
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -72973,7 +73332,12 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 3432739471209155628}
+  - {fileID: 3432739471209155627}
+  - {fileID: 3432739471209155615}
+  - {fileID: 3432739471209155613}
+  - {fileID: 3432739471209155614}
   viewIdField: 95
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -72995,10 +73359,100 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 3432739471209155631}
+  - {fileID: 3432739471209155630}
+  - {fileID: 3432739471209155618}
+  - {fileID: 3432739471209155629}
+  - {fileID: 3432739471209155616}
+  - {fileID: 3432739471209155617}
   viewIdField: 94
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &3432739471209155625 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7961216997320298941, guid: dfc9c018e09e42d44a86cff7dc6a3de9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3432739471209155601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3432739471209155603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3432739471209155626 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7961216997320298956, guid: dfc9c018e09e42d44a86cff7dc6a3de9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3432739471209155601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3432739471209155603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4e8cda9653e894e844b18f2d261ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3432739471209155627 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7961216998200186016, guid: dfc9c018e09e42d44a86cff7dc6a3de9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3432739471209155601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3432739471209155605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3432739471209155628 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7961216998200186043, guid: dfc9c018e09e42d44a86cff7dc6a3de9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3432739471209155601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3432739471209155605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4e8cda9653e894e844b18f2d261ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3432739471209155629 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7961216997671786405, guid: dfc9c018e09e42d44a86cff7dc6a3de9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3432739471209155601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3432739471209155606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3432739471209155630 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7961216997061852882, guid: dfc9c018e09e42d44a86cff7dc6a3de9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3432739471209155601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3432739471209155607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3432739471209155631 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7961216997061852901, guid: dfc9c018e09e42d44a86cff7dc6a3de9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3432739471209155601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3432739471209155607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4e8cda9653e894e844b18f2d261ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &3478483246600830156
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -74976,10 +75430,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2304
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2644115025489321573}
@@ -75005,7 +75459,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2644115025489321573}
@@ -75020,13 +75474,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -75265,6 +75722,11 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 3.3422499
       objectReference: {fileID: 0}
+    - target: {fileID: 585067638106777951, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1743294856270629658, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
       propertyPath: m_OnSelectEnter.m_PersistentCalls.m_Calls.Array.size
@@ -75339,6 +75801,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: 3.2739964
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743294856270629663, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2223509772416261932, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
@@ -75424,6 +75891,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223509772416261937, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2783336416626583523, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
@@ -75519,6 +75991,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: 3.3422499
+      objectReference: {fileID: 0}
+    - target: {fileID: 4633296049985498324, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4911060967181038588, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
@@ -75635,6 +76112,16 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 3.2906837
       objectReference: {fileID: 0}
+    - target: {fileID: 6174238453219419892, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193382112440135744, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6193382112440135802, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
       propertyPath: m_TagString
@@ -75680,6 +76167,11 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 3.3068786
       objectReference: {fileID: 0}
+    - target: {fileID: 6473501971600260202, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6473501971600260203, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
       propertyPath: m_Name
@@ -75710,6 +76202,11 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 3.2444625
       objectReference: {fileID: 0}
+    - target: {fileID: 6521840908309469770, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8542950950607649963, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -75730,6 +76227,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1111888417}
+    - target: {fileID: 8542950950607649967, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca89b0b6c94e6904fb73c44eeb7318b4, type: 3}
 --- !u!23 &4911060969246358306 stripped
@@ -76454,7 +76956,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 3838253190523526369}
   m_StartingSelectedInteractable: {fileID: 1696579640}
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -76468,7 +76970,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -76482,15 +76984,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -76993,10 +77496,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1716698753}
@@ -77011,7 +77514,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1716698753}
@@ -77026,13 +77529,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -77396,10 +77902,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4961938494535269068}
@@ -77414,7 +77920,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4961938494535269068}
@@ -77429,13 +77935,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -78009,22 +78518,25 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEnter:
+  m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnLastHoverExit:
+  m_OnLastHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -79303,7 +79815,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 3882558207353111117}
   m_StartingSelectedInteractable: {fileID: 2141997199}
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -79317,7 +79829,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -79331,15 +79843,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -80645,7 +81158,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 5334912400764031137}
   m_StartingSelectedInteractable: {fileID: 597546479}
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -80659,7 +81172,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -80673,15 +81186,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -81052,21 +81566,22 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 362427377}
   m_StartingSelectedInteractable: {fileID: 0}
-  m_OnHoverEnter:
+  m_OnHoverEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverExit:
+  m_OnHoverExited:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEnter:
+  m_OnSelectEntered:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExit:
+  m_OnSelectExited:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1

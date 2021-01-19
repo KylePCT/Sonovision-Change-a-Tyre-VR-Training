@@ -13,6 +13,7 @@ TagManager:
   - WrenchBit
   - Tablet
   - Chassis_Foot
+  - UI_Menu
   layers:
   - Default
   - TransparentFX

@@ -125,6 +125,7 @@
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\LeverEnableLift.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\MoveableArms.cs" />
+    <Compile Include="Assets\Scripts\INV1 0020\ProgressChecker.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\RaiseLowerLift.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\RestrictRotation.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\TaskChecks\TC_FeetInPlace.cs" />

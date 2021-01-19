@@ -48,6 +48,8 @@ MonoBehaviour:
   - OnSelectExit
   - DisableUIElements
   - SetActiveUIElements
+  - UpdatePercentageDown
+  - UpdatePercentageUp
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

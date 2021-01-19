@@ -32,7 +32,7 @@ public class SnapBack : MonoBehaviour
         Tablet.transform.position = Vector3.Lerp(playerPos, tabletPos, fraction);
 
         Vector3 direction = Player.transform.position - transform.position;
-        Quaternion rotation = Quaternion.LookRotation(direction);
+        Quaternion rotation = Quaternion.LookRotation(-direction);
         Tablet.transform.rotation = rotation;
 
         Instantiate(SpawnParticles, Tablet.transform.position, Tablet.transform.rotation);

@@ -30,6 +30,7 @@ ScriptsOnlyBuild:
     - PlayerNetworkSetup
     - PlayerUIManager
     - PointersController
+    - ProgressChecker
     - ProximityVoiceTrigger
     - RaiseLowerLift
     - RandomColour
@@ -77,8 +78,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
-    PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.Utilities.dll:
     - Photon.Pun.UtilityScripts.MoveByKeys
     PhotonUnityNetworking.dll:
@@ -612,6 +611,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 16214}
     - Class: 114
       Script: {instanceID: 16222}
+    - Class: 114
+      Script: {instanceID: 35712}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -715,8 +716,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11396}
     - Class: 114
       Script: {instanceID: 11398}
-    - Class: 114
-      Script: {instanceID: 11400}
     - Class: 114
       Script: {instanceID: 11824}
     - Class: 114
@@ -849,6 +848,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 16140}
     - Class: 114
       Script: {instanceID: 16238}
+    - Class: 114
+      Script: {instanceID: 35712}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -943,8 +944,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11396}
     - Class: 114
-      Script: {instanceID: 11400}
-    - Class: 114
       Script: {instanceID: 11864}
     - Class: 114
       Script: {instanceID: 11944}
@@ -1035,7 +1034,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16140}
     - Class: 114
-      Script: {instanceID: 27456}
+      Script: {instanceID: 35712}
+    - Class: 114
+      Script: {instanceID: 78872}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -1621,7 +1622,7 @@ ScriptsOnlyBuild:
     className: Block
   - hash:
       serializedVersion: 2
-      Hash: 9b70aecc8d515309c4326962e241b873
+      Hash: 448340fc7c845aecd2e441943c23ed1b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TC_FeetInPlace_Single
@@ -3569,6 +3570,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UI_Instruction
+  - hash:
+      serializedVersion: 2
+      Hash: a3b4442f43df92b78d978f1e1b4cd811
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ProgressChecker
   platform: 13
   scenePathNames:
   - Assets/Scenes/LoginScene.unity

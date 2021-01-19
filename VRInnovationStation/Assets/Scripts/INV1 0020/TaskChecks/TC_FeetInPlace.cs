@@ -37,7 +37,7 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
             AreAllFeetInPlace = true;
             m_photonView.RPC("SetActiveUIElements", RpcTarget.AllBuffered);
             DeactivateAllMeshRenderers();
-            Debug.Log("<color=white><b>[TC_FeetInPlace.cs] LIFT CAN NOW BE RAISED.</b> All four feet are in place.</color>");
+            Debug.Log("<color=white>[TC_FeetInPlace.cs] Lift can now be raised. All four feet are in place.</color>");
         }
         else
         {
@@ -52,6 +52,7 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
         {
             UI_ProgressTask.transform.gameObject.SetActive(true);
             FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
+            FindObjectOfType<ProgressChecker>().ChangePercentageTo(25);
             UI_ProgressTaskComplete = true;
         }
     }
