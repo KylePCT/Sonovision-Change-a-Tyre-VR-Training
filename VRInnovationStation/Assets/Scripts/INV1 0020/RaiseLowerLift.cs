@@ -61,6 +61,7 @@ public class RaiseLowerLift : MonoBehaviour
         IsRaising = false;
         IsLowering = false;
 
+        //Auto-generate limits based on current position.
         LowestPositionLimit = LowestPositionLimit + Lift.transform.position.y;
         HighestPositionLimit = HighestPositionLimit + Lift.transform.position.y;
         TargetHeightToRemoveWheel = TargetHeightToRemoveWheel + Lift.transform.position.y;
@@ -69,9 +70,11 @@ public class RaiseLowerLift : MonoBehaviour
         Lift.transform.position = tempLow;
     }
 
+    //When the trigger is entered, check what values are correct and run the appropriate code.
     void OnTriggerEnter(Collider collision)
     {
         Debug.Log(collision.gameObject.tag);
+        //If 'raise' is selected.
         if (collision.gameObject.tag == "Player" && MakeLiftRaise == true)
         {
             IsRaising = true;
@@ -79,6 +82,7 @@ public class RaiseLowerLift : MonoBehaviour
             Debug.Log("Raising Lift.");
         }
 
+        //If 'lower' is selected.
         else if (collision.gameObject.tag == "Player" && MakeLiftLower == true)
         {
             if (EnableLift.LiftCanMove == true)
@@ -97,6 +101,7 @@ public class RaiseLowerLift : MonoBehaviour
         }
     }
 
+    //Reset values when buttons are not pressed through the trigger.
     private void OnTriggerExit(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -132,22 +137,22 @@ public class RaiseLowerLift : MonoBehaviour
             ButtonConfirmationIndication.GetComponent<MeshRenderer>().material = WheelCanBeMoved;
             UI_LiftIsRaisedTaskButton.SetActive(true);
             m_photonView.RPC("SetActiveUIElements", RpcTarget.AllBuffered);
-
         }
         else
         {
             CanRemoveWheel = false;
             ButtonConfirmationIndication.GetComponent<MeshRenderer>().material = WheelCantBeMoved;
+
             UI_LiftIsRaisedTaskButton.SetActive(false);
         }
     }
 
+    //Raise lift position and set RPC values for multiplayer UI;
     public void RaiseLift()
     {
         if (Lift.transform.position.y < HighestPositionLimit && TaskCheck.AreAllFeetInPlace)
         {
             ButtonRaise.GetComponent<MeshRenderer>().material = WheelCanBeMoved;
-            m_photonView.RPC("SetActiveUIElements", RpcTarget.AllBuffered);
 
             ButtonLower.GetComponent<MeshRenderer>().material = DefaultMat;
             Lift.transform.position += (Vector3.up * LiftSpeed * Time.deltaTime);
@@ -155,6 +160,7 @@ public class RaiseLowerLift : MonoBehaviour
         }
     }
 
+    //Lower lift position.
     public void LowerLift()
     {
         if (Lift.transform.position.y > LowestPositionLimit && TaskCheck.AreAllFeetInPlace)
@@ -192,6 +198,7 @@ public class RaiseLowerLift : MonoBehaviour
         }
     }
 
+    //Photon multiplayer; sync UI and SFX.
     [PunRPC]
     void SetActiveUIElements()
     {
@@ -199,6 +206,7 @@ public class RaiseLowerLift : MonoBehaviour
         {
             UI_LiftIsRaisedTaskButton.transform.gameObject.SetActive(true);
             FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
+            FindObjectOfType<ProgressChecker>().ChangePercentageTo(30);
             UI_ProgressTaskComplete = true;
         }
     }

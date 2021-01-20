@@ -18,14 +18,9 @@ public class MoveableArms : MonoBehaviour
         ArmHandle.GetComponent<BoxCollider>().enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter(Collider other)
     {
+        //If the gameObject is the hidden collision, allow the arms to move.
         if (other.gameObject.tag == "HiddenCollision")
         {
             ArmsCanMove = true;
@@ -36,6 +31,7 @@ public class MoveableArms : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        //If the gameObject is the hidden collision, allow the arms to move.
         if (other.gameObject.tag == "HiddenCollision")
         {
             ArmsCanMove = true;
@@ -46,16 +42,16 @@ public class MoveableArms : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         ArmsCanMove = false;
-        FindObjectOfType<AudioManager>().PlaySound("MetalClang");
         ArmHandle.GetComponent<BoxCollider>().enabled = false;
     }
 
+    //If the arms can be moved, allow their colliders to work and therefore be interacted with.
     public void MoveArms()
     {
         if (ArmsCanMove == true)
         {
             ArmHandle.GetComponent<BoxCollider>().enabled = true;
-            Debug.Log("Arms can be moved.");
+            //Debug.Log("Arms can be moved.");
         }
     }
 }

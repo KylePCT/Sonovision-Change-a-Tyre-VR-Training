@@ -50,6 +50,10 @@ MonoBehaviour:
   - SetActiveUIElements
   - UpdatePercentageDown
   - UpdatePercentageUp
+  - WheelRemovedTask
+  - WheelReplacedTask
+  - SetTo100
+  - UpdateProgress
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

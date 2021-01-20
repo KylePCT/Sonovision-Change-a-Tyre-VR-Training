@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class TC_GotPPE : MonoBehaviour
+public class TC_GotPPE : MonoBehaviourPunCallbacks
 {
     public GameObject Player;
     public GameObject PPE_Helmet;
     public GameObject PPE_HighVis;
+    public PhotonView m_photonView;
 
     [Space(10)]
 
@@ -44,6 +47,7 @@ public class TC_GotPPE : MonoBehaviour
     //Grab PPE when colliding.
     void OnTriggerEnter(Collider collision)
     {
+        //If the player grabs it...
         if (collision.gameObject.tag == "Player")
         {
             FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
@@ -53,8 +57,10 @@ public class TC_GotPPE : MonoBehaviour
                 GotHelmet = true;
                 Debug.Log("[Task Check] Player has picked up goggles; GotHelmet is now: " + GotHelmet + ".");
 
+                //Instantiate particles and set to unactive.
                 CheckPPE();
                 Instantiate(RemovedParticles, PPE_Helmet.transform.position, PPE_Helmet.transform.rotation);
+                m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBuffered);
                 PPE_Helmet.SetActive(false);
             }
 
@@ -65,6 +71,7 @@ public class TC_GotPPE : MonoBehaviour
 
                 CheckPPE();
                 Instantiate(RemovedParticles, PPE_HighVis.transform.position, PPE_HighVis.transform.rotation);
+                m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBuffered);
                 PPE_HighVis.SetActive(false);
             }
         }
@@ -75,8 +82,10 @@ public class TC_GotPPE : MonoBehaviour
         //When both PPE objects are attained, you can do VR things.
         if (GotHelmet || GotHighVis)
         {
+            //Debug check.
             Debug.Log("[Task Check] GotHelmet is " + GotHelmet + ". GotHighVis is " + GotHighVis + ".");
 
+            //If you have both PPE, allow interactions.
             if (GotHelmet && GotHighVis)
             {
                 Debug.Log("[Task Check] All PPE has been picked up.");
@@ -105,5 +114,12 @@ public class TC_GotPPE : MonoBehaviour
         {
             i.SetActive(true);
         }
+    }
+
+    //Photon progress RPCCall updates.
+    [PunRPC]
+    void UpdatePercentageUp()
+    {
+        FindObjectOfType<ProgressChecker>().IncreasePercentageBy(2);
     }
 }

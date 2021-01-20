@@ -555,6 +555,7 @@ MonoBehaviour:
   Player: {fileID: 3156596090749270751, guid: c6e23e0d1c6fa63488784625a6f721c4, type: 3}
   PPE_Helmet: {fileID: 1676642146}
   PPE_HighVis: {fileID: 6952441}
+  m_photonView: {fileID: 6952446}
   Instruction: {fileID: 1699754743}
   InstructionCanvas: {fileID: 1088331329}
   RemovedParticles: {fileID: 7897930186204489696, guid: fcc0098da4fd9ec43a818d75d72c79be,
@@ -579,12 +580,50 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
+--- !u!114 &6952446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6952441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 6952448}
+  viewIdField: 34
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!4 &6952447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 140344207029797049, guid: e7a9a0b480d91ad48888272d4bd94fd1,
     type: 3}
   m_PrefabInstance: {fileID: 6952440}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6952448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6952441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
 --- !u!1 &7221317
 GameObject:
   m_ObjectHideFlags: 0
@@ -2700,44 +2739,21 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 64409426}
   m_StartingSelectedInteractable: {fileID: 0}
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
+  m_OnHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -6506,10 +6522,23 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 214656350}
   viewIdField: 112
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &214656350 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8612607846671201738, guid: a1b14c3c403c09744b12c0aa70d2a43d,
+    type: 3}
+  m_PrefabInstance: {fileID: 214656346}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214656348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4e8cda9653e894e844b18f2d261ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &216469930
 GameObject:
   m_ObjectHideFlags: 0
@@ -6824,10 +6853,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9063388434545631223}
@@ -6842,7 +6871,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9063388434545631223}
@@ -6857,28 +6886,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9063388434545631223}
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: a5a3d55d440ae0d4a9fc14e699d9a9f6,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectExited:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -6954,10 +6968,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 180669660807605241}
@@ -6972,7 +6986,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 180669660807605241}
@@ -6987,28 +7001,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 180669660807605241}
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: a5a3d55d440ae0d4a9fc14e699d9a9f6,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectExited:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -7084,10 +7083,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8103105834680778658}
@@ -7102,7 +7101,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8103105834680778658}
@@ -7117,28 +7116,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8103105834680778658}
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: a5a3d55d440ae0d4a9fc14e699d9a9f6,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectExited:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -7214,10 +7198,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 479046720619281533}
@@ -7232,7 +7216,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 479046720619281533}
@@ -7247,28 +7231,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 479046720619281533}
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: a5a3d55d440ae0d4a9fc14e699d9a9f6,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectExited:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -7344,10 +7313,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3845659682283721212}
@@ -7362,7 +7331,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3845659682283721212}
@@ -7377,28 +7346,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3845659682283721212}
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: a5a3d55d440ae0d4a9fc14e699d9a9f6,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectExited:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -7474,10 +7428,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7513226367100759659}
@@ -7492,7 +7446,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7513226367100759659}
@@ -7507,28 +7461,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7513226367100759659}
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: a5a3d55d440ae0d4a9fc14e699d9a9f6,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectExited:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -7604,10 +7543,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1206727793614629923}
@@ -7622,7 +7561,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1206727793614629923}
@@ -7637,28 +7576,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1206727793614629923}
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: a5a3d55d440ae0d4a9fc14e699d9a9f6,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectExited:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -7734,10 +7658,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9038933829154947503}
@@ -7752,14 +7676,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9038933829154947503}
         m_MethodName: set_material
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 71be90c4a15b1614093268a2fed1e350,
+          m_ObjectArgument: {fileID: 2100000, guid: b408b11db7de0be4487e8f72d5f3af22,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
@@ -7767,28 +7691,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9038933829154947503}
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 71be90c4a15b1614093268a2fed1e350,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectExited:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -8567,22 +8476,21 @@ MonoBehaviour:
     m_Bits: 2304
   m_AttachTransform: {fileID: 953327246}
   m_StartingSelectedInteractable: {fileID: 230662960}
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 0.008
   m_RecycleDelayTime: 1
@@ -9021,6 +8929,7 @@ MonoBehaviour:
   Col_RightFrontArmPlace: {fileID: 2075467950}
   Col_RightBackArmPlace: {fileID: 1981820745}
   UI_ProgressTask: {fileID: 1808098906}
+  whManager: {fileID: 2123629107}
   AreAllFeetInPlace: 0
 --- !u!114 &289380363
 MonoBehaviour:
@@ -9138,44 +9047,21 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 301706595}
   m_StartingSelectedInteractable: {fileID: 0}
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
+  m_OnHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -15722,82 +15608,22 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 542674996}
-        m_MethodName: MakeRaise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8305816732082186878}
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 8d1483e560a1ec74597f52711f7617fb,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 542674996}
-        m_MethodName: StopMoving
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 542674994}
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 64fc72ed41a1f5e4bb52b8b8cc5b45ab,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 542674996}
-        m_MethodName: StopMoving
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectCanceled:
+  m_OnLastHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -16490,17 +16316,17 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 552228464}
         m_MethodName: set_material
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: ea137c69eb693ab4592fdaaa5a39e4d8,
+          m_ObjectArgument: {fileID: 2100000, guid: 8d1483e560a1ec74597f52711f7617fb,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
@@ -16508,7 +16334,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 552228464}
@@ -16523,16 +16349,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -17956,82 +17779,22 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 581542702}
-        m_MethodName: MakeLower
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8809334602842793026}
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 8d1483e560a1ec74597f52711f7617fb,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 581542702}
-        m_MethodName: StopMoving
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 581542705}
-        m_MethodName: set_material
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 64fc72ed41a1f5e4bb52b8b8cc5b45ab,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 581542702}
-        m_MethodName: StopMoving
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectCanceled:
+  m_OnLastHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -18957,10 +18720,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 597546481}
@@ -18975,7 +18738,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 597546481}
@@ -18990,16 +18753,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -19120,6 +18880,7 @@ MonoBehaviour:
   InSlot: 1
   WrenchManager: {fileID: 1340159584}
   WheelManager: {fileID: 2123629107}
+  m_photonView: {fileID: 0}
 --- !u!114 &597546484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22058,6 +21819,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   m_photonView: {fileID: 678850242}
   CollisionBox: {fileID: 678850236}
+  wheelManager: {fileID: 2123629107}
 --- !u!114 &678850242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26313,17 +26075,17 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 832914307}
         m_MethodName: set_material
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: ea137c69eb693ab4592fdaaa5a39e4d8,
+          m_ObjectArgument: {fileID: 2100000, guid: 8d1483e560a1ec74597f52711f7617fb,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
@@ -26331,7 +26093,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 832914307}
@@ -26346,16 +26108,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -28747,47 +28506,46 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2304
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2100000, guid: 8d1483e560a1ec74597f52711f7617fb, type: 2}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917096461}
+        m_MethodName: set_material
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 2100000, guid: 8d1483e560a1ec74597f52711f7617fb,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2100000, guid: e161c2140b32df646a268b9454dbe947, type: 2}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 917096461}
+        m_MethodName: set_material
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 2100000, guid: f95f4c3215738f24cab80b29b1cd14ae,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -32841,17 +32599,17 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1046173000}
         m_MethodName: set_material
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: ea137c69eb693ab4592fdaaa5a39e4d8,
+          m_ObjectArgument: {fileID: 2100000, guid: 8d1483e560a1ec74597f52711f7617fb,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
@@ -32859,7 +32617,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1046173000}
@@ -32874,16 +32632,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -35456,44 +35211,21 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 1120458755}
   m_StartingSelectedInteractable: {fileID: 0}
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
+  m_OnHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -36617,10 +36349,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1146372668}
@@ -36635,7 +36367,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1146372668}
@@ -36650,16 +36382,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -36780,6 +36509,7 @@ MonoBehaviour:
   InSlot: 1
   WrenchManager: {fileID: 1340159584}
   WheelManager: {fileID: 2123629107}
+  m_photonView: {fileID: 0}
 --- !u!114 &1146372671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39037,7 +38767,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: -1
-  m_Mesh: {fileID: -5285379327019731616, guid: 0d9fb5360a1d9714d9c5b1132fa95109, type: 3}
+  m_Mesh: {fileID: -8525263101022833912, guid: c441c40632595f34587356dd18bb0a31, type: 3}
 --- !u!114 &1209366465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39056,10 +38786,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1209366467}
@@ -39074,18 +38804,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2123629107}
-        m_MethodName: AreAllBoltsRemoved
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1209366467}
@@ -39100,27 +38819,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8970699921859665985}
-        m_MethodName: SnapWheel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -42356,6 +42061,7 @@ MonoBehaviour:
   CorrectBit: {fileID: 8738323851788419155}
   TheBitIsCorrect: 0
   UI_TaskComplete_CorrectBit: {fileID: 1735423516}
+  m_photonView: {fileID: 1340159585}
 --- !u!114 &1340159585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43186,25 +42892,22 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -44302,6 +44005,16 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 0.30699998
       objectReference: {fileID: 0}
+    - target: {fileID: 8611496501341684564, guid: 63b0595c0794a5748ad0cfd4649f69c6,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611496501341684565, guid: 63b0595c0794a5748ad0cfd4649f69c6,
+        type: 3}
+      propertyPath: m_OnHoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d1483e560a1ec74597f52711f7617fb, type: 2}
     - target: {fileID: 8611496501341684584, guid: 63b0595c0794a5748ad0cfd4649f69c6,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -44342,6 +44055,11 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8611496502238988198, guid: 63b0595c0794a5748ad0cfd4649f69c6,
+        type: 3}
+      propertyPath: m_OnHoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d1483e560a1ec74597f52711f7617fb, type: 2}
     - target: {fileID: 8611496502238988199, guid: 63b0595c0794a5748ad0cfd4649f69c6,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -44356,6 +44074,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: 1.9190001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611496502238988217, guid: 63b0595c0794a5748ad0cfd4649f69c6,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8611496502238988221, guid: 63b0595c0794a5748ad0cfd4649f69c6,
         type: 3}
@@ -44548,7 +44271,11 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 1437246293}
+  - {fileID: 1437246292}
+  - {fileID: 1437246300}
+  - {fileID: 1437246299}
   viewIdField: 102
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -47845,6 +47572,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   m_photonView: {fileID: 1577364000}
   CollisionBox: {fileID: 1577363994}
+  wheelManager: {fileID: 2123629107}
 --- !u!114 &1577364000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51328,6 +51056,7 @@ MonoBehaviour:
   Player: {fileID: 3156596090749270751, guid: c6e23e0d1c6fa63488784625a6f721c4, type: 3}
   PPE_Helmet: {fileID: 1676642146}
   PPE_HighVis: {fileID: 6952441}
+  m_photonView: {fileID: 1676642151}
   Instruction: {fileID: 1699754743}
   InstructionCanvas: {fileID: 1088331329}
   RemovedParticles: {fileID: 7897930186204489696, guid: fcc0098da4fd9ec43a818d75d72c79be,
@@ -51352,12 +51081,50 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
+--- !u!114 &1676642151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676642146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 1676642153}
+  viewIdField: 33
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!4 &1676642152 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 477596468737791124, guid: b8f377efc3b8ea041bf59976ea8a1baa,
     type: 3}
   m_PrefabInstance: {fileID: 1676642145}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1676642153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676642146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
 --- !u!1 &1686133654
 GameObject:
   m_ObjectHideFlags: 0
@@ -51663,10 +51430,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1696579642}
@@ -51681,7 +51448,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1696579642}
@@ -51696,16 +51463,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -51826,6 +51590,7 @@ MonoBehaviour:
   InSlot: 1
   WrenchManager: {fileID: 1340159584}
   WheelManager: {fileID: 2123629107}
+  m_photonView: {fileID: 0}
 --- !u!114 &1696579645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52064,6 +51829,16 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 2.0800002
       objectReference: {fileID: 0}
+    - target: {fileID: 8611496501341684564, guid: 63b0595c0794a5748ad0cfd4649f69c6,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611496501341684565, guid: 63b0595c0794a5748ad0cfd4649f69c6,
+        type: 3}
+      propertyPath: m_OnHoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d1483e560a1ec74597f52711f7617fb, type: 2}
     - target: {fileID: 8611496501341684584, guid: 63b0595c0794a5748ad0cfd4649f69c6,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -52104,6 +51879,11 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8611496502238988198, guid: 63b0595c0794a5748ad0cfd4649f69c6,
+        type: 3}
+      propertyPath: m_OnHoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d1483e560a1ec74597f52711f7617fb, type: 2}
     - target: {fileID: 8611496502238988199, guid: 63b0595c0794a5748ad0cfd4649f69c6,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -52118,6 +51898,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: 3.6920004
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611496502238988217, guid: 63b0595c0794a5748ad0cfd4649f69c6,
+        type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8611496502238988221, guid: 63b0595c0794a5748ad0cfd4649f69c6,
         type: 3}
@@ -52258,7 +52043,11 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 1711941157}
+  - {fileID: 1711941156}
+  - {fileID: 1711941168}
+  - {fileID: 1711941167}
   viewIdField: 105
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -52280,10 +52069,62 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 1711941159}
+  - {fileID: 1711941158}
+  - {fileID: 1711941170}
+  - {fileID: 1711941169}
   viewIdField: 104
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &1711941167 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5474162292196677694, guid: 63b0595c0794a5748ad0cfd4649f69c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1711941154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1711941168 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3887221991462716839, guid: 63b0595c0794a5748ad0cfd4649f69c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1711941154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711941163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1711941169 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 372220393549222018, guid: 63b0595c0794a5748ad0cfd4649f69c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1711941154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1711941170 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5064082899506615470, guid: 63b0595c0794a5748ad0cfd4649f69c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1711941154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711941164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1712390111
 GameObject:
   m_ObjectHideFlags: 0
@@ -58879,44 +58720,21 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 1939141366}
   m_StartingSelectedInteractable: {fileID: 0}
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
+  m_OnHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -60258,6 +60076,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   m_photonView: {fileID: 1981820751}
   CollisionBox: {fileID: 1981820745}
+  wheelManager: {fileID: 2123629107}
 --- !u!114 &1981820751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62491,17 +62310,17 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1987909298}
         m_MethodName: set_material
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: ea137c69eb693ab4592fdaaa5a39e4d8,
+          m_ObjectArgument: {fileID: 2100000, guid: 8d1483e560a1ec74597f52711f7617fb,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
@@ -62509,7 +62328,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1987909298}
@@ -62524,16 +62343,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -65425,6 +65241,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   m_photonView: {fileID: 2075467956}
   CollisionBox: {fileID: 2075467950}
+  wheelManager: {fileID: 2123629107}
 --- !u!114 &2075467956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65590,25 +65407,22 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -67134,6 +66948,7 @@ GameObject:
   - component: {fileID: 2123629106}
   - component: {fileID: 2123629107}
   - component: {fileID: 2123629108}
+  - component: {fileID: 2123629109}
   m_Layer: 0
   m_Name: WheelManager
   m_TagString: Untagged
@@ -67168,7 +66983,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WrenchManager: {fileID: 1340159584}
-  WheelSnap: {fileID: 0}
+  WheelSnap: {fileID: 8970699921859665985}
+  m_photonView: {fileID: 2123629108}
   WheelMain: {fileID: 4821047634440765551}
   WheelBreakDisk: {fileID: 8970699921859665984}
   WheelBoltsManager: {fileID: 524355017}
@@ -67195,10 +67011,26 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 2123629109}
   viewIdField: 21
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &2123629109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123629105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
 --- !u!1 &2125311313
 GameObject:
   m_ObjectHideFlags: 0
@@ -67637,10 +67469,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2141997201}
@@ -67655,7 +67487,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2141997201}
@@ -67670,16 +67502,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -67800,6 +67629,7 @@ MonoBehaviour:
   InSlot: 1
   WrenchManager: {fileID: 1340159584}
   WheelManager: {fileID: 2123629107}
+  m_photonView: {fileID: 0}
 --- !u!114 &2141997204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67933,44 +67763,21 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 2146575588}
   m_StartingSelectedInteractable: {fileID: 0}
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
+  m_OnHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -71424,44 +71231,21 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 6549425420857522190}
   m_StartingSelectedInteractable: {fileID: 6309427354559235445}
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
+  m_OnHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -71836,44 +71620,21 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 2294758768488545076}
   m_StartingSelectedInteractable: {fileID: 1146372666}
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
+  m_OnHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -73024,11 +72785,21 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.x
       value: -0.00058662816
       objectReference: {fileID: 0}
+    - target: {fileID: 7961216997061852910, guid: dfc9c018e09e42d44a86cff7dc6a3de9,
+        type: 3}
+      propertyPath: m_OnHoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d1483e560a1ec74597f52711f7617fb, type: 2}
     - target: {fileID: 7961216997320298932, guid: dfc9c018e09e42d44a86cff7dc6a3de9,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -0.00058674737
       objectReference: {fileID: 0}
+    - target: {fileID: 7961216997320298933, guid: dfc9c018e09e42d44a86cff7dc6a3de9,
+        type: 3}
+      propertyPath: m_OnHoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d1483e560a1ec74597f52711f7617fb, type: 2}
     - target: {fileID: 7961216997320298939, guid: dfc9c018e09e42d44a86cff7dc6a3de9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -73039,6 +72810,11 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.x
       value: -0.00058630033
       objectReference: {fileID: 0}
+    - target: {fileID: 7961216997355845041, guid: dfc9c018e09e42d44a86cff7dc6a3de9,
+        type: 3}
+      propertyPath: m_OnHoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d1483e560a1ec74597f52711f7617fb, type: 2}
     - target: {fileID: 7961216997355845070, guid: dfc9c018e09e42d44a86cff7dc6a3de9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -73049,6 +72825,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -1.938
       objectReference: {fileID: 0}
+    - target: {fileID: 7961216998200186044, guid: dfc9c018e09e42d44a86cff7dc6a3de9,
+        type: 3}
+      propertyPath: m_OnHoverEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d1483e560a1ec74597f52711f7617fb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfc9c018e09e42d44a86cff7dc6a3de9, type: 3}
 --- !u!1 &3432739471209155602 stripped
@@ -74221,7 +74002,10 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 3795724748890271006}
+  - {fileID: 3795724748890271007}
+  - {fileID: 3795724748890271008}
   viewIdField: 85
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -75430,10 +75214,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2304
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2644115025489321573}
@@ -75448,18 +75232,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2123629107}
-        m_MethodName: AreAllBoltsRemoved
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2644115025489321573}
@@ -75474,16 +75247,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -76956,44 +76726,21 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 3838253190523526369}
   m_StartingSelectedInteractable: {fileID: 1696579640}
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
+  m_OnHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -77496,10 +77243,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1716698753}
@@ -77514,7 +77261,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1716698753}
@@ -77529,16 +77276,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -77902,10 +77646,10 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4961938494535269068}
@@ -77920,7 +77664,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4961938494535269068}
@@ -77935,16 +77679,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -78031,6 +77772,7 @@ MonoBehaviour:
   InSlot: 1
   WrenchManager: {fileID: 1340159584}
   WheelManager: {fileID: 2123629107}
+  m_photonView: {fileID: 0}
 --- !u!114 &6309427354559235449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78518,25 +78260,22 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -79815,44 +79554,21 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 3882558207353111117}
   m_StartingSelectedInteractable: {fileID: 2141997199}
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
+  m_OnHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -81158,44 +80874,21 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 5334912400764031137}
   m_StartingSelectedInteractable: {fileID: 597546479}
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnSelectEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
+  m_OnHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -81566,22 +81259,21 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 362427377}
   m_StartingSelectedInteractable: {fileID: 0}
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 3061f984ad92e73418b6a94cfaa21288,
     type: 2}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1

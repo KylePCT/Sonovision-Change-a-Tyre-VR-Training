@@ -7,6 +7,7 @@ public class RandomColour : MonoBehaviourPunCallbacks
 {
     private Color randomColour;
 
+    //Avatar components.
     public GameObject head;
     public GameObject body;
     public GameObject leftHand;

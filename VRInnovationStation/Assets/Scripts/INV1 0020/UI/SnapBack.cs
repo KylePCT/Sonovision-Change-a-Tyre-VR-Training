@@ -17,9 +17,11 @@ public class SnapBack : MonoBehaviour
 
     private void Awake()
     {
+        //Get the objects.
         Player = GameObject.FindGameObjectWithTag("Player");
         Tablet = GameObject.FindGameObjectWithTag("Tablet");
 
+        //Get the transform values.
         playerPos = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);
         tabletPos = new Vector3(Tablet.transform.position.x, Tablet.transform.position.y, Tablet.transform.position.z);
     }
@@ -27,14 +29,17 @@ public class SnapBack : MonoBehaviour
     //Reactivate can be called and the tablet will snap back.
     public void ReactivateUI()
     {
+        //Position checks.
         playerPos = Player.transform.position;
         Tablet.SetActive(true);
         Tablet.transform.position = Vector3.Lerp(playerPos, tabletPos, fraction);
 
+        //Rotation checks.
         Vector3 direction = Player.transform.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(-direction);
         Tablet.transform.rotation = rotation;
 
+        //Spawn particles and move tablet.
         Instantiate(SpawnParticles, Tablet.transform.position, Tablet.transform.rotation);
         tabletPos = Tablet.transform.position;
     }

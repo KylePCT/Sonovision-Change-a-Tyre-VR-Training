@@ -16,12 +16,6 @@ public class MovementController : MonoBehaviour
     public GameObject mainVRPlayer;
     public GameObject XRRigGameobject;
 
-    //Start is called before the first frame update.
-    void Start()
-    {
-
-    }
-
     private void OnEnable()
     {
         teleportationProvider.endLocomotion += onEndLocomotion;

@@ -17,6 +17,7 @@ public class HandButton : XRBaseInteractable
     private float previousHandHeight = 0.0f;
     private XRBaseInteractor hoverInteractor = null;
 
+    //Add in hover events to allow the button to detect the collision from the player.
     protected override void Awake()
     {
         base.Awake();
@@ -24,12 +25,14 @@ public class HandButton : XRBaseInteractable
         onHoverExit.AddListener(EndPress);
     }
 
+    //Remove listeners for clean-up.
     protected void OnDestroy()
     {
         onHoverEnter.RemoveListener(StartPress);
         onHoverExit.RemoveListener(EndPress);
     }
 
+    //When the press begins; assign the interactor.
     private void StartPress(XRBaseInteractor interactor)
     {
         hoverInteractor = interactor;
@@ -38,6 +41,7 @@ public class HandButton : XRBaseInteractable
         previousHandHeight = GetLocalYPosition(hoverInteractor.transform.position);
     }
 
+    //When the press ends; unassign the interactor.
     private void EndPress(XRBaseInteractor interactor)
     {
         hoverInteractor = null;
@@ -53,6 +57,7 @@ public class HandButton : XRBaseInteractable
         SetMinMax();
     }
 
+    //Sets the minimum and maximum values to use as a range dependant on its start location; saves editing inspector values each time.
     private void SetMinMax()
     {
         Collider collider = GetComponent<Collider>();
@@ -60,6 +65,7 @@ public class HandButton : XRBaseInteractable
         yMax = transform.localPosition.y;
     }
 
+    //Check if the hand value is in the correct place and then check if it has been pressed.
     public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
     {
         if(hoverInteractor)

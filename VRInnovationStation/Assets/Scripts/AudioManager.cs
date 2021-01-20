@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
+        //Allows only one to run.
         if (instance == null)
         {
             instance = this;
@@ -23,8 +24,10 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        //DDoL so we don't haev to keep instantiating.
         DontDestroyOnLoad(gameObject);
 
+        //Set values for every Sound in our array.
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -37,6 +40,8 @@ public class AudioManager : MonoBehaviour
             s.source.playOnAwake = s.playOnAwake;
         }
     }
+
+    //Play a sound dependant on its name. => public call method called using "FindObjectOfType<AudioManager>().PlaySound("name");"
 
     public void PlaySound(string name)
     {
@@ -51,6 +56,8 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
+    //Public sound calls.
+    #region Sounds
     public void UISound_Forward()
     {
         FindObjectOfType<AudioManager>().PlaySound("UI_Select_Forward");
@@ -65,4 +72,5 @@ public class AudioManager : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().PlaySound("UI_Select_Normal");
     }
+    #endregion
 }

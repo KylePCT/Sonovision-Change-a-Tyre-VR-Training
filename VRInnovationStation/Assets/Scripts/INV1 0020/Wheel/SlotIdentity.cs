@@ -20,6 +20,7 @@ public class SlotIdentity : MonoBehaviour
 
     private void Start()
     {
+        //If the slot is on the wheel, set the socket to inactive.
         if (SlotType == 0)
         {
             GetComponent<XRSocketInteractor>().enabled = false;
@@ -28,6 +29,7 @@ public class SlotIdentity : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
+        //If the slot is in contact with a bolt, allow it to attach to the socket.
         if (col.tag == "Bolts")
         {
             if (WheelManager.CanNewWheelBeAttached == true)

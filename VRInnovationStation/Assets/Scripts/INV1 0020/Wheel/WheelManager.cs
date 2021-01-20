@@ -5,11 +5,12 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using Photon.Pun;
 
-public class WheelManager : MonoBehaviour
+public class WheelManager : MonoBehaviourPunCallbacks
 {
     [Header("Script References")]
     public WrenchManager WrenchManager;
     public SnapNewWheel WheelSnap;
+    public PhotonView m_photonView;
 
     [Header("Object References")]
     public GameObject WheelMain;
@@ -33,6 +34,7 @@ public class WheelManager : MonoBehaviour
         WheelMainBoltHoles = GameObject.FindGameObjectsWithTag("WheelBoltHoles");
         WheelBreakBoltHoles = GameObject.FindGameObjectsWithTag("BreakBoltHoles");
         WheelMain.GetComponent<MeshCollider>().enabled = false;
+        IsNewWheelAttached = false;
 
         SortBoltArrays();
 
@@ -60,6 +62,7 @@ public class WheelManager : MonoBehaviour
         CanNewWheelBeAttached = true;
         WheelSnap.CanSnap = true;
         Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel can now be removed.");
+        m_photonView.RPC("WheelRemovedTask", RpcTarget.AllBuffered); //Photon for percentage sets.
     }
 
     //Checks if the slots all have bolts. This would be called after you have put the new wheel on.
@@ -69,6 +72,7 @@ public class WheelManager : MonoBehaviour
         {
             for (int i = 0; i < Bolts.Length; i++)
             {
+                //If any of the bolts in the array are not in slot, call return.
                 if (Bolts[i].GetComponent<BoltIdentity>().InSlot == false)
                 {
                     Debug.Log("<color=orange>[WheelManager.cs]</color> Task not completed, one or more bolts are still needed.");
@@ -79,6 +83,7 @@ public class WheelManager : MonoBehaviour
 
             IsNewWheelAttached = true;
             Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel has all bolts and task is complete.");
+            m_photonView.RPC("WheelReplacedTask", RpcTarget.AllBuffered); //Photon for percentage sets.
         }
     }
 
@@ -88,5 +93,18 @@ public class WheelManager : MonoBehaviour
         Bolts = Bolts.OrderBy(c => c.name).ToArray();
         WheelMainBoltHoles = WheelMainBoltHoles.OrderBy(c => c.name).ToArray();
         WheelBreakBoltHoles = WheelBreakBoltHoles.OrderBy(c => c.name).ToArray();
+    }
+
+    //PunRPC calls for percentage changes.
+    [PunRPC]
+    void WheelRemovedTask()
+    {
+        FindObjectOfType<ProgressChecker>().ChangePercentageTo(55);
+    }
+
+    [PunRPC]
+    void WheelReplacedTask()
+    {
+        FindObjectOfType<ProgressChecker>().ChangePercentageTo(90);
     }
 }

@@ -6,10 +6,12 @@ public class AssignCanvasEventCamera : MonoBehaviour
 {
     void Awake()
     {
+        //Find the canvas.
         Canvas canvas = this.GetComponent<Canvas>();
 
         Debug.Log("Canvas: " + canvas + "; Canvas Camera: " +  canvas.worldCamera + ".");
 
+        //If the canvas has no camera, find it.
         if (canvas.worldCamera == null)
         {
             Debug.Log("Camera not found. Initializing XR Camera...");
@@ -17,6 +19,7 @@ public class AssignCanvasEventCamera : MonoBehaviour
         }
     }
 
+    //Attach the main camera as the world Camera.
     public void AttachCamera()
     {
         Canvas canvas = this.GetComponent<Canvas>();

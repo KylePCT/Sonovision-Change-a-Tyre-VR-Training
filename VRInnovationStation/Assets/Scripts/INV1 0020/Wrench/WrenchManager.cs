@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using Photon.Pun;
 
-public class WrenchManager : MonoBehaviour, Photon.Pun.IPunObservable
+public class WrenchManager : MonoBehaviourPunCallbacks, Photon.Pun.IPunObservable
 {
     [Header("Object References")]
     public GameObject PneumaticWrench;
@@ -28,11 +28,13 @@ public class WrenchManager : MonoBehaviour, Photon.Pun.IPunObservable
 
     [Header("UI")]
     public GameObject UI_TaskComplete_CorrectBit;
+    public PhotonView m_photonView;
 
 
     // Update is called once per frame
     void Update()
     {
+        //Check to see if a check is neccessary.
         if (DoesBitNeedCheck == true)
         {
             CheckForBit();
@@ -49,6 +51,7 @@ public class WrenchManager : MonoBehaviour, Photon.Pun.IPunObservable
         }
     }
 
+    //Check to see if there is a bit present in the wrench.
     public void CheckForBit()
     {
         if (BitSocket.GetComponent<XRSocketInteractor>().selectTarget.gameObject != null)
@@ -61,17 +64,21 @@ public class WrenchManager : MonoBehaviour, Photon.Pun.IPunObservable
         }
     }
 
+    //Check is the bit is correct.
     public void IsBitCorrect()
     {
+        //Checks if a bit is present in the wrench...
         if (IsThereABitInSocket == true)
         {
-            if (BitInSocket == CorrectBit && TheBitIsCorrect == false)
+            //If the socket contains the right bit...
+            if (BitInSocket == CorrectBit && TheBitIsCorrect == false) //TheBitIsCorrect checks if it has been stated to be correct by this system; allows 1 time use.
             {
                 //Great success. Unscrew the thing or send another bool to allow it to happen with collision.
                 CorrectBit.GetComponent<XRSocketInteractor>().enabled = true;
                 DoesBitNeedCheck = false;
                 Debug.Log("<color=yellow>[WrenchManager.cs] </color> Correct bit is in socket.");
                 TheBitIsCorrect = true;
+                m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBuffered); //Photon.
                 UI_TaskComplete_CorrectBit.SetActive(true);
             }
             else
@@ -102,5 +109,18 @@ public class WrenchManager : MonoBehaviour, Photon.Pun.IPunObservable
             //this.BitInSocket = (GameObject)stream.ReceiveNext();
             this.TheBitIsCorrect = (bool)stream.ReceiveNext();
         }
+    }
+
+    //Photon progress RPCCall updates.
+    [PunRPC]
+    void UpdatePercentageUp()
+    {
+        FindObjectOfType<ProgressChecker>().IncreasePercentageBy(5);
+    }
+
+    [PunRPC]
+    void UpdatePercentageDown()
+    {
+        FindObjectOfType<ProgressChecker>().DecreasePercentageBy(5);
     }
 }
