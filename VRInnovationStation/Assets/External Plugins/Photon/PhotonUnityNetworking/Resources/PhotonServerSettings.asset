@@ -54,6 +54,7 @@ MonoBehaviour:
   - WheelReplacedTask
   - SetTo100
   - UpdateProgress
+  - IncreaseProgress
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

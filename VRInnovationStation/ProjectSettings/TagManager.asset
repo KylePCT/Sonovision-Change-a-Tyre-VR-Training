@@ -14,6 +14,7 @@ TagManager:
   - Tablet
   - Chassis_Foot
   - UI_Menu
+  - Player_FT
   layers:
   - Default
   - TransparentFX

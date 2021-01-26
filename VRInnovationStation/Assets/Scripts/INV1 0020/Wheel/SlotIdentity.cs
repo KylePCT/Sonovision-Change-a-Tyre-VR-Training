@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using Photon.Pun;
 
-public class SlotIdentity : MonoBehaviour
+public class SlotIdentity : MonoBehaviourPunCallbacks
 {
     [Header("Identity")]
     public int SlotNumber;
@@ -17,6 +17,7 @@ public class SlotIdentity : MonoBehaviour
 
     public WheelManager WheelManager;
     public WrenchManager WrenchManager;
+    public PhotonView m_photonView;
 
     private void Start()
     {
@@ -38,6 +39,7 @@ public class SlotIdentity : MonoBehaviour
                 {
                     //Slots for bolts are now active on the new wheel.
                     GetComponent<XRSocketInteractor>().enabled = true;
+                    m_photonView.RPC("IncreaseProgress", RpcTarget.AllBuffered); //Photon for percentage sets.
                 }
             }
             else
@@ -46,5 +48,11 @@ public class SlotIdentity : MonoBehaviour
                 Debug.Log("<color=orange>[SlotIdentity.cs]</color> New wheel is not yet attached.");
             }
         }
+    }
+
+    [PunRPC]
+    void IncreaseProgress()
+    {
+        FindObjectOfType<ProgressChecker>().IncreasePercentageBy(2);
     }
 }

@@ -75,20 +75,24 @@ public class RaiseLowerLift : MonoBehaviour
     {
         Debug.Log(collision.gameObject.tag);
         //If 'raise' is selected.
-        if (collision.gameObject.tag == "Player" && MakeLiftRaise == true)
+        if (collision.gameObject.tag == "Player_FT" && MakeLiftRaise == true)
         {
             IsRaising = true;
             IsLowering = false;
+            FindObjectOfType<AudioManager>().PlaySound("CarLiftMoving");
+
             Debug.Log("Raising Lift.");
         }
 
         //If 'lower' is selected.
-        else if (collision.gameObject.tag == "Player" && MakeLiftLower == true)
+        else if (collision.gameObject.tag == "Player_FT" && MakeLiftLower == true)
         {
             if (EnableLift.LiftCanMove == true)
             {
                 IsLowering = true;
                 IsRaising = false;
+                FindObjectOfType<AudioManager>().PlaySound("CarLiftMoving");
+
                 Debug.Log("Lowering Lift.");
             }
             else
@@ -104,12 +108,14 @@ public class RaiseLowerLift : MonoBehaviour
     //Reset values when buttons are not pressed through the trigger.
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player_FT")
         {
             IsRaising = false;
             IsLowering = false;
             ButtonRaise.GetComponent<MeshRenderer>().material = DefaultMat;
             ButtonLower.GetComponent<MeshRenderer>().material = DefaultMat;
+            FindObjectOfType<AudioManager>().PlaySound("CarLiftStop");
+
             Debug.Log("Stopped moving.");
         }
     }
@@ -142,8 +148,6 @@ public class RaiseLowerLift : MonoBehaviour
         {
             CanRemoveWheel = false;
             ButtonConfirmationIndication.GetComponent<MeshRenderer>().material = WheelCantBeMoved;
-
-            UI_LiftIsRaisedTaskButton.SetActive(false);
         }
     }
 
@@ -156,7 +160,13 @@ public class RaiseLowerLift : MonoBehaviour
 
             ButtonLower.GetComponent<MeshRenderer>().material = DefaultMat;
             Lift.transform.position += (Vector3.up * LiftSpeed * Time.deltaTime);
+
             UI_LiftIsRaisedTaskButton.SetActive(true);
+        }
+
+        else
+        {
+            FindObjectOfType<AudioManager>().StopPlaying("CarLiftMoving");
         }
     }
 
@@ -168,10 +178,16 @@ public class RaiseLowerLift : MonoBehaviour
             ButtonLower.GetComponent<MeshRenderer>().material = WheelCanBeMoved;
             ButtonRaise.GetComponent<MeshRenderer>().material = DefaultMat;
 
+            //If the lever is down...
             if (EnableLift.LiftCanMove == true)
             {
                 Lift.transform.position += (Vector3.down * LiftSpeed * Time.deltaTime);
             }
+        }
+
+        else
+        {
+            FindObjectOfType<AudioManager>().StopPlaying("CarLiftMoving");
         }
     }
 

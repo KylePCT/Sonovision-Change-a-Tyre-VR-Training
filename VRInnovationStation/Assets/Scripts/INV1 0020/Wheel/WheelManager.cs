@@ -16,6 +16,7 @@ public class WheelManager : MonoBehaviourPunCallbacks
     public GameObject WheelMain;
     public GameObject WheelBreakDisk;
     public GameObject WheelBoltsManager;
+    public GameObject NewWheel;
 
     [Header("Bolts")]
     public GameObject[] Bolts;
@@ -57,7 +58,8 @@ public class WheelManager : MonoBehaviourPunCallbacks
             }
         }
 
-        WheelMain.GetComponent<MeshCollider>().enabled = true;
+        //Wheel can now be removed. Allow the next stuff.
+        NewWheel.GetComponent<MeshCollider>().enabled = true;
         WheelMain.layer = 11;
         CanNewWheelBeAttached = true;
         WheelSnap.CanSnap = true;
@@ -99,6 +101,7 @@ public class WheelManager : MonoBehaviourPunCallbacks
     [PunRPC]
     void WheelRemovedTask()
     {
+        WheelMain.GetComponent<MeshCollider>().enabled = true;
         FindObjectOfType<ProgressChecker>().ChangePercentageTo(55);
     }
 

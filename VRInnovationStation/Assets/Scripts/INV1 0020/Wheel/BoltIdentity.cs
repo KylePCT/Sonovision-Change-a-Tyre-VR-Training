@@ -56,7 +56,7 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
     [PunRPC]
     void UpdateProgress()
     {
-        FindObjectOfType<ProgressChecker>().IncreasePercentageBy(5);
+        FindObjectOfType<ProgressChecker>().IncreasePercentageBy(2);
     }
 }
 

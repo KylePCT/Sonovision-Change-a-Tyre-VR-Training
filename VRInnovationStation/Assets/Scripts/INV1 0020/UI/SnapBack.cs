@@ -30,7 +30,7 @@ public class SnapBack : MonoBehaviour
     public void ReactivateUI()
     {
         //Position checks.
-        playerPos = Player.transform.position;
+        playerPos = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);
         Tablet.SetActive(true);
         Tablet.transform.position = Vector3.Lerp(playerPos, tabletPos, fraction);
 

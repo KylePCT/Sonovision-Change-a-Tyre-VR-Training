@@ -33,8 +33,8 @@ public class AudioManager : MonoBehaviour
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
 
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
+            //s.source.volume = s.volume;
+            //s.source.pitch = s.pitch;
 
             s.source.loop = s.loop;
             s.source.playOnAwake = s.playOnAwake;
@@ -42,7 +42,6 @@ public class AudioManager : MonoBehaviour
     }
 
     //Play a sound dependant on its name. => public call method called using "FindObjectOfType<AudioManager>().PlaySound("name");"
-
     public void PlaySound(string name)
     {
         Sound s = Array.Find(sounds, Sound => Sound.name == name);
@@ -53,7 +52,27 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        s.source.volume = s.volume;
+        s.source.pitch = s.pitch;
+
         s.source.Play();
+    }
+
+    //Stop a sound dependant on its name. => public call method called using "FindObjectOfType<AudioManager>().StopPlaying("name");"
+    public void StopPlaying(string name)
+    {
+        Sound s = Array.Find(sounds, Sound => Sound.name == name);
+
+        if (s == null)
+        {
+            Debug.LogWarning("[AudioManager.cs] Sound: <" + name + "> not found!");
+            return;
+        }
+
+        s.source.volume = s.volume;
+        s.source.pitch = s.pitch;
+
+        s.source.Stop();
     }
 
     //Public sound calls.
