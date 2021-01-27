@@ -56,6 +56,9 @@ MonoBehaviour:
   - UpdateProgress
   - IncreaseProgress
   - DecreaseProgress
+  - ChangePercentageTo
+  - DecreasePercentageBy
+  - IncreasePercentageBy
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
