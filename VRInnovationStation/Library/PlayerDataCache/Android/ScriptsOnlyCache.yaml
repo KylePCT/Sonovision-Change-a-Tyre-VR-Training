@@ -158,8 +158,6 @@ ScriptsOnlyBuild:
     Unity.XR.Management.dll:
     - UnityEngine.XR.Management.XRGeneralSettings
     - UnityEngine.XR.Management.XRManagerSettings
-    Unity.XR.Oculus.Editor.dll:
-    - Unity.XR.Oculus.Editor.OculusSettingsEditor
     Unity.XR.Oculus.dll:
     - Unity.XR.Oculus.OculusLoader
     - Unity.XR.Oculus.OculusSettings
@@ -235,13 +233,13 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11382}
+      Script: {instanceID: 11384}
     - Class: 114
-      Script: {instanceID: 11388}
+      Script: {instanceID: 11390}
     - Class: 114
-      Script: {instanceID: 11396}
+      Script: {instanceID: 11398}
     - Class: 114
-      Script: {instanceID: 11400}
+      Script: {instanceID: 11402}
     - Class: 114
       Script: {instanceID: 11946}
     - Class: 114
@@ -374,8 +372,6 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11382}
-    - Class: 114
       Script: {instanceID: 11384}
     - Class: 114
       Script: {instanceID: 11386}
@@ -393,6 +389,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11398}
     - Class: 114
       Script: {instanceID: 11400}
+    - Class: 114
+      Script: {instanceID: 11402}
     - Class: 114
       Script: {instanceID: 11598}
     - Class: 114
@@ -711,15 +709,15 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11382}
+      Script: {instanceID: 11384}
     - Class: 114
-      Script: {instanceID: 11388}
+      Script: {instanceID: 11390}
     - Class: 114
-      Script: {instanceID: 11392}
-    - Class: 114
-      Script: {instanceID: 11396}
+      Script: {instanceID: 11394}
     - Class: 114
       Script: {instanceID: 11398}
+    - Class: 114
+      Script: {instanceID: 11400}
     - Class: 114
       Script: {instanceID: 11826}
     - Class: 114
@@ -942,11 +940,11 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11382}
+      Script: {instanceID: 11384}
     - Class: 114
-      Script: {instanceID: 11388}
+      Script: {instanceID: 11390}
     - Class: 114
-      Script: {instanceID: 11396}
+      Script: {instanceID: 11398}
     - Class: 114
       Script: {instanceID: 11866}
     - Class: 114
@@ -1040,7 +1038,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16144}
     - Class: 114
-      Script: {instanceID: 86902}
+      Script: {instanceID: 59360}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -3586,4 +3584,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/HomeScene.unity
   - Assets/Scenes/World_Bronze.unity
   - Assets/Scenes/World_Silver.unity
-  playerPath: C:/Users/KT/Desktop/SV_VRMartin/APKs/v0.2.6d.apk
+  playerPath: C:/Users/KT/Desktop/SV_VRMartin/APKs/v0.2.6e.apk

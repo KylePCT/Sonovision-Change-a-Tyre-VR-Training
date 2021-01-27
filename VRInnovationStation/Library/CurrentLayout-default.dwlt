@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 150
+  controlID: 34
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 65
+  controlID: 35
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 66
+  controlID: 36
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -395,20 +395,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Resources
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Resources
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\KT\Desktop\SV_VRMartin\SV_VRInnovationStation\VRInnovationStation
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 886f0000
-    m_LastClickedID: 28552
-    m_ExpandedIDs: 0000000032450000f66e0000f86e0000fa6e0000fc6e0000fe6e0000006f0000026f0000046f0000066f0000086f00000a6f00000c6f00000e6f0000106f0000126f0000146f0000166f0000186f00001a6f00001c6f00001e6f0000206f00008e6f000000ca9a3b
+    scrollPos: {x: 0, y: 236}
+    m_SelectedIDs: ec4a0000
+    m_LastClickedID: 19180
+    m_ExpandedIDs: 00000000c04200008a4a00008c4a00008e4a0000904a0000924a0000944a0000964a0000984a00009a4a00009c4a00009e4a0000a04a0000a24a0000a44a0000a64a0000a84a0000aa4a0000ac4a0000ae4a0000b04a0000b24a0000b44a0000f44a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -436,7 +436,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000032450000f66e0000f86e0000fa6e0000fc6e0000fe6e0000006f0000026f0000046f0000066f0000086f00000a6f00000c6f00000e6f0000106f0000126f0000146f0000166f0000186f00001a6f00001c6f00001e6f0000206f0000
+    m_ExpandedIDs: 00000000c04200008a4a00008c4a00008e4a0000904a0000924a0000944a0000964a0000984a00009a4a00009c4a00009e4a0000a04a0000a24a0000a44a0000a64a0000a84a0000aa4a0000ac4a0000ae4a0000b04a0000b24a0000b44a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -559,9 +559,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 50820000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: dec5ffff3cd8ffffa0dbffff7edfffffe8e2ffff84faffff488a0000cc8e0000
+      m_ExpandedIDs: 3c2cffff160e0200260e0200360e02003c0e0200480e0200520e02005c0e0200820e02008a0e02009e0e0200d40e0200dc0e0200de0e0200f80e0200140f0200160f0200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -614,16 +614,16 @@ MonoBehaviour:
   m_ShowContextualTools: 0
   m_WindowGUID: 4737e45d2e1f9004ebf99e35befc7248
   m_Gizmos: 0
-  m_SceneIsLit: 1
+  m_SceneIsLit: 0
   m_SceneLighting: 1
   m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -5.8222666, y: 3.1710536, z: 1.4898834}
+    m_Target: {x: 0.015024735, y: 0.025035273, z: 0.1916193}
     speed: 2
-    m_Value: {x: -5.8222666, y: 3.1710536, z: 1.4898834}
+    m_Value: {x: 3.607778, y: 3.3622828, z: -0.17407581}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -636,7 +636,7 @@ MonoBehaviour:
   m_SceneViewState:
     showFog: 1
     showMaterialUpdate: 0
-    showSkybox: 1
+    showSkybox: 0
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -669,11 +669,11 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.04049972, y: 0.005361998, z: 0.00058019755, w: -0.9993248}
+    m_Target: {x: -0.0014897267, y: -0.9964034, z: -0.003836923, w: -0.08878073}
     speed: 2
-    m_Value: {x: -0.038994465, y: 0.0053602657, z: 0.00058815116, w: -0.9992249}
+    m_Value: {x: -0.05080644, y: -0.51886636, z: 0.031860854, w: -0.8527493}
   m_Size:
-    m_Target: 0.3797814
+    m_Target: 0.30287644
     speed: 2
     m_Value: 0.3797814
   m_Ortho:
