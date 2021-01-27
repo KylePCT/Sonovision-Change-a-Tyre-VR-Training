@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
 
-public class ProgressChecker : MonoBehaviour
+public class ProgressChecker : MonoBehaviourPunCallbacks
 {
     private static float PercentageComplete;
 
@@ -17,6 +18,7 @@ public class ProgressChecker : MonoBehaviour
     }
 
     //Increase the percentage of the progress system by the designated number, play a little SFX.
+    [PunRPC]
     public void IncreasePercentageBy(float number)
     {
         //Prevent overflow.
@@ -35,6 +37,7 @@ public class ProgressChecker : MonoBehaviour
     }
 
     //Decrease the percentage of the progress system by the designated number, play a little SFX.
+    [PunRPC]
     public void DecreasePercentageBy(float number)
     {
         //Prevent underflow.
@@ -53,6 +56,7 @@ public class ProgressChecker : MonoBehaviour
     }
 
     //Force set the percentage of the progress system by the designated number, play a little SFX.
+    [PunRPC]
     public void ChangePercentageTo(float number)
     {
         //Prevent under/overflow.
