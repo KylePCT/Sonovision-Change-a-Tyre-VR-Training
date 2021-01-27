@@ -33,19 +33,29 @@ public class SlotIdentity : MonoBehaviourPunCallbacks
         //If the slot is in contact with a bolt, allow it to attach to the socket.
         if (col.tag == "Bolts")
         {
-            if (WheelManager.CanNewWheelBeAttached == true)
+            if (WheelManager.CanNewWheelBeAttached == true && SlotType == 0)
             {
-                if (SlotType == 0)
-                {
-                    //Slots for bolts are now active on the new wheel.
-                    GetComponent<XRSocketInteractor>().enabled = true;
-                    m_photonView.RPC("IncreaseProgress", RpcTarget.AllBuffered); //Photon for percentage sets.
-                }
+                //Slots for bolts are now active on the new wheel.
+                GetComponent<XRSocketInteractor>().enabled = true;
+                m_photonView.RPC("IncreaseProgress", RpcTarget.AllBuffered); //Photon for percentage sets.
+                WheelManager.DoAllSlotsHaveBolts();
             }
             else
             {
                 WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enabled = true;
-                Debug.Log("<color=orange>[SlotIdentity.cs]</color> New wheel is not yet attached.");
+                Debug.Log("<color=orange>[SlotIdentity.cs]</color> Bolt not attached to slot. CanNewWheelBeAttached is false or SlotType is not a wheel slot.");
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider col)
+    {
+        //If the slot is in contact with a bolt, allow it to attach to the socket.
+        if (col.tag == "Bolts")
+        {
+            if (WheelManager.CanNewWheelBeAttached == true && SlotType == 0)
+            {
+                m_photonView.RPC("DecreaseProgress", RpcTarget.AllBuffered); //Photon for percentage sets.
             }
         }
     }
@@ -54,5 +64,11 @@ public class SlotIdentity : MonoBehaviourPunCallbacks
     void IncreaseProgress()
     {
         FindObjectOfType<ProgressChecker>().IncreasePercentageBy(2);
+    }
+
+    [PunRPC]
+    void DecreaseProgress()
+    {
+        FindObjectOfType<ProgressChecker>().DecreasePercentageBy(2);
     }
 }

@@ -2687,6 +2687,7 @@ GameObject:
   - component: {fileID: 64409429}
   - component: {fileID: 64409428}
   - component: {fileID: 64409427}
+  - component: {fileID: 64409433}
   - component: {fileID: 64409432}
   m_Layer: 0
   m_Name: Wheel_Main_BoltHole_3_001
@@ -2775,7 +2776,7 @@ MonoBehaviour:
   BoltInSlot: 1
   WheelManager: {fileID: 2123629107}
   WrenchManager: {fileID: 1340159584}
-  m_photonView: {fileID: 1209366469}
+  m_photonView: {fileID: 64409432}
 --- !u!23 &64409430
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2824,6 +2825,29 @@ MeshFilter:
   m_GameObject: {fileID: 64409425}
   m_Mesh: {fileID: 1052828004423074367, guid: 50e5c6c355d169347b2cc5e8bf9fc290, type: 3}
 --- !u!114 &64409432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64409425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 2
+  ObservedComponents:
+  - {fileID: 64409433}
+  viewIdField: 44
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &64409433
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8944,7 +8968,8 @@ MonoBehaviour:
   Col_LeftBackArmPlace: {fileID: 1577363994}
   Col_RightFrontArmPlace: {fileID: 2075467950}
   Col_RightBackArmPlace: {fileID: 1981820745}
-  UI_ProgressTask: {fileID: 1808098906}
+  UI_ProgressTask_2e: {fileID: 1808098906}
+  UI_ProgressTask_2v: {fileID: 754586167}
   whManager: {fileID: 2123629107}
   AreAllFeetInPlace: 0
 --- !u!114 &289380363
@@ -9011,6 +9036,7 @@ GameObject:
   - component: {fileID: 301706598}
   - component: {fileID: 301706597}
   - component: {fileID: 301706596}
+  - component: {fileID: 301706602}
   - component: {fileID: 301706601}
   m_Layer: 0
   m_Name: Wheel_Main_BoltHole_2_001
@@ -9099,7 +9125,7 @@ MonoBehaviour:
   BoltInSlot: 1
   WheelManager: {fileID: 2123629107}
   WrenchManager: {fileID: 1340159584}
-  m_photonView: {fileID: 1209366469}
+  m_photonView: {fileID: 301706601}
 --- !u!23 &301706599
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9148,6 +9174,29 @@ MeshFilter:
   m_GameObject: {fileID: 301706594}
   m_Mesh: {fileID: 1469392551519799429, guid: 50e5c6c355d169347b2cc5e8bf9fc290, type: 3}
 --- !u!114 &301706601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301706594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 2
+  ObservedComponents:
+  - {fileID: 301706602}
+  viewIdField: 38
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &301706602
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15438,23 +15487,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 832914309}
   - {fileID: 832914310}
-  - {fileID: 1046172995}
-  - {fileID: 1046172993}
-  - {fileID: 1046172994}
-  - {fileID: 552228459}
-  - {fileID: 552228457}
-  - {fileID: 552228458}
-  - {fileID: 1987909293}
-  - {fileID: 1987909291}
-  - {fileID: 1987909292}
   - {fileID: 449905435}
   - {fileID: 449905434}
-  - {fileID: 338591904}
-  - {fileID: 338591903}
-  - {fileID: 606655582}
-  - {fileID: 606655581}
-  - {fileID: 2125311324}
-  - {fileID: 2125311323}
   viewIdField: 29
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -17472,7 +17506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &577774546
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27248,8 +27282,8 @@ RectTransform:
   m_Father: {fileID: 1556086339}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.3649721}
-  m_AnchorMax: {x: 1, y: 0.9999721}
+  m_AnchorMin: {x: 0, y: 0.56591606}
+  m_AnchorMax: {x: 1, y: 0.99995446}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -35154,6 +35188,7 @@ GameObject:
   - component: {fileID: 1120458758}
   - component: {fileID: 1120458757}
   - component: {fileID: 1120458756}
+  - component: {fileID: 1120458762}
   - component: {fileID: 1120458761}
   m_Layer: 0
   m_Name: Wheel_Main_BoltHole_5_001
@@ -35242,7 +35277,7 @@ MonoBehaviour:
   BoltInSlot: 1
   WheelManager: {fileID: 2123629107}
   WrenchManager: {fileID: 1340159584}
-  m_photonView: {fileID: 1209366469}
+  m_photonView: {fileID: 1120458761}
 --- !u!23 &1120458759
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35291,6 +35326,29 @@ MeshFilter:
   m_GameObject: {fileID: 1120458754}
   m_Mesh: {fileID: -8791006756710638198, guid: 50e5c6c355d169347b2cc5e8bf9fc290, type: 3}
 --- !u!114 &1120458761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120458754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 2
+  ObservedComponents:
+  - {fileID: 1120458762}
+  viewIdField: 45
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &1120458762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39098,6 +39156,11 @@ MonoBehaviour:
   - {fileID: 1209366470}
   - {fileID: 1209366471}
   - {fileID: 1209366472}
+  - {fileID: 1939141373}
+  - {fileID: 301706602}
+  - {fileID: 64409433}
+  - {fileID: 2146575595}
+  - {fileID: 1120458762}
   viewIdField: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -44324,14 +44387,6 @@ MonoBehaviour:
   OwnershipTransfer: 2
   ObservedComponents:
   - {fileID: 1437246298}
-  - {fileID: 1437246295}
-  - {fileID: 1437246294}
-  - {fileID: 1437246302}
-  - {fileID: 1437246293}
-  - {fileID: 1437246292}
-  - {fileID: 1437246300}
-  - {fileID: 1437246301}
-  - {fileID: 1437246299}
   viewIdField: 28
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -46849,8 +46904,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 875436878}
   m_HandleRect: {fileID: 875436877}
   m_Direction: 2
-  m_Value: 0.9999236
-  m_Size: 0.635
+  m_Value: 0.9999195
+  m_Size: 0.43403837
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -48422,7 +48477,7 @@ PrefabInstance:
     - target: {fileID: 1743294856270629658, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
       propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1743294856270629658, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
@@ -48524,6 +48579,31 @@ PrefabInstance:
       propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1743294856270629658, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743294856270629658, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743294856270629658, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 289380362}
+    - target: {fileID: 1743294856270629658, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CheckIfSimIsComplete
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743294856270629658, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1743294856270629659, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -48567,7 +48647,7 @@ PrefabInstance:
     - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
       propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
@@ -48617,6 +48697,31 @@ PrefabInstance:
     - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
       propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 289380362}
+    - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CheckIfSimIsComplete
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2223509772416261937, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
@@ -50445,7 +50550,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 5
+  m_fontSize: 4.66
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -52232,10 +52337,6 @@ MonoBehaviour:
   OwnershipTransfer: 2
   ObservedComponents:
   - {fileID: 1711941162}
-  - {fileID: 1711941159}
-  - {fileID: 1711941158}
-  - {fileID: 1711941157}
-  - {fileID: 1711941156}
   viewIdField: 27
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -52777,6 +52878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LiftCanMove: 0
+  UI_ButtonForward: {fileID: 577774545}
 --- !u!1 &1720364558
 GameObject:
   m_ObjectHideFlags: 0
@@ -59045,6 +59147,7 @@ GameObject:
   - component: {fileID: 1939141369}
   - component: {fileID: 1939141368}
   - component: {fileID: 1939141367}
+  - component: {fileID: 1939141373}
   - component: {fileID: 1939141372}
   m_Layer: 0
   m_Name: Wheel_Main_BoltHole_1_001
@@ -59133,7 +59236,7 @@ MonoBehaviour:
   BoltInSlot: 1
   WheelManager: {fileID: 2123629107}
   WrenchManager: {fileID: 1340159584}
-  m_photonView: {fileID: 1209366469}
+  m_photonView: {fileID: 1939141372}
 --- !u!23 &1939141370
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59182,6 +59285,29 @@ MeshFilter:
   m_GameObject: {fileID: 1939141365}
   m_Mesh: {fileID: -6548344181889903568, guid: 50e5c6c355d169347b2cc5e8bf9fc290, type: 3}
 --- !u!114 &1939141372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939141365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 2
+  ObservedComponents:
+  - {fileID: 1939141373}
+  viewIdField: 41
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &1939141373
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68200,6 +68326,7 @@ GameObject:
   - component: {fileID: 2146575591}
   - component: {fileID: 2146575590}
   - component: {fileID: 2146575589}
+  - component: {fileID: 2146575595}
   - component: {fileID: 2146575594}
   m_Layer: 0
   m_Name: Wheel_Main_BoltHole_4_001
@@ -68288,7 +68415,7 @@ MonoBehaviour:
   BoltInSlot: 1
   WheelManager: {fileID: 2123629107}
   WrenchManager: {fileID: 1340159584}
-  m_photonView: {fileID: 1209366469}
+  m_photonView: {fileID: 2146575594}
 --- !u!23 &2146575592
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68337,6 +68464,29 @@ MeshFilter:
   m_GameObject: {fileID: 2146575587}
   m_Mesh: {fileID: -9100409261489023646, guid: 50e5c6c355d169347b2cc5e8bf9fc290, type: 3}
 --- !u!114 &2146575594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146575587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 2
+  ObservedComponents:
+  - {fileID: 2146575595}
+  viewIdField: 40
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &2146575595
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71696,6 +71846,8 @@ GameObject:
   - component: {fileID: 2666335932330484895}
   - component: {fileID: 2666335932330484896}
   - component: {fileID: 2666335932330484897}
+  - component: {fileID: 2666335932330484898}
+  - component: {fileID: 2666335932330484899}
   m_Layer: 0
   m_Name: Wheel_Main_BoltHole_1_001
   m_TagString: WheelBoltHoles
@@ -71720,7 +71872,7 @@ MonoBehaviour:
   BoltInSlot: 1
   WheelManager: {fileID: 2123629107}
   WrenchManager: {fileID: 1340159584}
-  m_photonView: {fileID: 1209366469}
+  m_photonView: {fileID: 2666335932330484899}
 --- !u!114 &2666335932330484896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71770,6 +71922,44 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.047111616, y: 0.03740572, z: 0.03740576}
   m_Center: {x: 0.00000011455275, y: -0.0000003241002, z: -0.00000008661296}
+--- !u!114 &2666335932330484898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2666335932330484894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+--- !u!114 &2666335932330484899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2666335932330484894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 2
+  ObservedComponents:
+  - {fileID: 2666335932330484898}
+  viewIdField: 43
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!23 &2674005233826259213
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -72086,6 +72276,8 @@ GameObject:
   - component: {fileID: 2750616380748013987}
   - component: {fileID: 2750616380748013988}
   - component: {fileID: 2750616380748013989}
+  - component: {fileID: 2750616380748013990}
+  - component: {fileID: 2750616380748013991}
   m_Layer: 0
   m_Name: Wheel_Main_BoltHole_4_001
   m_TagString: WheelBoltHoles
@@ -72110,7 +72302,7 @@ MonoBehaviour:
   BoltInSlot: 1
   WheelManager: {fileID: 2123629107}
   WrenchManager: {fileID: 1340159584}
-  m_photonView: {fileID: 1209366469}
+  m_photonView: {fileID: 2750616380748013991}
 --- !u!114 &2750616380748013988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72160,6 +72352,44 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.047111616, y: 0.037452415, z: 0.037452552}
   m_Center: {x: -0.00000011455275, y: -0.00000047683716, z: -0.00000012107193}
+--- !u!114 &2750616380748013990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2750616380748013986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+--- !u!114 &2750616380748013991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2750616380748013986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 2
+  ObservedComponents:
+  - {fileID: 2750616380748013990}
+  viewIdField: 39
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &2816469975142124069
 GameObject:
   m_ObjectHideFlags: 0
@@ -72632,10 +72862,23 @@ MonoBehaviour:
   observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 2972226907129357797}
   viewIdField: 117
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &2972226907129357797 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1058460267958529466, guid: dc54986e426546147a6cfa6fb28d41d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2972226907129357794}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2972226907129357795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a4e8cda9653e894e844b18f2d261ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &3026591810905888061
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -76014,7 +76257,7 @@ PrefabInstance:
     - target: {fileID: 1743294856270629658, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
       propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1743294856270629658, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
@@ -76064,6 +76307,31 @@ PrefabInstance:
     - target: {fileID: 1743294856270629658, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
       propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743294856270629658, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743294856270629658, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743294856270629658, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 289380362}
+    - target: {fileID: 1743294856270629658, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CheckIfSimIsComplete
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743294856270629658, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1743294856270629659, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
@@ -76119,7 +76387,7 @@ PrefabInstance:
     - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
       propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
@@ -76169,6 +76437,46 @@ PrefabInstance:
     - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
         type: 3}
       propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnHoverExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_material
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnHoverExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Material, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnHoverExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2100000, guid: 317635a563c5b924facabd5c920b42b0, type: 2}
+    - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 289380362}
+    - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CheckIfSimIsComplete
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223509772416261935, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
+        type: 3}
+      propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2223509772416261937, guid: ca89b0b6c94e6904fb73c44eeb7318b4,
@@ -77193,6 +77501,8 @@ GameObject:
   - component: {fileID: 5579225623469858007}
   - component: {fileID: 5579225623469858008}
   - component: {fileID: 5579225623469858009}
+  - component: {fileID: 5579225623469858010}
+  - component: {fileID: 5579225623469858011}
   m_Layer: 0
   m_Name: Wheel_Main_BoltHole_5_001
   m_TagString: WheelBoltHoles
@@ -77217,7 +77527,7 @@ MonoBehaviour:
   BoltInSlot: 1
   WheelManager: {fileID: 2123629107}
   WrenchManager: {fileID: 1340159584}
-  m_photonView: {fileID: 1209366469}
+  m_photonView: {fileID: 5579225623469858011}
 --- !u!114 &5579225623469858008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77267,6 +77577,44 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.047111616, y: 0.037437156, z: 0.037436884}
   m_Center: {x: 0.00000011455275, y: -0.00000023841858, z: -0.00000011175871}
+--- !u!114 &5579225623469858010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5579225623469858006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+--- !u!114 &5579225623469858011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5579225623469858006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 2
+  ObservedComponents:
+  - {fileID: 5579225623469858010}
+  viewIdField: 42
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!33 &5606577199494257435
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -80025,6 +80373,8 @@ GameObject:
   - component: {fileID: 7488703313158482435}
   - component: {fileID: 7488703313158482436}
   - component: {fileID: 7488703313158482437}
+  - component: {fileID: 7488703313158482438}
+  - component: {fileID: 7488703313158482439}
   m_Layer: 0
   m_Name: Wheel_Main_BoltHole_2_001
   m_TagString: WheelBoltHoles
@@ -80049,7 +80399,7 @@ MonoBehaviour:
   BoltInSlot: 1
   WheelManager: {fileID: 2123629107}
   WrenchManager: {fileID: 1340159584}
-  m_photonView: {fileID: 1209366469}
+  m_photonView: {fileID: 7488703313158482439}
 --- !u!114 &7488703313158482436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80099,6 +80449,44 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.04711139, y: 0.037478965, z: 0.037478514}
   m_Center: {x: -8.422686e-21, y: -0.0000006295741, z: -0.000000002794005}
+--- !u!114 &7488703313158482438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7488703313158482434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+--- !u!114 &7488703313158482439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7488703313158482434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 2
+  ObservedComponents:
+  - {fileID: 7488703313158482438}
+  viewIdField: 37
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!23 &7513226367100759659
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81347,6 +81735,8 @@ GameObject:
   - component: {fileID: 8476244230795346865}
   - component: {fileID: 8476244230795346866}
   - component: {fileID: 8476244230795346867}
+  - component: {fileID: 8476244230795346868}
+  - component: {fileID: 8476244230795346869}
   m_Layer: 0
   m_Name: Wheel_Main_BoltHole_3_001
   m_TagString: WheelBoltHoles
@@ -81371,7 +81761,7 @@ MonoBehaviour:
   BoltInSlot: 1
   WheelManager: {fileID: 2123629107}
   WrenchManager: {fileID: 1340159584}
-  m_photonView: {fileID: 1209366469}
+  m_photonView: {fileID: 8476244230795346869}
 --- !u!114 &8476244230795346866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81421,6 +81811,44 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.047111467, y: 0.037269004, z: 0.037268706}
   m_Center: {x: -0.00000011455275, y: -0.00000008568162, z: -0.00000012386587}
+--- !u!114 &8476244230795346868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8476244230795346864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+--- !u!114 &8476244230795346869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8476244230795346864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 2
+  Synchronization: 3
+  OwnershipTransfer: 2
+  ObservedComponents:
+  - {fileID: 8476244230795346868}
+  viewIdField: 36
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &8520496880130482724
 GameObject:
   m_ObjectHideFlags: 0

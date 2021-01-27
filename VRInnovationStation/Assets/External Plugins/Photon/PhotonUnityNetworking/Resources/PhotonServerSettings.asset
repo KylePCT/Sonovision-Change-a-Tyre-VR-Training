@@ -55,6 +55,7 @@ MonoBehaviour:
   - SetTo100
   - UpdateProgress
   - IncreaseProgress
+  - DecreaseProgress
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

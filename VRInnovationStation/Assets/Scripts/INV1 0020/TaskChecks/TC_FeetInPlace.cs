@@ -16,7 +16,8 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
     public GameObject Col_RightBackArmPlace;
 
     //UI and Script References.
-    public GameObject UI_ProgressTask;
+    public GameObject UI_ProgressTask_2e;
+    public GameObject UI_ProgressTask_2v;
     public WheelManager whManager;
 
     private bool UI_ProgressTaskComplete;
@@ -43,27 +44,32 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
             AreAllFeetInPlace = true;
             m_photonView.RPC("SetActiveUIElements", RpcTarget.AllBuffered);
             DeactivateAllMeshRenderers();
-            Debug.Log("<color=white>[TC_FeetInPlace.cs] Lift can now be raised. All four feet are in place.</color>");
+            Debug.Log("<color=magenta>[TC_FeetInPlace.cs]</color> Lift can now be raised. All four feet are in place.");
         }
         else
         {
             //Set variable to false and also run a check to make sure the simulation isn't at the end by checking if there is a new wheel.
-            AreAllFeetInPlace = false;
             CheckIfSimIsComplete();
+            AreAllFeetInPlace = false;
         }
     }
 
     //Check if the sim is finished and set progress to 100%.
     public void CheckIfSimIsComplete()
     {
+        Debug.Log("<color=magenta>[TC_FeetInPlace.cs]</color> Checking if Sim is complete...");
+
         //This should be the final simulation task.
         if (whManager.IsNewWheelAttached)
         {
+            Debug.Log("<color=magenta>[TC_FeetInPlace.cs]</color> New wheel is attached, arms need moving to complete the simulation.");
+
             if (Col_LeftFrontArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == false &&
                 Col_LeftBackArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == false &&
                 Col_RightFrontArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == false &&
                 Col_RightBackArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == false)
             {
+                Debug.Log("<b><color=magenta>[TC_FeetInPlace.cs]</color> Simulation complete!</b>");
                 m_photonView.RPC("SetTo100", RpcTarget.AllBuffered);
             }
         }
@@ -75,7 +81,7 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
     {
         if (UI_ProgressTaskComplete == false)
         {
-            UI_ProgressTask.transform.gameObject.SetActive(true);
+            UI_ProgressTask_2e.SetActive(true);
             FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
             FindObjectOfType<ProgressChecker>().ChangePercentageTo(25);
             UI_ProgressTaskComplete = true;
@@ -86,6 +92,7 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
     [PunRPC]
     void SetTo100()
     {
+        UI_ProgressTask_2v.SetActive(true);
         FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
         FindObjectOfType<ProgressChecker>().ChangePercentageTo(100);
     }
