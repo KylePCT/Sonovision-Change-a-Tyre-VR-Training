@@ -10,12 +10,21 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
     public PhotonView m_photonView;
 
     //The feet of each moveable arm.
+    [Header("Chassis Collisions")]
     public GameObject Col_LeftFrontArmPlace;
     public GameObject Col_LeftBackArmPlace;
     public GameObject Col_RightFrontArmPlace;
     public GameObject Col_RightBackArmPlace;
 
+    //The origin collisions.
+    [Header("Origin Collisions")]
+    public GameObject Col_LeftFrontArmPlaceDefault;
+    public GameObject Col_LeftBackArmPlaceDefault;
+    public GameObject Col_RightFrontArmPlaceDefault;
+    public GameObject Col_RightBackArmPlaceDefault;
+
     //UI and Script References.
+    [Header("References")]
     public GameObject UI_ProgressTask_2e;
     public GameObject UI_ProgressTask_2v;
     public WheelManager whManager;
@@ -59,19 +68,13 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
     {
         Debug.Log("<color=magenta>[TC_FeetInPlace.cs]</color> Checking if Sim is complete...");
 
-        //This should be the final simulation task.
-        if (whManager.IsNewWheelAttached)
+        if (Col_LeftBackArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
+            Col_LeftFrontArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
+            Col_RightBackArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
+            Col_RightFrontArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision)
         {
-            Debug.Log("<color=magenta>[TC_FeetInPlace.cs]</color> New wheel is attached, arms need moving to complete the simulation.");
-
-            if (Col_LeftFrontArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == false &&
-                Col_LeftBackArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == false &&
-                Col_RightFrontArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == false &&
-                Col_RightBackArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == false)
-            {
-                Debug.Log("<b><color=magenta>[TC_FeetInPlace.cs]</color> Simulation complete!</b>");
-                m_photonView.RPC("SetTo100", RpcTarget.AllBuffered);
-            }
+            Debug.Log("<b><color=magenta>[TC_FeetInPlace.cs]</color> Simulation complete!</b>");
+            m_photonView.RPC("SetTo100", RpcTarget.AllBuffered);
         }
     }
 

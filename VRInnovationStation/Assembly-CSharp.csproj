@@ -130,6 +130,7 @@
     <Compile Include="Assets\Scripts\INV1 0020\RestrictRotation.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\TaskChecks\TC_FeetInPlace.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\TaskChecks\TC_FeetInPlace_Single.cs" />
+    <Compile Include="Assets\Scripts\INV1 0020\TaskChecks\TC_FeetReturned.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\TaskChecks\TC_GotPPE.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\ToggleAttach.cs" />
     <Compile Include="Assets\Scripts\INV1 0020\UI\AssignCanvasEventCamera.cs" />

@@ -13,8 +13,6 @@ public class TC_FeetInPlace_Single : MonoBehaviourPunCallbacks
     public PhotonView m_photonView;
     public GameObject CollisionBox;
 
-    public WheelManager wheelManager;
-
     //If a foot enters the collision...
     private void OnTriggerEnter(Collider other)
     {
@@ -39,20 +37,10 @@ public class TC_FeetInPlace_Single : MonoBehaviourPunCallbacks
         //Otherwise just remove the percentage stated prior.
         if (other.gameObject.CompareTag("Chassis_Foot"))
         {
-            if (wheelManager.IsNewWheelAttached == false)
-            {
-                IsFootInCollision = false;
-                m_photonView.RPC("UpdatePercentageDown", RpcTarget.AllBuffered);
-                Debug.Log("<color=white>[TC_FeetInPlace_Single.cs] </color>" + gameObject.name + " is no longer in the collision.");
-            }
-
-            //If the collision is exited while the new wheel is attached, update the percentage.
-            else if (wheelManager.IsNewWheelAttached == true)
-            {
-                m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBuffered);
-            }
+            IsFootInCollision = false;
+            m_photonView.RPC("UpdatePercentageDown", RpcTarget.AllBuffered);
+            Debug.Log("<color=white>[TC_FeetInPlace_Single.cs] </color>" + gameObject.name + " is no longer in the collision.");
         }
-
     }
 
     //Turn meshes on and off appropriately.

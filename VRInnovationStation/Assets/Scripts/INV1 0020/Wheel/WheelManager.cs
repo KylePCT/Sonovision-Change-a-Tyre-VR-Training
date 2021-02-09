@@ -28,6 +28,9 @@ public class WheelManager : MonoBehaviourPunCallbacks
     [HideInInspector]
     public bool IsNewWheelAttached = false;
 
+    public GameObject[] ChassisCollisions;
+    public GameObject[] OriginCollisions;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +88,18 @@ public class WheelManager : MonoBehaviourPunCallbacks
 
             IsNewWheelAttached = true;
             Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel has all bolts and task is complete.");
+
+            //Change the collisions around.
+            foreach(GameObject i in ChassisCollisions)
+            {
+                i.SetActive(false);
+            }
+
+            foreach(GameObject j in OriginCollisions)
+            {
+                j.SetActive(true);
+            }
+
             m_photonView.RPC("WheelReplacedTask", RpcTarget.AllBuffered); //Photon for percentage sets.
         }
     }

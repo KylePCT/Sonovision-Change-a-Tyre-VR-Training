@@ -7,7 +7,7 @@ using Photon.Pun;
 public class ProgressChecker : MonoBehaviourPunCallbacks
 {
     private static float PercentageComplete;
-
+    public PhotonView m_photonView;
     public TextMeshProUGUI PercentageDisplayText;
 
     // Start is called before the first frame update
@@ -18,8 +18,47 @@ public class ProgressChecker : MonoBehaviourPunCallbacks
     }
 
     //Increase the percentage of the progress system by the designated number, play a little SFX.
-    [PunRPC]
     public void IncreasePercentageBy(float number)
+    {
+        if (PhotonNetwork.CurrentRoom.PlayerCount <= 1)
+        {
+            m_photonView.RPC("IncreaseRPC", RpcTarget.AllBuffered, number);
+        }
+        else
+        {
+            m_photonView.RPC("IncreaseRPC", RpcTarget.OthersBuffered, number);
+        }
+    }
+
+    //Decrease the percentage of the progress system by the designated number, play a little SFX.
+    public void DecreasePercentageBy(float number)
+    {
+        if (PhotonNetwork.CurrentRoom.PlayerCount <= 1)
+        {
+            m_photonView.RPC("IncreaseRPC", RpcTarget.AllBuffered, number);
+        }
+        else
+        {
+            m_photonView.RPC("DecreaseRPC", RpcTarget.OthersBuffered, number);
+
+        }
+    }
+
+    //Force set the percentage of the progress system by the designated number, play a little SFX.
+    public void ChangePercentageTo(float number)
+    {
+        if (PhotonNetwork.CurrentRoom.PlayerCount <= 1)
+        {
+            m_photonView.RPC("IncreaseRPC", RpcTarget.AllBuffered, number);
+        }
+        else
+        {
+            m_photonView.RPC("ChangeRPC", RpcTarget.OthersBuffered, number);
+        }
+    }
+
+    [PunRPC]
+    private void IncreaseRPC(float number)
     {
         //Prevent overflow.
         if (PercentageComplete < 100f)
@@ -36,9 +75,8 @@ public class ProgressChecker : MonoBehaviourPunCallbacks
         }
     }
 
-    //Decrease the percentage of the progress system by the designated number, play a little SFX.
     [PunRPC]
-    public void DecreasePercentageBy(float number)
+    private void DecreaseRPC(float number)
     {
         //Prevent underflow.
         if (PercentageComplete >= 0f)
@@ -55,9 +93,8 @@ public class ProgressChecker : MonoBehaviourPunCallbacks
         }
     }
 
-    //Force set the percentage of the progress system by the designated number, play a little SFX.
     [PunRPC]
-    public void ChangePercentageTo(float number)
+    private void ChangeRPC(float number)
     {
         //Prevent under/overflow.
         if (PercentageComplete >= 0f || PercentageComplete < 100f)

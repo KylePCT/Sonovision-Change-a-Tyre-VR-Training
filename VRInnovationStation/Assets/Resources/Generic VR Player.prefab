@@ -843,6 +843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a787fbf2c4de83d4bbe65eaa7d928316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_photonView: {fileID: 1303570288637387078}
   PercentageDisplayText: {fileID: 4847197107127238415}
 --- !u!114 &3156596090749270748
 MonoBehaviour:
