@@ -6,7 +6,7 @@ using Photon.Pun;
 
 public class ProgressChecker : MonoBehaviourPunCallbacks
 {
-    private static float PercentageComplete;
+    private static float PercentageComplete = 0f;
     public PhotonView m_photonView;
     public TextMeshProUGUI PercentageDisplayText;
 
@@ -35,7 +35,7 @@ public class ProgressChecker : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.CurrentRoom.PlayerCount <= 1)
         {
-            m_photonView.RPC("IncreaseRPC", RpcTarget.AllBuffered, number);
+            m_photonView.RPC("DecreaseRPC", RpcTarget.AllBuffered, number);
         }
         else
         {
@@ -49,7 +49,7 @@ public class ProgressChecker : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.CurrentRoom.PlayerCount <= 1)
         {
-            m_photonView.RPC("IncreaseRPC", RpcTarget.AllBuffered, number);
+            m_photonView.RPC("ChangeRPC", RpcTarget.AllBuffered, number);
         }
         else
         {
@@ -64,7 +64,7 @@ public class ProgressChecker : MonoBehaviourPunCallbacks
         if (PercentageComplete < 100f)
         {
             PercentageComplete = PercentageComplete + number;
-            Debug.Log("<color=cyan>[ProgressChecker.cs]</color> Percentage complete has been changed by: <" + number + "%>. Overall percentage is now: <" + PercentageComplete + "%>.");
+            Debug.Log("<color=cyan>[ProgressChecker.cs]</color> Percentage complete has been changed by: <color=#5DF958><" + number + "%></color>. Overall percentage is now: <" + PercentageComplete + "%>.");
             PercentageDisplayText.text = PercentageComplete + "%";
             FindObjectOfType<AudioManager>().PlaySound("UI_PercentUp");
 
@@ -82,7 +82,7 @@ public class ProgressChecker : MonoBehaviourPunCallbacks
         if (PercentageComplete >= 0f)
         {
             PercentageComplete = PercentageComplete - number;
-            Debug.Log("<color=cyan>[ProgressChecker.cs]</color> Percentage complete has been changed by: <-" + number + "%>. Overall percentage is now: <" + PercentageComplete + "%>.");
+            Debug.Log("<color=cyan>[ProgressChecker.cs]</color> Percentage complete has been changed by: <color=#F95858><-" + number + "%></color>. Overall percentage is now: <" + PercentageComplete + "%>.");
             PercentageDisplayText.text = PercentageComplete + "%";
             FindObjectOfType<AudioManager>().PlaySound("UI_PercentDown");
 
@@ -100,7 +100,7 @@ public class ProgressChecker : MonoBehaviourPunCallbacks
         if (PercentageComplete >= 0f || PercentageComplete < 100f)
         {
             PercentageComplete = number;
-            Debug.Log("<color=cyan>[ProgressChecker.cs]</color> Percentage complete has been force changed to: <" + number + "%>.");
+            Debug.Log("<color=cyan>[ProgressChecker.cs]</color> Percentage complete has been force changed to: <color=yellow><" + number + "%></color>.");
             PercentageDisplayText.text = PercentageComplete + "%";
             FindObjectOfType<AudioManager>().PlaySound("UI_PercentUp");
 

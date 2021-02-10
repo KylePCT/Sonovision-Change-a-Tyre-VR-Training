@@ -29,7 +29,7 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
     public GameObject UI_ProgressTask_2v;
     public WheelManager whManager;
 
-    private bool UI_ProgressTaskComplete;
+    private bool UI_ProgressTaskComplete = false;
 
     [HideInInspector]
     public bool AreAllFeetInPlace = false;
@@ -73,7 +73,7 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
             Col_RightBackArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
             Col_RightFrontArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision)
         {
-            Debug.Log("<b><color=magenta>[TC_FeetInPlace.cs]</color> Simulation complete!</b>");
+            Debug.Log("<b><color=magenta>[TC_FeetInPlace.cs]</color> <color=#5DF958>Simulation complete!</color></b>");
             m_photonView.RPC("SetTo100", RpcTarget.AllBuffered);
         }
     }

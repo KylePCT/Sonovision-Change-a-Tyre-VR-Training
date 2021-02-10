@@ -73,7 +73,7 @@ public class RaiseLowerLift : MonoBehaviour
     //When the trigger is entered, check what values are correct and run the appropriate code.
     void OnTriggerEnter(Collider collision)
     {
-        Debug.Log(collision.gameObject.tag);
+        Debug.Log("<color=orange>[RaiseLowerLift.cs]</color> " + collision.gameObject.tag + " has collided with the lift button trigger.");
         //If 'raise' is selected.
         if (collision.gameObject.tag == "Player_FT" && MakeLiftRaise == true)
         {
@@ -81,7 +81,7 @@ public class RaiseLowerLift : MonoBehaviour
             IsLowering = false;
             FindObjectOfType<AudioManager>().PlaySound("CarLiftMoving");
 
-            Debug.Log("Raising Lift.");
+            Debug.Log("<color=orange>[RaiseLowerLift.cs]</color> Raising Lift.");
         }
 
         //If 'lower' is selected.
@@ -93,14 +93,14 @@ public class RaiseLowerLift : MonoBehaviour
                 IsRaising = false;
                 FindObjectOfType<AudioManager>().PlaySound("CarLiftMoving");
 
-                Debug.Log("Lowering Lift.");
+                Debug.Log("<color=orange>[RaiseLowerLift.cs]</color> Lowering Lift.");
             }
             else
             {
                 //No move. Maybe a sad noise.
                 IsRaising = false;
                 IsLowering = false;
-                Debug.Log("Stopped moving, lever is not in place.");
+                Debug.Log("<color=orange>[RaiseLowerLift.cs]</color> Stopped moving, lowering lever is not in place.");
             }
         }
     }
@@ -116,7 +116,7 @@ public class RaiseLowerLift : MonoBehaviour
             ButtonLower.GetComponent<MeshRenderer>().material = DefaultMat;
             FindObjectOfType<AudioManager>().PlaySound("CarLiftStop");
 
-            Debug.Log("Stopped moving.");
+            Debug.Log("<color=orange>[RaiseLowerLift.cs]</color> Stopped moving.");
         }
     }
 

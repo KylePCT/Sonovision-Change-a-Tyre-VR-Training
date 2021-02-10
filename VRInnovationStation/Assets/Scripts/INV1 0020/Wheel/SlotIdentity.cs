@@ -38,12 +38,15 @@ public class SlotIdentity : MonoBehaviourPunCallbacks
                 //Slots for bolts are now active on the new wheel.
                 GetComponent<XRSocketInteractor>().enabled = true;
                 m_photonView.RPC("IncreaseProgress", RpcTarget.AllBuffered); //Photon for percentage sets.
+                col.GetComponent<BoltIdentity>().InSlot = true; //Tell the bolt it is now in a slot.
+                Debug.Log("<color=orange>[SlotIdentity.cs]</color> Bolt <" + col.gameObject.name + "> is now in a slot.");
+
                 WheelManager.DoAllSlotsHaveBolts();
             }
             else
             {
                 WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enabled = true;
-                Debug.Log("<color=orange>[SlotIdentity.cs]</color> Bolt not attached to slot. CanNewWheelBeAttached is false or SlotType is not a wheel slot.");
+                Debug.Log("<color=orange>[SlotIdentity.cs]</color> Bolt <" + col.gameObject.name + "> not attached to slot. Maybe CanNewWheelBeAttached is false or SlotType is not a wheel slot.");
             }
         }
     }

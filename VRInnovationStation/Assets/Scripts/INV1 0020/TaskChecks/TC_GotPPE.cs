@@ -55,7 +55,7 @@ public class TC_GotPPE : MonoBehaviourPunCallbacks
             if (gameObject.name == "PPE_Goggles")
             {
                 GotHelmet = true;
-                Debug.Log("[Task Check] Player has picked up goggles; GotHelmet is now: " + GotHelmet + ".");
+                Debug.Log("<color=orange>[TC_GotPPE.cs]</color> Player has picked up goggles; GotHelmet is now: " + GotHelmet + ".");
 
                 //Instantiate particles and set to unactive.
                 CheckPPE();
@@ -67,7 +67,7 @@ public class TC_GotPPE : MonoBehaviourPunCallbacks
             if (gameObject.name == "PPE_HighVis")
             {
                 GotHighVis = true;
-                Debug.Log("[Task Check] Player has picked up high visibility jacket; GotHighVis is now: " + GotHighVis + ".");
+                Debug.Log("<color=orange>[TC_GotPPE.cs]</color> Player has picked up high visibility jacket; GotHighVis is now: " + GotHighVis + ".");
 
                 CheckPPE();
                 Instantiate(RemovedParticles, PPE_HighVis.transform.position, PPE_HighVis.transform.rotation);
@@ -83,12 +83,12 @@ public class TC_GotPPE : MonoBehaviourPunCallbacks
         if (GotHelmet || GotHighVis)
         {
             //Debug check.
-            Debug.Log("[Task Check] GotHelmet is " + GotHelmet + ". GotHighVis is " + GotHighVis + ".");
+            Debug.Log("<color=orange>[TC_GotPPE.cs]</color> GotHelmet is " + GotHelmet + ". GotHighVis is " + GotHighVis + ".");
 
             //If you have both PPE, allow interactions.
             if (GotHelmet && GotHighVis)
             {
-                Debug.Log("[Task Check] All PPE has been picked up.");
+                Debug.Log("<color=orange>[TC_GotPPE.cs]</color> All PPE has been picked up.");
                 IsSafeToWork = true;
                 Instruction.IsTaskComplete = true;
 
@@ -96,14 +96,16 @@ public class TC_GotPPE : MonoBehaviourPunCallbacks
 
                 Player.GetComponentInChildren<XRDirectInteractor>().enableInteractions = true;
                 Player.GetComponentInChildren<XRRayInteractor>().enableInteractions = true;
+                FindObjectOfType<ProgressChecker>().ChangePercentageTo(5);
+
                 ShowExtrasWithPPEOn();
-                Debug.Log("[Task Check] Interactions activated.");
+                Debug.Log("<color=orange>[TC_GotPPE.cs]</color> Interactions activated.");
             }
         }
 
         else
         {
-            Debug.Log("[Task Check] Player does not have any PPE yet.");
+            Debug.Log("<color=orange>[TC_GotPPE.cs]</color> Player does not have any PPE yet.");
         }
     }
 
@@ -120,6 +122,6 @@ public class TC_GotPPE : MonoBehaviourPunCallbacks
     [PunRPC]
     void UpdatePercentageUp()
     {
-        FindObjectOfType<ProgressChecker>().IncreasePercentageBy(2);
+        FindObjectOfType<ProgressChecker>().IncreasePercentageBy(1);
     }
 }

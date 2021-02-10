@@ -8,7 +8,7 @@ using Photon.Realtime;
 public class TC_FeetInPlace_Single : MonoBehaviourPunCallbacks
 {
     [HideInInspector]
-    public bool IsFootInCollision;
+    public bool IsFootInCollision = false;
 
     public PhotonView m_photonView;
     public GameObject CollisionBox;
@@ -22,13 +22,13 @@ public class TC_FeetInPlace_Single : MonoBehaviourPunCallbacks
             //Set the collision to be true and update the progress UI.
             IsFootInCollision = true;
             m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBuffered);
-            Debug.Log("<color=white>[TC_FeetInPlace_Single.cs] </color>" + gameObject.name + " is now in the correct place.");
+            Debug.Log("<color=magenta>[TC_FeetInPlace_Single.cs] </color>" + gameObject.name + " is now in the correct place.");
         }
         else
         {
             //If a random thing enters the collision, don't set variables.
             IsFootInCollision = false;
-            Debug.Log("<color=white>[TC_FeetInPlace_Single.cs] </color>" + gameObject.name + " has entered the collision and is not tagged 'Chassis_Foot'.");
+            Debug.Log("<color=magenta>[TC_FeetInPlace_Single.cs] </color>" + gameObject.name + " has entered the collision and is not tagged 'Chassis_Foot'.");
         }
     }
 
@@ -39,7 +39,7 @@ public class TC_FeetInPlace_Single : MonoBehaviourPunCallbacks
         {
             IsFootInCollision = false;
             m_photonView.RPC("UpdatePercentageDown", RpcTarget.AllBuffered);
-            Debug.Log("<color=white>[TC_FeetInPlace_Single.cs] </color>" + gameObject.name + " is no longer in the collision.");
+            Debug.Log("<color=magenta>[TC_FeetInPlace_Single.cs] </color>" + gameObject.name + " is no longer in the collision.");
         }
     }
 
@@ -58,12 +58,12 @@ public class TC_FeetInPlace_Single : MonoBehaviourPunCallbacks
     [PunRPC]
     void UpdatePercentageUp()
     {
-        FindObjectOfType<ProgressChecker>().IncreasePercentageBy(2);
+        FindObjectOfType<ProgressChecker>().IncreasePercentageBy(5);
     }
 
     [PunRPC]
     void UpdatePercentageDown()
     {
-        FindObjectOfType<ProgressChecker>().DecreasePercentageBy(2);
+        FindObjectOfType<ProgressChecker>().DecreasePercentageBy(5);
     }
 }

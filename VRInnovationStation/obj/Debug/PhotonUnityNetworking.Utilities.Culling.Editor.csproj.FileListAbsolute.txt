@@ -282,3 +282,5 @@ C:\Users\KT\Desktop\SV_VRMartin\SV_VRInnovationStation\VRInnovationStation\obj\D
 C:\Users\KT\Desktop\SV_VRMartin\SV_VRInnovationStation\VRInnovationStation\obj\Debug\PhotonUnityNetworking.Utilities.Culling.Editor.csproj.CopyComplete
 C:\Users\KT\Desktop\SV_VRMartin\SV_VRInnovationStation\VRInnovationStation\obj\Debug\PhotonUnityNetworking.Utilities.Culling.Editor.dll
 C:\Users\KT\Desktop\SV_VRMartin\SV_VRInnovationStation\VRInnovationStation\obj\Debug\PhotonUnityNetworking.Utilities.Culling.Editor.pdb
+C:\Users\KT\Desktop\SV_VRMartin\SV_VRInnovationStation\VRInnovationStation\Temp\bin\Debug\UnityEditor.WebGL.Extensions.dll
+C:\Users\KT\Desktop\SV_VRMartin\SV_VRInnovationStation\VRInnovationStation\Temp\bin\Debug\UnityEditor.WebGL.Extensions.pdb

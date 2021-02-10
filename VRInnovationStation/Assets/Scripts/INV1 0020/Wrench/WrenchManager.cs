@@ -23,7 +23,7 @@ public class WrenchManager : MonoBehaviourPunCallbacks, Photon.Pun.IPunObservabl
 
     private GameObject BitInSocket;
     private bool DoesBitNeedCheck = true;
-    private bool IsThereABitInSocket;
+    private bool IsThereABitInSocket = false;
     public bool TheBitIsCorrect = false;
 
     [Header("UI")]

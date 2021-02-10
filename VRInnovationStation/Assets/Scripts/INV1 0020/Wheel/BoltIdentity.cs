@@ -10,7 +10,7 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
 {
     [Header("Identity")]
     public int BoltNumber;
-    public bool InSlot;
+    public bool InSlot = true;
 
     public WrenchManager WrenchManager;
     public WheelManager WheelManager;

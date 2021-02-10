@@ -73,10 +73,14 @@ public class WheelManager : MonoBehaviourPunCallbacks
     //Checks if the slots all have bolts. This would be called after you have put the new wheel on.
     public void DoAllSlotsHaveBolts()
     {
-        if (CanNewWheelBeAttached && WheelBreakDisk.GetComponent<XRSocketInteractor>().selectTarget.gameObject.name == "Wheel_New")
+        if (CanNewWheelBeAttached)
         {
+            Debug.Log("<color=orange>[WheelManager.cs]</color> Checking bolts in slots...");
+
             for (int i = 0; i < Bolts.Length; i++)
             {
+                Debug.Log("<color=orange>[WheelManager.cs]</color> Checking bolt <" + i + ">.");
+
                 //If any of the bolts in the array are not in slot, call return.
                 if (Bolts[i].GetComponent<BoltIdentity>().InSlot == false)
                 {
@@ -99,6 +103,9 @@ public class WheelManager : MonoBehaviourPunCallbacks
             {
                 j.SetActive(true);
             }
+
+            Debug.Log("<color=orange>[WheelManager.cs]</color> Arm collisions are now inverted.");
+            FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
 
             m_photonView.RPC("WheelReplacedTask", RpcTarget.AllBuffered); //Photon for percentage sets.
         }

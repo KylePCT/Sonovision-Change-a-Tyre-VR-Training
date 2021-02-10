@@ -78,7 +78,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     //Called when connected to master.
     public override void OnConnectedToMaster()
     {
-        Debug.Log("Reconnected.");
+        Debug.Log("<color=cyan>[RoomManager.cs] Reconnected.");
         PhotonNetwork.JoinLobby();
     }
 
@@ -93,19 +93,19 @@ public class RoomManager : MonoBehaviourPunCallbacks
     //Called when joining a lobby.
     public override void OnJoinedLobby()
     {
-        Debug.Log("Joined to lobby.");
+        Debug.Log("<color=cyan>[RoomManager.cs] Joined to lobby.</color>");
     }
 
     //Called when a room is created.
     public override void OnCreatedRoom()
     {
-        Debug.Log("A room has been created with the name: <" + PhotonNetwork.CurrentRoom.Name + ">.");
+        Debug.Log("<color=cyan>[RoomManager.cs] A room has been created with the name: <" + PhotonNetwork.CurrentRoom.Name + ">.</color>");
     }
 
     //Called when joining a room.
     public override void OnJoinedRoom()
     {
-        Debug.Log("The local player <" + PhotonNetwork.NickName + "> has joined <" + PhotonNetwork.CurrentRoom.Name + ">. Player count: <" + PhotonNetwork.CurrentRoom.PlayerCount + ">.");
+        Debug.Log("<color=cyan>[RoomManager.cs] The local player <" + PhotonNetwork.NickName + "> has joined <" + PhotonNetwork.CurrentRoom.Name + ">. Player count: <" + PhotonNetwork.CurrentRoom.PlayerCount + ">.</color>");
 
         //If the map/room has a key set.
         if (PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey(MultiplayerVRConstants.MAP_TYPE_KEY))
@@ -115,7 +115,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
             //Get the map type and name.
             if (PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue(MultiplayerVRConstants.MAP_TYPE_KEY, out mapType))
             {
-                Debug.Log("Joined room with the map: <" + (string)mapType + ">.");
+                Debug.Log("<color=cyan>[RoomManager.cs] Joined room with the map: <" + (string)mapType + ">.</color>");
 
                 //If the map name is _____...
                 if ((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_BRONZE)
@@ -140,7 +140,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     //Called when a player enters the same room as the user.
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        Debug.Log("Player <" + newPlayer.NickName + "> has joined. Player count: <" + PhotonNetwork.CurrentRoom.PlayerCount + ">.");
+        Debug.Log("<color=cyan>[RoomManager.cs] Player <" + newPlayer.NickName + "> has joined. Player count: <" + PhotonNetwork.CurrentRoom.PlayerCount + ">.</color>");
     }
 
     //Called whenever the room listing is updated. => When a room is created; when a room is joined.

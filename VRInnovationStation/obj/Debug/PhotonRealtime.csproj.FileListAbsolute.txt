@@ -264,3 +264,5 @@ C:\Users\KT\Desktop\SV_VRMartin\SV_VRInnovationStation\VRInnovationStation\obj\D
 C:\Users\KT\Desktop\SV_VRMartin\SV_VRInnovationStation\VRInnovationStation\obj\Debug\PhotonRealtime.csproj.CopyComplete
 C:\Users\KT\Desktop\SV_VRMartin\SV_VRInnovationStation\VRInnovationStation\obj\Debug\PhotonRealtime.dll
 C:\Users\KT\Desktop\SV_VRMartin\SV_VRInnovationStation\VRInnovationStation\obj\Debug\PhotonRealtime.pdb
+C:\Users\KT\Desktop\SV_VRMartin\SV_VRInnovationStation\VRInnovationStation\Temp\bin\Debug\UnityEditor.WebGL.Extensions.dll
+C:\Users\KT\Desktop\SV_VRMartin\SV_VRInnovationStation\VRInnovationStation\Temp\bin\Debug\UnityEditor.WebGL.Extensions.pdb

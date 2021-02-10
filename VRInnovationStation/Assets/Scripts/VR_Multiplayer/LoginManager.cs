@@ -42,13 +42,13 @@ public class LoginManager : MonoBehaviourPunCallbacks
     public override void OnConnected()
     {
         //Called when the internet connection is established.
-        Debug.Log("<b><color=white>[LOGINMANAGER]</color></b> Server available.");
+        Debug.Log("<b><color=white>[LoginManager.cs]</color></b> <color=cyan>Server available.</color>");
     }
 
     public override void OnConnectedToMaster()
     {
         //Called when a user is connected to the Photon server.
-        Debug.Log("<b><color=white>[LOGINMANAGER]</color></b> Connected to the Master Photon server with player name: " + PhotonNetwork.NickName + ".");
+        Debug.Log("<b><color=white>[LoginManager.cs]</color></b> <color=cyan>Connected to the Master Photon server with player name: <" + PhotonNetwork.NickName + ">.</color>");
 
         //Load the home scene using Photon's LoadLevel method. Loads it asynchronously.
         PhotonNetwork.LoadLevel("HomeScene");
