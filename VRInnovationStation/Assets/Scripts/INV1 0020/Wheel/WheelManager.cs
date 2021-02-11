@@ -62,8 +62,11 @@ public class WheelManager : MonoBehaviourPunCallbacks
         }
 
         //Wheel can now be removed. Allow the next stuff.
+        WheelMain.GetComponent<MeshCollider>().enabled = true;
         NewWheel.GetComponent<MeshCollider>().enabled = true;
-        WheelMain.layer = 11;
+        NewWheel.GetComponent<Rigidbody>().isKinematic = true;
+
+        WheelMain.layer = 11; //Make it interactable. (Layer 11)
         CanNewWheelBeAttached = true;
         WheelSnap.CanSnap = true;
         Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel can now be removed.");
