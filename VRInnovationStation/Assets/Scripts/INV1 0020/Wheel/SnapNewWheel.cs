@@ -34,10 +34,14 @@ public class SnapNewWheel : MonoBehaviour
     {
         Destroy(NewWheel.GetComponent<XRGrabInteractable>());
         OldWheel.gameObject.transform.SetParent(null);
+
         NewWheel.gameObject.transform.SetParent(SnapParent.gameObject.transform);
         NewWheel.gameObject.transform.position = AttachPoint.position;
         NewWheel.gameObject.transform.rotation = AttachPoint.rotation;
+        NewWheel.GetComponent<Rigidbody>().isKinematic = true;
+        NewWheel.GetComponent<Rigidbody>().freezeRotation = true;
         NewWheel.GetComponent<MeshCollider>().enabled = false;
+
         Debug.Log("<color=orange>[SnapNewWheel.cs]</color> New wheel has been added to the chassis.");
     }
 }
