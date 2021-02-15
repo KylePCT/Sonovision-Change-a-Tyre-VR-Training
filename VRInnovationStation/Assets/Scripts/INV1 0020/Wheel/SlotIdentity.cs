@@ -32,6 +32,12 @@ public class SlotIdentity : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter(Collider col)
     {
+        //Failsafe, make sure the wrench has an active socket interactor unless otherwise.
+        if (WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enabled == false)
+        {
+            WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enabled = true;
+        }
+
         //If the slot is in contact with a bolt, allow it to attach to the socket.
         if (col.tag == "Bolts")
         {
@@ -44,11 +50,11 @@ public class SlotIdentity : MonoBehaviourPunCallbacks
                     //Slots for bolts are now active on the new wheel.
                     GetComponent<XRSocketInteractor>().enabled = true;
 
-                    col.gameObject.transform.SetParent(gameObject.transform);
-                    col.gameObject.transform.position = gameObject.transform.position;
+                    //Start the coroutine we define below named ExampleCoroutine.
+                    StartCoroutine(TempDisableSocket());
 
                     m_photonView.RPC("IncreaseProgress", RpcTarget.AllBuffered); //Photon for percentage sets.
-                    col.GetComponent<BoltIdentity>().InSlot = true; //Tell the bolt it is now in a slot.
+                    AttachedBolt.GetComponent<BoltIdentity>().InSlot = true; //Tell the bolt it is now in a slot.
                     Debug.Log("<color=orange>[SlotIdentity.cs]</color> Bolt <" + col.gameObject.name + "> is now in a slot.");
 
                     WheelManager.DoAllSlotsHaveBolts();
@@ -57,7 +63,6 @@ public class SlotIdentity : MonoBehaviourPunCallbacks
 
             else
             {
-                WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enableInteractions = true;
                 Debug.Log("<color=orange>[SlotIdentity.cs]</color> Bolt <" + col.gameObject.name + "> not attached to slot. Maybe CanNewWheelBeAttached is false or SlotType is not a wheel slot.");
             }
         }
@@ -70,8 +75,6 @@ public class SlotIdentity : MonoBehaviourPunCallbacks
         {
             if (WheelManager.CanNewWheelBeAttached == true && SlotType == 0)
             {
-                WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enableInteractions = true;
-
                 m_photonView.RPC("DecreaseProgress", RpcTarget.AllBuffered); //Photon for percentage sets.
             }
         }
@@ -87,5 +90,23 @@ public class SlotIdentity : MonoBehaviourPunCallbacks
     void DecreaseProgress()
     {
         FindObjectOfType<ProgressChecker>().DecreasePercentageBy(2);
+    }
+
+    IEnumerator TempDisableSocket()
+    {
+        //Print the time of when the function is first called.
+        Debug.Log("<color=orange>[SlotIdentity.cs]</color> Started Coroutine at timestamp: <" + Time.time + ">.");
+
+        WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enabled = false;
+        WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().socketActive = false;
+
+        //Yield on a new YieldInstruction that waits for x seconds.
+        yield return new WaitForSeconds(1f);
+
+        WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enabled = true;
+        WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().socketActive = true;
+
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("<color=orange>[SlotIdentity.cs]</color> Finished Coroutine at timestamp: <" + Time.time + ">.");
     }
 }
