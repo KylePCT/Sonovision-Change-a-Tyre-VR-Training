@@ -58,6 +58,10 @@ public class WrenchManager : MonoBehaviourPunCallbacks, Photon.Pun.IPunObservabl
         {
             BitInSocket = BitSocket.GetComponent<XRSocketInteractor>().selectTarget.gameObject;
         }
+        else
+        {
+            return;
+        }
     }
 
     //Check is the bit is correct.

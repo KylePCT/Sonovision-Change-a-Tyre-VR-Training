@@ -39,17 +39,24 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
         //If the correct bit is colliding...
         if (other.tag == "WrenchBit" && WrenchManager.TheBitIsCorrect == true)
         {
-            //If the wrench doesn't have anything on the bit...
+            //If the wrench doesn't have anything on the bit, remove the bolt from the slot.
             if (WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().selectTarget == null)
             {
                 //Remove the bolt and check if all are removed.
                 InSlot = false;
+
+
                 this.gameObject.transform.SetParent(null);
                 WheelManager.AreAllBoltsRemoved();
                 FindObjectOfType<AudioManager>().PlaySound("PneumaticWrench");
                 m_photonView.RPC("UpdateProgress", RpcTarget.AllBuffered);
 
-                Debug.Log("<color=orange>[BoltIdentity.cs]</color> Bolt: " + gameObject.name + " is now removed from the old wheel.");
+                Debug.Log("<color=orange>[BoltIdentity.cs]</color> Bolt: <" + gameObject.name + "> is now removed from the old wheel.");
+            }
+
+            else
+            {
+                Debug.Log("<color=orange>[BoltIdentity.cs]</color> Item: <" + WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().selectTarget.name + "> is now connected to the wrench bit socket.");
             }
         }
     }

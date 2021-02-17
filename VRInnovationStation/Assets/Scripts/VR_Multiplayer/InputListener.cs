@@ -43,4 +43,30 @@ public class InputListener : MonoBehaviour
             }
         }
     }
+
+    public void CallHapticLeft(uint channel, float amplitude, float duration)
+    {
+        InputDevice device = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
+        HapticCapabilities capabilities;
+        if (device.TryGetHapticCapabilities(out capabilities))
+        {
+            if (capabilities.supportsImpulse)
+            {
+                device.SendHapticImpulse(channel, amplitude, duration);
+            }
+        }
+    }
+
+    public void CallHapticRight(uint channel, float amplitude, float duration)
+    {
+        InputDevice device = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+        HapticCapabilities capabilities;
+        if (device.TryGetHapticCapabilities(out capabilities))
+        {
+            if (capabilities.supportsImpulse)
+            {
+                device.SendHapticImpulse(channel, amplitude, duration);
+            }
+        }
+    }
 }

@@ -40,6 +40,7 @@ public class RaiseLowerLift : MonoBehaviour
     public LeverEnableLift EnableLift;
     private bool CanMoveLift = false;
     private bool CanRemoveWheel = false;
+    private bool hasRPCBeenCalled = false;
 
     [Header("Visual Materials")]
     public Material DefaultMat;
@@ -60,6 +61,7 @@ public class RaiseLowerLift : MonoBehaviour
 
         IsRaising = false;
         IsLowering = false;
+        hasRPCBeenCalled = false;
 
         //Auto-generate limits based on current position.
         LowestPositionLimit = LowestPositionLimit + Lift.transform.position.y;
@@ -142,7 +144,12 @@ public class RaiseLowerLift : MonoBehaviour
             CanRemoveWheel = true;
             ButtonConfirmationIndication.GetComponent<MeshRenderer>().material = WheelCanBeMoved;
             UI_LiftIsRaisedTaskButton.SetActive(true);
-            m_photonView.RPC("SetActiveUIElements", RpcTarget.AllBuffered);
+
+            if (!hasRPCBeenCalled)
+            {
+                SetActiveUIElements();
+                hasRPCBeenCalled = true;
+            }
         }
         else
         {
@@ -214,8 +221,6 @@ public class RaiseLowerLift : MonoBehaviour
         }
     }
 
-    //Photon multiplayer; sync UI and SFX.
-    [PunRPC]
     void SetActiveUIElements()
     {
         if (UI_ProgressTaskComplete == false)
