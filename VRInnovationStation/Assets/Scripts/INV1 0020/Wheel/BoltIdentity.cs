@@ -51,6 +51,7 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
             {
                 //Remove the bolt and check if all are removed.
                 InSlot = false;
+                boltNeedsTightening = false;
 
                 this.gameObject.transform.SetParent(null);
                 WheelManager.AreAllBoltsRemoved();
@@ -59,21 +60,19 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
 
                 Debug.Log("<color=orange>[BoltIdentity.cs]</color> Bolt: <" + gameObject.name + "> is now removed from the old wheel.");
             }
-
-            else
-            {
-                Debug.Log("<color=orange>[BoltIdentity.cs]</color> Item: <" + WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().selectTarget.name + "> is now connected to the wrench bit socket.");
-            }
         }
 
         if (other.tag == "WheelBoltHoles" && boltNeedsTightening)
         {
             //If the bolt needs tightening (using the wrench after placing the bolt in manually).
-            FindObjectOfType<AudioManager>().PlaySound("PneumaticWrench");
-            m_photonView.RPC("UpdateProgress", RpcTarget.AllBuffered);
             other.GetComponent<XRSocketInteractor>().enabled = false;
             isBoltTight = true;
+
+            FindObjectOfType<AudioManager>().PlaySound("PneumaticWrench");
+            m_photonView.RPC("UpdateProgress", RpcTarget.AllBuffered);
             Debug.Log("<color=orange>[BoltIdentity.cs]</color> Bolt " + gameObject.name + " is now tight.");
+
+            WheelManager.AreAllBoltsTight();
         }
     }
 

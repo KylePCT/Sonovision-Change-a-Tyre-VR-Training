@@ -86,35 +86,54 @@ public class WheelManager : MonoBehaviourPunCallbacks
             {
                 Debug.Log("<color=orange>[WheelManager.cs]</color> Checking bolt <" + i + ">.");
 
-                //If any of the bolts in the array are not in slot and tight, call return.
-                if (Bolts[i].GetComponent<BoltIdentity>().isBoltTight == false)
+                //If any of the bolts in the array are not in slot, call return.
+                if (Bolts[i].GetComponent<BoltIdentity>().InSlot == false)
                 {
                     Debug.Log("<color=orange>[WheelManager.cs]</color> Task not completed, one or more bolts are still needed.");
                     return;
                     //Check for nothing.
                 }
+
+                else
+                {
+                    Bolts[i].GetComponent<BoltIdentity>().boltNeedsTightening = true;
+                }
             }
 
-            IsNewWheelAttached = true;
-            Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel has all bolts and task is complete.");
-
-            //Change the collisions around.
-            foreach(GameObject i in ChassisCollisions)
-            {
-                i.SetActive(false);
-            }
-
-            foreach(GameObject j in OriginCollisions)
-            {
-                j.SetActive(true);
-            }
-
-            UI_Canvas_2o.SetActive(true);
-            Debug.Log("<color=orange>[WheelManager.cs]</color> Arm collisions are now inverted.");
-            FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
-
-            m_photonView.RPC("WheelReplacedTask", RpcTarget.AllBuffered); //Photon for percentage sets.
+            AreAllBoltsTight();
         }
+    }
+
+    public void AreAllBoltsTight()
+    {
+        for (int i = 0; i < Bolts.Length; i++)
+        {
+            if (Bolts[i].GetComponent<BoltIdentity>().isBoltTight == false)
+            {
+                Debug.Log("<color=orange>[WheelManager.cs]</color> Task not completed, one or more bolts are not tight.");
+                return;
+            }
+        }
+
+        IsNewWheelAttached = true;
+        Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel has all bolts and task is complete.");
+
+        //Change the collisions around.
+        foreach (GameObject i in ChassisCollisions)
+        {
+            i.SetActive(false);
+        }
+
+        foreach (GameObject j in OriginCollisions)
+        {
+            j.SetActive(true);
+        }
+
+        UI_Canvas_2o.SetActive(true);
+        Debug.Log("<color=orange>[WheelManager.cs]</color> Arm collisions are now inverted.");
+        FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
+
+        m_photonView.RPC("WheelReplacedTask", RpcTarget.AllBuffered); //Photon for percentage sets.
     }
 
     //Sorts the arrays into descending order for convinience.
