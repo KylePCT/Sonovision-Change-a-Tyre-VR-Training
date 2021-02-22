@@ -31,6 +31,10 @@ public class WheelManager : MonoBehaviourPunCallbacks
     public GameObject[] ChassisCollisions;
     public GameObject[] OriginCollisions;
 
+    //One time checks.
+    private bool wheelHasBeenRemoved = false;
+    private bool wheelHasBeenReplaced = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +47,9 @@ public class WheelManager : MonoBehaviourPunCallbacks
         SortBoltArrays();
 
         CanNewWheelBeAttached = false;
+
+        wheelHasBeenRemoved = false;
+        wheelHasBeenReplaced = false;
     }
 
     //Checks if all the bolts are removed before allowing the user to take the wheel off.
@@ -62,8 +69,12 @@ public class WheelManager : MonoBehaviourPunCallbacks
         }
 
         //Wheel can now be removed. Allow the next stuff.
+        WheelMain.GetComponent<MeshCollider>().enabled = true;
+        WheelMain.layer = 11; //Make it an interactable.
+
         NewWheel.GetComponent<MeshCollider>().enabled = true;
-        WheelMain.layer = 11;
+        NewWheel.GetComponent<Rigidbody>().isKinematic = true;
+
         CanNewWheelBeAttached = true;
         WheelSnap.CanSnap = true;
         Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel can now be removed.");
@@ -88,27 +99,45 @@ public class WheelManager : MonoBehaviourPunCallbacks
                     return;
                     //Check for nothing.
                 }
+
+                Bolts[i].GetComponent<BoltIdentity>().needsTightening = true;
             }
 
             IsNewWheelAttached = true;
-            Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel has all bolts and task is complete.");
-
-            //Change the collisions around.
-            foreach(GameObject i in ChassisCollisions)
-            {
-                i.SetActive(false);
-            }
-
-            foreach(GameObject j in OriginCollisions)
-            {
-                j.SetActive(true);
-            }
-
-            Debug.Log("<color=orange>[WheelManager.cs]</color> Arm collisions are now inverted.");
-            FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
-
-            m_photonView.RPC("WheelReplacedTask", RpcTarget.AllBuffered); //Photon for percentage sets.
+            Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel has all bolts.");
         }
+    }
+
+    public void AreAllBoltsTight()
+    {
+        for (int i = 0; i < Bolts.Length; i++)
+        {
+            Debug.Log("<color=orange>[WheelManager.cs]</color> Checking tightness for bolt <" + i + ">.");
+
+            //If any of the bolts in the array are not tight, call return.
+            if (Bolts[i].GetComponent<BoltIdentity>().IsTight == false)
+            {
+                Debug.Log("<color=orange>[WheelManager.cs]</color> Task not completed, one or more bolts are still not tight.");
+                return;
+                //Check for nothing.
+            }
+        }
+
+        //Change the collisions around.
+        foreach (GameObject i in ChassisCollisions)
+        {
+            i.SetActive(false);
+        }
+
+        foreach (GameObject j in OriginCollisions)
+        {
+            j.SetActive(true);
+        }
+
+        Debug.Log("<color=orange>[WheelManager.cs]</color> Arm collisions are now inverted.");
+        FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
+
+        m_photonView.RPC("WheelReplacedTask", RpcTarget.AllBuffered); //Photon for percentage sets.
     }
 
     //Sorts the arrays into descending order for convinience.
@@ -123,13 +152,22 @@ public class WheelManager : MonoBehaviourPunCallbacks
     [PunRPC]
     void WheelRemovedTask()
     {
-        WheelMain.GetComponent<MeshCollider>().enabled = true;
-        FindObjectOfType<ProgressChecker>().ChangePercentageTo(55);
+        if (!wheelHasBeenRemoved)
+        {
+            WheelMain.GetComponent<MeshCollider>().enabled = true;
+            FindObjectOfType<ProgressChecker>().ChangePercentageTo(55);
+            WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enabled = false;
+            wheelHasBeenRemoved = true;
+        }
     }
 
     [PunRPC]
     void WheelReplacedTask()
     {
-        FindObjectOfType<ProgressChecker>().ChangePercentageTo(90);
+        if (!wheelHasBeenReplaced)
+        {
+            FindObjectOfType<ProgressChecker>().ChangePercentageTo(90);
+            wheelHasBeenReplaced = true;
+        }
     }
 }

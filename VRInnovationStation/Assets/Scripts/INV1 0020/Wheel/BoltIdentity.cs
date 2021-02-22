@@ -11,16 +11,24 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
     [Header("Identity")]
     public int BoltNumber;
     public bool InSlot = true;
+    public bool needsTightening = false;
+    public bool IsTight = false;
 
     public WrenchManager WrenchManager;
     public WheelManager WheelManager;
     public PhotonView m_photonView;
 
+    private Animator anim;
+
     //Bolts start in slot without colliders.
     private void Start()
     {
         InSlot = true;
+        needsTightening = false;
+        IsTight = false;
+
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        anim = GetComponent<Animator>();
     }
 
     //Once the wrench has the correct bit, allow these bolts to have colliders to be interacted with. 
@@ -49,6 +57,29 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
                 m_photonView.RPC("UpdateProgress", RpcTarget.AllBuffered);
 
                 Debug.Log("<color=orange>[BoltIdentity.cs]</color> Bolt: " + gameObject.name + " is now removed from the old wheel.");
+            }
+        }
+
+        //If the wrench touches the bolt and the new wheel is attached.
+        if (other.tag == "WrenchBit" && WheelManager.IsNewWheelAttached == true)
+        {
+            if (!InSlot)
+            {
+                Debug.LogWarning("<color=orange>[BoltIdentity.cs]</color> <color=red>Tightness check for Bolt: <" + gameObject.name + "> failed as it wasn't in a slot. </color>");
+            }
+
+            //If it still needs tightening, tighten the bolt.
+            if (needsTightening == true && InSlot == true)
+            {
+                this.GetComponent<XRGrabInteractable>().enabled = false;
+                this.GetComponent<BoxCollider>().enabled = false;
+                FindObjectOfType<AudioManager>().PlaySound("PneumaticWrench");
+                IsTight = true;
+                anim.Play("AN_BoltTighten");
+                UpdateProgress();
+                WheelManager.AreAllBoltsTight();
+                Debug.Log("<color=orange>[BoltIdentity.cs]</color> Bolt: <" + gameObject.name + "> has been tightened.");
+                needsTightening = false;
             }
         }
     }

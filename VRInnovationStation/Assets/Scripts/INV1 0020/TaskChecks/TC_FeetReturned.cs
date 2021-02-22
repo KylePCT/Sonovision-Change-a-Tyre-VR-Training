@@ -38,7 +38,7 @@ public class TC_FeetReturned : MonoBehaviourPunCallbacks
         {
             IsFootInCollision = false;
             m_photonView.RPC("UpdatePercentageDown", RpcTarget.AllBuffered);
-            Debug.Log("<color=white>[TC_FeetReturned.cs] </color>" + gameObject.name + " is no longer in the origin.");
+            Debug.Log("<color=magenta>[TC_FeetReturned.cs] </color>" + gameObject.name + " is no longer in the origin.");
         }
 
     }
