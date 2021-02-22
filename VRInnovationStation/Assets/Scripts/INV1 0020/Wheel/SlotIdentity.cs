@@ -19,8 +19,6 @@ public class SlotIdentity : MonoBehaviourPunCallbacks
     public WrenchManager WrenchManager;
     public PhotonView m_photonView;
 
-    private GameObject AttachedBolt;
-
     private void Start()
     {
         //If the slot is on the wheel, set the socket to inactive.
@@ -35,29 +33,19 @@ public class SlotIdentity : MonoBehaviourPunCallbacks
         //If the slot is in contact with a bolt, allow it to attach to the socket.
         if (col.tag == "Bolts")
         {
-            AttachedBolt = col.gameObject;
-
             if (WheelManager.CanNewWheelBeAttached == true && SlotType == 0)
             {
-                if (WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().selectTarget != null)
-                {
-                    //Slots for bolts are now active on the new wheel.
-                    GetComponent<XRSocketInteractor>().enabled = true;
+                //Slots for bolts are now active on the new wheel.
+                GetComponent<XRSocketInteractor>().enabled = true;
+                m_photonView.RPC("IncreaseProgress", RpcTarget.AllBuffered); //Photon for percentage sets.
+                col.GetComponent<BoltIdentity>().InSlot = true; //Tell the bolt it is now in a slot.
+                Debug.Log("<color=orange>[SlotIdentity.cs]</color> Bolt <" + col.gameObject.name + "> is now in a slot.");
 
-                    col.gameObject.transform.SetParent(gameObject.transform);
-                    col.gameObject.transform.position = gameObject.transform.position;
-
-                    m_photonView.RPC("IncreaseProgress", RpcTarget.AllBuffered); //Photon for percentage sets.
-                    col.GetComponent<BoltIdentity>().InSlot = true; //Tell the bolt it is now in a slot.
-                    Debug.Log("<color=orange>[SlotIdentity.cs]</color> Bolt <" + col.gameObject.name + "> is now in a slot.");
-
-                    WheelManager.DoAllSlotsHaveBolts();
-                }
+                WheelManager.DoAllSlotsHaveBolts();
             }
-
             else
             {
-                WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enableInteractions = true;
+                WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enabled = true;
                 Debug.Log("<color=orange>[SlotIdentity.cs]</color> Bolt <" + col.gameObject.name + "> not attached to slot. Maybe CanNewWheelBeAttached is false or SlotType is not a wheel slot.");
             }
         }
@@ -70,8 +58,6 @@ public class SlotIdentity : MonoBehaviourPunCallbacks
         {
             if (WheelManager.CanNewWheelBeAttached == true && SlotType == 0)
             {
-                WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enableInteractions = true;
-
                 m_photonView.RPC("DecreaseProgress", RpcTarget.AllBuffered); //Photon for percentage sets.
             }
         }
