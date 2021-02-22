@@ -16,19 +16,12 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
     public WheelManager WheelManager;
     public PhotonView m_photonView;
 
-    [HideInInspector]
-    public bool boltNeedsTightening = false;
-
-    [HideInInspector]
-    public bool isBoltTight = false;
 
     //Bolts start in slot without colliders.
     private void Start()
     {
         InSlot = true;
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
-        boltNeedsTightening = false;
-        isBoltTight = false;
     }
 
     //Once the wrench has the correct bit, allow these bolts to have colliders to be interacted with. 
@@ -52,6 +45,7 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
                 //Remove the bolt and check if all are removed.
                 InSlot = false;
 
+
                 this.gameObject.transform.SetParent(null);
                 WheelManager.AreAllBoltsRemoved();
                 FindObjectOfType<AudioManager>().PlaySound("PneumaticWrench");
@@ -64,16 +58,6 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
             {
                 Debug.Log("<color=orange>[BoltIdentity.cs]</color> Item: <" + WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().selectTarget.name + "> is now connected to the wrench bit socket.");
             }
-        }
-
-        if (other.tag == "WheelBoltHoles" && boltNeedsTightening)
-        {
-            //If the bolt needs tightening (using the wrench after placing the bolt in manually).
-            FindObjectOfType<AudioManager>().PlaySound("PneumaticWrench");
-            m_photonView.RPC("UpdateProgress", RpcTarget.AllBuffered);
-            other.GetComponent<XRSocketInteractor>().enabled = false;
-            isBoltTight = true;
-            Debug.Log("<color=orange>[BoltIdentity.cs]</color> Bolt " + gameObject.name + " is now tight.");
         }
     }
 

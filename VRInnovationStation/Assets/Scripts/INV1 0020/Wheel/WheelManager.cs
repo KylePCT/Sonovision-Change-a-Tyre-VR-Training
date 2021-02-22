@@ -86,8 +86,8 @@ public class WheelManager : MonoBehaviourPunCallbacks
             {
                 Debug.Log("<color=orange>[WheelManager.cs]</color> Checking bolt <" + i + ">.");
 
-                //If any of the bolts in the array are not in slot and tight, call return.
-                if (Bolts[i].GetComponent<BoltIdentity>().isBoltTight == false)
+                //If any of the bolts in the array are not in slot, call return.
+                if (Bolts[i].GetComponent<BoltIdentity>().InSlot == false)
                 {
                     Debug.Log("<color=orange>[WheelManager.cs]</color> Task not completed, one or more bolts are still needed.");
                     return;
