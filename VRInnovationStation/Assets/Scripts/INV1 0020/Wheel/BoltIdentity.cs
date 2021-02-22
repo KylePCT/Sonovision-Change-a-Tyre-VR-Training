@@ -16,7 +16,6 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
     public WheelManager WheelManager;
     public PhotonView m_photonView;
 
-
     //Bolts start in slot without colliders.
     private void Start()
     {

@@ -11,8 +11,6 @@ public class WheelManager : MonoBehaviourPunCallbacks
     public WrenchManager WrenchManager;
     public SnapNewWheel WheelSnap;
     public PhotonView m_photonView;
-    public GameObject UI_Canvas_2k;
-    public GameObject UI_Canvas_2o;
 
     [Header("Object References")]
     public GameObject WheelMain;
@@ -70,7 +68,6 @@ public class WheelManager : MonoBehaviourPunCallbacks
         WheelMain.layer = 11; //Make it interactable. (Layer 11)
         CanNewWheelBeAttached = true;
         WheelSnap.CanSnap = true;
-        UI_Canvas_2k.SetActive(true);
         Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel can now be removed.");
         m_photonView.RPC("WheelRemovedTask", RpcTarget.AllBuffered); //Photon for percentage sets.
     }
@@ -109,7 +106,6 @@ public class WheelManager : MonoBehaviourPunCallbacks
                 j.SetActive(true);
             }
 
-            UI_Canvas_2o.SetActive(true);
             Debug.Log("<color=orange>[WheelManager.cs]</color> Arm collisions are now inverted.");
             FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
 
