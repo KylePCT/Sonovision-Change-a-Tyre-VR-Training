@@ -18,8 +18,6 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
     public WheelManager WheelManager;
     public PhotonView m_photonView;
 
-    private Animator anim;
-
     //Bolts start in slot without colliders.
     private void Start()
     {
@@ -28,7 +26,6 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
         IsTight = false;
 
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
-        anim = GetComponent<Animator>();
     }
 
     //Once the wrench has the correct bit, allow these bolts to have colliders to be interacted with. 
@@ -52,7 +49,9 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
                 //Remove the bolt and check if all are removed.
                 InSlot = false;
                 this.gameObject.transform.SetParent(null);
+
                 WheelManager.AreAllBoltsRemoved();
+
                 FindObjectOfType<AudioManager>().PlaySound("PneumaticWrench");
                 m_photonView.RPC("UpdateProgress", RpcTarget.AllBuffered);
 
@@ -75,9 +74,10 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
                 this.GetComponent<BoxCollider>().enabled = false;
                 FindObjectOfType<AudioManager>().PlaySound("PneumaticWrench");
                 IsTight = true;
-                anim.Play("AN_BoltTighten");
+
                 UpdateProgress();
                 WheelManager.AreAllBoltsTight();
+
                 Debug.Log("<color=orange>[BoltIdentity.cs]</color> Bolt: <" + gameObject.name + "> has been tightened.");
                 needsTightening = false;
             }

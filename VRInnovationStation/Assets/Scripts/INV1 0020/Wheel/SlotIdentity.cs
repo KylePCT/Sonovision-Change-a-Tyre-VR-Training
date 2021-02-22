@@ -46,7 +46,6 @@ public class SlotIdentity : MonoBehaviourPunCallbacks
             else
             {
                 WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enabled = true;
-                Debug.Log("<color=orange>[SlotIdentity.cs]</color> Bolt <" + col.gameObject.name + "> not attached to slot. Maybe CanNewWheelBeAttached is false or SlotType is not a wheel slot.");
             }
         }
     }

@@ -5802,7 +5802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &187146433
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11703,7 +11703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &378605362
 Transform:
   m_ObjectHideFlags: 0
@@ -11769,6 +11769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsFootInCollision: 0
+  whManager: {fileID: 2123629107}
   m_photonView: {fileID: 378605364}
 --- !u!65 &378605366
 BoxCollider:
@@ -18831,7 +18832,6 @@ GameObject:
   - component: {fileID: 597546484}
   - component: {fileID: 597546486}
   - component: {fileID: 597546487}
-  - component: {fileID: 597546488}
   m_Layer: 8
   m_Name: Wheel_Bolt_003
   m_TagString: Bolts
@@ -19114,25 +19114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e13bd496786918489b181b5a86bc38c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &597546488
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597546476}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d5bccad842a9dfe4a88416a707396d46, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &600413481
 GameObject:
   m_ObjectHideFlags: 0
@@ -21095,7 +21076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &637012152
 Transform:
   m_ObjectHideFlags: 0
@@ -21161,6 +21142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsFootInCollision: 0
+  whManager: {fileID: 2123629107}
   m_photonView: {fileID: 637012154}
 --- !u!65 &637012156
 BoxCollider:
@@ -25481,7 +25463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &812236748
 Transform:
   m_ObjectHideFlags: 0
@@ -25547,6 +25529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsFootInCollision: 0
+  whManager: {fileID: 2123629107}
   m_photonView: {fileID: 812236750}
 --- !u!65 &812236752
 BoxCollider:
@@ -25971,7 +25954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &823374146
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29074,8 +29057,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917096457}
-  m_LocalRotation: {x: 0.98154837, y: -0.008765389, z: -0.1909789, w: 0.0036174806}
-  m_LocalPosition: {x: -1.688, y: 1.364, z: 5.863}
+  m_LocalRotation: {x: 0.96352214, y: -0.0062272977, z: 0.26746073, w: 0.0071511525}
+  m_LocalPosition: {x: -1.739, y: 1.365, z: 5.861}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 6732795}
@@ -29083,7 +29066,7 @@ Transform:
   - {fileID: 7221318}
   m_Father: {fileID: 527208631}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 539.78503, y: 382.023, z: 1.0649872}
+  m_LocalEulerAnglesHint: {x: 539.02, y: 328.976, z: 0.46798706}
 --- !u!114 &917096464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37276,7 +37259,6 @@ GameObject:
   - component: {fileID: 1146372671}
   - component: {fileID: 1146372673}
   - component: {fileID: 1146372674}
-  - component: {fileID: 1146372675}
   m_Layer: 8
   m_Name: Wheel_Bolt_004
   m_TagString: Bolts
@@ -37559,25 +37541,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e13bd496786918489b181b5a86bc38c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1146372675
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1146372663}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d5bccad842a9dfe4a88416a707396d46, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1147364225
 GameObject:
   m_ObjectHideFlags: 0
@@ -43034,7 +42997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1329466303
 Transform:
   m_ObjectHideFlags: 0
@@ -43100,6 +43063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsFootInCollision: 0
+  whManager: {fileID: 2123629107}
   m_photonView: {fileID: 1329466305}
 --- !u!65 &1329466307
 BoxCollider:
@@ -52851,7 +52815,6 @@ GameObject:
   - component: {fileID: 1696579645}
   - component: {fileID: 1696579647}
   - component: {fileID: 1696579648}
-  - component: {fileID: 1696579649}
   m_Layer: 8
   m_Name: Wheel_Bolt_005
   m_TagString: Bolts
@@ -53134,25 +53097,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e13bd496786918489b181b5a86bc38c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1696579649
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696579637}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d5bccad842a9dfe4a88416a707396d46, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1699754741
 GameObject:
   m_ObjectHideFlags: 0
@@ -67401,6 +67345,8 @@ MonoBehaviour:
   WrenchManager: {fileID: 1340159584}
   WheelSnap: {fileID: 8970699921859665985}
   m_photonView: {fileID: 2123629108}
+  UI_Canvas_2k: {fileID: 187146432}
+  UI_Canvas_2o: {fileID: 823374145}
   WheelMain: {fileID: 4821047634440765551}
   WheelBreakDisk: {fileID: 8970699921859665984}
   WheelBoltsManager: {fileID: 524355017}
@@ -67844,7 +67790,6 @@ GameObject:
   - component: {fileID: 2141997204}
   - component: {fileID: 2141997206}
   - component: {fileID: 2141997207}
-  - component: {fileID: 2141997208}
   m_Layer: 8
   m_Name: Wheel_Bolt_002
   m_TagString: Bolts
@@ -68127,25 +68072,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e13bd496786918489b181b5a86bc38c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &2141997208
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141997196}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d5bccad842a9dfe4a88416a707396d46, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2146575587
 GameObject:
   m_ObjectHideFlags: 0
@@ -78314,7 +78240,6 @@ GameObject:
   - component: {fileID: 6309427354559235449}
   - component: {fileID: 6309427354559235451}
   - component: {fileID: 6309427354559235452}
-  - component: {fileID: 6309427354559235453}
   m_Layer: 8
   m_Name: Wheel_Bolt_001
   m_TagString: Bolts
@@ -78536,25 +78461,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e13bd496786918489b181b5a86bc38c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &6309427354559235453
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6309427354559235444}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d5bccad842a9dfe4a88416a707396d46, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6312367889939534655
 GameObject:
   m_ObjectHideFlags: 0

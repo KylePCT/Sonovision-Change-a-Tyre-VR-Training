@@ -38,6 +38,8 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
     {
         //Turns off the guides.
         DeactivateAllMeshRenderers();
+        TurnOffSecondCollisions();
+
         UI_ProgressTaskComplete = false;
     }
 
@@ -68,13 +70,16 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
     {
         Debug.Log("<color=magenta>[TC_FeetInPlace.cs]</color> Checking if Sim is complete...");
 
-        if (Col_LeftBackArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
-            Col_LeftFrontArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
-            Col_RightBackArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
-            Col_RightFrontArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision)
+        if (whManager.IsNewWheelAttached)
         {
-            Debug.Log("<b><color=magenta>[TC_FeetInPlace.cs]</color> <color=#5DF958>Simulation complete!</color></b>");
-            m_photonView.RPC("SetTo100", RpcTarget.AllBuffered);
+            if (Col_LeftBackArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
+                Col_LeftFrontArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
+                Col_RightBackArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
+                Col_RightFrontArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision)
+            {
+                Debug.Log("<b><color=magenta>[TC_FeetInPlace.cs]</color> <color=#5DF958>Simulation complete!</color></b>");
+                m_photonView.RPC("SetTo100", RpcTarget.AllBuffered);
+            }
         }
     }
 
@@ -107,5 +112,13 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
         Col_LeftBackArmPlace.GetComponent<MeshRenderer>().enabled = false;
         Col_RightFrontArmPlace.GetComponent<MeshRenderer>().enabled = false;
         Col_RightBackArmPlace.GetComponent<MeshRenderer>().enabled = false;
+    }
+
+    private void TurnOffSecondCollisions()
+    {
+        Col_LeftBackArmPlaceDefault.SetActive(false);
+        Col_LeftFrontArmPlaceDefault.SetActive(false);
+        Col_RightBackArmPlaceDefault.SetActive(false);
+        Col_RightFrontArmPlaceDefault.SetActive(false);
     }
 }
