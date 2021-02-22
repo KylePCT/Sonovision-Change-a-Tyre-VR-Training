@@ -32,6 +32,12 @@ public class SlotIdentity : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter(Collider col)
     {
+        //Failsafe, make sure the wrench has an active socket interactor unless otherwise.
+        if (WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enabled == false)
+        {
+            WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enabled = true;
+        }
+
         //If the slot is in contact with a bolt, allow it to attach to the socket.
         if (col.tag == "Bolts")
         {
@@ -71,6 +77,8 @@ public class SlotIdentity : MonoBehaviourPunCallbacks
 
     private void OnTriggerExit(Collider col)
     {
+        GetComponent<XRSocketInteractor>().enabled = false;
+
         if (col.tag == "Bolts")
         {
             if (WheelManager.CanNewWheelBeAttached == true && SlotType == 0)

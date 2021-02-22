@@ -24,20 +24,21 @@ public class SnapNewWheel : MonoBehaviour
         //If the collider is triggered by 'Wheel_New', and other scripts have set their completed values...
         if (other.name == "Wheel_New" && WheelManager.CanNewWheelBeAttached && CanSnap)
         {
+            NewWheel.GetComponent<XRGrabInteractable>().enabled = true;
             SnapWheel();
-            NewWheel.GetComponent<XRGrabInteractable>().enabled = false;
         }
     }
     
     //Destroy old components and set the new whwel to have these.
     public void SnapWheel()
     {
-        NewWheel.GetComponent<XRGrabInteractable>().enabled = false;
+        Destroy(NewWheel.GetComponent<XRGrabInteractable>());
         OldWheel.gameObject.transform.SetParent(null);
 
         NewWheel.gameObject.transform.SetParent(SnapParent.gameObject.transform);
         NewWheel.gameObject.transform.position = AttachPoint.position;
         NewWheel.gameObject.transform.rotation = AttachPoint.rotation;
+        NewWheel.GetComponent<MeshCollider>().enabled = false;
 
         Debug.Log("<color=orange>[SnapNewWheel.cs]</color> New wheel has been added to the chassis.");
     }
