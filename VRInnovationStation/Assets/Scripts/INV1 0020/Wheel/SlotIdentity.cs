@@ -49,16 +49,21 @@ public class SlotIdentity : MonoBehaviourPunCallbacks
                 {
                     //Slots for bolts are now active on the new wheel.
                     GetComponent<XRSocketInteractor>().enabled = true;
-                    
+
+                    //Start the coroutine we define below named ExampleCoroutine.
+                    StartCoroutine(TempDisableSocket());
+
                     m_photonView.RPC("IncreaseProgress", RpcTarget.AllBuffered); //Photon for percentage sets.
                     AttachedBolt.GetComponent<BoltIdentity>().InSlot = true; //Tell the bolt it is now in a slot.
-                    BoltInSlot = false;
-
                     Debug.Log("<color=orange>[SlotIdentity.cs]</color> Bolt <" + col.gameObject.name + "> is now in a slot.");
-                    Debug.Log("<color=orange>[SlotIdentity.cs]</color> Socket currently has: <" + WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().selectTarget.name + "> attached.");
 
                     WheelManager.DoAllSlotsHaveBolts();
                 }
+            }
+
+            else
+            {
+                Debug.Log("<color=orange>[SlotIdentity.cs]</color> Bolt <" + col.gameObject.name + "> not attached to slot. Maybe CanNewWheelBeAttached is false or SlotType is not a wheel slot.");
             }
         }
     }
@@ -85,5 +90,23 @@ public class SlotIdentity : MonoBehaviourPunCallbacks
     void DecreaseProgress()
     {
         FindObjectOfType<ProgressChecker>().DecreasePercentageBy(2);
+    }
+
+    IEnumerator TempDisableSocket()
+    {
+        //Print the time of when the function is first called.
+        Debug.Log("<color=orange>[SlotIdentity.cs]</color> Started Coroutine at timestamp: <" + Time.time + ">.");
+
+        WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enabled = false;
+        WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().socketActive = false;
+
+        //Yield on a new YieldInstruction that waits for x seconds.
+        yield return new WaitForSeconds(1f);
+
+        WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enabled = true;
+        WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().socketActive = true;
+
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("<color=orange>[SlotIdentity.cs]</color> Finished Coroutine at timestamp: <" + Time.time + ">.");
     }
 }
