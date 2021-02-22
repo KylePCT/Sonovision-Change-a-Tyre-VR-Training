@@ -24,20 +24,19 @@ public class LeverEnableLift : MonoBehaviour, Photon.Pun.IPunObservable
             LiftCanMove = true;
             FindObjectOfType<AudioManager>().PlaySound("UI_PercentUp");
             UI_ButtonForward.SetActive(true);
-        }
-    }
 
-    private void OnTriggerStay(Collider other)
-    {
-        LiftCanMove = true;
-        UI_ButtonForward.SetActive(true);
+        }
+        else
+        {
+            LiftCanMove = false;
+            FindObjectOfType<AudioManager>().PlaySound("UI_PercentDown");
+            UI_ButtonForward.SetActive(false);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         LiftCanMove = false;
-        FindObjectOfType<AudioManager>().PlaySound("UI_PercentDown");
-        UI_ButtonForward.SetActive(false);
     }
 
     //This void allows the object to be synced using Photon View.

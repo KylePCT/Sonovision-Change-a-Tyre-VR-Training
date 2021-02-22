@@ -10,7 +10,8 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
     private PhotonView m_photonView;
     public Rigidbody rb; //For access to the Kinematic options.
     public bool isBeingHeld = false; //Keep track of the object held.
-    public bool stayKinematic = false;
+    private bool wasAlreadyKinematic;
+    public bool wantsToBeKinematicAfterGrab;
 
     //Grabbed object string storage.
     string grabbedName;
@@ -25,27 +26,48 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
         //Set the names of the presumed grabbed object.
         grabbedName = m_photonView.gameObject.name;
         objectName = gameObject.name;
+
+        if (rb.isKinematic == true)
+        {
+            wasAlreadyKinematic = true;
+        }
+        else
+        {
+            wasAlreadyKinematic = false;
+        }
     }
 
     void Start()
     {
         //Get the rigidbody.
         rb = GetComponent<Rigidbody>();
-
-        if (rb.isKinematic) stayKinematic = true;
     }
 
     [PunRPC]
     void Update()
     {
-        if (!isBeingHeld && !stayKinematic) //If the object is not being held.
+        if (!isBeingHeld) //If the object is not being held.
         {
-            if (rb.isKinematic) rb.isKinematic = false;
+            rb = GetComponent<Rigidbody>();
+
+            //Only turn off the kinematic if it wasn't already kinematic.
+            if (!wasAlreadyKinematic)
+            {
+                rb.isKinematic = false;
+            }
+
+            else if (wantsToBeKinematicAfterGrab)
+            {
+                rb.isKinematic = true;
+                rb.useGravity = true;
+            }
         }
 
         if (isBeingHeld) //If the object is being held.
         {
-            if (!rb.isKinematic) rb.isKinematic = true;
+            rb = GetComponent<Rigidbody>();
+
+            rb.isKinematic = true;
         }
     }
 
@@ -76,8 +98,11 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
         //When an object is no longer selected, call the StopNetworkGrabbing method to all players in the same room.
         m_photonView.RPC("StopNetworkGrabbing", RpcTarget.AllBuffered);
 
-        rb.isKinematic = true;
-        rb.useGravity = true;
+        if (wantsToBeKinematicAfterGrab)
+        {
+            rb.isKinematic = true;
+            rb.useGravity = true;
+        }
     }
 
     private void TransferOwnership()
