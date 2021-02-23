@@ -13,7 +13,14 @@ public class WheelManager : MonoBehaviourPunCallbacks
     public PhotonView m_photonView;
     public GameObject UI_Canvas_2k;
     public GameObject UI_Canvas_2o;
+    public GameObject CorrectBit;
+    [Space(10)]
+    public Material Bolt_StandardMat;
+    public Material Bolt_HighlightMat;
+    public Material Bit_StandardMat;
+    public Material Bit_HighlightMat;
 
+    [Space(10)]
     [Header("Object References")]
     public GameObject WheelMain;
     public GameObject WheelBreakDisk;
@@ -25,6 +32,7 @@ public class WheelManager : MonoBehaviourPunCallbacks
     public GameObject[] WheelMainBoltHoles;
     public GameObject[] WheelBreakBoltHoles;
 
+    [Space(10)]
     [HideInInspector]
     public bool CanNewWheelBeAttached = false;
     [HideInInspector]
@@ -59,6 +67,7 @@ public class WheelManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("<color=orange>[WheelManager.cs]</color> <" + Bolts.Length + "> bolts found.");
 
+        //Checks all bolts; if one is in slot, return.
         for (int i = 0; i < Bolts.Length; i++)
         {
             if (Bolts[i].GetComponent<BoltIdentity>().InSlot == true)
@@ -70,7 +79,7 @@ public class WheelManager : MonoBehaviourPunCallbacks
             }
         }
 
-        //Wheel can now be removed. Allow the next stuff.
+        //If code is allowed to execute...
         WheelMain.GetComponent<MeshCollider>().enabled = true;
         WheelMain.layer = 11; //Make it an interactable.
 
@@ -95,6 +104,7 @@ public class WheelManager : MonoBehaviourPunCallbacks
             for (int i = 0; i < Bolts.Length; i++)
             {
                 Debug.Log("<color=orange>[WheelManager.cs]</color> Checking bolt <" + i + ">.");
+                Bolts[i].gameObject.layer = 1;
 
                 //If any of the bolts in the array are not in slot, call return.
                 if (Bolts[i].GetComponent<BoltIdentity>().InSlot == false)
@@ -104,9 +114,16 @@ public class WheelManager : MonoBehaviourPunCallbacks
                     //Check for nothing.
                 }
 
-                Bolts[i].GetComponent<BoltIdentity>().needsTightening = true;
+                //Only show the highlighted material if it isn't already tight.
+                if (!Bolts[i].GetComponent<BoltIdentity>().IsTight)
+                {
+                    Bolts[i].GetComponent<Renderer>().material = Bolt_HighlightMat;
+                    Bolts[i].GetComponent<BoltIdentity>().needsTightening = true;
+                }
             }
 
+            //If all bolts are in the slots on the wheel...
+            CorrectBit.GetComponent<Renderer>().material = Bit_HighlightMat;
             IsNewWheelAttached = true;
             Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel has all bolts.");
         }
@@ -114,6 +131,9 @@ public class WheelManager : MonoBehaviourPunCallbacks
 
     public void AreAllBoltsTight()
     {
+        CorrectBit.GetComponent<Renderer>().material = Bit_HighlightMat; //Show the user what to do.
+
+        //Check is all bolts are tight...
         for (int i = 0; i < Bolts.Length; i++)
         {
             Debug.Log("<color=orange>[WheelManager.cs]</color> Checking tightness for bolt <" + i + ">.");
@@ -125,6 +145,8 @@ public class WheelManager : MonoBehaviourPunCallbacks
                 return;
                 //Check for nothing.
             }
+
+            Bolts[i].GetComponent<Renderer>().material = Bolt_StandardMat;
         }
 
         //Change the collisions around.
@@ -139,6 +161,11 @@ public class WheelManager : MonoBehaviourPunCallbacks
         }
 
         UI_Canvas_2o.SetActive(true);
+
+        //Remove functionality from the wrench bit.
+        CorrectBit.GetComponent<Renderer>().material = Bit_StandardMat;
+        CorrectBit.GetComponent<XRSocketInteractor>().enabled = false;
+
         Debug.Log("<color=orange>[WheelManager.cs]</color> Arm collisions are now inverted.");
         FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
 
@@ -161,7 +188,6 @@ public class WheelManager : MonoBehaviourPunCallbacks
         {
             WheelMain.GetComponent<MeshCollider>().enabled = true;
             FindObjectOfType<ProgressChecker>().ChangePercentageTo(55);
-            WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().enabled = false;
             wheelHasBeenRemoved = true;
         }
     }
@@ -171,6 +197,8 @@ public class WheelManager : MonoBehaviourPunCallbacks
     {
         if (!wheelHasBeenReplaced)
         {
+            CorrectBit.GetComponent<XRSocketInteractor>().enabled = false;
+            NewWheel.gameObject.layer = 1;
             FindObjectOfType<ProgressChecker>().ChangePercentageTo(90);
             wheelHasBeenReplaced = true;
         }

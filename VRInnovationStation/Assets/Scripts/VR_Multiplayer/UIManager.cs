@@ -11,13 +11,13 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         //Initially the menu should be deactivated.
-        UI_VRMenuGameobject.SetActive(false);
+        //UI_VRMenuGameobject.SetActive(false);
         //UI_OpenWorldsGameobject.SetActive(false);
     }
 
     public void OnWorldsButtonClicked()
     {
-        Debug.Log("Worlds button clicked.");
+        Debug.Log("<color=cyan>[UIManager.cs] </color>Worlds button clicked.");
 
         if (UI_OpenWorldsGameobject != null)
         {
@@ -27,12 +27,12 @@ public class UIManager : MonoBehaviour
 
     public void OnHomeButtonClicked()
     {
-        Debug.Log("Home button clicked.");
+        Debug.Log("<color=cyan>[UIManager.cs] </color>Home button clicked.");
     }
 
     public void OnChangeAvatarButtonClicked()
     {
-        Debug.Log("Change Avatar button clicked.");
+        Debug.Log("<color=cyan>[UIManager.cs] </color>Change Avatar button clicked.");
         AvatarSelectionManager.Instance.ActivateAvatarSelectionPlatform();
     }
 

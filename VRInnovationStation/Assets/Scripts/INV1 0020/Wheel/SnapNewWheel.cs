@@ -28,7 +28,7 @@ public class SnapNewWheel : MonoBehaviour
         }
     }
     
-    //Destroy old components and set the new whwel to have these.
+    //Destroy old components and set the new wheel to have these.
     public void SnapWheel()
     {
         Destroy(NewWheel.GetComponent<XRGrabInteractable>());

@@ -46,6 +46,7 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
     //Check if the feet are in the collision to allow the lift to be raised correctly.
     void Update()
     {
+        //################################# Should probably throw this through an array and do a foreach...
         if (Col_LeftFrontArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == true && 
             Col_LeftBackArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == true &&
             Col_RightFrontArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == true &&

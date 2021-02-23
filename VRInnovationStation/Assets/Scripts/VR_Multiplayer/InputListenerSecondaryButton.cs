@@ -53,7 +53,7 @@ public class InputListenerSecondaryButton : MonoBehaviour
                     if (!isPressed)
                     {
                         isPressed = true;
-                        Debug.Log("OnPress event is called");
+                        Debug.Log("<color=cyan>[InputListenerSecondaryButton.cs] </color>OnPress event is called.");
 
                         OnPress.Invoke();
                     }
@@ -63,7 +63,7 @@ public class InputListenerSecondaryButton : MonoBehaviour
                 {
                     isPressed = false;
                     OnRelease.Invoke();
-                    Debug.Log("OnRelease event is called");
+                    Debug.Log("<color=cyan>[InputListenerSecondaryButton.cs] </color>OnRelease event is called.");
                 }
             }
             

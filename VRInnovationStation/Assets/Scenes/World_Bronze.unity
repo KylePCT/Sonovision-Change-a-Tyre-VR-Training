@@ -11699,7 +11699,7 @@ GameObject:
   - component: {fileID: 378605365}
   m_Layer: 0
   m_Name: Col_LeftBackArmPlaceDefault
-  m_TagString: Untagged
+  m_TagString: HiddenCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19047,6 +19047,8 @@ MonoBehaviour:
   WrenchManager: {fileID: 1340159584}
   WheelManager: {fileID: 2123629107}
   m_photonView: {fileID: 597546484}
+  StandardMaterial: {fileID: 2100000, guid: e8415cd83a7e331459689574cfcfdb68, type: 2}
+  HighlightMaterial: {fileID: 2100000, guid: 909fb67d736265e49a525cb57bc0a0fe, type: 2}
 --- !u!114 &597546484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21072,7 +21074,7 @@ GameObject:
   - component: {fileID: 637012155}
   m_Layer: 0
   m_Name: Col_RightFrontArmPlaceDefault
-  m_TagString: Untagged
+  m_TagString: HiddenCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25459,7 +25461,7 @@ GameObject:
   - component: {fileID: 812236751}
   m_Layer: 0
   m_Name: Col_RightBackArmPlaceDefault
-  m_TagString: Untagged
+  m_TagString: HiddenCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29057,8 +29059,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917096457}
-  m_LocalRotation: {x: 0.96352214, y: -0.0062272977, z: 0.26746073, w: 0.0071511525}
-  m_LocalPosition: {x: -1.739, y: 1.365, z: 5.861}
+  m_LocalRotation: {x: 0.71139425, y: -0.0019577162, z: 0.7027292, w: 0.009278231}
+  m_LocalPosition: {x: -1.5364124, y: 1.3603051, z: 5.760073}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 6732795}
@@ -29066,7 +29068,7 @@ Transform:
   - {fileID: 7221318}
   m_Father: {fileID: 527208631}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 539.02, y: 328.976, z: 0.46798706}
+  m_LocalEulerAnglesHint: {x: 539.086, y: 270.69702, z: -0.5880127}
 --- !u!114 &917096464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37474,6 +37476,8 @@ MonoBehaviour:
   WrenchManager: {fileID: 1340159584}
   WheelManager: {fileID: 2123629107}
   m_photonView: {fileID: 597546484}
+  StandardMaterial: {fileID: 2100000, guid: e8415cd83a7e331459689574cfcfdb68, type: 2}
+  HighlightMaterial: {fileID: 2100000, guid: 909fb67d736265e49a525cb57bc0a0fe, type: 2}
 --- !u!114 &1146372671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42993,7 +42997,7 @@ GameObject:
   - component: {fileID: 1329466306}
   m_Layer: 0
   m_Name: Col_LeftFrontArmPlaceDefault
-  m_TagString: Untagged
+  m_TagString: HiddenCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53030,6 +53034,8 @@ MonoBehaviour:
   WrenchManager: {fileID: 1340159584}
   WheelManager: {fileID: 2123629107}
   m_photonView: {fileID: 597546484}
+  StandardMaterial: {fileID: 2100000, guid: e8415cd83a7e331459689574cfcfdb68, type: 2}
+  HighlightMaterial: {fileID: 2100000, guid: 909fb67d736265e49a525cb57bc0a0fe, type: 2}
 --- !u!114 &1696579645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67347,6 +67353,11 @@ MonoBehaviour:
   m_photonView: {fileID: 2123629108}
   UI_Canvas_2k: {fileID: 187146432}
   UI_Canvas_2o: {fileID: 823374145}
+  CorrectBit: {fileID: 8738323851788419155}
+  Bolt_StandardMat: {fileID: 2100000, guid: e8415cd83a7e331459689574cfcfdb68, type: 2}
+  Bolt_HighlightMat: {fileID: 2100000, guid: 909fb67d736265e49a525cb57bc0a0fe, type: 2}
+  Bit_StandardMat: {fileID: 2100000, guid: a5a3d55d440ae0d4a9fc14e699d9a9f6, type: 2}
+  Bit_HighlightMat: {fileID: 2100000, guid: 8aa169029463a554698c0b7c218e7ebb, type: 2}
   WheelMain: {fileID: 4821047634440765551}
   WheelBreakDisk: {fileID: 8970699921859665984}
   WheelBoltsManager: {fileID: 524355017}
@@ -68005,6 +68016,8 @@ MonoBehaviour:
   WrenchManager: {fileID: 1340159584}
   WheelManager: {fileID: 2123629107}
   m_photonView: {fileID: 597546484}
+  StandardMaterial: {fileID: 2100000, guid: e8415cd83a7e331459689574cfcfdb68, type: 2}
+  HighlightMaterial: {fileID: 2100000, guid: 909fb67d736265e49a525cb57bc0a0fe, type: 2}
 --- !u!114 &2141997204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75705,7 +75718,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -78394,6 +78407,8 @@ MonoBehaviour:
   WrenchManager: {fileID: 1340159584}
   WheelManager: {fileID: 2123629107}
   m_photonView: {fileID: 597546484}
+  StandardMaterial: {fileID: 2100000, guid: e8415cd83a7e331459689574cfcfdb68, type: 2}
+  HighlightMaterial: {fileID: 2100000, guid: 909fb67d736265e49a525cb57bc0a0fe, type: 2}
 --- !u!114 &6309427354559235449
 MonoBehaviour:
   m_ObjectHideFlags: 0

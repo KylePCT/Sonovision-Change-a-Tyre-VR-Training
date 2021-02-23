@@ -13,10 +13,10 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Sonovision
-  productName: TyreChangeProcedure
+  productName: Tyre Change VR
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0, g: 0.10112771, b: 0.16037738, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 0
   m_SplashScreenOverlayOpacity: 1
@@ -41,6 +41,8 @@ PlayerSettings:
     height: 1
   m_SplashScreenLogos:
   - logo: {fileID: 21300000, guid: 8d84413f586e0cf43a46c7c1a80f65d1, type: 3}
+    duration: 2
+  - logo: {fileID: 0}
     duration: 2
   m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 8d84413f586e0cf43a46c7c1a80f65d1,
     type: 3}
@@ -127,7 +129,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.2.6e
+  bundleVersion: 0.2.8
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0

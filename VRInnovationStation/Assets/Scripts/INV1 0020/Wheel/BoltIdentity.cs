@@ -14,9 +14,16 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
     public bool needsTightening = false;
     public bool IsTight = false;
 
+    [Space(10)]
+
     public WrenchManager WrenchManager;
     public WheelManager WheelManager;
     public PhotonView m_photonView;
+
+    [Space(10)]
+
+    public Material StandardMaterial;
+    public Material HighlightMaterial;
 
     //Bolts start in slot without colliders.
     private void Start()
@@ -40,8 +47,9 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
     //On trigger...
     private void OnTriggerEnter(Collider other)
     {
+        //REMOVE BOLTS #################################################
         //If the correct bit is colliding...
-        if (other.tag == "WrenchBit" && WrenchManager.TheBitIsCorrect == true)
+        if (other.tag == "WrenchBit" && WrenchManager.TheBitIsCorrect == true && WheelManager.IsNewWheelAttached == false)
         {
             //If the wrench doesn't have anything on the bit...
             if (WrenchManager.CorrectBit.GetComponent<XRSocketInteractor>().selectTarget == null)
@@ -59,6 +67,7 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
             }
         }
 
+        //CHECK IF THE REATTACHED BOLTS ARE TIGHT #####################
         //If the wrench touches the bolt and the new wheel is attached.
         if (other.tag == "WrenchBit" && WheelManager.IsNewWheelAttached == true)
         {
@@ -68,18 +77,32 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
             }
 
             //If it still needs tightening, tighten the bolt.
-            if (needsTightening == true && InSlot == true)
+            if (InSlot)
             {
-                this.GetComponent<XRGrabInteractable>().enabled = false;
-                this.GetComponent<BoxCollider>().enabled = false;
-                FindObjectOfType<AudioManager>().PlaySound("PneumaticWrench");
-                IsTight = true;
+                if (needsTightening)
+                {
+                    if (!IsTight)
+                    {
+                        //Remove interactions from the bolt.
+                        GetComponent<XRGrabInteractable>().enabled = false;
+                        GetComponent<BoxCollider>().enabled = false;
+                        gameObject.layer = 1;
 
-                UpdateProgress();
-                WheelManager.AreAllBoltsTight();
+                        FindObjectOfType<AudioManager>().PlaySound("PneumaticWrench");
+                        GetComponent<Renderer>().material = StandardMaterial;
+                        needsTightening = false;
+                        IsTight = true;
 
-                Debug.Log("<color=orange>[BoltIdentity.cs]</color> Bolt: <" + gameObject.name + "> has been tightened.");
-                needsTightening = false;
+                        UpdateProgress();
+                        WheelManager.AreAllBoltsTight();
+                        Debug.Log("<color=orange>[BoltIdentity.cs]</color> Bolt: <" + gameObject.name + "> has been tightened.");
+                    }
+                }
+
+                else
+                {
+                    Destroy(GetComponent<XRGrabInteractable>());
+                }
             }
         }
     }

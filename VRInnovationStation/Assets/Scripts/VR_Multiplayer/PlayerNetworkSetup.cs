@@ -66,7 +66,7 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
             object avatarSelectionNumber;
             if (PhotonNetwork.LocalPlayer.CustomProperties.TryGetValue(MultiplayerVRConstants.AVATAR_SELECTION_NUMBER, out avatarSelectionNumber))
             {
-                Debug.Log("Avatar Selection Number: <" + (int)avatarSelectionNumber + ">.");
+                Debug.Log("<color=cyan>[PlayerNetworkSetup.cs] </color>Avatar Selection Number: <" + (int)avatarSelectionNumber + ">.");
 
                 photonView.RPC("InitializeSelectedAvatarModel", RpcTarget.AllBuffered, (int)avatarSelectionNumber);
             }
@@ -76,7 +76,7 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
             TeleportationArea[] teleportationAreas = GameObject.FindObjectsOfType<TeleportationArea>();
             if (teleportationAreas.Length > 0)
             {
-                Debug.Log("Found <" + teleportationAreas.Length + "> teleportation areas.");
+                Debug.Log("<color=cyan>[PlayerNetworkSetup.cs] </color>Found <" + teleportationAreas.Length + "> teleportation areas.");
             }
 
             foreach (var item in teleportationAreas)
@@ -91,7 +91,7 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
         //Is the player the remote player?
         else
         {
-            Debug.LogError("[PlayerNetworkSetup.cs] How have you managed to cause PhotonView to not be true OR false?! Check your code.");
+            Debug.LogError("<color=cyan>[PlayerNetworkSetup.cs] </color> How have you managed to cause PhotonView to not be true OR false?! Check your code.");
         }
 
         //Shows player names for all users.
