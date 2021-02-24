@@ -114,12 +114,7 @@ public class WheelManager : MonoBehaviourPunCallbacks
                     //Check for nothing.
                 }
 
-                //Only show the highlighted material if it isn't already tight.
-                if (!Bolts[i].GetComponent<BoltIdentity>().IsTight)
-                {
-                    Bolts[i].GetComponent<Renderer>().material = Bolt_HighlightMat;
-                    Bolts[i].GetComponent<BoltIdentity>().needsTightening = true;
-                }
+                SetBoltHighlights();
             }
 
             //If all bolts are in the slots on the wheel...
@@ -142,6 +137,7 @@ public class WheelManager : MonoBehaviourPunCallbacks
             if (Bolts[i].GetComponent<BoltIdentity>().IsTight == false)
             {
                 Debug.Log("<color=orange>[WheelManager.cs]</color> Task not completed, one or more bolts are still not tight.");
+                Bolts[i].GetComponent<Renderer>().material = Bolt_HighlightMat;
                 return;
                 //Check for nothing.
             }
@@ -180,6 +176,32 @@ public class WheelManager : MonoBehaviourPunCallbacks
         WheelBreakBoltHoles = WheelBreakBoltHoles.OrderBy(c => c.name).ToArray();
     }
 
+    public void SetBoltHighlights()
+    {
+        StartCoroutine(SetBoltHighlightsCoroutine(1));
+    }
+
+    IEnumerator SetBoltHighlightsCoroutine(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+
+        for (int i = 0; i < Bolts.Length; i++)
+        {
+            //Only show the highlighted material if it isn't already tight.
+            if (!Bolts[i].GetComponent<BoltIdentity>().IsTight && Bolts[i].GetComponent<BoltIdentity>().InSlot)
+            {
+                Bolts[i].GetComponent<Renderer>().material = Bolt_HighlightMat;
+                Bolts[i].GetComponent<BoltIdentity>().needsTightening = true;
+
+                //Remove the bolts interactions so the material doesn't change when hovered.
+                Bolts[i].GetComponent<XRGrabInteractable>().interactionLayerMask = 0;
+                Bolts[i].GetComponent<XRGrabInteractable>().colliders.Clear();
+                Bolts[i].gameObject.layer = 0;
+                Debug.Log("<color=orange>[WheelManager.cs]</color> Bolt <" + Bolts[i].gameObject.name + "> is now highlighted and has had its interactions removed.");
+            }
+        }
+    }
+
     //PunRPC calls for percentage changes.
     [PunRPC]
     void WheelRemovedTask()
@@ -198,7 +220,7 @@ public class WheelManager : MonoBehaviourPunCallbacks
         if (!wheelHasBeenReplaced)
         {
             CorrectBit.GetComponent<XRSocketInteractor>().enabled = false;
-            NewWheel.gameObject.layer = 1;
+            NewWheel.gameObject.layer = 0;
             FindObjectOfType<ProgressChecker>().ChangePercentageTo(90);
             wheelHasBeenReplaced = true;
         }

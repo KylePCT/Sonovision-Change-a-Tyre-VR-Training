@@ -84,9 +84,8 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
                     if (!IsTight)
                     {
                         //Remove interactions from the bolt.
-                        GetComponent<XRGrabInteractable>().enabled = false;
                         GetComponent<BoxCollider>().enabled = false;
-                        gameObject.layer = 1;
+                        gameObject.layer = 0;
 
                         FindObjectOfType<AudioManager>().PlaySound("PneumaticWrench");
                         GetComponent<Renderer>().material = StandardMaterial;

@@ -17,7 +17,7 @@ public class RandomColour : MonoBehaviourPunCallbacks
     {
         randomColour = Random.ColorHSV(0f, 1f, 0.6f, .8f, 1f, 1f);
         changeColour();
-        //photonView.RPC("changeColour", RpcTarget.AllBuffered, randomColour);
+        photonView.RPC("changeColour", RpcTarget.AllBufferedViaServer);
     }
 
     [PunRPC]

@@ -53,12 +53,12 @@ public class TC_FeetReturned : MonoBehaviourPunCallbacks
     [PunRPC]
     void UpdatePercentageUp()
     {
-        FindObjectOfType<ProgressChecker>().IncreasePercentageBy(2);
+        FindObjectOfType<ProgressChecker>().IncreasePercentageBy(1);
     }
 
     [PunRPC]
     void UpdatePercentageDown()
     {
-        FindObjectOfType<ProgressChecker>().DecreasePercentageBy(2);
+        FindObjectOfType<ProgressChecker>().DecreasePercentageBy(1);
     }
 }
