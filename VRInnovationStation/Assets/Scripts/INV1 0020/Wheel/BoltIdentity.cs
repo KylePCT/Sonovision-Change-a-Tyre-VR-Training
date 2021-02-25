@@ -83,18 +83,7 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
                 {
                     if (!IsTight)
                     {
-                        //Remove interactions from the bolt.
-                        GetComponent<BoxCollider>().enabled = false;
-                        gameObject.layer = 0;
-
-                        FindObjectOfType<AudioManager>().PlaySound("PneumaticWrench");
-                        GetComponent<Renderer>().material = StandardMaterial;
-                        needsTightening = false;
-                        IsTight = true;
-
-                        UpdateProgress();
-                        WheelManager.AreAllBoltsTight();
-                        Debug.Log("<color=orange>[BoltIdentity.cs]</color> Bolt: <" + gameObject.name + "> has been tightened.");
+                        m_photonView.RPC("TightenBolt", RpcTarget.AllBuffered);
                     }
                 }
 
@@ -110,6 +99,23 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
     void UpdateProgress()
     {
         FindObjectOfType<ProgressChecker>().IncreasePercentageBy(2);
+    }
+
+    [PunRPC]
+    void TightenBolt()
+    {
+        //Remove interactions from the bolt.
+        GetComponent<BoxCollider>().enabled = false;
+        gameObject.layer = 0;
+
+        FindObjectOfType<AudioManager>().PlaySound("PneumaticWrench");
+        GetComponent<Renderer>().material = StandardMaterial;
+        needsTightening = false;
+        IsTight = true;
+
+        UpdateProgress();
+        WheelManager.AreAllBoltsTight();
+        Debug.Log("<color=orange>[BoltIdentity.cs]</color> Bolt: <" + gameObject.name + "> has been tightened.");
     }
 }
 

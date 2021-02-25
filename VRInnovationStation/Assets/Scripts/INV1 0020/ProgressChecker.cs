@@ -14,6 +14,7 @@ public class ProgressChecker : MonoBehaviourPunCallbacks
     void Start()
     {
         PercentageComplete = 0f;
+
         PercentageDisplayText.text = PercentageComplete + "%";
     }
 
@@ -22,7 +23,7 @@ public class ProgressChecker : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.CurrentRoom.PlayerCount <= 1)
         {
-            m_photonView.RPC("IncreaseRPC", RpcTarget.AllBuffered, number);
+            m_photonView.RPC("IncreaseRPC", RpcTarget.AllBufferedViaServer, number);
         }
         else
         {
@@ -35,7 +36,7 @@ public class ProgressChecker : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.CurrentRoom.PlayerCount <= 1)
         {
-            m_photonView.RPC("DecreaseRPC", RpcTarget.AllBuffered, number);
+            m_photonView.RPC("DecreaseRPC", RpcTarget.AllBufferedViaServer, number);
         }
         else
         {
@@ -49,7 +50,7 @@ public class ProgressChecker : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.CurrentRoom.PlayerCount <= 1)
         {
-            m_photonView.RPC("ChangeRPC", RpcTarget.AllBuffered, number);
+            m_photonView.RPC("ChangeRPC", RpcTarget.AllBufferedViaServer, number);
         }
         else
         {
@@ -68,7 +69,7 @@ public class ProgressChecker : MonoBehaviourPunCallbacks
             PercentageDisplayText.text = PercentageComplete + "%";
             FindObjectOfType<AudioManager>().PlaySound("UI_PercentUp");
 
-            if (PercentageComplete > 100f)
+            if (PercentageComplete >= 100f)
             {
                 PercentageComplete = 100f;
             }
@@ -86,7 +87,7 @@ public class ProgressChecker : MonoBehaviourPunCallbacks
             PercentageDisplayText.text = PercentageComplete + "%";
             FindObjectOfType<AudioManager>().PlaySound("UI_PercentDown");
 
-            if (PercentageComplete < 0f)
+            if (PercentageComplete <= 0f)
             {
                 PercentageComplete = 0f;
             }
@@ -104,12 +105,12 @@ public class ProgressChecker : MonoBehaviourPunCallbacks
             PercentageDisplayText.text = PercentageComplete + "%";
             FindObjectOfType<AudioManager>().PlaySound("UI_PercentUp");
 
-            if (PercentageComplete < 0f)
+            if (PercentageComplete <= 0f)
             {
                 PercentageComplete = 0f;
             }
 
-            else if (PercentageComplete > 100f)
+            else if (PercentageComplete >= 100f)
             {
                 PercentageComplete = 100f;
             }

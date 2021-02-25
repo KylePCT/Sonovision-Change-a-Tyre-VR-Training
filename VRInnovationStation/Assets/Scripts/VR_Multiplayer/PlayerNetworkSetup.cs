@@ -94,10 +94,32 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
             Debug.LogError("<color=cyan>[PlayerNetworkSetup.cs] </color> How have you managed to cause PhotonView to not be true OR false?! Check your code.");
         }
 
-        //Shows player names for all users.
-        if (PlayerName_Text != null)
+        //Show the master client as yellow.
+        if (PhotonNetwork.IsMasterClient)
         {
+            PlayerName_Text.color = Color.yellow;
+
+            //Show master client with a star.
+            if (photonView.Owner.NickName != null && photonView.Owner.NickName != "")
+            {
+                PlayerName_Text.text = "Master Client: " + photonView.Owner.NickName;
+            }
+
+            else
+            {
+                PlayerName_Text.text = "Master Client";
+            }
+        }
+
+        if (photonView.Owner.NickName != null)
+        {
+            //Shows player names for all users.
             PlayerName_Text.text = photonView.Owner.NickName;
+        }
+
+        else if (photonView.Owner.NickName == null || photonView.Owner.NickName == "")
+        {
+            PlayerName_Text.text = "Anonymous";
         }
     }
 

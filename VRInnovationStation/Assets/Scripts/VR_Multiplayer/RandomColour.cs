@@ -13,8 +13,11 @@ public class RandomColour : MonoBehaviourPunCallbacks
     public GameObject leftHand;
     public GameObject rightHand;
 
+    private PhotonView photonView;
+
     void Start()
     {
+        photonView = GetComponentInParent<PhotonView>();
         randomColour = Random.ColorHSV(0f, 1f, 0.6f, .8f, 1f, 1f);
         changeColour();
         photonView.RPC("changeColour", RpcTarget.AllBufferedViaServer);

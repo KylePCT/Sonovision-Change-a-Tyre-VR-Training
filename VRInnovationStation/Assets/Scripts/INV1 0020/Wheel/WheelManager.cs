@@ -114,7 +114,7 @@ public class WheelManager : MonoBehaviourPunCallbacks
                     //Check for nothing.
                 }
 
-                SetBoltHighlights();
+                m_photonView.RPC("SetBoltHighlights", RpcTarget.AllBuffered); //Photon to show materials from the highlight.
             }
 
             //If all bolts are in the slots on the wheel...
@@ -176,6 +176,7 @@ public class WheelManager : MonoBehaviourPunCallbacks
         WheelBreakBoltHoles = WheelBreakBoltHoles.OrderBy(c => c.name).ToArray();
     }
 
+    [PunRPC]
     public void SetBoltHighlights()
     {
         StartCoroutine(SetBoltHighlightsCoroutine(1));

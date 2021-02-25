@@ -54,11 +54,13 @@ public class TC_FeetReturned : MonoBehaviourPunCallbacks
     void UpdatePercentageUp()
     {
         FindObjectOfType<ProgressChecker>().IncreasePercentageBy(1);
+        IsFootInCollision = true;
     }
 
     [PunRPC]
     void UpdatePercentageDown()
     {
         FindObjectOfType<ProgressChecker>().DecreasePercentageBy(1);
+        IsFootInCollision = false;
     }
 }
