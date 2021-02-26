@@ -11771,6 +11771,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   whManager: {fileID: 2123629107}
   m_photonView: {fileID: 378605364}
+  feetInPlace: {fileID: 289380362}
 --- !u!65 &378605366
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21146,6 +21147,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   whManager: {fileID: 2123629107}
   m_photonView: {fileID: 637012154}
+  feetInPlace: {fileID: 289380362}
 --- !u!65 &637012156
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22100,6 +22102,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   m_photonView: {fileID: 678850242}
   CollisionBox: {fileID: 678850236}
+  feetInPlace: {fileID: 289380362}
 --- !u!114 &678850242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25533,6 +25536,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   whManager: {fileID: 2123629107}
   m_photonView: {fileID: 812236750}
+  feetInPlace: {fileID: 289380362}
 --- !u!65 &812236752
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43069,6 +43073,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   whManager: {fileID: 2123629107}
   m_photonView: {fileID: 1329466305}
+  feetInPlace: {fileID: 289380362}
 --- !u!65 &1329466307
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48964,6 +48969,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   m_photonView: {fileID: 1577364000}
   CollisionBox: {fileID: 1577363994}
+  feetInPlace: {fileID: 289380362}
 --- !u!114 &1577364000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62041,6 +62047,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   m_photonView: {fileID: 1981820751}
   CollisionBox: {fileID: 1981820745}
+  feetInPlace: {fileID: 289380362}
 --- !u!114 &1981820751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65467,6 +65474,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   m_photonView: {fileID: 2075467956}
   CollisionBox: {fileID: 2075467950}
+  feetInPlace: {fileID: 289380362}
 --- !u!114 &2075467956
 MonoBehaviour:
   m_ObjectHideFlags: 0

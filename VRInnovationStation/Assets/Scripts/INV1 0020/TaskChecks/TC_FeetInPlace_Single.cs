@@ -13,6 +13,8 @@ public class TC_FeetInPlace_Single : MonoBehaviourPunCallbacks
     public PhotonView m_photonView;
     public GameObject CollisionBox;
 
+    public TC_FeetInPlace feetInPlace;
+
     //If a foot enters the collision...
     private void OnTriggerEnter(Collider other)
     {

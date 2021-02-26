@@ -47,7 +47,7 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
     void Update()
     {
         //################################# Should probably throw this through an array and do a foreach...
-        if (Col_LeftFrontArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == true && 
+        if (Col_LeftFrontArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == true &&
             Col_LeftBackArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == true &&
             Col_RightFrontArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == true &&
             Col_RightBackArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == true)
@@ -71,16 +71,13 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
     {
         Debug.Log("<color=magenta>[TC_FeetInPlace.cs]</color> Checking if Sim is complete...");
 
-        if (whManager.IsNewWheelAttached)
+        if (Col_LeftBackArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
+            Col_LeftFrontArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
+            Col_RightBackArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
+            Col_RightFrontArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision)
         {
-            if (Col_LeftBackArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
-                Col_LeftFrontArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
-                Col_RightBackArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
-                Col_RightFrontArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision)
-            {
-                Debug.Log("<b><color=magenta>[TC_FeetInPlace.cs]</color> <color=#5DF958>Simulation complete!</color></b>");
-                m_photonView.RPC("SetTo100", RpcTarget.AllBuffered);
-            }
+            Debug.Log("<b><color=magenta>[TC_FeetInPlace.cs]</color> <color=#5DF958>Simulation complete!</color></b>");
+            m_photonView.RPC("SetTo100", RpcTarget.AllBuffered);
         }
     }
 

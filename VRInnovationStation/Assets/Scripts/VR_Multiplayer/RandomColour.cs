@@ -15,8 +15,14 @@ public class RandomColour : MonoBehaviourPunCallbacks
 
     private PhotonView photonView;
 
+    private PlayerNetworkSetup PNS;
+
     void Start()
     {
+        PNS = GetComponentInParent<PlayerNetworkSetup>();
+        PNS.CheckMasterClient();
+        Debug.Log("<color=yellow>[RandomColour.cs] </color> <" + PhotonNetwork.MasterClient.NickName + "> is the Master Client.");
+
         photonView = GetComponentInParent<PhotonView>();
         randomColour = Random.ColorHSV(0f, 1f, 0.6f, .8f, 1f, 1f);
         changeColour();

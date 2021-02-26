@@ -865,7 +865,7 @@ MonoBehaviour:
   XRHead: {fileID: 3156596091043963862}
   XRHand_Left: {fileID: 3156596092365247552}
   XRHand_Right: {fileID: 3848305321944785299}
-  headPositionOffset: {x: 0, y: 0.75, z: 0}
+  headPositionOffset: {x: 0, y: -0.2, z: 0}
   handRotationOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &3326011949706172337
 MonoBehaviour:
@@ -5176,7 +5176,7 @@ PrefabInstance:
     - target: {fileID: 2059960205749354645, guid: 6c9d0f8ca6df14945bd661d8df956052,
         type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: BreakBoltHoles
       objectReference: {fileID: 0}
     - target: {fileID: 2256039792707525280, guid: 6c9d0f8ca6df14945bd661d8df956052,
         type: 3}

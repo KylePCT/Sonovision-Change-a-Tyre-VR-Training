@@ -13,6 +13,8 @@ public class TC_FeetReturned : MonoBehaviourPunCallbacks
     public WheelManager whManager;
     public PhotonView m_photonView;
 
+    public TC_FeetInPlace feetInPlace;
+
     //If a foot enters the collision...
     private void OnTriggerEnter(Collider other)
     {

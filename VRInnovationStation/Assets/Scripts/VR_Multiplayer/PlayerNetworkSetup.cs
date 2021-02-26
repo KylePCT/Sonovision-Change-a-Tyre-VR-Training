@@ -94,21 +94,20 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
             Debug.LogError("<color=cyan>[PlayerNetworkSetup.cs] </color> How have you managed to cause PhotonView to not be true OR false?! Check your code.");
         }
 
+        CheckMasterClient();
+    }
+
+    public void CheckMasterClient()
+    {
         //Show the master client as yellow.
         if (PhotonNetwork.IsMasterClient)
         {
             PlayerName_Text.color = Color.yellow;
+        }
 
-            //Show master client with a star.
-            if (photonView.Owner.NickName != null && photonView.Owner.NickName != "")
-            {
-                PlayerName_Text.text = "Master Client: " + photonView.Owner.NickName;
-            }
-
-            else
-            {
-                PlayerName_Text.text = "Master Client";
-            }
+        else
+        {
+            PlayerName_Text.color = Color.white;
         }
 
         if (photonView.Owner.NickName != null)
@@ -117,16 +116,11 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
             PlayerName_Text.text = photonView.Owner.NickName;
         }
 
-        else if (photonView.Owner.NickName == null || photonView.Owner.NickName == "")
+        else if (photonView.Owner.NickName == null || photonView.Owner.NickName == "" || photonView.Owner.NickName == " ")
         {
             PlayerName_Text.text = "Anonymous";
+            photonView.Owner.NickName = "Anonymous";
         }
-    }
-
-    //Update is called once per frame
-    void Update()
-    {
-        
     }
 
     //Set layers through code.
