@@ -30,8 +30,6 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
     public WheelManager whManager;
 
     private bool UI_ProgressTaskComplete = false;
-
-    [HideInInspector]
     public bool AreAllFeetInPlace = false;
 
     private void Start()
@@ -61,8 +59,8 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
         else
         {
             //Set variable to false and also run a check to make sure the simulation isn't at the end by checking if there is a new wheel.
-            CheckIfSimIsComplete();
             AreAllFeetInPlace = false;
+            CheckIfSimIsComplete();
         }
     }
 

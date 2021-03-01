@@ -7,13 +7,18 @@ using Photon.Realtime;
 //Checks each individual foot.
 public class TC_FeetReturned : MonoBehaviourPunCallbacks
 {
-    [HideInInspector]
     public bool IsFootInCollision = false;
 
     public WheelManager whManager;
     public PhotonView m_photonView;
 
     public TC_FeetInPlace feetInPlace;
+    private TC_FeetInPlace_Single[] chassisFeetInPlace;
+
+    private void Start()
+    {
+        chassisFeetInPlace = FindObjectsOfType<TC_FeetInPlace_Single>();
+    }
 
     //If a foot enters the collision...
     private void OnTriggerEnter(Collider other)
@@ -25,6 +30,14 @@ public class TC_FeetReturned : MonoBehaviourPunCallbacks
             {
                 //Set the collision to be true and update the progress UI.
                 IsFootInCollision = true;
+                feetInPlace.AreAllFeetInPlace = false; //Remove old feet methods.
+
+                //Remove old collision methods so new collisions can run.
+                foreach (TC_FeetInPlace_Single foot in chassisFeetInPlace)
+                {
+                    foot.IsFootInCollision = false;
+                }
+
                 m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBuffered);
                 Debug.Log("<color=magenta>[TC_FeetReturned.cs] </color>" + gameObject.name + " is now back to it's origin.");
             }
@@ -57,6 +70,7 @@ public class TC_FeetReturned : MonoBehaviourPunCallbacks
     {
         FindObjectOfType<ProgressChecker>().IncreasePercentageBy(1);
         IsFootInCollision = true;
+        feetInPlace.AreAllFeetInPlace = false; //Remove old feet methods.
     }
 
     [PunRPC]

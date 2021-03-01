@@ -7,7 +7,6 @@ using Photon.Realtime;
 //Checks each individual foot.
 public class TC_FeetInPlace_Single : MonoBehaviourPunCallbacks
 {
-    [HideInInspector]
     public bool IsFootInCollision = false;
 
     public PhotonView m_photonView;
