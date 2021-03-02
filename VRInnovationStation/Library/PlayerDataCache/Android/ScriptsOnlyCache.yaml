@@ -79,8 +79,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
-    PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.Utilities.dll:
     - Photon.Pun.UtilityScripts.MoveByKeys
     PhotonUnityNetworking.dll:
@@ -699,8 +697,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
-    - Class: 84
-      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 90
@@ -1045,7 +1041,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16146}
     - Class: 114
-      Script: {instanceID: 88742}
+      Script: {instanceID: 58372}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -1805,7 +1801,7 @@ ScriptsOnlyBuild:
     className: NamePickGui
   - hash:
       serializedVersion: 2
-      Hash: 34c9028f56efd37f7f880d683f3a28ae
+      Hash: 88e856c59229db297b38727e35a60f0b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TC_FeetInPlace
@@ -3317,7 +3313,7 @@ ScriptsOnlyBuild:
     className: CurrentRoomPlayerCountProperty
   - hash:
       serializedVersion: 2
-      Hash: 5df4215c5030847e3ed6be28f91dbff5
+      Hash: 483771c99bb347123c27e33307c23f89
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SnapNewWheel
@@ -3597,4 +3593,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/HomeScene.unity
   - Assets/Scenes/World_Bronze.unity
   - Assets/Scenes/World_Silver.unity
-  playerPath: C:/Users/KT/Desktop/SV_VRMartin/APKs/v0.2.8f.apk
+  playerPath: C:/Users/KT/Desktop/SV_VRMartin/APKs/v0.2.9c.apk

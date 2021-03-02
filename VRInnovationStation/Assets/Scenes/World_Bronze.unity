@@ -8968,18 +8968,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_photonView: {fileID: 289380364}
-  Col_LeftFrontArmPlace: {fileID: 678850236}
-  Col_LeftBackArmPlace: {fileID: 1577363994}
-  Col_RightFrontArmPlace: {fileID: 2075467950}
-  Col_RightBackArmPlace: {fileID: 1981820745}
-  Col_LeftFrontArmPlaceDefault: {fileID: 1329466302}
-  Col_LeftBackArmPlaceDefault: {fileID: 378605361}
-  Col_RightFrontArmPlaceDefault: {fileID: 637012151}
-  Col_RightBackArmPlaceDefault: {fileID: 812236747}
+  ChassisCollisions:
+  - {fileID: 1577363994}
+  - {fileID: 678850236}
+  - {fileID: 1981820745}
+  - {fileID: 2075467950}
+  OriginCollisions:
+  - {fileID: 378605361}
+  - {fileID: 1329466302}
+  - {fileID: 812236747}
+  - {fileID: 637012151}
   UI_ProgressTask_2e: {fileID: 1808098906}
   UI_ProgressTask_2v: {fileID: 754586167}
   whManager: {fileID: 2123629107}
   AreAllFeetInPlace: 0
+  CarLiftCanMove: 0
 --- !u!114 &289380363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11703,7 +11706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &378605362
 Transform:
   m_ObjectHideFlags: 0
@@ -11713,7 +11716,7 @@ Transform:
   m_GameObject: {fileID: 378605361}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.4960003, y: 1.202, z: -0.35000002}
-  m_LocalScale: {x: 0.32, y: 0.5195357, z: 0.16315769}
+  m_LocalScale: {x: 0.5, y: 0.5195357, z: 0.52}
   m_Children: []
   m_Father: {fileID: 289380361}
   m_RootOrder: 4
@@ -21079,7 +21082,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &637012152
 Transform:
   m_ObjectHideFlags: 0
@@ -21088,8 +21091,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 637012151}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.458, y: -1.287, z: -0.35000002}
-  m_LocalScale: {x: 0.32, y: 0.5051831, z: 0.16315769}
+  m_LocalPosition: {x: -1.4979999, y: -1.287, z: -0.35000002}
+  m_LocalScale: {x: 0.5, y: 0.5051831, z: 0.52}
   m_Children: []
   m_Father: {fileID: 289380361}
   m_RootOrder: 7
@@ -25468,7 +25471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &812236748
 Transform:
   m_ObjectHideFlags: 0
@@ -25477,8 +25480,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812236747}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.458, y: 1.202, z: -0.35000002}
-  m_LocalScale: {x: 0.32, y: 0.5195357, z: 0.16315769}
+  m_LocalPosition: {x: -1.498, y: 1.202, z: -0.35000002}
+  m_LocalScale: {x: 0.5, y: 0.5195357, z: 0.52}
   m_Children: []
   m_Father: {fileID: 289380361}
   m_RootOrder: 6
@@ -28456,8 +28459,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890815131}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7418, y: 0, z: 1.034}
-  m_LocalScale: {x: 0.15443254, y: 0.11382954, z: 0.22321343}
+  m_LocalPosition: {x: 1.7665, y: 0, z: 1.0533}
+  m_LocalScale: {x: 0.15443254, y: 0.11382954, z: 0.1810752}
   m_Children: []
   m_Father: {fileID: 543450653479345983}
   m_RootOrder: 3
@@ -43005,7 +43008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1329466303
 Transform:
   m_ObjectHideFlags: 0
@@ -43015,7 +43018,7 @@ Transform:
   m_GameObject: {fileID: 1329466302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.496, y: -1.287, z: -0.35000002}
-  m_LocalScale: {x: 0.32, y: 0.5051831, z: 0.16315769}
+  m_LocalScale: {x: 0.5, y: 0.5051831, z: 0.52}
   m_Children: []
   m_Father: {fileID: 289380361}
   m_RootOrder: 5
@@ -81856,6 +81859,7 @@ MonoBehaviour:
   AttachPoint: {fileID: 479271023}
   SnapParent: {fileID: 1420145377}
   CanSnap: 0
+  feetInPlace: {fileID: 0}
   WheelManager: {fileID: 2123629107}
 --- !u!65 &8970699921859665986
 BoxCollider:

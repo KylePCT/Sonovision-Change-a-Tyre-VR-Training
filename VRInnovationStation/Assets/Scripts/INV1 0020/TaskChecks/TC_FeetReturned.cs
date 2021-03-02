@@ -13,12 +13,6 @@ public class TC_FeetReturned : MonoBehaviourPunCallbacks
     public PhotonView m_photonView;
 
     public TC_FeetInPlace feetInPlace;
-    private TC_FeetInPlace_Single[] chassisFeetInPlace;
-
-    private void Start()
-    {
-        chassisFeetInPlace = FindObjectsOfType<TC_FeetInPlace_Single>();
-    }
 
     //If a foot enters the collision...
     private void OnTriggerEnter(Collider other)
@@ -31,20 +25,13 @@ public class TC_FeetReturned : MonoBehaviourPunCallbacks
                 //Set the collision to be true and update the progress UI.
                 IsFootInCollision = true;
                 feetInPlace.AreAllFeetInPlace = false; //Remove old feet methods.
-
-                //Remove old collision methods so new collisions can run.
-                foreach (TC_FeetInPlace_Single foot in chassisFeetInPlace)
-                {
-                    foot.IsFootInCollision = false;
-                }
-
+                feetInPlace.CheckIfSimIsComplete();
                 m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBuffered);
                 Debug.Log("<color=magenta>[TC_FeetReturned.cs] </color>" + gameObject.name + " is now back to it's origin.");
             }
             else
             {
                 //If a random thing enters the collision, don't set variables.
-                IsFootInCollision = false;
                 Debug.Log("<color=magenta>[TC_FeetReturned.cs] </color>" + gameObject.name + " has entered the collision and is not tagged 'Chassis_Foot'.");
             }
         }
@@ -71,6 +58,7 @@ public class TC_FeetReturned : MonoBehaviourPunCallbacks
         FindObjectOfType<ProgressChecker>().IncreasePercentageBy(1);
         IsFootInCollision = true;
         feetInPlace.AreAllFeetInPlace = false; //Remove old feet methods.
+        feetInPlace.CheckIfSimIsComplete();
     }
 
     [PunRPC]
