@@ -19497,17 +19497,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '(Not yet implemented fully, please continue onto the next instruction).
-
-    From
-    left-hand side of the chassis, articulate rear-facing lift arm away from the
-    chassis and stow in the indicated position.
+  m_text: 'From left-hand side of the chassis, articulate rear-facing lift arm away
+    from the chassis and stow in the indicated position.
 
 
-
-    Please ensure the lift arm
-    is stowed before proceeding. If necessary, extend or retract the lift arm to
-    achieve the required positioning.'
+    Please ensure the
+    lift arm is stowed before proceeding. If necessary, extend or retract the lift
+    arm to achieve the required positioning.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79d4648e145bbfe4d98e527a1bc556e4, type: 2}
   m_sharedMaterial: {fileID: -4535133726810321958, guid: 79d4648e145bbfe4d98e527a1bc556e4,
@@ -28210,17 +28206,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '(Not yet implemented fully, please continue onto the next instruction).
-
-    From
-    right-hand side of the chassis, articulate rear-facing lift arm away from the
-    chassis and stow in the indicated position.
+  m_text: 'From right-hand side of the chassis, articulate rear-facing lift arm away
+    from the chassis and stow in the indicated position.
 
 
-
-    Please ensure the lift arm
-    is stowed before proceeding. If necessary, extend or retract the lift arm to
-    achieve the required positioning.'
+    Please ensure the
+    lift arm is stowed before proceeding. If necessary, extend or retract the lift
+    arm to achieve the required positioning.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79d4648e145bbfe4d98e527a1bc556e4, type: 2}
   m_sharedMaterial: {fileID: -4535133726810321958, guid: 79d4648e145bbfe4d98e527a1bc556e4,
@@ -30642,17 +30634,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '(Not yet implemented fully, please continue onto the next instruction).
-
-    From
-    right-hand side of the chassis, articulate front-facing lift arm away from the
-    chassis and stow in the indicated position.
+  m_text: 'From right-hand side of the chassis, articulate front-facing lift arm
+    away from the chassis and stow in the indicated position.
 
 
-
-    Please ensure the lift arm
-    is stowed before proceeding. If necessary, extend or retract the lift arm to
-    achieve the required positioning.'
+    Please ensure
+    the lift arm is stowed before proceeding. If necessary, extend or retract the
+    lift arm to achieve the required positioning.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79d4648e145bbfe4d98e527a1bc556e4, type: 2}
   m_sharedMaterial: {fileID: -4535133726810321958, guid: 79d4648e145bbfe4d98e527a1bc556e4,
@@ -50742,17 +50730,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '(Not yet implemented fully, please continue onto the next instruction).
-
-    From
-    left-hand side of the chassis, articulate front-facing lift arm away from the
-    chassis and stow in the indicated position.
+  m_text: 'From left-hand side of the chassis, articulate front-facing lift arm away
+    from the chassis and stow in the indicated position.
 
 
-
-    Please ensure the lift arm
-    is stowed before proceeding. If necessary, extend or retract the lift arm to
-    achieve the required positioning.'
+    Please ensure the
+    lift arm is stowed before proceeding. If necessary, extend or retract the lift
+    arm to achieve the required positioning.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79d4648e145bbfe4d98e527a1bc556e4, type: 2}
   m_sharedMaterial: {fileID: -4535133726810321958, guid: 79d4648e145bbfe4d98e527a1bc556e4,

@@ -30,12 +30,18 @@ public class TC_GotPPE : MonoBehaviourPunCallbacks
 
     public GameObject[] ObjectsToShowWhenPPEIsOn;
 
+    private AudioManager AudioManager;
+    private ProgressChecker ProgressChecker;
+
     [HideInInspector]
     public bool IsSafeToWork = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager = FindObjectOfType<AudioManager>();
+        ProgressChecker = FindObjectOfType<ProgressChecker>();
+
         //If it isn't safe to work (no PPE) then you can't do any VR interactions.
         if (!IsSafeToWork)
         {
@@ -50,7 +56,7 @@ public class TC_GotPPE : MonoBehaviourPunCallbacks
         //If the player grabs it...
         if (collision.gameObject.tag == "Player")
         {
-            FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
+            AudioManager.PlaySound("UI_Complete");
 
             if (gameObject.name == "PPE_Goggles")
             {
@@ -122,6 +128,6 @@ public class TC_GotPPE : MonoBehaviourPunCallbacks
     [PunRPC]
     void UpdatePercentageUp()
     {
-        FindObjectOfType<ProgressChecker>().IncreasePercentageBy(1);
+        ProgressChecker.IncreasePercentageBy(1);
     }
 }

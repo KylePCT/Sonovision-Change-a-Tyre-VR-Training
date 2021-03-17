@@ -28,6 +28,9 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
     public bool CarLiftCanMove = false;
     private bool has100BeenSet = false;
 
+    private AudioManager AudioManager;
+    private ProgressChecker ProgressChecker;
+
     private void Start()
     {
         //Turns off the guides.
@@ -35,6 +38,9 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
         TurnOffSecondCollisions();
 
         UI_ProgressTaskComplete = false;
+
+        AudioManager = FindObjectOfType<AudioManager>();
+        ProgressChecker = FindObjectOfType<ProgressChecker>();
     }
 
     //Check if the feet are in the collision to allow the lift to be raised correctly.
@@ -75,8 +81,12 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
 
         Debug.Log("<b><color=magenta>[TC_FeetInPlace.cs]</color> <color=#5DF958>Simulation complete!</color></b>");
 
-        FindObjectOfType<ProgressChecker>().ChangePercentageTo(100);
-        m_photonView.RPC("SetTo100", RpcTarget.AllBuffered);
+        if (!has100BeenSet)
+        {
+            FindObjectOfType<ProgressChecker>().ChangePercentageTo(100);
+            m_photonView.RPC("SetTo100", RpcTarget.AllBuffered);
+            has100BeenSet = true;
+        }
 
     }
 
@@ -87,8 +97,8 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
         if (UI_ProgressTaskComplete == false)
         {
             UI_ProgressTask_2e.SetActive(true);
-            FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
-            FindObjectOfType<ProgressChecker>().ChangePercentageTo(25);
+            AudioManager.PlaySound("UI_Complete");
+            ProgressChecker.ChangePercentageTo(25);
             UI_ProgressTaskComplete = true;
         }
     }
@@ -100,8 +110,8 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
         if (!has100BeenSet)
         {
             UI_ProgressTask_2v.SetActive(true);
-            FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
-            FindObjectOfType<ProgressChecker>().ChangePercentageTo(100);
+            AudioManager.PlaySound("UI_Complete");
+            ProgressChecker.ChangePercentageTo(100);
             has100BeenSet = true;
         }
     }

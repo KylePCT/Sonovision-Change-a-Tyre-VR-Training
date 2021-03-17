@@ -30,6 +30,14 @@ public class WrenchManager : MonoBehaviourPunCallbacks, Photon.Pun.IPunObservabl
     public GameObject UI_TaskComplete_CorrectBit;
     public PhotonView m_photonView;
 
+    private XRSocketInteractor BitXRSocket;
+    private ProgressChecker ProgressChecker;
+
+    private void Start()
+    {
+        BitXRSocket = BitSocket.GetComponent<XRSocketInteractor>();
+        ProgressChecker = FindObjectOfType<ProgressChecker>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -39,7 +47,7 @@ public class WrenchManager : MonoBehaviourPunCallbacks, Photon.Pun.IPunObservabl
         {
             CheckForBit();
 
-            if (BitSocket.GetComponent<XRSocketInteractor>().selectTarget.gameObject == null)
+            if (BitXRSocket.selectTarget.gameObject == null)
             {
                 IsThereABitInSocket = false;
             }
@@ -54,9 +62,9 @@ public class WrenchManager : MonoBehaviourPunCallbacks, Photon.Pun.IPunObservabl
     //Check to see if there is a bit present in the wrench.
     public void CheckForBit()
     {
-        if (BitSocket.GetComponent<XRSocketInteractor>().selectTarget.gameObject != null)
+        if (BitXRSocket.selectTarget.gameObject != null)
         {
-            BitInSocket = BitSocket.GetComponent<XRSocketInteractor>().selectTarget.gameObject;
+            BitInSocket = BitXRSocket.selectTarget.gameObject;
         }
         else
         {
@@ -115,12 +123,12 @@ public class WrenchManager : MonoBehaviourPunCallbacks, Photon.Pun.IPunObservabl
     [PunRPC]
     void UpdatePercentageUp()
     {
-        FindObjectOfType<ProgressChecker>().IncreasePercentageBy(5);
+        ProgressChecker.IncreasePercentageBy(5);
     }
 
     [PunRPC]
     void UpdatePercentageDown()
     {
-        FindObjectOfType<ProgressChecker>().DecreasePercentageBy(5);
+        ProgressChecker.DecreasePercentageBy(5);
     }
 }

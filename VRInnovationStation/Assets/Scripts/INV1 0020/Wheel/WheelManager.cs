@@ -41,6 +41,8 @@ public class WheelManager : MonoBehaviourPunCallbacks
     public GameObject[] ChassisCollisions;
     public GameObject[] OriginCollisions;
 
+    private ProgressChecker ProgressChecker;
+
     //One time checks.
     private bool wheelHasBeenRemoved = false;
     private bool wheelHasBeenReplaced = false;
@@ -226,7 +228,7 @@ public class WheelManager : MonoBehaviourPunCallbacks
         if (!wheelHasBeenRemoved)
         {
             WheelMain.GetComponent<MeshCollider>().enabled = true;
-            FindObjectOfType<ProgressChecker>().ChangePercentageTo(55);
+            ProgressChecker.ChangePercentageTo(55);
             wheelHasBeenRemoved = true;
         }
     }
@@ -238,7 +240,7 @@ public class WheelManager : MonoBehaviourPunCallbacks
         {
             CorrectBit.GetComponent<XRSocketInteractor>().enabled = false;
             NewWheel.gameObject.layer = 0;
-            FindObjectOfType<ProgressChecker>().ChangePercentageTo(90);
+            ProgressChecker.ChangePercentageTo(90);
             wheelHasBeenReplaced = true;
         }
     }

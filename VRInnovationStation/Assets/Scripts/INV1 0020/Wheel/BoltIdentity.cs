@@ -25,6 +25,9 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
     public Material StandardMaterial;
     public Material HighlightMaterial;
 
+    private AudioManager AudioManager;
+    private ProgressChecker ProgressChecker;
+
     //Bolts start in slot without colliders.
     private void Start()
     {
@@ -33,6 +36,8 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
         IsTight = false;
 
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        AudioManager = FindObjectOfType<AudioManager>();
+        ProgressChecker = FindObjectOfType<ProgressChecker>();
     }
 
     //Once the wrench has the correct bit, allow these bolts to have colliders to be interacted with. 
@@ -60,7 +65,7 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
 
                 WheelManager.AreAllBoltsRemoved();
 
-                FindObjectOfType<AudioManager>().PlaySound("PneumaticWrench");
+                AudioManager.PlaySound("PneumaticWrench");
                 m_photonView.RPC("UpdateProgress", RpcTarget.AllBuffered);
 
                 Debug.Log("<color=orange>[BoltIdentity.cs]</color> Bolt: " + gameObject.name + " is now removed from the old wheel.");
@@ -87,7 +92,7 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
                         GetComponent<BoxCollider>().enabled = false;
                         gameObject.layer = 0;
 
-                        FindObjectOfType<AudioManager>().PlaySound("PneumaticWrench");
+                        AudioManager.PlaySound("PneumaticWrench");
                         GetComponent<Renderer>().material = StandardMaterial;
                         needsTightening = false;
                         IsTight = true;
@@ -109,7 +114,7 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
     [PunRPC]
     void UpdateProgress()
     {
-        FindObjectOfType<ProgressChecker>().IncreasePercentageBy(2);
+        ProgressChecker.IncreasePercentageBy(2);
     }
 }
 

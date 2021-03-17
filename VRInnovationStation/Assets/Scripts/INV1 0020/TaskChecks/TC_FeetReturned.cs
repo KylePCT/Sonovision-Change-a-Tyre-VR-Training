@@ -14,6 +14,13 @@ public class TC_FeetReturned : MonoBehaviourPunCallbacks
 
     public TC_FeetInPlace feetInPlace;
 
+    private ProgressChecker ProgressChecker;
+
+    private void Start()
+    {
+        ProgressChecker = FindObjectOfType<ProgressChecker>();
+    }
+
     //If a foot enters the collision...
     private void OnTriggerEnter(Collider other)
     {
@@ -55,7 +62,7 @@ public class TC_FeetReturned : MonoBehaviourPunCallbacks
     [PunRPC]
     void UpdatePercentageUp()
     {
-        FindObjectOfType<ProgressChecker>().IncreasePercentageBy(1);
+        ProgressChecker.IncreasePercentageBy(1);
         IsFootInCollision = true;
         feetInPlace.AreAllFeetInPlace = false; //Remove old feet methods.
         feetInPlace.CheckIfSimIsComplete();
@@ -64,7 +71,7 @@ public class TC_FeetReturned : MonoBehaviourPunCallbacks
     [PunRPC]
     void UpdatePercentageDown()
     {
-        FindObjectOfType<ProgressChecker>().DecreasePercentageBy(1);
+        ProgressChecker.DecreasePercentageBy(1);
         IsFootInCollision = false;
     }
 }

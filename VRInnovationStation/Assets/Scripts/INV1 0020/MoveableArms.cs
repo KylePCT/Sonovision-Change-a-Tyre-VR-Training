@@ -11,6 +11,8 @@ public class MoveableArms : MonoBehaviour
 
     private bool ArmsCanMove;
 
+    private AudioManager AudioManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,7 @@ public class MoveableArms : MonoBehaviour
         if (other.gameObject.tag == "HiddenCollision")
         {
             ArmsCanMove = true;
-            FindObjectOfType<AudioManager>().PlaySound("MetalClang");
+            AudioManager.PlaySound("MetalClang");
             MoveArms();
         }
     }

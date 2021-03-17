@@ -19,8 +19,12 @@ public class SlotIdentity : MonoBehaviourPunCallbacks
     public WrenchManager WrenchManager;
     public PhotonView m_photonView;
 
+    private ProgressChecker ProgressChecker;
+
     private void Start()
     {
+        ProgressChecker = FindObjectOfType<ProgressChecker>();
+
         //If the slot is on the wheel, set the socket to inactive.
         if (SlotType == 0)
         {
@@ -69,12 +73,12 @@ public class SlotIdentity : MonoBehaviourPunCallbacks
     [PunRPC]
     void IncreaseProgress()
     {
-        FindObjectOfType<ProgressChecker>().IncreasePercentageBy(2);
+        ProgressChecker.IncreasePercentageBy(2);
     }
 
     [PunRPC]
     void DecreaseProgress()
     {
-        FindObjectOfType<ProgressChecker>().DecreasePercentageBy(2);
+        ProgressChecker.DecreasePercentageBy(2);
     }
 }
