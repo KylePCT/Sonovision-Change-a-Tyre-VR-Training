@@ -152,7 +152,7 @@ MonoBehaviour:
     y: 0
     width: 2498
     height: 1397
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -488,20 +488,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/UI
+    - Assets/Models/INV1 0020
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/UI
+  - Assets/Models/INV1 0020
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\KT\Desktop\SV_VRMartin\SV_VRInnovationStation\VRInnovationStation
+  m_LastProjectPath: D:\_SonoKyle\SV_GarageDemo\SV_VRInnovationStation\VRInnovationStation
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 16}
-    m_SelectedIDs: 186f0000
-    m_LastClickedID: 28440
-    m_ExpandedIDs: 0000000090420000fe6e0000006f0000026f0000046f0000066f0000086f00000a6f00000c6f00000e6f0000106f0000126f0000146f0000166f00001a6f00001c6f00001e6f0000206f0000226f0000246f0000266f0000286f00002c6f000000ca9a3b
+    scrollPos: {x: 0, y: 188}
+    m_SelectedIDs: 307c0000
+    m_LastClickedID: 31792
+    m_ExpandedIDs: 000000009a410000ca6f0000cc6f0000ce6f0000d06f0000d26f0000d46f0000d66f0000d86f0000da6f0000dc6f0000de6f0000e06f0000e26f0000e46f0000e66f0000e86f0000ea6f0000ec6f0000ee6f0000f06f0000f26f0000f46f0000587000005a70000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -529,7 +529,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000090420000fe6e0000006f0000026f0000046f0000066f0000086f00000a6f00000c6f00000e6f0000106f0000126f0000146f0000166f0000186f00001a6f00001c6f00001e6f0000206f0000226f0000246f0000266f0000286f00002a6f00002c6f00002e6f0000
+    m_ExpandedIDs: 000000009a410000ca6f0000cc6f0000ce6f0000d06f0000d26f0000d46f0000d66f0000d86f0000da6f0000dc6f0000de6f0000e06f0000e26f0000e46f0000e66f0000e86f0000ea6f0000ec6f0000ee6f0000f06f0000f26f0000f46f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -557,7 +557,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000d65f0000c4590000184a00000a770000e26e0000d2a3000010870000
+    m_ExpandedInstanceIDs: c6230000d65f0000c4590000184a00000a770000e26e0000d2a3000010870000e2410000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -652,9 +652,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: b0410000
       m_LastClickedID: 0
-      m_ExpandedIDs: 6afbffff
+      m_ExpandedIDs: 92400100a2400100b4400100be400100ee400100f64001000a4101004a4101006641010082410100a2410100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -707,16 +707,16 @@ MonoBehaviour:
   m_ShowContextualTools: 0
   m_WindowGUID: 4737e45d2e1f9004ebf99e35befc7248
   m_Gizmos: 1
-  m_SceneIsLit: 1
+  m_SceneIsLit: 0
   m_SceneLighting: 1
   m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.4934938, y: 2.507418, z: 3.252969}
+    m_Target: {x: 0.3039581, y: 0.96739703, z: 0.5641282}
     speed: 2
-    m_Value: {x: -2.4934938, y: 2.507418, z: 3.252969}
+    m_Value: {x: 0.3039581, y: 0.96739703, z: 0.5641282}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -728,8 +728,8 @@ MonoBehaviour:
   m_ExposureSliderMax: 10
   m_SceneViewState:
     showFog: 1
-    showMaterialUpdate: 1
-    showSkybox: 1
+    showMaterialUpdate: 0
+    showSkybox: 0
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -762,11 +762,11 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.016338041, y: 0.9143232, z: -0.036524806, w: 0.40440017}
+    m_Target: {x: -0.032661073, y: -0.8834982, z: -0.058143597, w: 0.464465}
     speed: 2
-    m_Value: {x: 0.017225755, y: 0.92249477, z: -0.041015368, w: 0.38343763}
+    m_Value: {x: -0.032736074, y: -0.8824722, z: -0.058072932, w: 0.46561646}
   m_Size:
-    m_Target: 1.7427437
+    m_Target: 0.30287644
     speed: 2
     m_Value: 1.7427437
   m_Ortho:
@@ -830,7 +830,7 @@ MonoBehaviour:
   m_TargetSize: {x: 1594, y: 876}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
-  m_RenderIMGUI: 1
+  m_RenderIMGUI: 0
   m_MaximizeOnPlay: 0
   m_UseMipMap: 0
   m_VSyncEnabled: 0
@@ -854,7 +854,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
