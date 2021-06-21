@@ -142,7 +142,7 @@ public class RaiseLowerLift : MonoBehaviour
             CanRemoveWheel = true;
             ButtonConfirmationIndication.GetComponent<MeshRenderer>().material = WheelCanBeMoved;
             UI_LiftIsRaisedTaskButton.SetActive(true);
-            m_photonView.RPC("SetActiveUIElements", RpcTarget.AllBuffered);
+            m_photonView.RPC("SetActiveUIElements", RpcTarget.AllBufferedViaServer);
         }
         else
         {

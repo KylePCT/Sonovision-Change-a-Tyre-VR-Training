@@ -132,6 +132,7 @@ ScriptsOnlyBuild:
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.ShaderGraph.Editor.dll:
+    - UnityEditor.Graphing.GraphObject
     - UnityEditor.ShaderGraph.Drawing.MaterialGraphEditWindow
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
@@ -1043,7 +1044,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16146}
     - Class: 114
-      Script: {instanceID: 79778}
+      Script: {instanceID: 179366}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -3595,4 +3596,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/HomeScene.unity
   - Assets/Scenes/World_Bronze.unity
   - Assets/Scenes/World_Silver.unity
-  playerPath: C:/Users/KT/Desktop/SV_VRMartin/APKs/v0.3.0.apk
+  playerPath: D:/_SonoKyle/SV_GarageDemo/APKs/v0.3.1.apk

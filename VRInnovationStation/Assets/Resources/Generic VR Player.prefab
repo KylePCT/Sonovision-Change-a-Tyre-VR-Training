@@ -4591,7 +4591,7 @@ PrefabInstance:
     - target: {fileID: 477596468737791124, guid: b8f377efc3b8ea041bf59976ea8a1baa,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.00008
+      value: 0.00004
       objectReference: {fileID: 0}
     - target: {fileID: 477596468737791124, guid: b8f377efc3b8ea041bf59976ea8a1baa,
         type: 3}
@@ -5817,6 +5817,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Avatar_Head_Realistic 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2895859166426690811, guid: 65ab023410ac5ad49bf7d9859906aac9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7226769201334919115, guid: 65ab023410ac5ad49bf7d9859906aac9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 06d0b9cdf1fea0b46a894e4e3bdb5fbb, type: 2}
     - target: {fileID: 8049691444857069739, guid: 65ab023410ac5ad49bf7d9859906aac9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5875,17 +5885,17 @@ PrefabInstance:
     - target: {fileID: 8049691444857069739, guid: 65ab023410ac5ad49bf7d9859906aac9,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.00023766303
+      value: 0.00022577988
       objectReference: {fileID: 0}
     - target: {fileID: 8049691444857069739, guid: 65ab023410ac5ad49bf7d9859906aac9,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.00022509544
+      value: 0.00021384067
       objectReference: {fileID: 0}
     - target: {fileID: 8049691444857069739, guid: 65ab023410ac5ad49bf7d9859906aac9,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.00023766306
+      value: 0.0002257799
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65ab023410ac5ad49bf7d9859906aac9, type: 3}

@@ -34,18 +34,19 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
     private void Start()
     {
         //Turns off the guides.
+        AudioManager = FindObjectOfType<AudioManager>();
+        ProgressChecker = FindObjectOfType<ProgressChecker>();
+
         DeactivateAllMeshRenderers();
         TurnOffSecondCollisions();
 
         UI_ProgressTaskComplete = false;
-
-        AudioManager = FindObjectOfType<AudioManager>();
-        ProgressChecker = FindObjectOfType<ProgressChecker>();
     }
 
     //Check if the feet are in the collision to allow the lift to be raised correctly.
     void Update()
     {
+        //Really need to move this out of update.
         for (int i = 0; i < ChassisCollisions.Length; i++)
         {
             if (ChassisCollisions[i].GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == false)
@@ -59,7 +60,7 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
             //Set variables to true and run multiplayer events.
             AreAllFeetInPlace = true;
             CarLiftCanMove = true;
-            m_photonView.RPC("SetActiveUIElements", RpcTarget.AllBuffered);
+            m_photonView.RPC("SetActiveUIElements", RpcTarget.AllBufferedViaServer);
             DeactivateAllMeshRenderers();
             Debug.Log("<color=magenta>[TC_FeetInPlace.cs]</color> Lift can now be raised. All four feet are in place.");
         }
@@ -84,7 +85,7 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
         if (!has100BeenSet)
         {
             FindObjectOfType<ProgressChecker>().ChangePercentageTo(100);
-            m_photonView.RPC("SetTo100", RpcTarget.AllBuffered);
+            m_photonView.RPC("SetTo100", RpcTarget.AllBufferedViaServer);
             has100BeenSet = true;
         }
 
@@ -98,7 +99,7 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
         {
             UI_ProgressTask_2e.SetActive(true);
             AudioManager.PlaySound("UI_Complete");
-            ProgressChecker.ChangePercentageTo(25);
+            FindObjectOfType<ProgressChecker>().ChangePercentageTo(25);
             UI_ProgressTaskComplete = true;
         }
     }
@@ -111,7 +112,7 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
         {
             UI_ProgressTask_2v.SetActive(true);
             AudioManager.PlaySound("UI_Complete");
-            ProgressChecker.ChangePercentageTo(100);
+            FindObjectOfType<ProgressChecker>().ChangePercentageTo(100);
             has100BeenSet = true;
         }
     }

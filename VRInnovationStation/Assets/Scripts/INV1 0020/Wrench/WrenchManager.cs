@@ -36,7 +36,6 @@ public class WrenchManager : MonoBehaviourPunCallbacks, Photon.Pun.IPunObservabl
     private void Start()
     {
         BitXRSocket = BitSocket.GetComponent<XRSocketInteractor>();
-        ProgressChecker = FindObjectOfType<ProgressChecker>();
     }
 
     // Update is called once per frame
@@ -123,12 +122,12 @@ public class WrenchManager : MonoBehaviourPunCallbacks, Photon.Pun.IPunObservabl
     [PunRPC]
     void UpdatePercentageUp()
     {
-        ProgressChecker.IncreasePercentageBy(5);
+        FindObjectOfType<ProgressChecker>().IncreasePercentageBy(5);
     }
 
     [PunRPC]
     void UpdatePercentageDown()
     {
-        ProgressChecker.DecreasePercentageBy(5);
+        FindObjectOfType<ProgressChecker>().DecreasePercentageBy(5);
     }
 }

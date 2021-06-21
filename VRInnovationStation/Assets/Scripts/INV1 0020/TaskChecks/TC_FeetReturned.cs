@@ -33,7 +33,7 @@ public class TC_FeetReturned : MonoBehaviourPunCallbacks
                 IsFootInCollision = true;
                 feetInPlace.AreAllFeetInPlace = false; //Remove old feet methods.
                 feetInPlace.CheckIfSimIsComplete();
-                m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBuffered);
+                m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBufferedViaServer);
                 Debug.Log("<color=magenta>[TC_FeetReturned.cs] </color>" + gameObject.name + " is now back to it's origin.");
             }
             else
@@ -52,7 +52,7 @@ public class TC_FeetReturned : MonoBehaviourPunCallbacks
             if (other.gameObject.CompareTag("Chassis_Foot"))
             {
                 IsFootInCollision = false;
-                m_photonView.RPC("UpdatePercentageDown", RpcTarget.AllBuffered);
+                m_photonView.RPC("UpdatePercentageDown", RpcTarget.AllBufferedViaServer);
                 Debug.Log("<color=magenta>[TC_FeetReturned.cs] </color>" + gameObject.name + " is no longer in the origin.");
             }
         }

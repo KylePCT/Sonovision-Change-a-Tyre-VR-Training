@@ -22,7 +22,7 @@ public class TC_FeetInPlace_Single : MonoBehaviourPunCallbacks
         {
             //Set the collision to be true and update the progress UI.
             IsFootInCollision = true;
-            m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBuffered);
+            m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBufferedViaServer);
             Debug.Log("<color=magenta>[TC_FeetInPlace_Single.cs] </color>" + gameObject.name + " is now in the correct place.");
         }
         else
@@ -39,7 +39,7 @@ public class TC_FeetInPlace_Single : MonoBehaviourPunCallbacks
         if (other.gameObject.CompareTag("Chassis_Foot"))
         {
             IsFootInCollision = false;
-            m_photonView.RPC("UpdatePercentageDown", RpcTarget.AllBuffered);
+            m_photonView.RPC("UpdatePercentageDown", RpcTarget.AllBufferedViaServer);
             Debug.Log("<color=magenta>[TC_FeetInPlace_Single.cs] </color>" + gameObject.name + " is no longer in the collision.");
         }
     }

@@ -66,7 +66,7 @@ public class TC_GotPPE : MonoBehaviourPunCallbacks
                 //Instantiate particles and set to unactive.
                 CheckPPE();
                 Instantiate(RemovedParticles, PPE_Helmet.transform.position, PPE_Helmet.transform.rotation);
-                m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBuffered);
+                m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBufferedViaServer);
                 PPE_Helmet.SetActive(false);
             }
 
@@ -77,7 +77,7 @@ public class TC_GotPPE : MonoBehaviourPunCallbacks
 
                 CheckPPE();
                 Instantiate(RemovedParticles, PPE_HighVis.transform.position, PPE_HighVis.transform.rotation);
-                m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBuffered);
+                m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBufferedViaServer);
                 PPE_HighVis.SetActive(false);
             }
         }

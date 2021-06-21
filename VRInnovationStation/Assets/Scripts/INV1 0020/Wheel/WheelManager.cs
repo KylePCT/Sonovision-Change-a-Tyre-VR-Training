@@ -228,7 +228,7 @@ public class WheelManager : MonoBehaviourPunCallbacks
         if (!wheelHasBeenRemoved)
         {
             WheelMain.GetComponent<MeshCollider>().enabled = true;
-            ProgressChecker.ChangePercentageTo(55);
+            FindObjectOfType<ProgressChecker>().ChangePercentageTo(55);
             wheelHasBeenRemoved = true;
         }
     }
@@ -240,7 +240,7 @@ public class WheelManager : MonoBehaviourPunCallbacks
         {
             CorrectBit.GetComponent<XRSocketInteractor>().enabled = false;
             NewWheel.gameObject.layer = 0;
-            ProgressChecker.ChangePercentageTo(90);
+            FindObjectOfType<ProgressChecker>().ChangePercentageTo(90);
             wheelHasBeenReplaced = true;
         }
     }

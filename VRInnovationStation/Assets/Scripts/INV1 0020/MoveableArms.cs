@@ -16,6 +16,8 @@ public class MoveableArms : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager = FindObjectOfType<AudioManager>();
+
         ArmsCanMove = false;
         ArmHandle.GetComponent<BoxCollider>().enabled = false;
     }
