@@ -3993,7 +3993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70180b3d6557c914ca0fe37316527cbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  head: {fileID: 6404915988805294934}
+  head: {fileID: 6884403078793221883}
   body: {fileID: 3512079555299209284}
   leftHand: {fileID: 2448543142886769459}
   rightHand: {fileID: 7968846463242886972}
@@ -5418,6 +5418,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 2970900991223242424, guid: 6c9d0f8ca6df14945bd661d8df956052,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4712311266667361706, guid: 6c9d0f8ca6df14945bd661d8df956052,
         type: 3}
       propertyPath: m_Layer
@@ -5713,6 +5718,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0b388ffdd4e35ce47a5ad9ae5d53e3bd, type: 2}
+    - target: {fileID: 8494837185786230101, guid: 6c9d0f8ca6df14945bd661d8df956052,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8690924722992997574, guid: 6c9d0f8ca6df14945bd661d8df956052,
         type: 3}
       propertyPath: BodyTransform

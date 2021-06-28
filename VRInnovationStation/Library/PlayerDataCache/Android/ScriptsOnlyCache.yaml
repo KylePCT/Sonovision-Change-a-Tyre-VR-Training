@@ -132,7 +132,6 @@ ScriptsOnlyBuild:
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.ShaderGraph.Editor.dll:
-    - UnityEditor.Graphing.GraphObject
     - UnityEditor.ShaderGraph.Drawing.MaterialGraphEditWindow
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
@@ -1044,7 +1043,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16146}
     - Class: 114
-      Script: {instanceID: 179366}
+      Script: {instanceID: 40930}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
