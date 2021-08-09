@@ -32,30 +32,25 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
     {
         //Get the rigidbody.
         rb = GetComponent<Rigidbody>();
-
-        if (rb.isKinematic) stayKinematic = true;
     }
 
-    [PunRPC]
     void Update()
     {
-        if (!isBeingHeld && !stayKinematic) //If the object is not being held.
+        if (isBeingHeld)
         {
-            if (rb.isKinematic) rb.isKinematic = false;
+            rb.isKinematic = true;
         }
-
-        if (isBeingHeld) //If the object is being held.
+        else
         {
-            if (!rb.isKinematic) rb.isKinematic = true;
+            rb.isKinematic = false;
         }
     }
 
     //When object is grabbed...
-    [PunRPC]
     public void OnSelectEnter()
     {
         //Calls the RPC method across players in the room.
-        m_photonView.RPC("StartNetworkGrabbing", RpcTarget.AllBufferedViaServer);
+        m_photonView.RPC("StartNetworkGrabbing", RpcTarget.AllBuffered);
 
         //If the owner is the local player...
         if (m_photonView.Owner == PhotonNetwork.LocalPlayer)
@@ -71,14 +66,13 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
     }
 
     //When object is released...
-    [PunRPC]
     public void OnSelectExit()
     {
         //When an object is no longer selected, call the StopNetworkGrabbing method to all players in the same room.
-        m_photonView.RPC("StopNetworkGrabbing", RpcTarget.AllBufferedViaServer);
+        m_photonView.RPC("StopNetworkGrabbing", RpcTarget.AllBuffered);
 
-        rb.isKinematic = true;
-        rb.useGravity = true;
+        //rb.isKinematic = true;
+        //rb.useGravity = true;
     }
 
     private void TransferOwnership()
@@ -105,32 +99,25 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
     {
         Debug.Log("Ownership transfer complete to Player: <" + targetView.Owner.NickName + ">.");
 
-        if (photonView.IsMine)
-        {
-            //Calls the RPC method across players in the room.
-            m_photonView.RPC("StartNetworkGrabbing", RpcTarget.AllBuffered);
-        }
+        //if (photonView.IsMine)
+        //{
+        //    //Calls the RPC method across players in the room.
+        //    m_photonView.RPC("StartNetworkGrabbing", RpcTarget.AllBuffered);
+        //}
     }
 
     [PunRPC] //This will be sent to all remotely connected players and update them on this.
-    public void StartNetworkGrabbing(string whatIsGrabbed)
+    public void StartNetworkGrabbing()
     {
-        //If the grabbed object is being held, set it to true.
-        if (whatIsGrabbed == objectName)
-        {
-            isBeingHeld = true;
-        }
-
+        isBeingHeld = true;
     }
 
     [PunRPC] //This will be sent to all remotely connected players and update them on this.
-    public void StopNetworkGrabbing(string whatIsGrabbed)
+    public void StopNetworkGrabbing()
     {
-        //If the grabbed object is being held, set it to false and drop it.
-        if (whatIsGrabbed == objectName)
-        {
-            isBeingHeld = false;
-        }
+        isBeingHeld = false;
+
+        if (stayKinematic) rb.isKinematic = true;
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
