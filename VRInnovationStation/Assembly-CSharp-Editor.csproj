@@ -267,16 +267,16 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="Photon3Unity3D">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Assets/External Plugins/Photon/PhotonLibs/Photon3Unity3D.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Assets/External Plugins/Photon/PhotonLibs/Photon3Unity3D.dll</HintPath>
     </Reference>
     <Reference Include="websocket-sharp">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Assets/External Plugins/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Assets/External Plugins/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.NRefactory">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/PackageCache/com.unity.render-pipelines.core@7.3.1/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/PackageCache/com.unity.render-pipelines.core@7.3.1/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.8f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -633,100 +633,100 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Subsystem.Registration">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Interaction.Toolkit">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.XR.Interaction.Toolkit.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.XR.Interaction.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Interaction.Toolkit.Editor">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.XR.Interaction.Toolkit.Editor.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.XR.Interaction.Toolkit.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Oculus">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.XR.Oculus.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.XR.Oculus.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Oculus.Editor">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.XR.Oculus.Editor.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.XR.Oculus.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management.Editor">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/_SonoKyle/SV_GarageDemo/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/_SonoKyle/SV_VR_TyreChange/SV_VRInnovationStation/VRInnovationStation/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

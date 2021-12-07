@@ -1,4 +1,0 @@
-#Mon Jun 28 10:23:38 BST 2021
-base.0=D\:\\_SonoKyle\\SV_GarageDemo\\SV_VRInnovationStation\\VRInnovationStation\\Temp\\gradleOut\\launcher\\build\\intermediates\\transforms\\dexMerger\\release\\0
-path.0=classes.dex
-renamed.0=classes.dex
