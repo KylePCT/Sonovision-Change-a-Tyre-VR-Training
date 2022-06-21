@@ -1,4 +1,4 @@
-# SV_VRInnovationStation
+# Sonovision: Change a Tyre - VR Training
 This project involves the user using VR multiplayer to teach a student how to change a tyre using a chassis. This utilises Unity, Oculus and Photon PUN API.
 
 # Design Brief
