@@ -78,7 +78,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     //Called when connected to master.
     public override void OnConnectedToMaster()
     {
-        Debug.Log("<color=cyan>[RoomManager.cs] Reconnected.");
+        Debug.Log("<color=cyan>[RoomManager.cs] Reconnected.</color>");
         PhotonNetwork.JoinLobby();
     }
 

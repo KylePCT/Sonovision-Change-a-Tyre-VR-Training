@@ -55,7 +55,7 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
     public void OnSelectEnter()
     {
         //Calls the RPC method across players in the room.
-        m_photonView.RPC("StartNetworkGrabbing", RpcTarget.AllBuffered);
+        m_photonView.RPC("StartNetworkGrabbing", RpcTarget.AllBufferedViaServer);
 
         //If the owner is the local player...
         if (m_photonView.Owner == PhotonNetwork.LocalPlayer)
@@ -75,7 +75,7 @@ public class NetworkedGrabbing : MonoBehaviourPunCallbacks, IPunOwnershipCallbac
     public void OnSelectExit()
     {
         //When an object is no longer selected, call the StopNetworkGrabbing method to all players in the same room.
-        m_photonView.RPC("StopNetworkGrabbing", RpcTarget.AllBuffered);
+        m_photonView.RPC("StopNetworkGrabbing", RpcTarget.AllBufferedViaServer);
 
         rb.isKinematic = true;
         rb.useGravity = true;

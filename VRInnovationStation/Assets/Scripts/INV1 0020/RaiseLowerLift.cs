@@ -142,7 +142,7 @@ public class RaiseLowerLift : MonoBehaviour
             CanRemoveWheel = true;
             ButtonConfirmationIndication.GetComponent<MeshRenderer>().material = WheelCanBeMoved;
             UI_LiftIsRaisedTaskButton.SetActive(true);
-            m_photonView.RPC("SetActiveUIElements", RpcTarget.AllBuffered);
+            m_photonView.RPC("SetActiveUIElements", RpcTarget.AllBufferedViaServer);
         }
         else
         {
@@ -154,7 +154,7 @@ public class RaiseLowerLift : MonoBehaviour
     //Raise lift position and set RPC values for multiplayer UI;
     public void RaiseLift()
     {
-        if (Lift.transform.position.y < HighestPositionLimit && TaskCheck.AreAllFeetInPlace)
+        if (Lift.transform.position.y < HighestPositionLimit && TaskCheck.CarLiftCanMove)
         {
             ButtonRaise.GetComponent<MeshRenderer>().material = WheelCanBeMoved;
 
@@ -173,7 +173,7 @@ public class RaiseLowerLift : MonoBehaviour
     //Lower lift position.
     public void LowerLift()
     {
-        if (Lift.transform.position.y > LowestPositionLimit && TaskCheck.AreAllFeetInPlace)
+        if (Lift.transform.position.y > LowestPositionLimit && TaskCheck.CarLiftCanMove)
         {
             ButtonLower.GetComponent<MeshRenderer>().material = WheelCanBeMoved;
             ButtonRaise.GetComponent<MeshRenderer>().material = DefaultMat;

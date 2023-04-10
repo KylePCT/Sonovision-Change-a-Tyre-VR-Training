@@ -25,6 +25,9 @@ public class BoltIdentity : MonoBehaviourPunCallbacks
     public Material StandardMaterial;
     public Material HighlightMaterial;
 
+    private AudioManager AudioManager;
+    private ProgressChecker ProgressChecker;
+
     //Bolts start in slot without colliders.
     private void Start()
     {

@@ -7,11 +7,12 @@ using Photon.Realtime;
 //Checks each individual foot.
 public class TC_FeetInPlace_Single : MonoBehaviourPunCallbacks
 {
-    [HideInInspector]
     public bool IsFootInCollision = false;
 
     public PhotonView m_photonView;
     public GameObject CollisionBox;
+
+    public TC_FeetInPlace feetInPlace;
 
     //If a foot enters the collision...
     private void OnTriggerEnter(Collider other)
@@ -21,7 +22,7 @@ public class TC_FeetInPlace_Single : MonoBehaviourPunCallbacks
         {
             //Set the collision to be true and update the progress UI.
             IsFootInCollision = true;
-            m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBuffered);
+            m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBufferedViaServer);
             Debug.Log("<color=magenta>[TC_FeetInPlace_Single.cs] </color>" + gameObject.name + " is now in the correct place.");
         }
         else
@@ -38,7 +39,7 @@ public class TC_FeetInPlace_Single : MonoBehaviourPunCallbacks
         if (other.gameObject.CompareTag("Chassis_Foot"))
         {
             IsFootInCollision = false;
-            m_photonView.RPC("UpdatePercentageDown", RpcTarget.AllBuffered);
+            m_photonView.RPC("UpdatePercentageDown", RpcTarget.AllBufferedViaServer);
             Debug.Log("<color=magenta>[TC_FeetInPlace_Single.cs] </color>" + gameObject.name + " is no longer in the collision.");
         }
     }
@@ -59,11 +60,13 @@ public class TC_FeetInPlace_Single : MonoBehaviourPunCallbacks
     void UpdatePercentageUp()
     {
         FindObjectOfType<ProgressChecker>().IncreasePercentageBy(2);
+        IsFootInCollision = true;
     }
 
     [PunRPC]
     void UpdatePercentageDown()
     {
         FindObjectOfType<ProgressChecker>().DecreasePercentageBy(2);
+        IsFootInCollision = false;
     }
 }

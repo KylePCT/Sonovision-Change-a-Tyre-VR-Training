@@ -3657,12 +3657,12 @@ PrefabInstance:
     - target: {fileID: 7139699444261728832, guid: 85b941c725bd991489890c2e553638d8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5
+      value: 1.464
       objectReference: {fileID: 0}
     - target: {fileID: 7139699444261728832, guid: 85b941c725bd991489890c2e553638d8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.814
+      value: 3.555
       objectReference: {fileID: 0}
     - target: {fileID: 7139699444261728832, guid: 85b941c725bd991489890c2e553638d8,
         type: 3}
@@ -8968,18 +8968,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_photonView: {fileID: 289380364}
-  Col_LeftFrontArmPlace: {fileID: 678850236}
-  Col_LeftBackArmPlace: {fileID: 1577363994}
-  Col_RightFrontArmPlace: {fileID: 2075467950}
-  Col_RightBackArmPlace: {fileID: 1981820745}
-  Col_LeftFrontArmPlaceDefault: {fileID: 1329466302}
-  Col_LeftBackArmPlaceDefault: {fileID: 378605361}
-  Col_RightFrontArmPlaceDefault: {fileID: 637012151}
-  Col_RightBackArmPlaceDefault: {fileID: 812236747}
+  ChassisCollisions:
+  - {fileID: 1577363994}
+  - {fileID: 678850236}
+  - {fileID: 1981820745}
+  - {fileID: 2075467950}
+  OriginCollisions:
+  - {fileID: 378605361}
+  - {fileID: 1329466302}
+  - {fileID: 812236747}
+  - {fileID: 637012151}
   UI_ProgressTask_2e: {fileID: 1808098906}
   UI_ProgressTask_2v: {fileID: 754586167}
   whManager: {fileID: 2123629107}
   AreAllFeetInPlace: 0
+  CarLiftCanMove: 0
 --- !u!114 &289380363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11703,7 +11706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &378605362
 Transform:
   m_ObjectHideFlags: 0
@@ -11713,7 +11716,7 @@ Transform:
   m_GameObject: {fileID: 378605361}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.4960003, y: 1.202, z: -0.35000002}
-  m_LocalScale: {x: 0.32, y: 0.5195357, z: 0.16315769}
+  m_LocalScale: {x: 0.5, y: 0.5195357, z: 0.52}
   m_Children: []
   m_Father: {fileID: 289380361}
   m_RootOrder: 4
@@ -11771,6 +11774,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   whManager: {fileID: 2123629107}
   m_photonView: {fileID: 378605364}
+  feetInPlace: {fileID: 289380362}
 --- !u!65 &378605366
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14643,7 +14647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479271022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.464, y: -0.01, z: -0.007}
+  m_LocalPosition: {x: 0.553, y: -0.01, z: -0.007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6546178401001791622}
@@ -19493,17 +19497,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '(Not yet implemented fully, please continue onto the next instruction).
-
-    From
-    left-hand side of the chassis, articulate rear-facing lift arm away from the
-    chassis and stow in the indicated position.
+  m_text: 'From left-hand side of the chassis, articulate rear-facing lift arm away
+    from the chassis and stow in the indicated position.
 
 
-
-    Please ensure the lift arm
-    is stowed before proceeding. If necessary, extend or retract the lift arm to
-    achieve the required positioning.'
+    Please ensure the
+    lift arm is stowed before proceeding. If necessary, extend or retract the lift
+    arm to achieve the required positioning.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79d4648e145bbfe4d98e527a1bc556e4, type: 2}
   m_sharedMaterial: {fileID: -4535133726810321958, guid: 79d4648e145bbfe4d98e527a1bc556e4,
@@ -21078,7 +21078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &637012152
 Transform:
   m_ObjectHideFlags: 0
@@ -21087,8 +21087,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 637012151}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.458, y: -1.287, z: -0.35000002}
-  m_LocalScale: {x: 0.32, y: 0.5051831, z: 0.16315769}
+  m_LocalPosition: {x: -1.4979999, y: -1.287, z: -0.35000002}
+  m_LocalScale: {x: 0.5, y: 0.5051831, z: 0.52}
   m_Children: []
   m_Father: {fileID: 289380361}
   m_RootOrder: 7
@@ -21146,6 +21146,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   whManager: {fileID: 2123629107}
   m_photonView: {fileID: 637012154}
+  feetInPlace: {fileID: 289380362}
 --- !u!65 &637012156
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22100,6 +22101,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   m_photonView: {fileID: 678850242}
   CollisionBox: {fileID: 678850236}
+  feetInPlace: {fileID: 289380362}
 --- !u!114 &678850242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25465,7 +25467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &812236748
 Transform:
   m_ObjectHideFlags: 0
@@ -25474,8 +25476,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812236747}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.458, y: 1.202, z: -0.35000002}
-  m_LocalScale: {x: 0.32, y: 0.5195357, z: 0.16315769}
+  m_LocalPosition: {x: -1.498, y: 1.202, z: -0.35000002}
+  m_LocalScale: {x: 0.5, y: 0.5195357, z: 0.52}
   m_Children: []
   m_Father: {fileID: 289380361}
   m_RootOrder: 6
@@ -25533,6 +25535,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   whManager: {fileID: 2123629107}
   m_photonView: {fileID: 812236750}
+  feetInPlace: {fileID: 289380362}
 --- !u!65 &812236752
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28203,17 +28206,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '(Not yet implemented fully, please continue onto the next instruction).
-
-    From
-    right-hand side of the chassis, articulate rear-facing lift arm away from the
-    chassis and stow in the indicated position.
+  m_text: 'From right-hand side of the chassis, articulate rear-facing lift arm away
+    from the chassis and stow in the indicated position.
 
 
-
-    Please ensure the lift arm
-    is stowed before proceeding. If necessary, extend or retract the lift arm to
-    achieve the required positioning.'
+    Please ensure the
+    lift arm is stowed before proceeding. If necessary, extend or retract the lift
+    arm to achieve the required positioning.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79d4648e145bbfe4d98e527a1bc556e4, type: 2}
   m_sharedMaterial: {fileID: -4535133726810321958, guid: 79d4648e145bbfe4d98e527a1bc556e4,
@@ -28452,8 +28451,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890815131}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7418, y: 0, z: 1.034}
-  m_LocalScale: {x: 0.15443254, y: 0.11382954, z: 0.22321343}
+  m_LocalPosition: {x: 1.7665, y: 0, z: 1.0533}
+  m_LocalScale: {x: 0.15443254, y: 0.11382954, z: 0.1810752}
   m_Children: []
   m_Father: {fileID: 543450653479345983}
   m_RootOrder: 3
@@ -30635,17 +30634,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '(Not yet implemented fully, please continue onto the next instruction).
-
-    From
-    right-hand side of the chassis, articulate front-facing lift arm away from the
-    chassis and stow in the indicated position.
+  m_text: 'From right-hand side of the chassis, articulate front-facing lift arm
+    away from the chassis and stow in the indicated position.
 
 
-
-    Please ensure the lift arm
-    is stowed before proceeding. If necessary, extend or retract the lift arm to
-    achieve the required positioning.'
+    Please ensure
+    the lift arm is stowed before proceeding. If necessary, extend or retract the
+    lift arm to achieve the required positioning.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79d4648e145bbfe4d98e527a1bc556e4, type: 2}
   m_sharedMaterial: {fileID: -4535133726810321958, guid: 79d4648e145bbfe4d98e527a1bc556e4,
@@ -43001,7 +42996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1329466303
 Transform:
   m_ObjectHideFlags: 0
@@ -43011,7 +43006,7 @@ Transform:
   m_GameObject: {fileID: 1329466302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.496, y: -1.287, z: -0.35000002}
-  m_LocalScale: {x: 0.32, y: 0.5051831, z: 0.16315769}
+  m_LocalScale: {x: 0.5, y: 0.5051831, z: 0.52}
   m_Children: []
   m_Father: {fileID: 289380361}
   m_RootOrder: 5
@@ -43069,6 +43064,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   whManager: {fileID: 2123629107}
   m_photonView: {fileID: 1329466305}
+  feetInPlace: {fileID: 289380362}
 --- !u!65 &1329466307
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48964,6 +48960,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   m_photonView: {fileID: 1577364000}
   CollisionBox: {fileID: 1577363994}
+  feetInPlace: {fileID: 289380362}
 --- !u!114 &1577364000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50733,17 +50730,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '(Not yet implemented fully, please continue onto the next instruction).
-
-    From
-    left-hand side of the chassis, articulate front-facing lift arm away from the
-    chassis and stow in the indicated position.
+  m_text: 'From left-hand side of the chassis, articulate front-facing lift arm away
+    from the chassis and stow in the indicated position.
 
 
-
-    Please ensure the lift arm
-    is stowed before proceeding. If necessary, extend or retract the lift arm to
-    achieve the required positioning.'
+    Please ensure the
+    lift arm is stowed before proceeding. If necessary, extend or retract the lift
+    arm to achieve the required positioning.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79d4648e145bbfe4d98e527a1bc556e4, type: 2}
   m_sharedMaterial: {fileID: -4535133726810321958, guid: 79d4648e145bbfe4d98e527a1bc556e4,
@@ -57047,88 +57040,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832078808}
   m_Mesh: {fileID: -4583525551562914338, guid: 50e5c6c355d169347b2cc5e8bf9fc290, type: 3}
---- !u!1 &1832540913
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1832540916}
-  - component: {fileID: 1832540915}
-  - component: {fileID: 1832540914}
-  m_Layer: 0
-  m_Name: Mirror
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
---- !u!23 &1832540914
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1832540913}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 576f48da8a871fe4daceb2363af81d57, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1832540915
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1832540913}
-  m_Mesh: {fileID: -2723260613333405795, guid: 7586964749e85494bb64d8c66c05abe2, type: 3}
---- !u!4 &1832540916
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1832540913}
-  m_LocalRotation: {x: 0.032891013, y: -0.84619045, z: 0.02065772, w: -0.53146327}
-  m_LocalPosition: {x: -5.382, y: 2.261, z: -2.771}
-  m_LocalScale: {x: 0.75586, y: 0.75586, z: 0.20715854}
-  m_Children:
-  - {fileID: 1867421092}
-  - {fileID: 1884468842}
-  - {fileID: 1966143485}
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: -244.263, z: -4.452}
 --- !u!1 &1845881351
 GameObject:
   m_ObjectHideFlags: 0
@@ -58229,121 +58140,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865141803}
   m_CullTransparentMesh: 0
---- !u!1 &1867421091
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1867421092}
-  - component: {fileID: 1867421095}
-  - component: {fileID: 1867421094}
-  - component: {fileID: 1867421093}
-  m_Layer: 0
-  m_Name: Camera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &1867421092
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1867421091}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.81, z: -0.23}
-  m_LocalScale: {x: 2.1913, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1832540916}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &1867421093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1867421091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 1
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
---- !u!81 &1867421094
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1867421091}
-  m_Enabled: 1
---- !u!20 &1867421095
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1867421091}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 2
-  m_GateFitMode: 3
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 43.565723
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 30.800001
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 5db01b5aff1f1cc4888e28917b05f414, type: 2}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
 --- !u!1 &1871836575
 GameObject:
   m_ObjectHideFlags: 0
@@ -58521,99 +58317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4e8cda9653e894e844b18f2d261ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1884468841
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1884468842}
-  - component: {fileID: 1884468845}
-  - component: {fileID: 1884468844}
-  - component: {fileID: 1884468843}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &1884468842
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1884468841}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.011, y: 0, z: 0}
-  m_LocalScale: {x: 0.001, y: 2.0617683, z: -2.0783973}
-  m_Children: []
-  m_Father: {fileID: 1832540916}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1884468843
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1884468841}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1884468844
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1884468841}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 576f48da8a871fe4daceb2363af81d57, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1884468845
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1884468841}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1886275385
 GameObject:
   m_ObjectHideFlags: 0
@@ -61520,99 +61223,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964130810}
   m_CullTransparentMesh: 0
---- !u!1 &1966143484
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1966143485}
-  - component: {fileID: 1966143488}
-  - component: {fileID: 1966143487}
-  - component: {fileID: 1966143486}
-  m_Layer: 0
-  m_Name: Cube (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1966143485
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1966143484}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0204, y: -0, z: -0}
-  m_LocalScale: {x: 0.0147452755, y: 2.1132066, z: 2.2949646}
-  m_Children: []
-  m_Father: {fileID: 1832540916}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1966143486
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1966143484}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1966143487
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1966143484}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: f9048364d0ddad2429aa3710bbb91251, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1966143488
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1966143484}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1966391787
 GameObject:
   m_ObjectHideFlags: 0
@@ -62041,6 +61651,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   m_photonView: {fileID: 1981820751}
   CollisionBox: {fileID: 1981820745}
+  feetInPlace: {fileID: 289380362}
 --- !u!114 &1981820751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65467,6 +65078,7 @@ MonoBehaviour:
   IsFootInCollision: 0
   m_photonView: {fileID: 2075467956}
   CollisionBox: {fileID: 2075467950}
+  feetInPlace: {fileID: 289380362}
 --- !u!114 &2075467956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82231,6 +81843,7 @@ MonoBehaviour:
   AttachPoint: {fileID: 479271023}
   SnapParent: {fileID: 1420145377}
   CanSnap: 0
+  feetInPlace: {fileID: 0}
   WheelManager: {fileID: 2123629107}
 --- !u!65 &8970699921859665986
 BoxCollider:

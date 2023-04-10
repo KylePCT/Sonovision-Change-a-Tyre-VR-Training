@@ -10,11 +10,14 @@ public class LeverEnableLift : MonoBehaviour, Photon.Pun.IPunObservable
 
     public GameObject UI_ButtonForward;
 
+    private AudioManager AudioManager;
+
     // Start is called before the first frame update
     void Start()
     {
         LiftCanMove = false;
         UI_ButtonForward.SetActive(false);
+        AudioManager = FindObjectOfType<AudioManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,7 +25,7 @@ public class LeverEnableLift : MonoBehaviour, Photon.Pun.IPunObservable
         if (other.gameObject.tag == "HiddenCollision")
         {
             LiftCanMove = true;
-            FindObjectOfType<AudioManager>().PlaySound("UI_PercentUp");
+            AudioManager.PlaySound("UI_PercentUp");
             UI_ButtonForward.SetActive(true);
 
         }
@@ -38,7 +41,7 @@ public class LeverEnableLift : MonoBehaviour, Photon.Pun.IPunObservable
     {
         LiftCanMove = false;
         UI_ButtonForward.SetActive(false);
-        FindObjectOfType<AudioManager>().PlaySound("UI_PercentDown");
+        AudioManager.PlaySound("UI_PercentDown");
     }
 
     //This void allows the object to be synced using Photon View.

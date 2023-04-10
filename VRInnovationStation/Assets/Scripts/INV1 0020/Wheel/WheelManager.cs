@@ -41,6 +41,8 @@ public class WheelManager : MonoBehaviourPunCallbacks
     public GameObject[] ChassisCollisions;
     public GameObject[] OriginCollisions;
 
+    private ProgressChecker ProgressChecker;
+
     //One time checks.
     private bool wheelHasBeenRemoved = false;
     private bool wheelHasBeenReplaced = false;
@@ -113,11 +115,11 @@ public class WheelManager : MonoBehaviourPunCallbacks
                     return;
                     //Check for nothing.
                 }
-
-                SetBoltHighlights();
             }
 
             //If all bolts are in the slots on the wheel...
+            m_photonView.RPC("SetBoltHighlights", RpcTarget.AllBuffered); //Photon to show materials from the highlight.
+
             CorrectBit.GetComponent<Renderer>().material = Bit_HighlightMat;
             IsNewWheelAttached = true;
             Debug.Log("<color=orange>[WheelManager.cs]</color> Wheel has all bolts.");
@@ -145,27 +147,8 @@ public class WheelManager : MonoBehaviourPunCallbacks
             Bolts[i].GetComponent<Renderer>().material = Bolt_StandardMat;
         }
 
-        //Change the collisions around.
-        foreach (GameObject i in ChassisCollisions)
-        {
-            i.SetActive(false);
-        }
-
-        foreach (GameObject j in OriginCollisions)
-        {
-            j.SetActive(true);
-        }
-
-        UI_Canvas_2o.SetActive(true);
-
-        //Remove functionality from the wrench bit.
-        CorrectBit.GetComponent<Renderer>().material = Bit_StandardMat;
-        CorrectBit.GetComponent<XRSocketInteractor>().enabled = false;
-
-        Debug.Log("<color=orange>[WheelManager.cs]</color> Arm collisions are now inverted.");
-        FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
-
-        m_photonView.RPC("WheelReplacedTask", RpcTarget.AllBuffered); //Photon for percentage sets.
+        m_photonView.RPC("WheelReplacedTask", RpcTarget.AllBuffered);
+        m_photonView.RPC("InvertCollisions", RpcTarget.AllBuffered); 
     }
 
     //Sorts the arrays into descending order for convinience.
@@ -176,6 +159,7 @@ public class WheelManager : MonoBehaviourPunCallbacks
         WheelBreakBoltHoles = WheelBreakBoltHoles.OrderBy(c => c.name).ToArray();
     }
 
+    [PunRPC]
     public void SetBoltHighlights()
     {
         StartCoroutine(SetBoltHighlightsCoroutine(1));
@@ -200,6 +184,41 @@ public class WheelManager : MonoBehaviourPunCallbacks
                 Debug.Log("<color=orange>[WheelManager.cs]</color> Bolt <" + Bolts[i].gameObject.name + "> is now highlighted and has had its interactions removed.");
             }
         }
+    }
+
+    [PunRPC]
+    public void InvertCollisions()
+    {
+        //Make sure all bolts are back to the standard material.
+        for (int i = 0; i < Bolts.Length; i++)
+        {
+            if (Bolts[i].GetComponent<BoltIdentity>().IsTight)
+            {
+                Bolts[i].GetComponent<Renderer>().material = Bolt_StandardMat;
+            }
+        }
+
+        //Change the collisions around.
+        foreach (GameObject i in ChassisCollisions)
+        {
+            i.SetActive(false);
+        }
+
+        foreach (GameObject j in OriginCollisions)
+        {
+            j.SetActive(true);
+        }
+
+        UI_Canvas_2o.SetActive(true);
+
+        //Remove functionality from the wrench bit.
+        CorrectBit.GetComponent<Renderer>().material = Bit_StandardMat;
+        CorrectBit.GetComponent<XRSocketInteractor>().enabled = false;
+
+        Debug.Log("<color=orange>[WheelManager.cs]</color> Arm collisions are now inverted.");
+        FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
+
+        m_photonView.RPC("WheelReplacedTask", RpcTarget.AllBuffered); //Photon for percentage sets.
     }
 
     //PunRPC calls for percentage changes.

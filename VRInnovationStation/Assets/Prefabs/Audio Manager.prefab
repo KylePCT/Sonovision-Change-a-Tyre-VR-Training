@@ -46,7 +46,71 @@ MonoBehaviour:
   sounds:
   - name: UI_Complete
     clip: {fileID: 8300000, guid: 1bbced29fda3b474fb348eca9405a710, type: 3}
+    volume: 0.501
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: UI_Select_Forward
+    clip: {fileID: 8300000, guid: b4dfe266a81ced746a01cc8fffb46438, type: 3}
+    volume: 1
+    pitch: 1.44
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: UI_Select_Backward
+    clip: {fileID: 8300000, guid: b4dfe266a81ced746a01cc8fffb46438, type: 3}
+    volume: 1
+    pitch: 0.68
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: UI_Select_Normal
+    clip: {fileID: 8300000, guid: b4dfe266a81ced746a01cc8fffb46438, type: 3}
     volume: 1
     pitch: 1
     loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: PneumaticWrench
+    clip: {fileID: 8300000, guid: 7b79d2ff26ede5a41b2879e30bed9be2, type: 3}
+    volume: 0.426
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: MetalClang
+    clip: {fileID: 8300000, guid: 9f737578a887a094386b2de143fadfd3, type: 3}
+    volume: 0.558
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: UI_PercentUp
+    clip: {fileID: 8300000, guid: e7303b5654af3b349b04b656523b96d1, type: 3}
+    volume: 0.558
+    pitch: 1.17
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: UI_PercentDown
+    clip: {fileID: 8300000, guid: e7303b5654af3b349b04b656523b96d1, type: 3}
+    volume: 0.558
+    pitch: 0.78
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: CarLiftMoving
+    clip: {fileID: 8300000, guid: cf165795ff46015418baa2177514452f, type: 3}
+    volume: 0.754
+    pitch: 0.78
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: CarLiftStop
+    clip: {fileID: 8300000, guid: 04bde1e4ec178bc41a08f7939a087468, type: 3}
+    volume: 0.558
+    pitch: 0.78
+    loop: 0
+    playOnAwake: 0
     source: {fileID: 0}

@@ -7,11 +7,19 @@ using Photon.Realtime;
 //Checks each individual foot.
 public class TC_FeetReturned : MonoBehaviourPunCallbacks
 {
-    [HideInInspector]
     public bool IsFootInCollision = false;
 
     public WheelManager whManager;
     public PhotonView m_photonView;
+
+    public TC_FeetInPlace feetInPlace;
+
+    private ProgressChecker ProgressChecker;
+
+    private void Start()
+    {
+        ProgressChecker = FindObjectOfType<ProgressChecker>();
+    }
 
     //If a foot enters the collision...
     private void OnTriggerEnter(Collider other)
@@ -23,13 +31,14 @@ public class TC_FeetReturned : MonoBehaviourPunCallbacks
             {
                 //Set the collision to be true and update the progress UI.
                 IsFootInCollision = true;
-                m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBuffered);
+                feetInPlace.AreAllFeetInPlace = false; //Remove old feet methods.
+                feetInPlace.CheckIfSimIsComplete();
+                m_photonView.RPC("UpdatePercentageUp", RpcTarget.AllBufferedViaServer);
                 Debug.Log("<color=magenta>[TC_FeetReturned.cs] </color>" + gameObject.name + " is now back to it's origin.");
             }
             else
             {
                 //If a random thing enters the collision, don't set variables.
-                IsFootInCollision = false;
                 Debug.Log("<color=magenta>[TC_FeetReturned.cs] </color>" + gameObject.name + " has entered the collision and is not tagged 'Chassis_Foot'.");
             }
         }
@@ -43,7 +52,7 @@ public class TC_FeetReturned : MonoBehaviourPunCallbacks
             if (other.gameObject.CompareTag("Chassis_Foot"))
             {
                 IsFootInCollision = false;
-                m_photonView.RPC("UpdatePercentageDown", RpcTarget.AllBuffered);
+                m_photonView.RPC("UpdatePercentageDown", RpcTarget.AllBufferedViaServer);
                 Debug.Log("<color=magenta>[TC_FeetReturned.cs] </color>" + gameObject.name + " is no longer in the origin.");
             }
         }
@@ -53,12 +62,16 @@ public class TC_FeetReturned : MonoBehaviourPunCallbacks
     [PunRPC]
     void UpdatePercentageUp()
     {
-        FindObjectOfType<ProgressChecker>().IncreasePercentageBy(1);
+        ProgressChecker.IncreasePercentageBy(1);
+        IsFootInCollision = true;
+        feetInPlace.AreAllFeetInPlace = false; //Remove old feet methods.
+        feetInPlace.CheckIfSimIsComplete();
     }
 
     [PunRPC]
     void UpdatePercentageDown()
     {
-        FindObjectOfType<ProgressChecker>().DecreasePercentageBy(1);
+        ProgressChecker.DecreasePercentageBy(1);
+        IsFootInCollision = false;
     }
 }

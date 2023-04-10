@@ -11,17 +11,11 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
 
     //The feet of each moveable arm.
     [Header("Chassis Collisions")]
-    public GameObject Col_LeftFrontArmPlace;
-    public GameObject Col_LeftBackArmPlace;
-    public GameObject Col_RightFrontArmPlace;
-    public GameObject Col_RightBackArmPlace;
+    public GameObject[] ChassisCollisions;
 
     //The origin collisions.
     [Header("Origin Collisions")]
-    public GameObject Col_LeftFrontArmPlaceDefault;
-    public GameObject Col_LeftBackArmPlaceDefault;
-    public GameObject Col_RightFrontArmPlaceDefault;
-    public GameObject Col_RightBackArmPlaceDefault;
+    public GameObject[] OriginCollisions;
 
     //UI and Script References.
     [Header("References")]
@@ -30,13 +24,19 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
     public WheelManager whManager;
 
     private bool UI_ProgressTaskComplete = false;
-
-    [HideInInspector]
     public bool AreAllFeetInPlace = false;
+    public bool CarLiftCanMove = false;
+    private bool has100BeenSet = false;
+
+    private AudioManager AudioManager;
+    private ProgressChecker ProgressChecker;
 
     private void Start()
     {
         //Turns off the guides.
+        AudioManager = FindObjectOfType<AudioManager>();
+        ProgressChecker = FindObjectOfType<ProgressChecker>();
+
         DeactivateAllMeshRenderers();
         TurnOffSecondCollisions();
 
@@ -46,23 +46,23 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
     //Check if the feet are in the collision to allow the lift to be raised correctly.
     void Update()
     {
-        //################################# Should probably throw this through an array and do a foreach...
-        if (Col_LeftFrontArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == true && 
-            Col_LeftBackArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == true &&
-            Col_RightFrontArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == true &&
-            Col_RightBackArmPlace.GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == true)
+        //Really need to move this out of update.
+        for (int i = 0; i < ChassisCollisions.Length; i++)
         {
+            if (ChassisCollisions[i].GetComponent<TC_FeetInPlace_Single>().IsFootInCollision == false)
+            {
+                Debug.Log("<color=magenta>[TC_FeetInPlace.cs]</color> All four feet are not in place. Returning...");
+                AreAllFeetInPlace = false;
+                CheckIfSimIsComplete();
+                return;
+            }
+
             //Set variables to true and run multiplayer events.
             AreAllFeetInPlace = true;
-            m_photonView.RPC("SetActiveUIElements", RpcTarget.AllBuffered);
+            CarLiftCanMove = true;
+            m_photonView.RPC("SetActiveUIElements", RpcTarget.AllBufferedViaServer);
             DeactivateAllMeshRenderers();
             Debug.Log("<color=magenta>[TC_FeetInPlace.cs]</color> Lift can now be raised. All four feet are in place.");
-        }
-        else
-        {
-            //Set variable to false and also run a check to make sure the simulation isn't at the end by checking if there is a new wheel.
-            CheckIfSimIsComplete();
-            AreAllFeetInPlace = false;
         }
     }
 
@@ -71,17 +71,24 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
     {
         Debug.Log("<color=magenta>[TC_FeetInPlace.cs]</color> Checking if Sim is complete...");
 
-        if (whManager.IsNewWheelAttached)
+        for (int i = 0; i < OriginCollisions.Length; i++)
         {
-            if (Col_LeftBackArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
-                Col_LeftFrontArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
-                Col_RightBackArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision &&
-                Col_RightFrontArmPlaceDefault.GetComponent<TC_FeetReturned>().IsFootInCollision)
+            if (OriginCollisions[i].GetComponent<TC_FeetReturned>().IsFootInCollision == false)
             {
-                Debug.Log("<b><color=magenta>[TC_FeetInPlace.cs]</color> <color=#5DF958>Simulation complete!</color></b>");
-                m_photonView.RPC("SetTo100", RpcTarget.AllBuffered);
+                Debug.Log("<color=magenta>[TC_FeetInPlace.cs]</color> All four feet are back at the origin. Returning...");
+                return;
             }
         }
+
+        Debug.Log("<b><color=magenta>[TC_FeetInPlace.cs]</color> <color=#5DF958>Simulation complete!</color></b>");
+
+        if (!has100BeenSet)
+        {
+            FindObjectOfType<ProgressChecker>().ChangePercentageTo(100);
+            m_photonView.RPC("SetTo100", RpcTarget.AllBufferedViaServer);
+            has100BeenSet = true;
+        }
+
     }
 
     //Set the UI to be updated for all players. Photon Multiplayer.
@@ -91,7 +98,7 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
         if (UI_ProgressTaskComplete == false)
         {
             UI_ProgressTask_2e.SetActive(true);
-            FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
+            AudioManager.PlaySound("UI_Complete");
             FindObjectOfType<ProgressChecker>().ChangePercentageTo(25);
             UI_ProgressTaskComplete = true;
         }
@@ -101,25 +108,29 @@ public class TC_FeetInPlace : MonoBehaviourPunCallbacks
     [PunRPC]
     void SetTo100()
     {
-        UI_ProgressTask_2v.SetActive(true);
-        FindObjectOfType<AudioManager>().PlaySound("UI_Complete");
-        FindObjectOfType<ProgressChecker>().ChangePercentageTo(100);
+        if (!has100BeenSet)
+        {
+            UI_ProgressTask_2v.SetActive(true);
+            AudioManager.PlaySound("UI_Complete");
+            FindObjectOfType<ProgressChecker>().ChangePercentageTo(100);
+            has100BeenSet = true;
+        }
     }
 
     //Hide all guides; in its own method for button calls and ease of use.
     public void DeactivateAllMeshRenderers()
     {
-        Col_LeftFrontArmPlace.GetComponent<MeshRenderer>().enabled = false;
-        Col_LeftBackArmPlace.GetComponent<MeshRenderer>().enabled = false;
-        Col_RightFrontArmPlace.GetComponent<MeshRenderer>().enabled = false;
-        Col_RightBackArmPlace.GetComponent<MeshRenderer>().enabled = false;
+        for (int i = 0; i < ChassisCollisions.Length; i++)
+        {
+            ChassisCollisions[i].GetComponent<MeshRenderer>().enabled = false;
+        }
     }
 
     private void TurnOffSecondCollisions()
     {
-        Col_LeftBackArmPlaceDefault.SetActive(false);
-        Col_LeftFrontArmPlaceDefault.SetActive(false);
-        Col_RightBackArmPlaceDefault.SetActive(false);
-        Col_RightFrontArmPlaceDefault.SetActive(false);
+        for (int i = 0; i < OriginCollisions.Length; i++)
+        {
+            OriginCollisions[i].gameObject.SetActive(false);
+        }
     }
 }
